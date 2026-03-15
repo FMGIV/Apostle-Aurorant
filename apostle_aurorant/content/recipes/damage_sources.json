@@ -1,0 +1,433 @@
+{
+"recipes":[
+{
+	"id": "kr.attackexhausthealth",
+	"actionid": "kv.damage",
+	"label": "Slightly Weary",
+	"startdescription": "The attack poses no real threat, yet it still manages to trouble me somewhat—",
+	"description": "it will consume a portion of my surplus stamina.",
+	"warmup": 10,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "exhaustneedhealth",
+			"label": "Exhaust",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.attackexhaustmind",
+	"actionid": "kv.damage",
+	"label": "Restless Agitation",
+	"startdescription": "This assault poses no real threat, yet it still troubles me somewhat—",
+	"description": "it will temporarily disrupt a portion of my mind.",
+	"warmup": 10,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "exhaustneedmind",
+			"label": "Exhaust",
+			"required": {
+				"ke.reason": 1,
+				"ke.passion": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.partymaindamagehealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured！",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymaindamagehealth.hit"
+		},
+		{
+			"id": "partymaindamagehealth.wound"
+		}
+	]
+},
+{
+	"id": "partymaindamagehealth.hit",
+	"label": "A setback!",
+	"description": "As long as I still retain even a sliver of spare strength, I shall not suffer overly grave injury — but this portion of power will require some time to recover.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"damagehealth": 1
+	}
+},
+{
+	"id": "partymaindamagehealth.wound",
+	"label": "I'm Hurt!",
+	"description": "It didn't have to be this way![If the attack fails to absorb Health, it will create a Wound. Receiving three Wounds of any kind will result in immediate death.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundminor": 1
+	}
+},
+{
+	"id": "kr.partymaindestroyhealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured！",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymaindestroyhealth.hit"
+		},
+		{
+			"id": "partymaindestroyhealth.wound"
+		}
+	]
+},
+{
+	"id": "partymaindestroyhealth.hit",
+	"label": "A Heavy Blow!",
+	"description": "As long as I still retain even a sliver of spare strength, I shall not suffer overly grave injury — but this portion of power will require some time to recover.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"damagehealth.severe": 1
+	}
+},
+{
+	"id": "partymaindestroyhealth.wound",
+	"label": "Grievously Wounded!",
+	"description": "Awakened Torment, Greater Than Before—[Three simultaneous Wounds of any kind will result in instant death, and such Wounds cannot heal on their own.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundsevere": 1
+	}
+},
+{
+	"id": "kr.partymaindamagemind",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I have failed to summon the strength necessary to face the foe; now my mind lies exposed to the threat—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedmind",
+			"label": "Injured！",
+			"required": {
+				"ke.reason": 1,
+				"ke.reasonexhausted": 1,
+				"ke.passion": 1,
+				"ke.passionexhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymaindamagemind.hit"
+		},
+		{
+			"id": "damagemind.end"
+		}
+	]
+},
+{
+	"id": "partymaindamagemind.hit",
+	"label": "Mind Wounded!",
+	"startdescription": "My reason is thrown into chaos, my passion dwindles and wanes—\n\n[Be warned: if both reason and passion are injured, mental strikes will directly kill you.]",
+	"requirements": {
+		"ka.mind": 1
+	},
+	"aspects": {
+		"damagemind": 1
+	}
+},
+{
+	"id": "damagemind.end",
+	"label": "In Utter Despair",
+	"startdescription": "Darkness swallows all. My consciousness helplessly sinks.",
+	"signalEndingFlavour": "Melancholy",
+	"requirements": {
+		"ka.mind": -1
+	},
+	"warmup": 10,
+	"ending": "kingending.deathmind"
+},
+{
+	"id": "kr.partymaindestroymind",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I have failed to summon the strength necessary to face the foe; now my mind lies exposed to a deadly threat—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedmind",
+			"label": "Injured！",
+			"required": {
+				"ke.reason": 1,
+				"ke.reasonexhausted": 1,
+				"ke.passion": 1,
+				"ke.passionexhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymaindestroymind.hit"
+		},
+		{
+			"id": "damagemind.end"
+		}
+	]
+},
+{
+	"id": "partymaindestroymind.hit",
+	"label": "Burden of the Mind",
+	"startdescription": "My reason lies shattered into gleaming fragments, my passion withers like leaves in the wind—\n\n[This damaged Ability card cannot recover on its own; beware: if both Reason and Passion are already wounded, a mental strike will kill you outright.]",
+	"requirements": {
+		"ka.mind": 1
+	},
+	"aspects": {
+		"damagemind.severe": 1
+	}
+},
+{
+	"id": "kr.huntressdestroyany",
+	"actionid": "kv.damage",
+	"label": "A Horrifying Power",
+	"startdescription": "An irresistible force crushes my very existence—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedany",
+			"label": "Destruction—",
+			"required": {
+				"ke.health": 1,
+				"ke.reason": 1,
+				"ke.passion": 1
+			},
+			"forbidden": {
+				"ka.damaged": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "huntressdestroyany.hit"
+		},
+		{
+			"id": "killedbycat.end"
+		},
+		{
+			"id": "killedbypig.end"
+		}
+	]
+},
+{
+	"id": "huntressdestroyany.hit",
+	"label": "No Longer Sustained",
+	"startdescription": "—Each strike pushes me closer to the brink of destruction!\n\n[This damaged Ability card cannot recover on its own; beware: taking a final blow with no usable Abilities left will cause instant death.]",
+	"requirements": {
+		"ability": 2
+	},
+	"aspects": {
+		"damagehealth.severe": 1,
+		"damagemind.severe": 1
+	}
+},
+{
+	"id": "kr.huntressdestroyhealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "Defenseless!",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured！",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "huntressdestroyhealth.hit"
+		},
+		{
+			"id": "huntressdestroyhealth.wound"
+		}
+	]
+},
+{
+	"id": "huntressdestroyhealth.hit",
+	"label": "A Heavy Blow!",
+	"description": "So long as I retain even a shred of spare stamina, such wounds are not fatal—yet this portion of strength cannot be recovered without external aid.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"damagehealth.severe": 1
+	}
+},
+{
+	"id": "huntressdestroyhealth.wound",
+	"label": "Grievously Wounded!",
+	"description": "Awakened Torment, Greater Than Before—[Three simultaneous Wounds of any kind will result in instant death, and such Wounds cannot heal on their own.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundsevere": 1
+	}
+},
+{
+	"id": "kr.huntressdestroymind",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I have failed to summon the strength necessary to face the foe; now my mind lies exposed to a deadly threat—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedmind",
+			"label": "Injured！",
+			"required": {
+				"ke.reason": 1,
+				"ke.reasonexhausted": 1,
+				"ke.passion": 1,
+				"ke.passionexhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "huntressdestroymind.hit"
+		},
+		{
+			"id": "killedbycat.end"
+		},
+		{
+			"id": "killedbypig.end"
+		}
+	]
+},
+{
+	"id": "huntressdestroymind.hit",
+	"label": "Burden of the Mind",
+	"startdescription": "My reason lies shattered into gleaming fragments, my passion withers like leaves in the wind—\n\n[This damaged Ability card cannot recover on its own; beware: if both Reason and Passion are already wounded, a mental strike will kill you outright.]",
+	"requirements": {
+		"ka.mind": 1
+	},
+	"aspects": {
+		"damagemind.severe": 1
+	}
+},
+{
+	"id": "killedbycat.end",
+	"label": "Frenzy",
+	"startdescription": "Neither alive nor dead. I am forever lost.",
+	"extantreqs": {
+		"ke.cat": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "kingending.deathcat"
+},
+{
+	"id": "killedbypig.end",
+	"label": "red Tide",
+	"startdescription": "A sweet red tide engulfs me.",
+	"extantreqs": {
+		"ke.pig": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "kingending.deathpig"
+},
+{
+	"id": "kr.enemydamagehealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I failed to muster enough strength to resist the Huntess, and now I will pay the price—",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured！",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "enemydamagehealth.hit"
+		},
+		{
+			"id": "enemydamagehealth.wound"
+		}
+	]
+},
+{
+	"id": "enemydamagehealth.hit",
+	"label": "A setback!",
+	"description": "As long as I still retain even a sliver of spare strength, I shall not suffer overly grave injury — but this portion of power will require some time to recover.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"damagehealth": 1
+	}
+},
+{
+	"id": "enemydamagehealth.wound",
+	"label": "I'm Hurt!",
+	"description": "It didn't have to be this way![If the attack fails to absorb Health, it will create a Wound. Receiving three Wounds of any kind will result in immediate death.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundminor": 1
+	}
+}
+]
+}

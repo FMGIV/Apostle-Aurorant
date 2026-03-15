@@ -1,0 +1,557 @@
+{
+"recipes":[
+{
+	"id": "kh.moveblocked",
+	"actionid": "kv.move",
+	"label": "A Cornered Beast's Struggle",
+	"startdescription": "This place has been sealed by the sheer malice of the Hours of the Knot. I must either turn and face the fight, or patiently await a chance to escape.\n\n[While the 'Seal of the Triple Knot' remains active, you will be unable to leave the current area.]",
+	"craftable": false,
+	"hintonly": true,
+	"requirements": {
+		"destination": 1
+	},
+	"extantreqs": {
+		"ka.blockmove": 1
+	}
+},
+{
+	"id": "kr.moveinregion1.pre",
+	"actionid": "kv.move",
+	"label": "Set Out, Through the Borderlands",
+	"startdescription": "Within this city of Britain lies what I need—unfortunately, I must traverse the war-scarred borderlands to reach it.\n\n[Accumulate two Progress in the wilderness to reach your destination. You cannot return here, and local allies and opportunities will be lost.]",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"destination": 1,
+		"inregion1.hidden": 1,
+		"domicile": 1,
+		"necessities": 1
+	},
+	"extantreqs": {
+		"ka.blockmove": -1
+	},
+	"aspects": {
+		"departure": 1
+	},
+	"effects": {
+		"necessities": -99
+	},
+	"haltverb": {
+		"kv.abandon": 1,
+		"kv.act": 1,
+		"kv.search": 1,
+		"kv.talk": 1,
+		"kv.work": 1,
+		"kv.task": 1,
+		"kv.spawnenemy": 1,
+		"kv.spawntrace": 1,
+		"kv.partymain": 1,
+		"kv.huntress": 1,
+		"kv.beast": 1,
+		"kv.enemyattack": 1,
+		"kv.enemyhide": 1,
+		"kv.enemyraid": 1,
+		"kv.oblivion": 1
+	},
+	"linked": [
+		{
+			"id": "kr.moveinregion1.departure"
+		}
+	]
+},
+{
+	"id": "kr.moveinregion1.departure",
+	"actionid": "kv.move",
+	"label": "Set Out, Through the Borderlands",
+	"description": "The path ahead awaits.",
+	"purge": {
+		"op": 99,
+		"destination": 99,
+		"ka.local": 99,
+		"ka.enemy": 99,
+		"ka.obstacle": 99,
+		"ka.malice": 99,
+		"ka.purgemarkgeneral": 99,
+		"ka.purgemarkhuntress": 99
+	},
+	"inductions": [
+		{
+			"id": "wheel.cycle",
+			"chance": 100,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"destination": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "kr.moveinregion2.departure.pre",
+	"actionid": "kv.move",
+	"label": "Set Out, Through the Bounds",
+	"startdescription": "I will not risk long-distance travel in the physical world—a traveling immortal offers far too many opportunities to attract unwanted attention. And the realm of dreams is no longer friendly, so I choose to move along the border between reality and slumber. Though desolate, chaotic, and fraught with unpredictable dangers, it is the path I take.\n\n[Accumulate three Progress in the wilderness to reach your destination. You cannot return here, and local allies and opportunities will be lost.]",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"destination": 1,
+		"domicile": 1,
+		"necessities": 1
+	},
+	"extantreqs": {
+		"ka.blockmove": -1
+	},
+	"aspects": {
+		"departure": 1
+	},
+	"effects": {
+		"necessities": -99
+	},
+	"haltverb": {
+		"kv.abandon": 1,
+		"kv.act": 1,
+		"kv.search": 1,
+		"kv.talk": 1,
+		"kv.work": 1,
+		"kv.task": 1,
+		"kv.spawnenemy": 1,
+		"kv.spawntrace": 1,
+		"kv.partymain": 1,
+		"kv.huntress": 1,
+		"kv.beast": 1,
+		"kv.enemyattack": 1,
+		"kv.enemyhide": 1,
+		"kv.enemyraid": 1,
+		"kv.oblivion": 1
+	},
+	"linked": [
+		{
+			"id": "kr.moveinregion2.departure"
+		}
+	]
+},
+{
+	"id": "kr.moveinregion2.departure",
+	"actionid": "kv.move",
+	"label": "Set Out, Through the Bounds",
+	"description": "Crossing the bounds of the Wake—",
+	"purge": {
+		"op": 99,
+		"destination": 99,
+		"ka.local": 99,
+		"ka.enemy": 99,
+		"ka.obstacle": 99,
+		"ka.malice": 99,
+		"ka.purgemarkgeneral": 99,
+		"ka.purgemarkhuntress": 99
+	},
+	"inductions": [
+		{
+			"id": "wheel.cycle",
+			"chance": 100,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"destination": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wheel.cycle",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.",
+	"warmup": 0,
+	"requirements": {
+		"destination": 1
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.spd5",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.spd4",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.spd3",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.spd2",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.spd1",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance.spd0",
+			"chance": 100
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd5",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Speed 5]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Current progress probability: 90%]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": -21
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance",
+			"chance": 90
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd4",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Speed 4]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Current progress probability: 70%]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": -27
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance",
+			"chance": 70
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd3",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Speed 3]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Current progress probability: 50%]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": -33
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance",
+			"chance": 50
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd2",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Speed 2]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Current progress probability: 30%]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": -39
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance",
+			"chance": 30
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd1",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Speed 1]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Current progress probability: 10%]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": -45
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.advance",
+			"chance": 10
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance",
+	"actionid": "kv.wild",
+	"label": "The Great Wheel Turns [Normal Progress]",
+	"startdescription": "The earth rolls away behind like a giant wheel.\n\n[You gain Progress. This clears all minor Progress.]",
+	"warmup": 30,
+	"effects": {
+		"ke.progress": 1,
+		"ke.smallprogress": -99
+	},
+	"linked": [
+		{
+			"id": "wheel.arrival"
+		},
+		{
+			"id": "wheel.cycle",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.still",
+	"actionid": "kv.wild",
+	"label": "Stagnation",
+	"startdescription": "Lingering in desolate wastelands may attract additional dangers and unwanted attention—\n\n[This may generate traces and enemies, but also grants you a small hidden Progress.]",
+	"warmup": 30,
+	"effects": {
+		"ke.smallprogress": 1
+	},
+	"linked": [
+		{
+			"id": "wheel.cycle",
+			"chance": 100
+		}
+	],
+	"alt": [
+		{
+			"id": "wheel.spawntrace",
+			"additional": true,
+			"chance": 30
+		},
+		{
+			"id": "wheel.spawnenemy",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "wheel.advance.spd0",
+	"actionid": "kv.wild",
+	"label": "Wheel of the Wildlands [Slowest Speed!]",
+	"startdescription": "Advance, through the smoke and mist of the wilderness.\n\n[Too many assets! You can only progress at the base rate.]",
+	"warmup": 60,
+	"tablereqs": {
+		"asset": 51
+	},
+	"linked": [
+		{
+			"id": "wheel.advance.slow",
+			"chance": 100
+		},
+		{
+			"id": "wheel.still",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.advance.slow",
+	"actionid": "kv.wild",
+	"label": "The Great Wheel Turns [Guaranteed Progress]",
+	"startdescription": "The earth rolls away behind like a giant wheel. [You have gained progress by accumulating three hidden minor advancements. This will clear all minor advancements.]",
+	"warmup": 30,
+	"requirements": {
+		"ke.smallprogress": 3
+	},
+	"effects": {
+		"ke.progress": 1,
+		"ke.smallprogress": -99
+	},
+	"linked": [
+		{
+			"id": "wheel.arrival"
+		},
+		{
+			"id": "wheel.cycle",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.arrival",
+	"actionid": "kv.wild",
+	"label": "Arrival",
+	"startdescription": "Continue onward, to yet another city engulfed in the flames of war—\n\n[Place your current location to enter a new city.]",
+	"warmup": 30,
+	"grandreqs": {
+		"ke.progress": "ka.distance"
+	},
+	"effects": {
+		"ke.smallprogress": -99
+	},
+	"slots": [
+		{
+			"id": "wheelneeddomicile",
+			"label": "Leave?",
+			"required": {
+				"domicile": 1
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "wheel.end.halt",
+			"chance": 100
+		},
+		{
+			"id": "wheel.regress",
+			"chance": 70
+		},
+		{
+			"id": "wheel.arrival",
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "wheel.regress",
+	"actionid": "kv.wild",
+	"label": "Lingering in the Wilds",
+	"startdescription": "@#|Staying in the desolate and perilous wilds a little longer—I have my reasons.#|Like the Mansus, the landscape of the Bounds is not constant. Finding the same exit again will require some effort.@\n\n[You lose 1 Progress.]",
+	"warmup": 30,
+	"requirements": {
+		"domicile": -1
+	},
+	"effects": {
+		"ke.progress": -1
+	},
+	"linked": [
+		{
+			"id": "wheel.cycle",
+			"chance": 100
+		}
+	],
+	"alt": [
+		{
+			"id": "wheel.spawntrace",
+			"additional": true
+		},
+		{
+			"id": "wheel.spawnenemy",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "wheel.end.halt",
+	"actionid": "kv.wild",
+	"label": "Arrival",
+	"startdescription": "Untill this place is no longer safe.",
+	"warmup": 0.1,
+	"requirements": {
+		"domicile": 1
+	},
+	"haltverb": {
+		"kv.abandon": 1,
+		"kv.act": 1,
+		"kv.search": 1,
+		"kv.talk": 1,
+		"kv.work": 1,
+		"kv.task": 1,
+		"kv.spawnenemy": 1,
+		"kv.spawntrace": 1,
+		"kv.partymain": 1,
+		"kv.huntress": 1,
+		"kv.beast": 1,
+		"kv.enemyattack": 1,
+		"kv.enemyhide": 1,
+		"kv.enemyraid": 1,
+		"kv.oblivion": 1
+	},
+	"linked": [
+		{
+			"id": "wheel.end.purge"
+		}
+	]
+},
+{
+	"id": "wheel.end.purge",
+	"actionid": "kv.wild",
+	"label": "Arrival",
+	"startdescription": "Untill this place is no longer safe.",
+	"warmup": 0.1,
+	"requirements": {
+		"domicile": 1
+	},
+	"purge": {
+		"op": 99,
+		"ka.local": 99,
+		"ka.enemy": 99,
+		"ka.obstacle": 99,
+		"ka.malice": 99,
+		"ka.purgemarkgeneral": 99,
+		"ka.purgemarkhuntress": 99
+	},
+	"linked": [
+		{
+			"id": "wheel.end"
+		}
+	]
+},
+{
+	"id": "wheel.end",
+	"actionid": "kv.wild",
+	"label": "Arrival",
+	"startdescription": "Untill this place is no longer safe.",
+	"warmup": 10,
+	"requirements": {
+		"domicile": 1
+	},
+	"effects": {
+		"ke.progress": -99,
+		"ke.smallprogress": -99,
+		"ke.surburb": -99
+	},
+	"aspects": {
+		"arrival": 1
+	}
+}
+]
+}

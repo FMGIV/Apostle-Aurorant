@@ -1,0 +1,284 @@
+{
+"elements":[
+{
+    "id": "contentment",
+    "$derives": "contentment",
+    "xtriggers": {
+        "refresh": "contentment"
+    }
+},
+{
+    "id": "dread",
+    "$derives": "dread",
+    "xtriggers": {
+        "refresh": "dread"
+    }
+},
+{
+    "id": "fascination",
+    "$derives": "fascination",
+    "xtriggers": {
+        "refresh": "fascination"
+    }
+},
+{
+    "id": "fleeting",
+    "$derives": "fleeting",
+    "xtriggers": {
+        "refresh": "fleeting"
+    }
+},
+{
+    "id": "restlessness",
+    "$derives": "restlessness",
+    "xtriggers": {
+        "refresh": "restlessness"
+    }
+},
+{
+    "id": "erudition",
+    "$derives": "erudition",
+    "xtriggers": {
+        "refresh": "erudition"
+    }
+},
+{
+    "id": "glimmering",
+    "$derives": "glimmering",
+    "xtriggers": {
+        "refresh": "glimmering"
+    }
+},
+{
+    "id": "vitality",
+    "$derives": "vitality",
+    "xtriggers": {
+        "refresh": "vitality"
+    }
+},
+{
+    "id": "influenceedge",
+    "$derives": "influenceedge",
+    "xtriggers": {
+        "refresh": "influenceedge"
+    }
+},
+{
+    "id": "influenceedgec",
+    "$derives": "influenceedgec",
+    "xtriggers": {
+        "refresh": "influenceedgec"
+    }
+},
+{
+    "id": "influenceedgee",
+    "$derives": "influenceedgee",
+    "xtriggers": {
+        "refresh": "influenceedgee"
+    }
+},
+{
+    "id": "influenceedgeg",
+    "$derives": "influenceedgeg",
+    "xtriggers": {
+        "refresh": "influenceedgeg"
+    }
+},
+{
+    "id": "influenceforge",
+    "$derives": "influenceforge",
+    "xtriggers": {
+        "refresh": "influenceforge"
+    }
+},
+{
+    "id": "influenceforgec",
+    "$derives": "influenceforgec",
+    "xtriggers": {
+        "refresh": "influenceforgec"
+    }
+},
+{
+    "id": "influenceforgee",
+    "$derives": "influenceforgee",
+    "xtriggers": {
+        "refresh": "influenceforgee"
+    }
+},
+{
+    "id": "influenceforgeg",
+    "$derives": "influenceforgeg",
+    "xtriggers": {
+        "refresh": "influenceforgeg"
+    }
+},
+{
+    "id": "influencegrail",
+    "$derives": "influencegrail",
+    "xtriggers": {
+        "refresh": "influencegrail"
+    }
+},
+{
+    "id": "influencegrailc",
+    "$derives": "influencegrailc",
+    "xtriggers": {
+        "refresh": "influencegrailc"
+    }
+},
+{
+    "id": "influencegraile",
+    "$derives": "influencegraile",
+    "xtriggers": {
+        "refresh": "influencegraile"
+    }
+},
+{
+    "id": "influencegrailg",
+    "$derives": "influencegrailg",
+    "xtriggers": {
+        "refresh": "influencegrailg"
+    }
+},
+{
+    "id": "influenceheart",
+    "$derives": "influenceheart",
+    "xtriggers": {
+        "refresh": "influenceheart"
+    }
+},
+{
+    "id": "influenceheartc",
+    "$derives": "influenceheartc",
+    "xtriggers": {
+        "refresh": "influenceheartc"
+    }
+},
+{
+    "id": "influencehearte",
+    "$derives": "influencehearte",
+    "xtriggers": {
+        "refresh": "influencehearte"
+    }
+},
+{
+    "id": "influenceheartg",
+    "$derives": "influenceheartg",
+    "xtriggers": {
+        "refresh": "influenceheartg"
+    }
+},
+{
+    "id": "influenceknock",
+    "$derives": "influenceknock",
+    "xtriggers": {
+        "refresh": "influenceknock"
+    }
+},
+{
+    "id": "influenceknockc",
+    "$derives": "influenceknockc",
+    "xtriggers": {
+        "refresh": "influenceknockc"
+    }
+},
+{
+    "id": "influenceknocke",
+    "$derives": "influenceknocke",
+    "xtriggers": {
+        "refresh": "influenceknocke"
+    }
+},
+{
+    "id": "influenceknockg",
+    "$derives": "influenceknockg",
+    "xtriggers": {
+        "refresh": "influenceknockg"
+    }
+},
+{
+    "id": "influencelantern",
+    "$derives": "influencelantern",
+    "xtriggers": {
+        "refresh": "influencelantern"
+    }
+},
+{
+    "id": "influencelanternc",
+    "$derives": "influencelanternc",
+    "xtriggers": {
+        "refresh": "influencelanternc"
+    }
+},
+{
+    "id": "influencelanterne",
+    "$derives": "influencelanterne",
+    "xtriggers": {
+        "refresh": "influencelanterne"
+    }
+},
+{
+    "id": "influencelanterng",
+    "$derives": "influencelanterng",
+    "xtriggers": {
+        "refresh": "influencelanterng"
+    }
+},
+{
+    "id": "influencemoth",
+    "$derives": "influencemoth",
+    "xtriggers": {
+        "refresh": "influencemoth"
+    }
+},
+{
+    "id": "influencemothc",
+    "$derives": "influencemothc",
+    "xtriggers": {
+        "refresh": "influencemothc"
+    }
+},
+{
+    "id": "influencemothe",
+    "$derives": "influencemothe",
+    "xtriggers": {
+        "refresh": "influencemothe"
+    }
+},
+{
+    "id": "influencemothg",
+    "$derives": "influencemothg",
+    "xtriggers": {
+        "refresh": "influencemothg"
+    }
+},
+{
+    "id": "influencewinter",
+    "$derives": "influencewinter",
+    "xtriggers": {
+        "refresh": "influencewinter"
+    }
+},
+{
+    "id": "influencewinterc",
+    "$derives": "influencewinterc",
+    "xtriggers": {
+        "refresh": "influencewinterc"
+    }
+},
+{
+    "id": "influencewintere",
+    "$derives": "influencewintere",
+    "xtriggers": {
+        "refresh": "influencewintere"
+    }
+},
+{
+    "id": "influencewinterg",
+    "$derives": "influencewinterg",
+    "xtriggers": {
+        "refresh": "influencewinterg"
+    }
+}
+]
+}

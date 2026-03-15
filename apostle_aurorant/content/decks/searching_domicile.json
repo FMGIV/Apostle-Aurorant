@@ -1,0 +1,153 @@
+{
+"decks": [
+{
+	"id": "searchdomicile.surburb",
+	"label": "Searching on the Fringes of Britain",
+	"description": "......",
+	"spec": [
+		"ke.opfarm",
+		"ke.opfog",
+		"ke.opmoonlight",
+		"ke.opchill",
+		"ke.dawn",
+		"ke.sunset",
+		"ke.night",
+		"enemy.bear",
+		"enemy.redrisen",
+		"enemy.steam",
+		"ke.wasteland",
+		"ke.wasteland",
+		"ke.wasteland",
+		"ke.wasteland",
+		"ke.wasteland"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.london",
+	"label": "Searching in London",
+	"description": "......",
+	"spec": [
+		"influencegrail",
+		"influenceforgec",
+		"ke.opammoa",
+		"ke.opfog",
+		"ke.opseizesupplies",
+		"ke.sunset",
+	    "ke.oproyalists",
+		"forgeplant.london",
+		"ke.vaultlondon"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.glasgow",
+	"label": "Searching in Glasgow",
+	"description": "......",
+	"spec": [
+		"influencemoth",
+		"influencelanternc",
+		"ke.opammob",
+		"ke.oprain",
+		"ke.noon",
+		"ke.night",
+	    "ke.oproyalists",
+		"sunshrine.glasgow",
+		"ke.vaultglasgow"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.powys",
+	"label": "Searching in Powys",
+	"description": "......",
+	"spec": [
+		"influencemothc",
+		"influencegrail",
+		"ke.dawn",
+		"ke.opmoonlight",
+		"ke.opfarm",
+	    "ke.oparmy",
+		"ke.opstrengthspawnerb",
+		"ke.vaultpowys",
+		"vagasteps.powys"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.belfast",
+	"label": "Searching in Belfast",
+	"description": "......",
+	"spec": [
+		"influencegrail",
+		"ke.opwaves",
+		"ke.opflames",
+		"ke.opfog",
+		"ke.sunset",
+		"ke.opammoa",
+	    "ke.oproyalists",
+		"ke.vaultbelfast1",
+		"ke.vaultbelfast2"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.dover",
+	"label": "Searching in Dover",
+	"description": "......",
+	"spec": [
+		"influencemoth",
+		"influencegrail",
+		"ke.opwaves",
+		"ke.opflames",
+		"ke.dawn",
+		"ke.opammoa",
+		"ke.oparmy",
+	    "ke.oproyalists",
+		"ke.vaultdover",
+		"forgeplant.dover"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.northumb",
+	"label": "Searching in Northumberland",
+	"description": "......",
+	"spec": [
+		"influencegrail",
+		"ke.opwaves",
+		"ke.night",
+		"ke.opmoonlight",
+		"ke.opextractgraila",
+		"ke.oparmy",
+		"ke.opfarm",
+		"ke.vaultnorthumb",
+		"vagasteps.northumb"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "searchdomicile.edinburgh",
+	"label": "Searching in Edinburgh",
+	"description": "......",
+	"spec": [
+		"influencelantern",
+		"influencemothc",
+		"ke.opflames",
+		"ke.opfog",
+		"ke.noon",
+		"ke.oproyalists",
+		"sunshrine.edinburgh"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+}
+]
+}

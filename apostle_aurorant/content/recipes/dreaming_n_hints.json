@@ -1,0 +1,306 @@
+{
+"recipes":[
+{
+	"id": "kh.dreamdesire",
+	"actionid": "kv.dream",
+	"label": "Contemplation: Desire",
+	"startdescription": "I will take this chance to examine my goal more closely.",
+	"requirements": {
+		"desire": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.dreamdesire"
+		}
+	]
+},
+{
+	"id": "kr.dreamdesire",
+	"actionid": "kv.dream",
+	"label": "Contemplation: Desire",
+	"startdescription": "The realization of desire is a long and grand process—I may plan more carefully; or, if reality diverges from my initial expectations, I can change my desire. There is still time.\n\n[Leave this empty to receive the next hint, or place a specific Influence to transform Desire.]",
+	"requirements": {
+		"desire": 1
+	},
+	"slots": [
+		{
+			"id": "dreamneedinfluence",
+			"label": "A Chance?",
+			"required": {
+				"influence": 1
+			}
+		}
+	],
+	"deckeffects":{
+		"kd.desirehints": 1
+	},
+	"warmup": 30,
+	"alt": [
+		{
+			"id": "swtichdesire.dawn"
+		},
+		{
+			"id": "swtichdesire.noon"
+		},
+		{
+			"id": "swtichdesire.sunset"
+		}
+	],
+	"linked": [
+		{
+			"id": "kh.dreamdesirecandle"
+		},
+		{
+			"id": "kh.dreamdesiredawn"
+		},
+		{
+			"id": "kh.dreamdesiresun"
+		}
+	]
+},
+{
+	"id": "kh.dreamdesirecandle",
+	"actionid": "kv.dream",
+	"label": "Birth of the Chandler",
+	"description": "@#ke.logica|The Chandler will not accept a broken, failed vessel. Before I devote myself to this goal, I must at least restore all my own abilities.#ke.logicb|To become a vessel for the Chandler, I must master all of their arcane arts. The esoteric knowledge they are made of awaits somewhere ahead on my journey—but first, I must refine the skills I already possess to their utmost perfection before I can comprehend them.#ke.logicc|The Paths of the Sun—on that great road connecting the Bounds and the Glory, lies the secret of ascension. There, I must prove my resolve to the Chandler, to reclaim the right to bear the birth of divinity.@",
+	"requirements": {
+		"ke.desirecandle": 1
+	}
+},
+{
+	"id": "kh.dreamdesiredawn",
+	"actionid": "kv.dream",
+	"label": "Path of Dawn",
+	"description": "@#ke.logica|The path to fulfilling my desire is fraught with perilous challenges; not a single shred of my strength should be wasted. Before even considering seizing powers beyond my limits, I must first restore all the abilities I have lost.#ke.logicb|The original plan was to refine myself in some way until I reached an unbreakable peak—but I need a crucible of extraordinary nature to forge those noble metals into my being. Starting to build one now may be too late; perhaps some sacred forge along my journey could serve a similar purpose.#ke.logicc|The Paths of the Sun—my fate is inextricably linked to this place. If I can tread upon and comprehend that path, I might glean insights to realize my desire.@",
+	"requirements": {
+		"ke.desiredawn": 1
+	}
+},
+{
+	"id": "kh.dreamdesiresun",
+	"actionid": "kv.dream",
+	"label": "Path of Return",
+	"description": "@#ke.logica|Ahead lies a road of perilous thorns, and I would do well to prepare thoroughly. Restoring all my lost abilities is a good start.#ke.logicb|The Sun‑in‑Splendor — once the supreme god who ruled the entire Mansus, my mentor and blood kin, now divided and nowhere to be found. Yet his sins and his scars remain in this world, and both are also essential parts of his nature; if I can come to understand and even accept these two, perhaps I may create an opportunity for his return.#ke.logicc|The Paths of the Sun — a crucial part of the Sun‑in‑Splendor’s grand design. If I can set foot upon and comprehend that path, perhaps I may gain insight from his legacy.@",
+	"requirements": {
+		"ke.desiresun": 1
+	}
+},
+{
+	"id": "swtichdesire.dawn",
+	"actionid": "kv.dream",
+	"label": "To Bring the Dawn",
+	"startdescription": "At present, many ancient and powerful forces covet the Dawn, and the temporarily vacant throne of the Sun. They may not realize that, in the mortal realm, “Dawn” has always represented new possibilities.",
+	"description": "The Second Dawn should belong to more innovative, younger forces. I will bring the Second Dawn myself—there will be obstacles and deadly dangers, but the path to greatness has always been so.",
+	"requirements": {
+		"desire": 1,
+		"ke.dawn": 1
+	},
+	"aspects": {
+		"switchtodawn": 1
+	},
+	"effects": {
+		"op": -99
+	}
+},
+{
+	"id": "swtichdesire.noon",
+	"actionid": "kv.dream",
+	"label": "To Return the Noon",
+	"startdescription": "I remember a brighter time. Back then, I did not yet know the cruelty and disparity of this world. I was happy. I will reclaim what I once had—even if only a little, the slightest bit.",
+	"description": "I will bring back that magnificent sun of yore, who was also my mentor and kin—the Sun-in-Splendour. I will gather His scattered fragments and bear the gravest scars myself. It will be painful, but it will be worth it.",
+	"requirements": {
+		"desire": 1,
+		"ke.noon": 1
+	},
+	"aspects": {
+		"switchtonoon": 1
+	},
+	"effects": {
+		"op": -99
+	}
+},
+{
+	"id": "swtichdesire.sunset",
+	"actionid": "kv.dream",
+	"label": "Sunset Has Arrived",
+	"startdescription": "The gods of this world hold too many desires, too much madness; the Second Dawn was a revolution, but its outcome is destined to fail. The Sun shall rise, yet it must fall—and when it sets, the whole world will descend with it.",
+	"description": "The Chandler. Only the Chandler remains as the sole path forward. I shall bring about His birth, and the world will endure in the faint light of candle‑flame.",
+	"requirements": {
+		"desire": 1,
+		"ke.sunset": 1
+	},
+	"aspects": {
+		"switchtosunset": 1
+	},
+	"effects": {
+		"op": -99
+	}
+},
+{
+	"id": "kr.dreaming.random",
+	"actionid": "kv.dream",
+	"label": "Wandering Thoughts...",
+	"startdescription": "I clear my mind and let my thoughts drift along with inspiration—",
+	"requirements": {
+		"desire": -1
+	},
+	"warmup": 30,
+	"deckeffects": {
+		"kd.randomdream": 1
+	},
+	"linked": [
+		{
+			"id": "kr.randomdream.contentment"
+		},
+		{
+			"id": "kr.randomdream.dread"
+		},
+		{
+			"id": "kr.randomdream.fleeting"
+		},
+		{
+			"id": "kr.randomdream.grief"
+		},
+		{
+			"id": "kr.randomdream.influenceforgec"
+		},
+		{
+			"id": "kr.randomdream.influencegrailc"
+		},
+		{
+			"id": "kr.randomdream.influencelanternc"
+		},
+		{
+			"id": "kr.randomdream.strengtha"
+		},
+		{
+			"id": "kr.randomdream.strengthc"
+		},
+		{
+			"id": "kr.randomdream.restlessness"
+		}
+	]
+},
+{
+	"id": "kr.randomdream.contentment",
+	"actionid": "kv.dream",
+	"label": "A Fleeting Moment of Ease",
+	"startdescription": "Tonight I shall dream of brief comfort.",
+	"description": "Tonight, in my dream, I follow the footsteps of my birth mother—Sunset Celia—through warm, bright corridors, witnessing the hidden wonders and marvels of histories in the light; the piercing aura about her is indeed unsettling, but to the lingering melody of Crossrow, her steps are always so light and joyful, and on her face, there always lingers an elusive, faint smile…\n\nThen I wake and realize such times are long gone. The beauty of childhood was a lie—we had simply not yet understood the cruelty of the world. But memories strive with all their might to remain as they were.",
+	"requirements": {
+		"desire": -1,
+		"contentment": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.dread",
+	"actionid": "kv.dream",
+	"label": "A Fearsome Foe",
+	"startdescription": "Tonight I shall dream of a fearsome enemy.",
+	"description": "Tonight, I return once more to the battlefield of Caen. Power and the thrill of regained freedom made me arrogant, leading me recklessly into the fray—until that fire was utterly extinguished by a bone‑deep chill. I had not imagined that a Name not even numbered among the Corrivality could be so formidable. When we clashed, her blade shone like the dawn, cleaving cold night from blazing sun—\n\nI awaken soon after, not without terror in my breast. She will come for me again, I am certain. I need only consider how I shall match her when that time comes.",
+	"requirements": {
+		"desire": -1,
+		"dread": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.fleeting",
+	"actionid": "kv.dream",
+	"label": "Halls of Bygone Days",
+	"startdescription": "Tonight I shall dream of old companions.",
+	"description": "Tonight, I dream of a grand and spacious hall. Friends from days gone by sit with me around a great round table, sharing food, wine, tales of distant places, and veiled interests and suspicions… Among them are not only humans but also Longs, Carapace Crosses, and yet older peoples whose names are now lost: I myself am the greatest oddity, and so I have never minded keeping company beyond the mainstream. Goblets clink, lamps burn long into the night.  \n\nBefore I know it, I have awoken—and realize most of those faces are no more. There is loss in my heart, but even more, solace: this world is so vast that even one as peculiar as I can find a place to belong.",
+	"requirements": {
+		"desire": -1,
+		"fleeting": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.grief",
+	"actionid": "kv.dream",
+	"label": "Sin",
+	"startdescription": "Tonight I shall dream of sorrow.",
+	"description": "Every soul has its shadow. Tonight, in that hazy darkness, all those I failed and all who died by my betrayal silently watch me, accusing me of my sins. And I have no answer. Is justice not merely a beautiful lie? Is loyalty not a shackle the strong bind upon the weak? If one loses all power for its sake, who then will remember his virtues?\n\nYet even though I have long understood the chain of cause and effect, bitterness remains in my heart… a sorrow I can do nothing about, and cannot forget.",
+	"requirements": {
+		"desire": -1,
+		"ke.grief": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influenceforgec",
+	"actionid": "kv.dream",
+	"label": "Fire of Change",
+	"startdescription": "Tonight I shall dream of rage.",
+	"description": "Change always meets resistance, and thus before every revolution, there must be anger. Tonight, on a golden field of sand, I fight without end against those enemies who deny transformation. Why will they not understand? Why do they resist the revolution? Every blow I strike carries a fanatic fury and a primal bloodlust: if they insist on denying and despising my existence, then let me change them with my own hands.\n\nEven now that I am awake, my blood still boils with that wild rage. I shall spare not a single foe; I shall tolerate not even a shred of disgrace.",
+	"requirements": {
+		"desire": -1,
+		"influenceforgec": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influencegrailc",
+	"actionid": "kv.dream",
+	"label": "red Vision",
+	"startdescription": "Tonight I shall dream of something red.",
+	"description": "Tonight, I dream of a being that once tempted me. Under the cover of night, we lose ourselves in abandon, sharing that forbidden sweetness of desire… Then, from a certain moment, my sight is flooded with red, and I find myself madly tearing at some unrecognizable flesh—flesh that was once my own blood, created by me. I know this is wrong, but a voracious hunger stops me from halting: show me the red within you, more, and still more.\n\nI wake in a cold sweat, but that hunger—that hunger has not faded, leaving me parched as a long‑drought desert.",
+	"requirements": {
+		"desire": -1,
+		"influencegrailc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influencelanternc",
+	"actionid": "kv.dream",
+	"label": "Glorious Days",
+	"startdescription": "Tonight I shall dream of radiance.",
+	"description": "Tonight, I dream of more glorious years. Together with other Names, I walked alongside my blood‑kin and mentor—the Sun that walks the House—and as we passed, even the gods paid their respects. I gaze upon that sun of old and am stung to tears. Then I realize: I have grown accustomed to a dimmed world.\n\nAnd then I wake. Today, everything I see glimmers with a faint light.",
+	"requirements": {
+		"desire": -1,
+		"influencelanternc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.strengtha",
+	"actionid": "kv.dream",
+	"label": "Night Without Dreams",
+	"startdescription": "Tonight I shall dream of…",
+	"description": "Tonight, there is no dream. I close my eyes, and when I open them again, it is already dawn. I almost believe I never slept—until I rise and find my flesh truly restored in strength.",
+	"requirements": {
+		"desire": -1,
+		"ke.strengtha": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.strengthc",
+	"actionid": "kv.dream",
+	"label": "A Pitiful Insight",
+	"startdescription": "Tonight I shall dream of pitiful gains.",
+	"description": "Tonight, I dream again of those unbearable years… George Collers, the one and only warden of Brancrug Prison, was a thorough and utter madman, a rarity even across the Wake. After performing the vilest experiments upon this wretched flesh, he would sometimes speak to me of the Histories—one‑sidedly, of course—about the various similarities and differences between the Invisible and the Great Arts, from the collapse of the Sun to the reign of the Worms…\n\nAnd though I have hated him with every fibre of my being, I must admit that some of what he said was just <i>goddamned</i> right—a fact that infuriates me most of all. Tonight, once again, I have gained these insights I wish I had never gained.",
+	"requirements": {
+		"desire": -1,
+		"ke.strengthc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.restlessness",
+	"actionid": "kv.dream",
+	"label": "Unbearable Past",
+	"startdescription": "Tonight I shall dream of the cell.",
+	"description": "Tonight, I am trapped again in that stifling, narrow oubliette. The cage is made of mere mortal materials, yet no matter how I struggle, scream, and strike its walls with all my fury, the enchantments upon it dissolve my strength, rendering my resistance like fists pounding into cotton. Damned Great Arts, damned noble blood.\n\nWas I not born with a great destiny? Is my calling not to remake the world and bring about a higher revolution? Yet I could not even change a common iron cage. Even now that I am awake, that restless, stifled resentment lingers in my heart, refusing to fade.",
+	"requirements": {
+		"desire": -1,
+		"restlessness": 1
+	},
+	"warmup": 30
+}
+]
+}

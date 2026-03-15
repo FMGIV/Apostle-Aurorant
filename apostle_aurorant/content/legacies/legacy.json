@@ -1,0 +1,52 @@
+{
+"legacies": [
+{
+    "id": "apostle_aurorant",
+    "image": "aurorant.legacy",
+    "label": "Apostle Aurorant",
+    "description": "I once stood in the world's spotlight, yet now have fallen to the depths. Then again, the one good thing about hitting rock bottom... is that the only way left is up.",
+    "startdescription": "Caen — the most devastating defeat since I regained my freedom —",
+    "startingVerbId": "kv.abandon",
+    "availableWithoutEndingMatch": true,
+    "fromEnding": "majorforgevictory",
+    "newstart": true,
+    "effects": {
+        "ke.failure": 1,
+        "ke.health": 1,
+        "ke.reason": 1,
+        "ke.passion": 1
+    },
+    "statusbarelements": [
+        "ka.wound",
+        "ka.damaged",
+        "asset",
+        "ke.trace"
+    ],
+    "tablecoverimage": "",
+    "overrideBGmusic": true,
+    "BGmusic": [
+        "bgmcliffs.mp3",
+        "bgmgrenadiers.mp3",
+        "bgmliberty.mp3",
+        "bgmmarch.mp3",
+        "bgmmeetagain.mp3",
+        "bgmnaq.mp3",
+        "bgmninth.mp3",
+        "bgmsixth.mp3",
+        "bgmsteel.mp3"
+    ],
+    "menuVisualsOverride": {
+	    "characterPosition": [20, -47],
+	    "occultWindPosition": [80.56, -20.38],
+
+	    "eyeGlowColor": [1.000, 0.8627, 0.3137, 1.000],
+	    "eyeFlareColor": [1.000, 0.8627, 0.3137, 1.000],
+
+	    "eyeGlowPosition": [32.5, 18],
+	    "eyeFlarePosition": [32.5, 18],
+
+	    "eyeFlareRotationMinMax": [60, 60]
+	}
+}
+]
+}

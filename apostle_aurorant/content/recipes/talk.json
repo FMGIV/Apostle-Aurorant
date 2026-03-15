@@ -1,0 +1,221 @@
+{
+"recipes":[
+{
+	"id": "kr.rememberinspirations",
+	"actionid": "kv.talk",
+	"label": "To Remember",
+	"startdescription": "Once again bathed in a familiar yet alien light. I shall remember this moment, no matter the reason. [This refreshes this card's duration.]",
+	"description": "Perhaps one day it will grant me a reward.",
+	"craftable": true,
+	"warmup": 15,
+	"requirements": {
+		"op": 1,
+		"memory": 1
+	},
+	"aspects": {
+		"remember": 1
+	}
+},
+{
+	"id": "talkto.royalists",
+	"actionid": "kv.talk",
+	"label": "Order My followers to gather supplies",
+	"startdescription": "Given the current situation, this task is perilous and difficult, but I will convince them it is necessary.\n\n[This will consume this card and grant you a certain amount of Supplies.]",
+    "description": "It seems I won’t be seeing them for a while. But these can serve a greater purpose.",
+	"requirements": {
+		"ke.allyroyalists": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"effects":{
+        "ke.allyroyalists": -1,
+		"necessities": 2
+    },
+    "deckeffects":{
+        "kd.gathernecess": 2
+    }
+},
+{
+	"id": "talkto.army",
+	"actionid": "kv.talk",
+	"label": "Command This Unit to Further Scout the Area",
+	"startdescription": "Conduct a thorough, carpet‑style search for those potential opportunities I may have missed.\n\n[This will cause this card to degrade into an Opportunity and grant you some relatively uncommon resources.]",
+    "description": "Gains have been made—but before the next mission, I must resupply them.",
+	"requirements": {
+		"ke.allyarmy": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects":{
+        "exhaustarmy": 1
+    },
+    "deckeffects":{
+        "kd.talktoarmyresult": 1
+    }
+},
+{
+	"id": "kr.routing.london",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in London",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.domlondon": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "kr.routing.glasgow",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Glasgow",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.domglasgow": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "kr.routing.powys",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Powys",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.dompowys": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r1s1",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"deckeffects":{
+		"kd.destination.r1s2": 1
+	}
+},
+{
+	"id": "kr.routing.belfast",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Belfast",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.dombelfast": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.dover",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Dover",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.domdover": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.northumb",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Northumberland",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.domnorthumb": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.edinburgh",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Edinburgh",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "ke.domedinburgh": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destination.r1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r1s2",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the Path toward Dawn.",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"effects":{
+		"ke.destunknown": 1
+	}
+}
+]
+}

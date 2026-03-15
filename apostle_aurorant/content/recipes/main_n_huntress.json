@@ -1,0 +1,2968 @@
+{
+"recipes":[
+{
+	"id": "partymain.coming",
+	"actionid": "kv.partymain",
+	"label": "Pursuers in Sight",
+	"startdescription": "The wind carries an unpleasant scent—sickly sweet, almost rotten, mingled with hawthorn blossoms, or perhaps the smell of blood. The signs are unmistakable: those who would hinder my ambitions have tracked me here.\n\n[When traces are present on the board, hostile groups may arrive at the end of each cycle. The more traces there are, the higher the chance they will find you.]",
+	"extantreqs": {
+		"ka.blockpartymain": -1
+	},
+	"warmup": 30,
+	"effects": {
+		"ke.partymain": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.setup1"
+		},
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.setup1",
+	"actionid": "kv.partymain",
+	"label": "The Enemy Gathers",
+	"startdescription": "Just as I steadily regain my former strength, my enemies will not remain idle. They will return with greater power and more sinister designs...\n\n[As the game progresses, the Garrisons of Triple Knot will enter the board with increasingly higher initial Threat and will remove a 'Wastage' upon arrival.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.difficulty": 1
+	},
+	"purge": {
+		"ke.partymainwound": 1
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 2,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.draw",
+	"actionid": "kv.partymain",
+	"label": "",
+	"comments": "抽取绳结戍边者的行动策略。",
+	"requirements": {
+		"ke.partymain": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategiespartymain": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.router"
+		}
+	]
+},
+{
+	"id": "partymain.router",
+	"actionid": "kv.partymain",
+	"label": "",
+	"comments": "链接着所有可能的recipe，决定绳结戍边者如何行动。",
+	"requirements": {
+		"ke.partymain": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "partymain.defeated"
+		},
+		{
+			"id": "partymain.losethreat"
+		},
+		{
+			"id": "partymain.finale"
+		},
+		{
+			"id": "partymain.supportcat"
+		},
+		{
+			"id": "partymain.supportpig"
+		},
+		{
+			"id": "partymain.attack3a.pre"
+		},
+		{
+			"id": "partymain.attack3b.pre"
+		},
+		{
+			"id": "partymain.attack2a.pre"
+		},
+		{
+			"id": "partymain.attack2b.pre"
+		},
+		{
+			"id": "partymain.special"
+		},
+		{
+			"id": "partymain.attack1a"
+		},
+		{
+			"id": "partymain.attack1b"
+		},
+		{
+			"id": "partymain.consume"
+		},
+		{
+			"id": "partymain.develop"
+		},
+		{
+			"id": "partymain.pass"
+		}
+	]
+},
+{
+	"id": "partymain.defeated",
+	"actionid": "kv.partymain",
+	"label": "Shattered Lines",
+	"startdescription": "A decisive victory! Having lost a significant number of members and resources, this group of hostile Long will pose no threat to me for a long time. Yet there will always be more fools rushing to the fire.",
+	"extantreqs": {
+		"ke.partymainwound": 7
+	},
+	"purge":{
+		"ke.partymainwound": 99
+	},
+	"warmup": 30,
+	"aspects": {
+		"repulseparty": 1
+	}
+},
+{
+	"id": "partymain.supportcat",
+	"actionid": "kv.partymain",
+	"label": "Enemies in Service",
+	"startdescription": "The enemy is channeling greater power from the dreams to aid their patron—\n\n[While the Huntress is present, the enemy will continually generate Malice to support their actions.]",
+	"grandReqs": {
+		"[ke.partystrategyc]+[ke.partystrategye]+[ke.partystrategyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.cat": 1,
+		"ke.moveblockerknot": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.supportcat",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.supportpig",
+	"actionid": "kv.partymain",
+	"label": "Enemies in Service",
+	"startdescription": "The enemy is channeling greater power from the dreams to aid their patron—\n\n[While the Huntress is present, the enemy will continually generate Malice to support their actions.]",
+	"grandReqs": {
+		"[ke.partystrategyc]+[ke.partystrategye]+[ke.partystrategyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.pig": 1,
+		"ke.moveblockerknot": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.supportpig",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.finale",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "My enemies have amassed enough strength and are now massing to fulfill the most sinister designs of the Knot Gods—soon, something mad will occur.\n\n[Your enemies have grown extremely dangerous—if you wish to avoid pointless losses, it is best to withdraw now.]",
+	"grandReqs": {
+		"[ke.partystrategyc]+[ke.partystrategye]+[ke.partystrategyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.moveblockerknot": -1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.summoncat"
+		},
+		{
+			"id": "partymain.summonpig"
+		},
+		{
+			"id": "partymain.blockarea"
+		}
+	]
+},
+{
+	"id": "partymain.summoncat",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has performed a large‑scale profane ritual to summon their patron—a hostile Name hidden within dreams. For me, the situation will become extremely perilous.\n\n[An extremely dangerous enemy—a hostile Name has been called to this place. Be prepared.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.markcat": 1,
+		"ka.huntressishere": -1
+	},
+	"alt":[
+		{
+			"id": "cat.pre",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.summonpig",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has performed a large‑scale profane ritual to summon their patron—a hostile Name hidden within dreams. For me, the situation will become extremely perilous.\n\n[An extremely dangerous enemy—a hostile Name has been called to this place. Be prepared.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.markpig": 1,
+		"ka.huntressishere": -1
+	},
+	"alt":[
+		{
+			"id": "pig.pre",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.blockarea",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has conducted a large‑scale profane ritual to beseech the Knot Gods, guiding their might to trap me here. The situation will become extremely perilous.\n\n[This area will be sealed; you will be unable to leave for a period of time.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.huntressishere": 1
+	},
+	"alt":[
+		{
+			"id": "kr.spawnmoveblockerknot",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.losethreat",
+	"actionid": "kv.partymain",
+	"label": "Weakened!",
+	"startdescription": "After losing a key local stronghold, the threat posed by this hostile group will diminish—for now.\n\n[This hostile group’s Threat will be reduced by 2.]",
+	"requirements": {
+		"ka.threat": 2
+	},
+	"extantreqs": {
+		"ke.partymainsetback": 1
+	},
+	"purge": {
+		"ke.partymainsetback": 1
+	},
+	"warmup": 30,
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": -2,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.router"
+		}
+	]
+},
+{
+	"id": "partymain.special",
+	"actionid": "kv.partymain",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "The malice of the Knot Gods echoes in every breath of air here, and my foes are scheming to harness its power for yet more sinister plots…\n\n[When the number of threats reaches a certain level, hostile groups can employ powerful special tactics by drawing upon the Malice present in the field.]",
+	"requirements": {
+		"ke.partystrategye": 1,
+		"ka.threat": 5
+	},
+	"extantreqs":{
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "needknotmalice",
+			"label": "Malice",
+			"required": {
+				"malice.axe": 1,
+				"malice.grail": 1,
+				"malice.malachite": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.specialaxe"
+		},
+		{
+			"id": "partymain.specialgrail"
+		},
+		{
+			"id": "partymain.specialmalachite"
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.specialaxe",
+	"actionid": "kv.partymain",
+	"label": "Edict of the Sealed Gate",
+	"startdescription": "Malice of the Horned-Axe is splitting the battlefield in a sinister way—some of my allies and resources will be forced to withdraw from the front lines!\n\n[The enemy has used the Malice of the Horned-Axe to weaken your support! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.axe": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.axespeciality",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "partymain.specialgrail",
+	"actionid": "kv.partymain",
+	"label": "Pain Etched in Memory",
+	"startdescription": "The venomous pain from the Grail saturates this realm of reality—both I and my allies shall endure suffering.\n\n[The enemy has used the Malice of the Grail to weaken your support! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.grail": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.grailspeciality",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "partymain.attack3a.pre",
+	"actionid": "kv.partymain",
+	"label": "Owl's Talons",
+	"startdescription": "Guided by the enemy, the frigid power of the Horned-Axe is tearing through my flesh—\n\n[If left undefended, this will permanently damage your Ability card.]",
+	"requirements": {
+		"ka.threat": 7,
+		"ke.partystrategya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain3a": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack3a"
+		}
+	]
+},
+{
+	"id": "partymain.attack3a",
+	"actionid": "kv.partymain",
+	"label": "Owl's Talons",
+	"startdescription": "Guided by the enemy, the frigid power of the Horned-Axe is tearing through my flesh—\n\n[If left undefended, this will permanently damage your Ability card.]",
+	"requirements": {
+		"panel.partymain3a": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain3a.responseedge"
+		},
+		{
+			"id": "partymain3a.responseknock"
+		},
+		{
+			"id": "kr.partymaindestroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain3a.responseedge",
+	"label": "Respond with Force",
+	"startdescription": "The Talons of the Owl are certainly vicious, but they no longer possess their former sharpness. Relying on brute force, I managed to fend them off and force them back to the other side of the skin.",
+	"requirements": {
+		"panel.partymain3a": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain3a.responseknock",
+	"label": "Respond with Opening",
+	"startdescription": "The Horned-Axe understands the ways of opening, but even the faint echoes of her power can still be deflected and misled. This strike caused me no real harm.",
+	"requirements": {
+		"panel.partymain3a": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain.attack3b.pre",
+	"actionid": "kv.partymain",
+	"label": "Touch of the Grail",
+	"startdescription": "My vision is tinged with a maddening scarlet—the temptation touched by the Grail is eroding my sanity and soul—\n\n[If left undefended, this will permanently damage your Ability card.]",
+	"requirements": {
+		"ka.threat": 7,
+		"ke.partystrategyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain3b": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack3b"
+		}
+	]
+},
+{
+	"id": "partymain.attack3b",
+	"actionid": "kv.partymain",
+	"label": "Touch of the Grail",
+	"startdescription": "My vision is tinged with a maddening scarlet—the temptation touched by the Grail is eroding my sanity and soul—\n\n[If left undefended, this will permanently damage your Ability card.]",
+	"requirements": {
+		"panel.partymain3b": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain3b.responsegrail"
+		},
+		{
+			"id": "partymain3b.responsemoth"
+		},
+		{
+			"id": "kr.partymaindestroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain3b.responsegrail",
+	"label": "Respond with Torment",
+	"startdescription": "Understanding of the Grail’s nature allows me to resist its lure with pain of equal magnitude. The frenzied scarlet recedes bit by bit against the current until it finally fades away entirely.",
+	"requirements": {
+		"panel.partymain3b": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain3b.responsemoth",
+	"label": "Respond with Yearning",
+	"startdescription": "A deeper, more fundamental restlessness buzzing within my skull, growing ever stronger. The Grail’s temptation unwillingly yields to this yearning.",
+	"requirements": {
+		"panel.partymain3b": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain.specialmalachite",
+	"actionid": "kv.partymain",
+	"label": "Embrace of the Malachite",
+	"startdescription": "the Malachite's malice takes the form of viridian protection—bestowed upon foes.\n\n[The enemy has established a barrier using the Malachite's malice! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.malachite": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.spawnshieldmalachite",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.attack2a.pre",
+	"actionid": "kv.partymain",
+	"label": "Stingstorm",
+	"startdescription": "The enemy has invoked the Malachite, summoning a tide of swarms from the Wood! If I wish to avoid the agony of their venom, I'd do well to keep my distance from these tiny foes—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"ka.threat": 3,
+		"ke.partystrategya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain2a": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack2a"
+		}
+	]
+},
+{
+	"id": "partymain.attack2a",
+	"actionid": "kv.partymain",
+	"label": "Stingstorm",
+	"startdescription": "The enemy has invoked the Malachite, summoning a tide of swarms from the Wood! If I wish to avoid the agony of their venom, I'd do well to keep my distance from these tiny foes—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"panel.partymain2a": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain2a.responsegrail"
+		},
+		{
+			"id": "partymain2a.responseforge"
+		},
+		{
+			"id": "kr.partymaindamagehealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain2a.responsegrail",
+	"label": "Respond with Temptation",
+	"startdescription": "The Malachite tempts the swarm with the sweetness of her blood, while the art of red can replicate an extremely similar taste. The enemy has been misled.",
+	"requirements": {
+		"panel.partymain2a": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain2a.responseforge",
+	"label": "Respond with Flame",
+	"startdescription": "Creatures long dwelling in the Wood cannot withstand fire. However vast their numbers, they shall be reduced to ashes.",
+	"requirements": {
+		"panel.partymain2a": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain.attack2b.pre",
+	"actionid": "kv.partymain",
+	"label": "Desecration's Reverberation",
+	"startdescription": "A blasphemous ritual, twisted by malice, is underway—one that should have sustained the existence of all things: now, the sickly resonance of the skin of the world tears through material barriers, assaulting my spirit—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"ka.threat": 3,
+		"ke.partystrategyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain2b": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack2b"
+		}
+	]
+},
+{
+	"id": "partymain.attack2b",
+	"actionid": "kv.partymain",
+	"label": "Desecration's Reverberation",
+	"startdescription": "A blasphemous ritual, twisted by malice, is underway—one that should have sustained the existence of all things: now, the sickly resonance of the skin of the world tears through material barriers, assaulting my spirit—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"panel.partymain2b": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain2b.responseheart"
+		},
+		{
+			"id": "partymain2b.responselantern"
+		},
+		{
+			"id": "kr.partymaindamagemind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain2b.responseheart",
+	"label": "Respond with Persistant",
+	"startdescription": "The pulse of endurance shall summon back the perseverance of the one who preserves the skin of the world, bringing this profane rite to a premature end.",
+	"requirements": {
+		"panel.partymain2b": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain2b.responselantern",
+	"label": "Respond with Ruthlessness",
+	"startdescription": "The light of the Watchman will reveal the unyielding truth, and drive out the impure from this world. The unbearable cacophony of mingled sounds fades, then vanishes completely… at least for now.",
+	"requirements": {
+		"panel.partymain2b": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "partyresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymainfight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain.attack1a",
+	"actionid": "kv.partymain",
+	"label": "Petty Tricks",
+	"startdescription": "The Sisterhood’s lackeys are attempting to harm me with mundane magic—but I’m not kind enough to play wounded for their sake.\n\n[The hostile group is attempting to deplete your Heath. This poses no substantial threat, but they will unlock more powerful abilities as their threat level increases.]",
+	"requirements": {
+		"ke.partystrategya": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.attackexhausthealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain.attack1b",
+	"actionid": "kv.partymain",
+	"label": "Scratching the Surface",
+	"startdescription": "The Sisterhood’s lackeys are trying to disrupt my mind with curses. It is somewhat irritating, but nothing more.\n\n[The hostile group is attempting to deplete your Reason and Passion. This poses no substantial threat, but they will unlock more powerful abilities as their threat level increases.]",
+	"requirements": {
+		"ke.partystrategyb": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.attackexhaustmind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain.consume",
+	"actionid": "kv.partymain",
+	"label": "Enemy Grows, Disaster Follows",
+	"startdescription": "The malice of the Knot Gods echoes through every breath of air here, and my enemies are praying to it for greater power…\n\n[A specific type of malice can cause hostile group to grow in threat rapidly.]",
+	"requirements": {
+		"ke.partystrategyc": 1
+	},
+	"extantreqs":{
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "needknotmalice",
+			"label": "Malice",
+			"required": {
+				"malice.axe": 1,
+				"malice.grail": 1,
+				"malice.malachite": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.consumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.consumesuccess",
+	"actionid": "kv.partymain",
+	"label": "Enemy Grows, Disaster Follows",
+	"startdescription": "The Prayer Is Answered — The Knot Gods have granted their servants stronger power, allowing them to employ more vicious tricks.\n\n[Enemies have used malice to increase their threat! You must clear existing malice from the field beforehand to prevent such situations.]",
+	"requirements": {
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.develop",
+	"actionid": "kv.partymain",
+	"label": "Enemy Expands",
+	"startdescription": "My enemies are setting up new hideouts, storehouses, and sanctuaries in the area, strengthening their own arms. Their threat will increase.",
+	"warmup": 30,
+	"requirements":{
+		"ke.partystrategyd": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.pass",
+	"actionid": "kv.partymain",
+	"label": "Enemy Plots in the Shadows",
+	"startdescription": "In corners beyond my sight, witches, sorcerers, and aspirants are brewing yet another wave of base schemes they intend to carry out.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partyshared.cooldown",
+	"label": "Enemy Regroups",
+	"startdescription": "This operation against me has ended. Regardless of the outcome, they will need time to reorganize before confronting me again —",
+	"warmup": 15,
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "cat.pre",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "",
+	"extantreqs": {
+		"ke.markcat": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.cat": 1
+	},
+	"playAudioTrack": "themecat.mp3",
+	"linked": [
+		{
+			"id": "cat.setup"
+		}
+	]
+},
+{
+	"id": "cat.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "<i>'Someone's 'bout to be in a whole heap o' trouble.'</i>\n\n[An extremely dangerous foe—are you ready for a grueling fight?]",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.draw",
+	"actionid": "kv.huntress",
+	"label": "",
+	"comments": "抽取老成仔猫的行动策略。",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.huntressstrategies": 1
+	},
+	"linked": [
+		{
+			"id": "cat.router"
+		}
+	]
+},
+{
+	"id": "cat.router",
+	"actionid": "kv.huntress",
+	"label": "",
+	"comments": "这一配方链接着老成仔猫的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "cat.quit"
+		},
+		{
+			"id": "cat.finale.consume"
+		},
+		{
+			"id": "cat.special.comsume"
+		},
+		{
+			"id": "cat.attacka.pre"
+		},
+		{
+			"id": "cat.attackb.pre"
+		},
+		{
+			"id": "cat.pass"
+		}
+	]
+},
+{
+	"id": "cat.quit",
+	"actionid": "kv.huntress",
+	"label": "Banished Huntress",
+	"startdescription": "Stripped of its summoner's support, this huntress' projection in the Wake begins to warp and unravel—",
+	"description": "Now that I've shaken off pursuit by hostile group and their patrons, I can finally refocus on advancing my own cause.",
+	"extantreqs": {
+		"ka.blockpartymain": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"aspects":{
+		"banhuntress": 1
+	}
+},
+{
+	"id": "cat.finale.consume",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike—the hunter continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer its final attack will persist.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.huntressstrategyd": 1
+	},
+	"extantreqs":{
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "needmalicevelvet",
+			"label": "Malice",
+			"required": {
+				"malice.velvet": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "cat.finale.convert"
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.finale.failed"
+		}
+	]
+},
+{
+	"id": "cat.finale.convert",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"comments": "负责将吸取到的恶意转化为技能次数。",
+	"startdescription": "A harbinger of a lethal strike—the hunter continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer its final attack will persist.]",
+	"requirements": {
+		"ke.cat": 1,
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ke.token": 1,
+		"malice.velvet": -1
+	},
+	"linked": [
+		{
+			"id": "cat.finale.consume"
+		},
+		{
+			"id": "cat.finale.pre"
+		}
+	]
+},
+{
+	"id": "cat.finale.failed",
+	"actionid": "kv.huntress",
+	"comments": "未能吸取任何恶意的情况下，此配方将清除策略确保猎手行动能够继续进行。",
+	"label": "Malignant Roar",
+	"startdescription": "......",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.huntressstrategyc": 1
+	},
+	"effects":{
+		"ka.purgemarkhuntress": -99
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.finale.pre",
+	"actionid": "kv.huntress",
+	"label": "The Grey Cat's Dance",
+	"startdescription": "It brings the dead back to the world, and leaves the living lost in bewilderment. The dance is so frantic it dizzies the mind, yet it seems to carry a rhythm that seizes the soul—I cannot look away, I cannot take back my thoughts—\n\n[Huntress’s final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.token": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.token": -1,
+		"panel.catfinale": 1
+	},
+	"linked": [
+		{
+			"id": "cat.finale"
+		}
+	]
+},
+{
+	"id": "cat.finale",
+	"actionid": "kv.huntress",
+	"label": "The Grey Cat's Dance",
+	"startdescription": "It brings the dead back to the world, and leaves the living lost in bewilderment. The dance is so frantic it dizzies the mind, yet it seems to carry a rhythm that seizes the soul—I cannot look away, I cannot take back my thoughts—\n\n[Huntress’s final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.catfinale": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "finaleresponse1",
+			"label": "Evoke",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse2",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse3",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.finale.responseheart"
+		},
+		{
+			"id": "cat.finale.responselantern"
+		},
+		{
+			"id": "cat.finale.responsemoth"
+		},
+		{
+			"id": "kr.huntressdestroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	]
+},
+{
+	"id": "cat.finale.responseheart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "My unceasing existence will not be bound by this dance—I can follow its rhythm, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.responselantern",
+	"label": "Respond with Illumination",
+	"startdescription": "The power of Moth instinctively longs for light—I can divert its desire, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.responsemoth",
+	"label": "Respond with Chaos",
+	"startdescription": "My yearning shares the same wildness as this dance—I can merge into its rhythm, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.end",
+	"label": "Huntress's Respite",
+	"startdescription": "The huntress's fierce assault has momentarily ceased, granting me a brief chance to catch my breath—",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.attacka.pre",
+	"actionid": "kv.huntress",
+	"label": "Shadow Approaches",
+	"startdescription": "The creature lunges so abruptly from the shadows: a mottled nightmare armed with fangs and claws, radiating from every part of it an intent to kill and a breath of venomous curse—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.huntressstrategya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.cata": 1
+	},
+	"linked": [
+		{
+			"id": "cat.attacka"
+		}
+	]
+},
+{
+	"id": "cat.attacka",
+	"actionid": "kv.huntress",
+	"label": "Shadow Approaches",
+	"startdescription": "The creature lunges so abruptly from the shadows: a mottled nightmare armed with fangs and claws, radiating from every part of it an intent to kill and a breath of venomous curse—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.cata": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.attacka.responseheart"
+		},
+		{
+			"id": "cat.attacka.responseedge"
+		},
+		{
+			"id": "kr.huntressdestroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "cat.attacka.responseedge",
+	"label": "Respond with Force",
+	"startdescription": "My fortitude shall not yield to this fleeting strike—though the creature struck true and melted back into the darkness, I remain unwounded.",
+	"requirements": {
+		"panel.cata": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attacka.responseheart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "I am brimming with vitality, making me swift enough to evade an attack that is but an instant away. The creature missed its mark and vanished once more into the shadows.",
+	"requirements": {
+		"panel.cata": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attackb.pre",
+	"actionid": "kv.huntress",
+	"label": "Vision of the Wood",
+	"startdescription": "A wild and chaotic force seizes my spirit, dragging me straight down into a place of darkness and danger—",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.huntressstrategyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.catb": 1
+	},
+	"linked": [
+		{
+			"id": "cat.attackb"
+		}
+	]
+},
+{
+	"id": "cat.attackb",
+	"actionid": "kv.huntress",
+	"label": "Vision of the Wood",
+	"startdescription": "A wild and chaotic force seizes my spirit, dragging me straight down into a place of darkness and danger—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.catb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.attackb.responsemoth"
+		},
+		{
+			"id": "cat.attackb.responseknock"
+		},
+		{
+			"id": "kr.huntressdestroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "cat.attackb.responsemoth",
+	"label": "Respond with Chaos",
+	"startdescription": "Generally speaking, the Wood is extremely dangerous to luminous beings. But I can learn from the yearning within and follow its laws. Guided by chaos and instinct, I ultimately manage to escape unharmed.",
+	"requirements": {
+		"panel.catb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"lantern": 1,
+					"moth": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attackb.responseknock",
+	"label": "Respond with Opening",
+	"startdescription": "The paths of the Wood are well-connected in all directions, though they are hidden among branches and mudstone. With the guidance that unlocks secrets, my spirit can quickly ascend back to the Wake.",
+	"requirements": {
+		"panel.catb": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.special.comsume",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The malice of this reality is continually converging toward the huntress—\n\n[The huntress can utilize the malice on the field to unleash powerful special skills.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.huntressstrategyc": 1
+	},
+	"extantreqs":{
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "needmalicevelvet",
+			"label": "Malice",
+			"required": {
+				"malice.velvet": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.special.comsumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.special.comsumesuccess",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "Fog is settling in. Flickering, indistinct shapes move at the edge of vision; murmurs, impossible to verify, drift unceasingly in the ear. In such unsettling surroundings, reliable information is hard to come by.\n\n[The huntress's special ability will provide cover for the enemy.]",
+	"requirements": {
+		"ke.cat": 1,
+		"malice.velvet": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"alt":[
+		{
+			"id": "kr.spawnfogvelvet",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.pass",
+	"actionid": "kv.huntress",
+	"label": "Huntress Lingers",
+	"startdescription": "Thoughts restless, ears ringing with a buzz, the wind's wail seems to carry fragmented murmurs — the huntress conceals itself within unnatural chaos, poised to strike at any moment.",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "catandpig.cooldown",
+	"label": "A Breathing Space",
+	"startdescription": "The huntress will soon resume their hunt —",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "cat.draw"
+		},
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.pre",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "",
+	"extantreqs": {
+		"ke.markpig": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.pig": 1
+	},
+	"playAudioTrack": "themepig.mp3",
+	"linked": [
+		{
+			"id": "pig.setup"
+		}
+	]
+},
+{
+	"id": "pig.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "<i>'You should be pleased.'</i>\n\n[An extremely dangerous foe—are you ready for a grueling fight?]",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.draw",
+	"actionid": "kv.huntress",
+	"label": "",
+	"comments": "抽取Lagiah的行动策略。",
+	"startdescription": "......",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.huntressstrategies": 1
+	},
+	"linked": [
+		{
+			"id": "pig.router"
+		}
+	]
+},
+{
+	"id": "pig.router",
+	"actionid": "kv.huntress",
+	"label": "",
+	"comments": "这一配方链接着无餍女王的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "pig.quit"
+		},
+		{
+			"id": "pig.finale.consume"
+		},
+		{
+			"id": "pig.special.comsume"
+		},
+		{
+			"id": "pig.attacka.pre"
+		},
+		{
+			"id": "pig.attackb.pre"
+		},
+		{
+			"id": "pig.pass"
+		}
+	]
+},
+{
+	"id": "pig.quit",
+	"actionid": "kv.huntress",
+	"label": "Banished Huntress",
+	"startdescription": "Stripped of its summoner's support, this hunter's projection in the Wake begins to warp and unravel—",
+	"description": "Now that I've shaken off pursuit by hostile group and their patrons, I can finally refocus on advancing my own cause.",
+	"extantreqs": {
+		"ka.blockpartymain": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"aspects":{
+		"banhuntress": 1
+	}
+},
+{
+	"id": "pig.finale.consume",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike—the hunter continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer its final attack will persist.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.huntressstrategyd": 1
+	},
+	"extantreqs":{
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "needmalicegrail",
+			"label": "Malice",
+			"required": {
+				"malice.grail": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "pig.finale.convert"
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.finale.failed"
+		}
+	]
+},
+{
+	"id": "pig.finale.convert",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"comments": "负责将吸取到的恶意转化为技能次数。",
+	"startdescription": "A harbinger of a lethal strike—the hunter continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer its final attack will persist.]",
+	"requirements": {
+		"ke.pig": 1,
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ke.token": 1,
+		"malice.grail": -1
+	},
+	"linked": [
+		{
+			"id": "pig.finale.consume"
+		},
+		{
+			"id": "pig.finale.pre"
+		}
+	]
+},
+{
+	"id": "pig.finale.failed",
+	"actionid": "kv.huntress",
+	"comments": "未能吸取任何恶意的情况下，此配方将清除策略确保猎手行动能够继续进行。",
+	"label": "Malignant Roar",
+	"startdescription": "......",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.huntressstrategyc": 1
+	},
+	"effects":{
+		"ka.purgemarkhuntress": -99
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.finale.pre",
+	"actionid": "kv.huntress",
+	"label": "Red Tide",
+	"startdescription": "Lagiah的形体扭曲融解为一道可怕的赤色巨浪，决意吞没自身触及到的一切事物——\n\n[Huntress’s final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.token": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.token": -1,
+		"panel.pigfinale": 1
+	},
+	"linked": [
+		{
+			"id": "pig.finale"
+		}
+	]
+},
+{
+	"id": "pig.finale",
+	"actionid": "kv.huntress",
+	"label": "Red Tide",
+	"startdescription": "Lagiah's form twisted and dissolved into a dreadful red tide, determined to swallow everything it touched—\n\n[Huntress’s final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.pigfinale": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "finaleresponse1",
+			"label": "Evoke",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse2",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse3",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.finale.responsegrail"
+		},
+		{
+			"id": "pig.finale.responseedge"
+		},
+		{
+			"id": "pig.finale.responseheart"
+		},
+		{
+			"id": "kr.huntressdestroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	]
+},
+{
+	"id": "pig.finale.responseheart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The roar of the Heart repelled the all‑pervading red, sparing me from being devoured for now—",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.responseedge",
+	"label": "Respond with Sharp",
+	"startdescription": "Nothing can withstand pure sharp force. The red tide was cleaved apart, revealing a massive breach—",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.responsegrail",
+	"label": "Respond with Torment",
+	"startdescription": "The torment of red overflowed from within me, piercing so deep that the devouring tide itself reversed its flow in resonance—",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.end",
+	"label": "Huntress's Respite",
+	"startdescription": "The huntress's fierce assault has momentarily ceased, granting me a brief chance to catch my breath—",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.attacka.pre",
+	"actionid": "kv.huntress",
+	"label": "Shattered Apart",
+	"startdescription": "Fully revealing her nature, Lagiah is a fierce and swift beast, driven by primal instincts to devour and to breed. The assault happens in an instant, fangs and claws dripping with red closing in with terrifying speed—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.huntressstrategya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.piga": 1
+	},
+	"linked": [
+		{
+			"id": "pig.attacka"
+		}
+	]
+},
+{
+	"id": "pig.attacka",
+	"actionid": "kv.huntress",
+	"label": "Shattered Apart",
+	"startdescription": "Fully revealing her nature, Lagiah is a fierce and swift beast, driven by primal instincts to devour and to breed. The assault happens in an instant, fangs and claws dripping with red closing in with terrifying speed—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.piga": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.attacka.responsegrail"
+		},
+		{
+			"id": "pig.attacka.responseedge"
+		},
+		{
+			"id": "kr.huntressdestroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "pig.attacka.responsegrail",
+	"label": "Respond with Temptation",
+	"startdescription": "The endless, ravenous hunger is fearsome, but it can be exploited. I stir up a violent appetite elsewhere, and her brief distraction is enough for me to evade the brunt of her attack.",
+	"requirements": {
+		"panel.piga": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attacka.responseedge",
+	"label": "Respond with Force",
+	"startdescription": "Blade meets claw, force clashes with savagery. After a fleeting clash, the shockwave of the impact sends us apart once more.",
+	"requirements": {
+		"panel.piga": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attackb.pre",
+	"actionid": "kv.huntress",
+	"label": "凶险诱惑",
+	"startdescription": "Lagiah开始施展她难以抗拒的诱惑之力：亵渎堕落的赤红之欲如同病毒一般在我脑海中扩散膨胀，意图永久侵害我的精神——",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.huntressstrategyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.pigb": 1
+	},
+	"linked": [
+		{
+			"id": "pig.attackb"
+		}
+	]
+},
+{
+	"id": "pig.attackb",
+	"actionid": "kv.huntress",
+	"label": "Treacherous Temptation",
+	"startdescription": "Lagiah begins to wield her irresistible power of seduction: the profane and corrupt desire of red spreads and swells like a virus in my mind, aiming to permanently ravage my spirit—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.pigb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way to",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"knock": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.attackb.responsemoth"
+		},
+		{
+			"id": "pig.attackb.responsewinter"
+		},
+		{
+			"id": "kr.huntressdestroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "pig.attackb.responsemoth",
+	"label": "Respond with Chaos",
+	"startdescription": "A long-forgotten, lost self, the shifting winds blowing through the Wood—that old yearning roars within my skull, and the red carnal lust cannot stand against it.",
+	"requirements": {
+		"panel.pigb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"lantern": 1,
+					"moth": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attackb.responsewinter",
+	"label": "Respond with Silence",
+	"startdescription": "Silence is a language without sound, and also the bolt that seals the gate. Thus shall I build a fortress of the spirit, so that the red temptation can probe no deeper.",
+	"requirements": {
+		"panel.pigb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "huntressresponse.spitter",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.special.comsume",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The malice of this reality is continually converging toward the huntress—\n\n[The huntress can utilize the malice on the field to unleash powerful special skills.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.huntressstrategyc": 1
+	},
+	"extantreqs":{
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "needmalicegrail",
+			"label": "Malice",
+			"required": {
+				"malice.grail": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.special.comsumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.special.comsumesuccess",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The air is thick and clammy, as if about to seep with juice; a ravenous appetite dissipates among all tangible things—as though this reality is about to devour itself.\n\n[The huntress's special ability will deplete advantageous Influence and supplies on the field.]",
+	"requirements": {
+		"ke.pig": 1,
+		"malice.grail": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"alt":[
+		{
+			"id": "kr.devourspeciality",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.pass",
+	"actionid": "kv.huntress",
+	"label": "Hunter Lingers",
+	"startdescription": "Devouring, mating, killing… every living being here has been deeply tainted by scarlet frenzy. The huntress wanders through this indescribable scene, poised to strike at any moment.",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+}
+]
+}

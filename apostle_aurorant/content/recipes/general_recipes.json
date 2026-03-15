@@ -1,0 +1,370 @@
+{
+"recipes":[
+{
+	"id": "kr.spawntrace",
+	"actionid": "kv.spawntrace",
+	"label": "Traces Exposed!",
+	"startdescription": "My carelessness has drawn the attention of an adversary, this could soon spell trouble—",
+	"warmup": 10,
+	"effects": {
+		"ke.trace": 1
+	}
+},
+{
+	"id": "wheel.spawntrace",
+	"actionid": "kv.spawntrace",
+	"label": "Traces Exposed!",
+	"startdescription": "My halt in the wilderness has exposed my trail, and this is likely to bring trouble—",
+	"warmup": 10,
+	"effects": {
+		"ke.trace": 1
+	}
+},
+{
+	"id": "kr.partygoalsetup",
+	"actionid": "spit.edge",
+	"label": "Countermeasures...",
+	"startdescription": "This hostile group has grown large enough to pose a threat—but that also makes them easier to track. Now I can devise targeted, effective countermeasures accordingly.",
+	"description": "Destroying the hostile group's base will significantly reduce their threat and buy more time for my goals; when I have sufficient strength to spare, I might also consider hunting their members directly.",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.goalwoundparties": -1,
+		"ke.goalsetbackparties": -1
+	},
+	"effects": {
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	}
+},
+{
+	"id": "kr.tracepartymainfight",
+	"actionid": "spit.lantern",
+	"label": "Traces of the Enemy",
+	"startdescription": "This time, the enemy's careless actions have exposed their tracks...",
+	"description": "This will prove useful as I plan my counterattack.",
+	"warmup": 5,
+	"extantreqs":{
+		"ke.partymain": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.partymaintrace": 1
+	}
+},
+{
+	"id": "kr.tracepartymainsearch",
+	"actionid": "spit.lantern",
+	"label": "Traces of the Enemy",
+	"startdescription": "A careful investigation of the location revealed traces of the enemy...",
+	"description": "This will prove useful as I plan my counterattack.",
+	"warmup": 5,
+	"extantreqs":{
+		"ke.partymain": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1,
+		"ke.fogvelvet": -1
+	},
+	"effects": {
+		"ke.partymaintrace": 1
+	}
+},
+{
+	"id": "kr.spawnshieldmalachite",
+	"actionid": "kv.mystnectar",
+	"label": "Embrace of the Malachite",
+	"startdescription": "My enemies are now protected by the power of the Malachite.",
+	"warmup": 10,
+	"effects":{
+		"ke.shieldmalachite": 1
+	}
+},
+{
+	"id": "kr.grailspeciality",
+	"actionid": "kv.mystgrail",
+	"label": "Pain Etched in Memory",
+	"startdescription": "The agony from the Grail has deeply saturated this reality. My allies and I shall endure torment—",
+	"warmup": 0,
+	"deckeffects":{
+		"kd.randomtoken8/10": 5
+	},
+	"linked":[
+		{
+			"id": "grailspeciality.consume"
+		}
+	]
+},
+{
+	"id": "grailspeciality.consume",
+	"actionid": "kv.mystgrail",
+	"label": "Pain Etched in Memory",
+	"startdescription": "The agony from the Grail has deeply saturated this reality. My allies and I shall endure torment—\n\n[The enemy's special strategy will randomly drain a certain number of your ally or ability cards, leaving them exhausted.]",
+	"warmup": 10,
+	"requirements":{
+		"ke.token": 1
+	},
+	"effects":{
+		"ke.token": -1
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "needabilityorally",
+			"label": "Torturing",
+			"required": {
+				"ability": 1,
+				"ka.ally": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "grailspeciality.consume"
+		},
+		{
+			"id": "grailspeciality.end"
+		}
+	]
+},
+{
+	"id": "grailspeciality.end",
+	"actionid": "kv.mystgrail",
+	"label": "Pain Etched in Memory",
+	"startdescription": "That searing pain leaves one dizzy and exhausted. We need time to regain our strength.",
+	"warmup": 10
+},
+{
+	"id": "kr.axespeciality",
+	"actionid": "kv.mystknock",
+	"label": "Edict of the Sealed Gate",
+	"startdescription": "The Horned-Axe is splitting space, forcing some of my allies and resources to withdraw from the front—",
+	"warmup": 0,
+	"deckeffects":{
+		"kd.randomtoken8/10": 6
+	},
+	"linked":[
+		{
+			"id": "axespeciality.consume"
+		}
+	]
+},
+{
+	"id": "axespeciality.consume",
+	"actionid": "kv.mystknock",
+	"label": "Edict of the Sealed Gate",
+	"startdescription": "The Horned-Axe is splitting space, forcing some of my allies and resources to withdraw from the front—\n\n[The enemy's special strategy will randomly draw a certain number of your ally and resource cards, preventing you from using them for an extended period.]",
+	"warmup": 10,
+	"requirements":{
+		"ke.token": 1
+	},
+	"effects":{
+		"ke.token": -1
+	},
+	"slots": [
+		{
+			"id": "needallyorasset",
+			"label": "Isolating",
+			"required": {
+				"asset": 1,
+				"ka.ally": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "axespeciality.consume"
+		},
+		{
+			"id": "axespeciality.end"
+		}
+	]
+},
+{
+	"id": "axespeciality.end",
+	"actionid": "kv.mystknock",
+	"label": "Lingering There",
+	"startdescription": "Barred from me by the wall of reality, these allies and resources are unable to provide aid for now—\n\n[You cannot use trapped allies and resources for the time being.]",
+	"description": "The barrier of reality finally collapses and dissolves. They can now serve me once more.",
+	"warmup": 90
+},
+{
+	"id": "kr.spawnfogvelvet",
+	"actionid": "kv.mystmoth",
+	"label": "Velvet's Shelter",
+	"startdescription": "My enemies have gained protection from the Velvet’s gifts.",
+	"warmup": 10,
+	"effects":{
+		"ke.fogvelvet": 1
+	}
+},
+{
+	"id": "kr.devourspeciality",
+	"actionid": "kv.mystgrail",
+	"label": "The Plague of Gluttony",
+	"startdescription": "Boundless gluttonous desire has been awakened. Everything of power that exists in this place shall be offered as tribute for the Grail to feast upon.[The huntress’ss special tactic will randomly drain a certain amount of Influence, Opportunities, and Supplies, and consume them.]",
+	"warmup": 10,
+	"deckeffects":{
+		"kd.randomtoken8/10": 5
+	},
+	"linked":[
+		{
+			"id": "devourspeciality.consume"
+		}
+	]
+},
+{
+	"id": "devourspeciality.consume",
+	"actionid": "kv.mystgrail",
+	"label": "The Plague of Gluttony",
+	"startdescription": "Take and take, never sated—the Grail is now feasting here.\n\n[The huntress’ss special tactic will randomly drain a certain amount of Influence, Opportunities, and Supplies, and consume them.]",
+	"warmup": 10,
+	"requirements":{
+		"ke.token": 1
+	},
+	"effects":{
+		"ke.token": -1
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "devourneedresources",
+			"label": "Devour",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"ka.important": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "devourspeciality.consume"
+		},
+		{
+			"id": "devourspeciality.end"
+		}
+	]
+},
+{
+	"id": "devourspeciality.end",
+	"actionid": "kv.mystgrail",
+	"label": "The Plague of Gluttony",
+	"startdescription": "At last, the terrible hunger of the Grail has been temporarily satisfied.",
+	"warmup": 10
+},
+{
+	"id": "kr.spawnmoveblockerknot",
+	"actionid": "kv.blockerspawner",
+	"label": "A Caged Beast's Fight",
+	"startdescription": "Led by the enemy, the malice of the Knot Gods has fully seeped into reality. Their immense power has forged an irresistible seal—\n\n[You cannot leave the current area.]",
+	"description": "The path of retreat is severed—I am forced to face a grueling battle.",
+	"warmup": 10,
+	"effects":{
+		"ke.moveblockerknot": 1
+	},
+	"haltverb": {
+		"kv.move": 1
+	}
+},
+{
+	"id": "kr.supportcat",
+	"actionid": "kv.supporthuntress",
+	"label": "Guiding Malice",
+	"startdescription": "The soil churns, shadows seethe—the power of the Velvet has been channeled to aid the huntress.\n\n[Malice shall make the huntress more dangerous.]",
+	"warmup": 10,
+	"effects":{
+		"malice.velvet": 1
+	}
+},
+{
+	"id": "kr.supportpig",
+	"actionid": "kv.supporthuntress",
+	"label": "Guiding Malice",
+	"startdescription": "Blood drips, senses sharpen—the power of the Grail has been channeled to aid the huntress.\n\n[Malice shall make the huntress more dangerous.]",
+	"warmup": 10,
+	"effects":{
+		"malice.grail": 1
+	}
+},
+{
+	"id": "partyresponse.spitter",
+	"actionid": "spit.moth",
+	"label": "Depletion",
+	"startdescription": "I have expended these resources to fend off the enemy’s assault—they will require time before they can be called upon again—",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "huntressresponse.spitter",
+	"actionid": "spit.moth",
+	"label": "Depletion",
+	"startdescription": "I have expended these resources to fend off the huntress' assault—they will require time before they can be called upon again—",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "temp.vagabond.gift",
+	"actionid": "kv.rose",
+	"label": "Sight-Evoked",
+	"startdescription": "I behold the world as seen by the Centipede’s eye, and I can feel the yearning that points toward the distant and the forbidden; my mind grows restless, as if something is about to transform from within—",
+	"description": "That old yearning and passion are reborn from this vision.",
+	"warmup": 15,
+	"slots": [
+		{
+			"id": "recoverneedpassion",
+			"label": "Something Lost",
+			"required": {
+				"ke.passiondamaged": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects":{
+		"recoverpassion": 1
+	},
+	"linked": [
+		{
+			"id": "vagabond.spawninfluence"
+		}
+	]
+},
+{
+	"id": "vagabond.spawninfluence",
+	"actionid": "kv.rose",
+	"label": "It Lingers…",
+	"description": "The forbidden vision lingers in my eyes, refusing to fade. I can harness its power.\n\n[A special Influence with no time limit! Be sure to use it well.]",
+	"warmup": 0,
+	"requirements":{
+		"ke.passiondamaged": -1,
+		"ke.passion": -1
+	},
+	"effects": {
+		"influencevagabond": 1
+	}
+}
+]
+}

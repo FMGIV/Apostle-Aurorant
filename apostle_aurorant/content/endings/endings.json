@@ -1,0 +1,64 @@
+{
+"endings": [
+{
+    "id": "kingending.deathmind",
+    "label": "My Mind is Lost",
+    "description": "When the mind is utterly broken, life loses all meaning. And so my soul shattered into pieces, dragged into the shadows of despair. I am a failure, a mistake, a shame left unspoken.\n\n[You lacked sufficient Reason and Passion, and you died from the mind assault.]",
+    "image": "death.mind",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "kingending.deathwounds",
+    "label": "Death of the Body",
+    "description": "The wounds I bore surpassed the frail limits of this flesh, and my bound soul shall perish alongside it. As consciousness sank into darkness, I did not trouble myself to recall any fragments from the past: all the injustice and torment this body endured have proven this world so distorted, so depraved, that it deserves nothing but utter upheaval—not a single trace of attachment remains.\nAs for where they will find me, or how they will remember me—I care not. I feel nothing but contempt for it all.\n\n[You have died from sustaining excessive wounds.]",
+    "image": "death.wound",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "kingending.deathpig",
+    "label": "The End of Gluttony",
+    "description": "I was engulfed by the ravenous thirst of the red tide, and within it, Lagiah devoured me through every one of her orifices—in an intoxicating sweetness of agony, most of me was torn apart and dissolved, while the remnant was preserved as a memento of a feast of triumph. That remainder shall watch in red visions as the Queen Unsated claims and consumes life, until at last it too is exhausted, celebrating an even grander and more splendid banquet.\n\n[You were slain by the Huntress, Lagiah, the Queen Unsated of the Red Grail. The path to greatness is often paved with setbacks; may you achieve glory in another history.]",
+    "image": "redgrail",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "kingending.deathcat",    
+    "label": "Beneath the Soil",
+    "description": "Clutched tight by the venomous Named One, my being was torn from my spirit—the former devoured to sate the creature's hunger, the latter buried deep in the soil of The Wood, rotting alongside a thousand long-forgotten souls. I tried to scream, but no sound escaped, no response stirred. I could rise no higher, nor would I ever be found. All that remains is to wait—until the end of all histories.\n\n[You were slain by the Huntress, Kitling Ripe of the Velvet. The path to greatness is often paved with setbacks; may you achieve glory in another history.]",
+    "image": "velvet",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "kingending.demo1",
+    "label": "The Road Stretches Onward",
+    "description": "Congratulations on completing all currently available content of this mod! Our adventure now reaches a temporary pause, but the journey of the New King is far from over. Within the shrouding mists of the unknown, more challenges and wonders await… and we need only time to let them clear on their own. We shall meet again at the next crossroads in the near future.  \n\n[Thank you for participating in the Apostle Aurorant demo test! Feel free to provide feedback on bugs and suggestions for improvement to main creators, Brizzery and IFORIZOLDA on Discord. Every stepping stone will help pave a firmer road toward the dawn.]",
+    "image": "demoendings",
+    "flavour": "Grand",
+    "anim": "DramaticLight",
+    "achievements": "XXX",
+    "BGmusic": "victorychimes.mp3"
+},
+{
+    "id": "kingending.demo2",
+    "label": "A Resplendent Path Ahead",
+    "description": "Congratulations on completing all currently available content of this mod! You have successfully regained all your powers and gathered every crucial resource—a milestone victory indeed. It is with regret that the remainder of our adventure must be postponed for now—the journey of the New King is far from over. Within the unseen mists ahead, more challenges and wonders await… and all that is needed is a little extra patience. The dawn is drawing near. Let us await its arrival together.\n\n[Congratulations on completing all tasks in the demo test—your skills are impeccable! Thank you for participating in this test. Feel free to provide feedback on bugs and suggestions for improvement to main creators, Brizzery and IFORIZOLDA on Discord. Every stepping stone will help pave a firmer road toward the dawn.]",
+    "image": "chandler",
+    "flavour": "Grand",
+    "anim": "DramaticLightCool",
+    "achievements": "XXX",
+    "BGmusic": "victorychimes.mp3"
+}
+]
+}

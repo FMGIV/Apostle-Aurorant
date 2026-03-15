@@ -1,0 +1,633 @@
+{
+"recipes":[
+{
+	"id": "kh.attackenemy",
+	"actionid": "kv.act",
+	"label": "How to Face the Enemy?",
+	"startdescription": "True strength does not come in a single form, nor does the power to win reside in just one reality.\n\n[Invest aspects meeting any of the enemy’s thresholds to launch an attack. Investing at least 5 ranks higher than the corresponding threshold guarantees a successful strike.]",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.hiddenenemy": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.hiddenenemy",
+	"actionid": "kv.act",
+	"label": "Nowhere to Be Found?",
+	"startdescription": "I know this enemy is nearby—yet I need more information to devise a strategy.\n\n[You cannot attack an enemy in hiding. Place the hidden enemy in the exploration slot to attempt to reveal it.]",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.hiddenenemy": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.attackedge1",
+	"actionid": "kv.act",
+	"label": "Finality：Force",
+	"startdescription": "I shall command them with the language of force—they have no right to defy, and they shall meet their end.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negedge": 1,
+		"edge": "negedge",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[edge]-[negedge]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackforge1",
+	"actionid": "kv.act",
+	"label": "Finality：Revolution",
+	"startdescription": "There will be a revolution, but the flame of rebirth needs kindling. They shall be the fuel.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negforge": 1,
+		"forge": "negforge",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[forge]-[negforge]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackgrail1",
+	"actionid": "kv.act",
+	"label": "Finality：Torment",
+	"startdescription": "Torment and pleasure share the same pinnacle. Today I shall bring torment, and they shall embrace it as if it were sweetness.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neggrail": 1,
+		"grail": "neggrail",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[grail]-[neggrail]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackheart1",
+	"actionid": "kv.act",
+	"label": "Finality：Ceaselessness",
+	"startdescription": "The struggle to endure is a march, and I will absolutely, absolutely, absolutely never stop.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negheart": 1,
+		"heart": "negheart",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[heart]-[negheart]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackknock1",
+	"actionid": "kv.act",
+	"label": "Finality：Opening",
+	"startdescription": "The paths of Knock lead everywhere and reach all realms; yet the roads they tread can only descend.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negknock": 1,
+		"knock": "negknock",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[knock]-[negknock]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attacklantern1",
+	"actionid": "kv.act",
+	"label": "Finality：Ruthlessness",
+	"startdescription": "There is no place for shadow, and no place for mercy. Under the cold witness of the light, I shall deliver certain death.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neglantern": 1,
+		"lantern": "neglantern",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[lantern]-[neglantern]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackmoth1",
+	"actionid": "kv.act",
+	"label": "Finality：Chaos",
+	"startdescription": "The ultimate strategy is to have no strategy at all. The path is unpredictable, and precisely because of that, I can arrive at the inevitable outcome.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negmoth": 1,
+		"moth": "negmoth",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[moth]-[negmoth]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackwinter1",
+	"actionid": "kv.act",
+	"label": "Finality：Silence",
+	"startdescription": "It ends here, silent and solemn, beautiful as the setting sun in snow.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negwinter": 1,
+		"winter": "negwinter",
+		"ka.hiddenenemy": -1
+	},
+	"grandreqs": {
+		"[winter]-[negwinter]": 5
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackedge2",
+	"actionid": "kv.act",
+	"label": "Tactics：Force",
+	"startdescription": "Speech was the weapon that won the first war. And the language of force speaks louder than words.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negedge": 1,
+		"edge": "negedge",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackforge2",
+	"actionid": "kv.act",
+	"label": "Tactics：Revolution",
+	"startdescription": "Arms as the hammer, battlefield as the anvil—here shall I kindle the fires of change.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negforge": 1,
+		"forge": "negforge",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackgrail2",
+	"actionid": "kv.act",
+	"label": "Tactics：Torment",
+	"startdescription": "All living things yield to the lure of the Grail, yet its essence is torment. I shall prove it.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neggrail": 1,
+		"grail": "neggrail",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackheart2",
+	"actionid": "kv.act",
+	"label": "Tactics：Ceaselessness",
+	"startdescription": "The shadow of war is a contest of survival, and my survival will not end today.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negheart": 1,
+		"heart": "negheart",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackknock2",
+	"actionid": "kv.act",
+	"label": "Tactics：Opening",
+	"startdescription": "Nothing can truly be sealed shut. Their lives shall cross the threshold and spill outward.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negknock": 1,
+		"knock": "negknock",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attacklantern2",
+	"actionid": "kv.act",
+	"label": "Tactics：Ruthlessness",
+	"startdescription": "The Glory casts an indifferent gaze upon this place, and in its turn I shall deliver a judgment equally devoid of mercy.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neglantern": 1,
+		"lantern": "neglantern",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackmoth2",
+	"actionid": "kv.act",
+	"label": "Tactics：Chaos",
+	"startdescription": "Yearning is the spark that sets the soul ablaze, yet it may just as easily spiral into chaos. They will rush into the flames.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negmoth": 1,
+		"moth": "negmoth",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attackwinter2",
+	"actionid": "kv.act",
+	"label": "Tactics：Silence",
+	"startdescription": "Words end here. Even in silence there is power—a power that brings an end.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negwinter": 1,
+		"winter": "negwinter",
+		"ka.hiddenenemy": -1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.attacksuccessprofane"
+		},
+		{
+			"id": "kr.attackmiss",
+			"chance": 30
+		},
+		{
+			"id": "kr.attackhit"
+		}
+	]
+},
+{
+	"id": "kr.attacksuccessprofane",
+	"label": "Victory!",
+	"startdescription": "In the face of reality‑overriding power, all defenses and resistance seem feeble.\n\n[This attack ignores all enemy traits!]",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.profane": 1
+	},
+	"aspects": {
+		"exhaust": 1,
+		"killany": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attackmiss",
+	"label": "Attack Missed!",
+	"startdescription": "Unexpected setbacks always arise. This attack failed to take effect, and pulling back safely will require a little extra time—",
+	"warmup": 15,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attackhit",
+	"label": "？",
+	"comments": "攻击命中，链接攻击结果。",
+	"startdescription": "......",
+	"linked": [
+		{
+			"id": "kr.attackbuffered"
+		},
+		{
+			"id": "kr.attacktwisted",
+			"chance": 70
+		},
+		{
+			"id": "kr.attackresisted",
+			"chance": 30
+		},
+		{
+			"id": "kr.attacksuccessrevival"
+		},
+		{
+			"id": "kr.attacksuccesspiercing"
+		},
+		{
+			"id": "kr.attacksuccess"
+		}
+	]
+},
+{
+	"id": "kr.attackbuffered",
+	"label": "Attack Blocked!",
+	"startdescription": "The special form of this being has deflected what should have been a fatal strike… but there will not be a second chance.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.buffering": 1,
+		"ka.melting": -1,
+		"ka.profane": -1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.buffering",
+			"level": -1,
+			"additive": true
+		}
+	],
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attacktwisted",
+	"label": "Reality Distortion!",
+	"startdescription": "A shield of protection around this being has deflected the attack that should have struck true. Perhaps I should wield a weapon of power.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.twisting": 1,
+		"ka.melting": -1,
+		"ka.profane": -1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attackresisted",
+	"label": "Enemy Still Alive?",
+	"startdescription": "I've struck with everything I have, yet the enemy remains standing... This can only be attributed to its astonishing resilience.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.resistant": 1,
+		"ka.piercing": -1,
+		"ka.profane": -1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attacksuccessrevival",
+	"label": "Enemy Still Alive",
+	"startdescription": "I need to try once more to ensure the enemy is completely destroyed.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.revival": 1,
+		"ka.piercing": -1,
+		"ka.profane": -1
+	},
+	"aspects": {
+		"exhaust": 1,
+		"killrevival": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.attacksuccess",
+	"label": "Victory!",
+	"startdescription": "Every act of destruction paves the way for renewed creation; every victory becomes fuel for greater glory.",
+	"requirements": {
+		"ka.enemy": 1
+	},
+	"aspects": {
+		"exhaust": 1,
+		"killenemy": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"alt": [
+		{
+			"id": "kr.oblivionconsume",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.oblivionconsume",
+	"actionid": "kv.oblivion",
+	"label": "The Void Boils!",
+	"startdescription": "A lethal force breaks free from its shackles, becoming a whirlpool of annihilation—\n\n[Allies, tools, or abilities drawn into it enter cooldown. Materials and non‑immortal allies are consumed.]",
+	"description": "After devouring enough reality, the hollow vortex finally satiates. Let us pray it is not invoked again.",
+	"requirements": {
+		"ka.oblivion": 1
+	},
+	"slots": [
+		{
+			"id": "oblivion.destroysth",
+			"label": "Something—",
+			"required": {
+				"supplies": 1,
+				"tool": 1,
+				"weapon": 1
+			},
+			"greedy": true
+		}
+	],
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"supplies": -99
+	}
+}
+]
+}

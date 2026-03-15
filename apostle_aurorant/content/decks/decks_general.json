@@ -1,0 +1,586 @@
+{
+"decks": [
+{
+	"id": "kd.seasons",
+	"label": "Of the Coming Hour",
+	"description": "Be prepared.",
+	"spec": [
+		"ke.silentseason",
+		"ke.silentseason",
+		"ke.silentseason",
+		"ke.hostileseason",
+		"ke.hostileseason",
+		"ke.hostileseason",
+		"ke.abnormalseason",
+		"ke.abnormalseason",
+		"ke.powerfulseason",
+		"ke.powerfulseason",
+		"ke.dreamingseason",
+		"ke.dreamingseason"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strength",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.strengtha",
+		"ke.strengthb",
+		"ke.strengthc"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.spawnenemyr1",
+	"label": "A New Threat",
+	"description": "What foe draws near?",
+	"spec": [
+		"enemy.bear",
+		"enemy.bear",
+		"enemy.redrisen",
+		"enemy.redrisen",
+		"enemy.spirits",
+		"enemy.spirits",
+		"enemy.steam",
+		"enemy.steam",
+		"enemy.wolfshard",
+		"enemy.wolfshard"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.maliceknots",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"malice.axe",
+		"malice.axe",
+		"malice.grail",
+		"malice.grail",
+		"malice.malachite",
+		"malice.malachite",
+		"malice.malachite"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "maliceknots.additional",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"malice.axe",
+		"malice.grail",
+		"malice.malachite",
+		"ke.nothing",
+		"ke.nothing",
+		"ke.nothing"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "malicegrail.additional",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"malice.grail",
+		"malice.grail",
+		"ke.nothing",
+		"ke.nothing"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "malicevelvet.additional",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"malice.velvet",
+		"malice.velvet",
+		"ke.nothing",
+		"ke.nothing"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpsea",
+	"label": "Extracts: Grail, Heart, or Moth?",
+	"description": "......",
+	"spec": [
+		"ke.supplyhearta",
+		"ke.supplyhearta",
+		"ke.supplygraila",
+		"ke.supplygraila",
+		"ke.supplymotha",
+		"ke.supplymotha"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpseb",
+	"label": "Extracts: Forge, Lantern, or Edge?",
+	"description": "......",
+	"spec": [
+		"ke.supplyforgea",
+		"ke.supplyforgea",
+		"ke.supplylanterna",
+		"ke.supplylanterna",
+		"ke.supplyedgea",
+		"ke.supplyedgea"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpsec",
+	"label": "Extracts: Winter, Knock, or Edge?",
+	"description": "......",
+	"spec": [
+		"ke.supplywintera",
+		"ke.supplywintera",
+		"ke.supplyknocka",
+		"ke.supplyknocka",
+		"ke.supplyedgea",
+		"ke.supplyedgea"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpselonga",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.supplygraila",
+		"ke.supplygraila",
+		"ke.supplyhearta",
+		"ke.supplyhearta"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpselongb",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.supplyforgea",
+		"ke.supplyforgea",
+		"ke.supplylanterna",
+		"ke.supplylanterna"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.extractcorpselongc",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.supplymotha",
+		"ke.supplymotha",
+		"ke.supplyknocka",
+		"ke.supplyknocka"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.randomdream",
+	"label": "A Random Dream",
+	"description": "What dream shall I drift into?",
+	"spec": [
+		"contentment",
+		"dread",
+		"fleeting",
+		"ke.grief",
+		"influenceforgec",
+		"influencegrailc",
+		"influencelanternc",
+		"ke.strengtha",
+		"ke.strengthc",
+		"restlessness"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strategiesbeasta",
+	"label": "？",
+	"comments": "决定荒野怪物的行动逻辑。",
+	"description": "......",
+	"spec": [
+		"ke.strategyattack",
+		"ke.strategyraid",
+		"ke.strategyhide",
+		"ke.strategyhide",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strategiesbeastb",
+	"label": "？",
+	"comments": "决定荒野怪物的行动逻辑。",
+	"description": "......",
+	"spec": [
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyraid",
+		"ke.strategyraid",
+		"ke.strategyhide",
+		"ke.strategyhide",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strategiesbeastc",
+	"label": "？",
+	"comments": "决定荒野怪物的行动逻辑。",
+	"description": "......",
+	"spec": [
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyraid",
+		"ke.strategyraid",
+		"ke.strategyraid",
+		"ke.strategyhide",
+		"ke.strategyhide",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strategiesbeastd",
+	"label": "？",
+	"comments": "决定荒野怪物的行动逻辑。",
+	"description": "......",
+	"spec": [
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyattack",
+		"ke.strategyraid",
+		"ke.strategyraid",
+		"ke.strategyraid",
+		"ke.strategyhide",
+		"ke.strategyhide",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass",
+		"ke.strategypass"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.strategiespartymain",
+	"label": "A Strategy of Garrisons of Triple Knot Garrisons",
+	"description": "决定绳结戍边者的行动逻辑。",
+	"spec": [
+		"ke.partystrategya",
+		"ke.partystrategya",
+		"ke.partystrategyb",
+		"ke.partystrategyb",
+		"ke.partystrategyc",
+		"ke.partystrategyc",
+		"ke.partystrategyd",
+		"ke.partystrategyd",
+		"ke.partystrategyd",
+		"ke.partystrategye",
+		"ke.partystrategyf",
+		"ke.partystrategyf",
+		"ke.partystrategyf",
+		"ke.partystrategyf",
+		"ke.partystrategyf"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.obwoundpartymain",
+	"label": "？",
+	"comments": "在猎杀绳结戍边者的成员时抽取随机阻碍。",
+	"description": "......",
+	"spec": [
+		"panel.partymainoba",
+		"panel.partymainoba",
+		"panel.partymainobb",
+		"panel.partymainobb",
+		"panel.partymainobc",
+		"panel.partymainobc"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.obsetbackpartymain",
+	"label": "？",
+	"comments": "在摧毁绳结戍边者的根据地时抽取随机阻碍。",
+	"description": "......",
+	"spec": [
+		"panel.partymainobc",
+		"panel.partymainobc",
+		"panel.partymainobd",
+		"panel.partymainobd",
+		"panel.partymainobe",
+		"panel.partymainobe"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.lootpartymain",
+	"label": "？",
+	"comments": "在摧毁绳结戍边者的根据地后随机获取的战利品。",
+	"description": "......",
+	"spec": [
+		"ke.supplygraila",
+		"ke.supplygraila",
+		"ke.supplyhearta",
+		"ke.supplyhearta",
+		"ke.supplyknocka",
+		"ke.supplyknocka",
+		"ke.supplywintera",
+		"ke.supplywintera",
+		"necessities",
+		"necessities",
+		"necessities",
+		"strengthspawnera"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.huntressstrategies",
+	"label": "？",
+	"comments": "用于决定老成仔猫和拉吉亚的行动。",
+	"description": "......",
+	"spec": [
+		"ke.huntressstrategya",
+		"ke.huntressstrategya",
+		"ke.huntressstrategyb",
+		"ke.huntressstrategyb",
+		"ke.huntressstrategyc",
+		"ke.huntressstrategyd",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye",
+		"ke.huntressstrategye"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.catinfluence",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"influencemoth",
+		"influencemoth",
+		"influencemoth",
+		"malice.velvet",
+		"malice.velvet",
+		"malice.velvet"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.piginfluence",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"restlessness",
+		"influencegrail",
+		"influencegrail",
+		"malice.grail",
+		"malice.grail",
+		"malice.grail"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.shrine",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"influenceedgec",
+		"influenceforgec",
+		"influenceknockc",
+		"influencelanternc",
+		"influencewinterc",
+		"ke.strengthc",
+		"ke.trace"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.gathernecess",
+	"label": "搜集补给结果",
+	"description": "......",
+	"spec": [
+		"necessities",
+		"necessities",
+		"necessities",
+		"ke.trace",
+		"husk",
+		"husk"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.seizesupplies",
+	"label": "回收物资结果",
+	"description": "How much profit will this bring me?",
+	"spec": [
+		"necessities",
+		"necessities",
+		"ke.supplyedgea",
+		"ke.supplyforgea",
+		"ke.supplyhearta",
+		"ke.nothing",
+		"ke.nothing",
+		"ke.trace"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.randomtoken8/10",
+	"comments": "隐藏卡池，用于特殊技能的计算。",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.token",
+		"ke.nothing",
+		"ke.nothing"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.talktoarmyresult",
+	"label": "命令军队进一步侦察所在地",
+	"description": "......",
+	"spec": [
+		"ke.opchill",
+		"ke.opchill",
+		"ke.opfog",
+		"ke.opfog",
+		"ke.opmoonlight",
+		"ke.opmoonlight",
+		"ke.night",
+		"ke.night",
+		"influenceedgec",
+		"influenceedgec",
+		"influenceedgec",
+		"necessities",
+		"necessities"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.desirehints",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"ke.logica",
+		"ke.logicb",
+		"ke.logicc"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.talktoship",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"influenceedgec",
+		"influenceedgec",
+		"influenceforgec",
+		"influenceforgec"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+},
+{
+	"id": "kd.talktobright",
+	"label": "？",
+	"description": "......",
+	"spec": [
+		"influencelanternc",
+		"influencelanternc",
+		"influenceknockc",
+		"influenceknockc"
+	],
+	"resetonexhaustion": true,
+	"defaultcard": "husk"
+}
+]
+}

@@ -1,0 +1,42 @@
+{
+"recipes":[
+{
+    "id": "move.towardsunknown",
+    "actionid": "kv.move",
+    "label": "Continue onward?",
+    "startdescription": "What lies ahead awaits?\n\n[You have already explored all areas available in the demo. Taking this action will lead to a temporary ending.]",
+    "warmup": 10,
+    "craftable": true,
+    "requirements": {
+        "ke.destunknown": 1
+    },
+    "signalEndingFlavour": "Grand",
+    "linked": [
+        {
+            "id": "kr.endingtrigger.demo2"
+        },
+        {
+            "id": "kr.endingtrigger.demo1"
+        }
+    ]
+},
+{
+    "id": "kr.endingtrigger.demo2",
+    "actionid": "kv.move",
+    "label": "Steadfast Strides",
+    "startdescription": "The clouds disperse—",
+    "extantreqs": {
+        "ka.damaged": -1,
+        "demo.gamescore": 8
+    },
+    "ending": "kingending.demo2"
+},
+{
+    "id": "kr.endingtrigger.demo1",
+    "actionid": "kv.move",
+    "label": "An Unknown Path Lies Ahead",
+    "startdescription": "Mist remains hazy...",
+    "ending": "kingending.demo1"
+}
+]
+}
