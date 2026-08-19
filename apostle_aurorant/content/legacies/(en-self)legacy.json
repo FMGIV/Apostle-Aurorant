@@ -1,0 +1,55 @@
+{
+"legacies": [
+{
+    "id": "apostle_aurorant",
+    "image": "aurorant.legacy",
+    "label": "Apostle Aurorant",
+    "description": "I was once the center of worlds, and now I've hit rock bottom. But then again, the good thing about the bottom... is that you could only rise.",
+    "startdescription": "Caen, the most tragic failure since I regained my freedom -",
+    "startingVerbId": "kv.abandon",
+    "availableWithoutEndingMatch": true,
+    "fromEnding": "majorforgevictory",
+    "newstart": true,
+    "effects": {
+        "ke.failure": 1,
+        "ke.health": 1,
+        "ke.reason": 1,
+        "ke.passion": 1
+    },
+    "statusbarelements": [
+        "ka.wound",
+        "ka.damaged",
+        "asset",
+        "ke.trace"
+    ],
+    "tablecoverimage": "",
+    "overrideBGmusic": true,
+    "BGmusic": [
+        "bgmcliffs.mp3",
+        "bgmgrenadiers.mp3",
+        "bgmliberty.mp3",
+        "bgmmarch.mp3",
+        "bgmmeetagain.mp3",
+        "bgmnaq.mp3",
+        "bgmninth.mp3",
+        "bgmsixth.mp3",
+        "bgmsteel.mp3"
+    ],
+    "menuVisualsOverride": {
+	    "characterPosition": [7, -47],
+	    "occultWindPosition": [27, 0],
+
+	    "eyeGlowColor": [1.000, 0.8627, 0.3137, 1.000],
+	    "eyeFlareColor": [1.000, 0.8627, 0.3137, 1.000],
+
+	    "eyeGlowPosition": [13, 37],
+	    "eyeFlarePosition": [13, 37],
+
+	    "eyeFlareRotationMinMax": [360, 360]
+	},
+	"quotes": [
+		"'A true king is reborn in defeat, and crowned in destruction.'\n\n- Geoffrey of Monmouth, <i>De gestis Britonum</i>"
+	]
+}
+]
+}

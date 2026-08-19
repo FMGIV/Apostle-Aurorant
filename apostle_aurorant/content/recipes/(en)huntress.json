@@ -1,0 +1,3840 @@
+{
+"recipes":[
+{
+	"id": "cat.pre",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "",
+	"extantreqs": {
+		"ke.markcat": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.cat": 1
+	},
+	"playAudioTrack": "themecat.mp3",
+	"linked": [
+		{
+			"id": "cat.setup"
+		}
+	]
+},
+{
+	"id": "cat.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "<i>'Someone's 'bout to be in a whole heap o' trouble.'</i>\n\n[An extremely dangerous foe—are you ready for a grueling fight?]",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.draw",
+	"actionid": "kv.huntress",
+	"comments": "抽取老成仔猫的行动策略。",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.huntress": 1
+	},
+	"linked": [
+		{
+			"id": "cat.router"
+		}
+	]
+},
+{
+	"id": "cat.router",
+	"actionid": "kv.huntress",
+	"comments": "这一配方链接着老成仔猫的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "cat.quit"
+		},
+		{
+			"id": "cat.finale.consume"
+		},
+		{
+			"id": "cat.special.comsume"
+		},
+		{
+			"id": "cat.attacka.pre"
+		},
+		{
+			"id": "cat.attackb.pre"
+		},
+		{
+			"id": "cat.pass"
+		}
+	]
+},
+{
+	"id": "cat.quit",
+	"actionid": "kv.huntress",
+	"label": "Banished Huntress",
+	"startdescription": "Stripped of her summoner's support, this huntress' projection in the Wake begins to warp and unravel—",
+	"description": "Now that I've shaken off pursuit by the hostile group and their patrons, I can once again focus on advancing my own cause.",
+	"extantreqs": {
+		"ke.partymaindefeated": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"aspects":{
+		"banhuntress": 1
+	}
+},
+{
+	"id": "cat.finale.consume",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike—the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.strategy.huntressd": 1
+	},
+	"extantreqs":{
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "needmalicevelvet",
+			"label": "Malice",
+			"required": {
+				"malice.velvet": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "cat.finale.convert"
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.failed"
+		}
+	]
+},
+{
+	"id": "cat.finale.convert",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"comments": "负责将吸取到的恶意转化为技能次数。",
+	"startdescription": "A harbinger of a lethal strike—the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.cat": 1,
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ke.token": 1,
+		"malice.velvet": -1
+	},
+	"linked": [
+		{
+			"id": "cat.finale.consume"
+		},
+		{
+			"id": "cat.finale.pre"
+		}
+	]
+},
+{
+	"id": "cat.finale.failed",
+	"actionid": "kv.huntress",
+	"comments": "未能吸取任何恶意的情况下，此配方将清除策略确保猎手行动能够继续进行。",
+	"label": "Malignant Roar",
+	"startdescription": "......",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.strategy.huntressd": 1,
+		"ke.token": -1
+	},
+	"effects":{
+		"ka.purgemarkhuntress": -99
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.finale.pre",
+	"actionid": "kv.huntress",
+	"label": "The Grey Cat's Dance",
+	"startdescription": "It brings the dead back to the world, and leaves the living lost in bewilderment. The dance is so frantic it dizzies the mind, yet it seems to carry a rhythm that seizes the soul—I cannot look away, I cannot take back my thoughts—\n\n[The Huntress' final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.token": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.token": -1,
+		"panel.catfinale": 1
+	},
+	"linked": [
+		{
+			"id": "cat.finale"
+		}
+	]
+},
+{
+	"id": "cat.finale",
+	"actionid": "kv.huntress",
+	"label": "The Grey Cat's Dance",
+	"startdescription": "It brings the dead back to the world, and leaves the living lost in bewilderment. The dance is so frantic it dizzies the mind, yet it seems to carry a rhythm that seizes the soul—I cannot look away, I cannot take back my thoughts—\n\n[The Huntress' final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.catfinale": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "finaleresponse1",
+			"label": "Evoke",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse2",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse3",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.riposted"
+		},
+		{
+			"id": "cat.finale.respond.heart"
+		},
+		{
+			"id": "cat.finale.respond.lantern"
+		},
+		{
+			"id": "cat.finale.respond.moth"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	]
+},
+{
+	"id": "cat.finale.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "My unceasing existence will not be bound by this dance—I can follow her rhythm, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.respond.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "The power of Moth instinctively longs for light—I can divert her desire, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "My yearning shares the same wildness as this dance—I can merge into her rhythm, though only for a fleeting moment—",
+	"requirements": {
+		"panel.catfinale": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.finale.end",
+	"label": "Huntress's Respite",
+	"startdescription": "The huntress's fierce assault has momentarily ceased, granting me a brief chance to catch my breath—",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.attacka.pre",
+	"actionid": "kv.huntress",
+	"label": "Shadow Approaches",
+	"startdescription": "The creature lunges abruptly from the shadows: a mottled nightmare armed with fangs and claws, radiating killing intent and exhaling venomous curses —\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.strategy.huntressa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.cata": 1
+	},
+	"linked": [
+		{
+			"id": "cat.attacka"
+		}
+	]
+},
+{
+	"id": "cat.attacka",
+	"actionid": "kv.huntress",
+	"label": "Shadow Approaches",
+	"startdescription": "The creature lunges abruptly from the shadows: a mottled nightmare armed with fangs and claws, radiating killing intent and exhaling venomous curses —\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.cata": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.riposted"
+		},
+		{
+			"id": "cat.attacka.respond.heart"
+		},
+		{
+			"id": "cat.attacka.respond.edge"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "cat.attacka.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "My fortitude shall not yield to this fleeting strike—though the creature struck true and melted back into the darkness, I remain unwounded.",
+	"requirements": {
+		"panel.cata": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attacka.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "I am brimming with vitality, making me swift enough to evade an attack that is but an instant away. The creature missed her mark and vanished once more into the shadows.",
+	"requirements": {
+		"panel.cata": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attackb.pre",
+	"actionid": "kv.huntress",
+	"label": "Vision of the Wood",
+	"startdescription": "A wild and chaotic force seizes my spirit, dragging me straight down into a place of darkness and danger—",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.strategy.huntressb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.catb": 1
+	},
+	"linked": [
+		{
+			"id": "cat.attackb"
+		}
+	]
+},
+{
+	"id": "cat.attackb",
+	"actionid": "kv.huntress",
+	"label": "Vision of the Wood",
+	"startdescription": "A wild and chaotic force seizes my spirit, dragging me straight down into a place of darkness and danger—",
+	"requirements": {
+		"panel.catb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.riposted"
+		},
+		{
+			"id": "cat.attackb.respond.moth"
+		},
+		{
+			"id": "cat.attackb.respond.knock"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "cat.attackb.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "Generally speaking, the Wood is extremely dangerous to luminous beings. But I can learn from the yearning within and follow her laws. Guided by chaos and instinct, I ultimately manage to escape unharmed.",
+	"requirements": {
+		"panel.catb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"lantern": 1,
+					"moth": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.attackb.respond.knock",
+	"label": "Respond with Opening",
+	"startdescription": "The paths of the Wood are well-connected in all directions, though they are hidden among branches and mudstone. With the guidance that unlocks secrets, my spirit can quickly ascend back to the Wake.",
+	"requirements": {
+		"panel.catb": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.finale.pre"
+		},
+		{
+			"id": "cat.finale.end"
+		},
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostecat",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "cat.special.comsume",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The malice of this reality is gathering continually at the huntress—\n\n[The huntress can utilize the malice on the field to unleash powerful special strategies.]",
+	"requirements": {
+		"ke.cat": 1,
+		"ke.strategy.huntressc": 1
+	},
+	"extantreqs":{
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "needmalicevelvet",
+			"label": "Malice",
+			"required": {
+				"malice.velvet": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "cat.special.comsumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.special.comsumesuccess",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "Fog is settling in. Flickering, indistinct shapes move at the edge of vision; murmurs, impossible to verify, drift unceasingly in the ear. In such unsettling surroundings, reliable information is hard to come by.\n\n[The huntress's special strategy will provide cover for the enemy.]",
+	"requirements": {
+		"ke.cat": 1,
+		"malice.velvet": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.velvet",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "cat.pass",
+	"actionid": "kv.huntress",
+	"label": "The Huntress Lingers",
+	"startdescription": "Thoughts are restless, ears ring and buzz, and the wind's wail seems to carry fragmented murmurs — the huntress conceals herself within unnatural chaos, poised to strike at any moment.",
+	"requirements": {
+		"ke.cat": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "cat.draw"
+		}
+	]
+},
+{
+	"id": "catandpig.cooldown",
+	"label": "A Breathing Space",
+	"startdescription": "The huntress will soon resume their hunt —",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "cat.draw"
+		},
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.pre",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "",
+	"extantreqs": {
+		"ke.markpig": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.pig": 1
+	},
+	"playAudioTrack": "themepig.mp3",
+	"linked": [
+		{
+			"id": "pig.setup"
+		}
+	]
+},
+{
+	"id": "pig.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "<i>'You should be pleased.'</i>\n\n[An extremely dangerous foe—are you ready for a grueling fight?]",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.draw",
+	"actionid": "kv.huntress",
+	"comments": "抽取拉吉亚的行动策略。",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.huntress": 1
+	},
+	"linked": [
+		{
+			"id": "pig.router"
+		}
+	]
+},
+{
+	"id": "pig.router",
+	"actionid": "kv.huntress",
+	"comments": "这一配方链接着无餍女王的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "pig.quit"
+		},
+		{
+			"id": "pig.finale.consume"
+		},
+		{
+			"id": "pig.special.comsume"
+		},
+		{
+			"id": "pig.attacka.pre"
+		},
+		{
+			"id": "pig.attackb.pre"
+		},
+		{
+			"id": "pig.pass"
+		}
+	]
+},
+{
+	"id": "pig.quit",
+	"actionid": "kv.huntress",
+	"label": "Banished Huntress",
+	"startdescription": "Stripped of her summoner's support, this huntress' projection in the Wake begins to warp and unravel—",
+	"description": "Now that I've shaken off pursuit by the hostile group and their patrons, I can once again focus on advancing my own cause.",
+	"extantreqs": {
+		"ke.partymaindefeated": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"aspects":{
+		"banhuntress": 1
+	}
+},
+{
+	"id": "pig.finale.consume",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike—the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.strategy.huntressd": 1
+	},
+	"extantreqs":{
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "needmalicegrail",
+			"label": "Malice",
+			"required": {
+				"malice.grail": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "pig.finale.convert"
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.failed"
+		}
+	]
+},
+{
+	"id": "pig.finale.convert",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"comments": "负责将吸取到的恶意转化为技能次数。",
+	"startdescription": "A harbinger of a lethal strike—the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.pig": 1,
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ke.token": 1,
+		"malice.grail": -1
+	},
+	"linked": [
+		{
+			"id": "pig.finale.consume"
+		},
+		{
+			"id": "pig.finale.pre"
+		}
+	]
+},
+{
+	"id": "pig.finale.failed",
+	"actionid": "kv.huntress",
+	"comments": "未能吸取任何恶意的情况下，此配方将清除策略确保猎手行动能够继续进行。",
+	"label": "Malignant Roar",
+	"startdescription": "......",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.strategy.huntressd": 1,
+		"ke.token": -1
+	},
+	"effects":{
+		"ka.purgemarkhuntress": -99
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.finale.pre",
+	"actionid": "kv.huntress",
+	"label": "Red Tide",
+	"startdescription": "Lagiah's form twists, and dissolves into a dreadful red tide, determined to swallow everything it touches —\n\n[The Huntress' final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.token": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.token": -1,
+		"panel.pigfinale": 1
+	},
+	"linked": [
+		{
+			"id": "pig.finale"
+		}
+	]
+},
+{
+	"id": "pig.finale",
+	"actionid": "kv.huntress",
+	"label": "Red Tide",
+	"startdescription": "Lagiah's form twists, and dissolves into a dreadful red tide, determined to swallow everything it touches —\n\n[The Huntress' final attack will repeat until the absorbed malice is exhausted, and failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.pigfinale": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "finaleresponse1",
+			"label": "Evoke",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse2",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse3",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.riposted"
+		},
+		{
+			"id": "pig.finale.respond.grail"
+		},
+		{
+			"id": "pig.finale.respond.edge"
+		},
+		{
+			"id": "pig.finale.respond.heart"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	]
+},
+{
+	"id": "pig.finale.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The roar of the Heart repels the all‑pervading red, sparing me from being devoured for now—",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.respond.edge",
+	"label": "Respond with Sharpness",
+	"startdescription": "Nothing can withstand pure sharp force. The red tide is cleaved apart, revealing a massive breach—",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.respond.grail",
+	"label": "Respond with Torment",
+	"startdescription": "Scarlet torment overflows from within me, piercing so deep that the devouring tide resonates with my pain and reverses her flow —",
+	"requirements": {
+		"panel.pigfinale": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.finale.end",
+	"label": "Huntress's Respite",
+	"startdescription": "The huntress's fierce assault has momentarily ceased, granting me a brief chance to catch my breath—",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.attacka.pre",
+	"actionid": "kv.huntress",
+	"label": "Rending and Tearing",
+	"startdescription": "With her true nature bared, Lagiah becomes a fierce and swift beast, driven by primal instincts to devour and to beget. The assault happens in an instant, crimson fangs and claws closing in with terrifying speed—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.strategy.huntressa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.piga": 1
+	},
+	"linked": [
+		{
+			"id": "pig.attacka"
+		}
+	]
+},
+{
+	"id": "pig.attacka",
+	"actionid": "kv.huntress",
+	"label": "Rending and Tearing",
+	"startdescription": "With her true nature bared, Lagiah becomes a fierce and swift beast, driven by primal instincts to devour and to beget. The assault happens in an instant, crimson fangs and claws closing in with terrifying speed—\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.piga": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.riposted"
+		},
+		{
+			"id": "pig.attacka.respond.grail"
+		},
+		{
+			"id": "pig.attacka.respond.edge"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "pig.attacka.respond.grail",
+	"label": "Respond with Temptation",
+	"startdescription": "Her endless, ravenous hunger is fearsome, but it can be exploited. I evoke a violent hunger elsewhere, and her momentary distraction is enough for me to evade the brunt of her attack.",
+	"requirements": {
+		"panel.piga": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attacka.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "Blade meets claw, force clashes with savagery. After a fleeting clash, the shockwave of the impact sends us apart once more.",
+	"requirements": {
+		"panel.piga": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attackb.pre",
+	"actionid": "kv.huntress",
+	"label": "Treacherous Temptation",
+	"startdescription": "Lagiah begins to wield her irresistible power of seduction. Profane and corrupt, crimson desires spread and swell like a virus in my mind, aiming to permanently ravage my spirit —\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.strategy.huntressb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.pigb": 1
+	},
+	"linked": [
+		{
+			"id": "pig.attackb"
+		}
+	]
+},
+{
+	"id": "pig.attackb",
+	"actionid": "kv.huntress",
+	"label": "Treacherous Temptation",
+	"startdescription": "Lagiah begins to wield her irresistible power of seduction. Profane and corrupt, crimson desires spread and swell like a virus in my mind, aiming to permanently ravage my spirit —\n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.pigb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.riposted"
+		},
+		{
+			"id": "pig.attackb.respond.moth"
+		},
+		{
+			"id": "pig.attackb.respond.winter"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	]
+},
+{
+	"id": "pig.attackb.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "A long-forgotten, lost self, the shifting winds blowing through the Wood—that old yearning roars within my skull, and the red carnal lust cannot stand against it.",
+	"requirements": {
+		"panel.pigb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"lantern": 1,
+					"moth": 1,
+					"forge": 1,
+					"knock": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.attackb.respond.winter",
+	"label": "Respond with Silence",
+	"startdescription": "Silence is a language without sound, and also the bolt that seals the gate. Thus shall I build a fortress of the spirit, so that the red temptation can probe no deeper.",
+	"requirements": {
+		"panel.pigb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.finale.pre"
+		},
+		{
+			"id": "pig.finale.end"
+		},
+		{
+			"id": "catandpig.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostepig",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "pig.special.comsume",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The malice of this reality is gathering continually at the huntress—\n\n[The huntress can utilize the malice on the field to unleash powerful special strategies.]",
+	"requirements": {
+		"ke.pig": 1,
+		"ke.strategy.huntressc": 1
+	},
+	"extantreqs":{
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "needmalicegrail",
+			"label": "Malice",
+			"required": {
+				"malice.grail": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "pig.special.comsumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.special.comsumesuccess",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The air is thick and sticky, as if it might ooze syrupy juices; a ravenous appetite starts gnawing within all tangible things—as though reality is about to devour itself.\n\n[The huntress's special strategy will deplete advantageous influences and supplies on the field.]",
+	"requirements": {
+		"ke.pig": 1,
+		"malice.grail": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.devour",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "pig.pass",
+	"actionid": "kv.huntress",
+	"label": "The Huntress Lingers",
+	"startdescription": "Devouring, mating, killing… every living being here has been deeply tainted by scarlet frenzy. The huntress wanders through this indescribable scene, poised to strike at any moment.",
+	"requirements": {
+		"ke.pig": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "pig.draw"
+		}
+	]
+},
+{
+	"id": "huntress.delayed",
+	"label": "A Trick to Distort Time",
+	"startdescription": "Time is a flickering, unpredictable flame. The Chandler's paradoxical mysteries disrupt her flow, and distort it, stretching it – \n\n[This will delay an attack for a while.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "huntress.redirecting"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "huntress.redirecting",
+	"label": "A Trick to Distort Time",
+	"startdescription": "This trick won't break causality <i>that</i> easily, but it will buy me more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "cat.finale"
+		},
+		{
+			"id": "cat.attacka"
+		},
+		{
+			"id": "cat.attackb"
+		},
+		{
+			"id": "pig.finale"
+		},
+		{
+			"id": "pig.attacka"
+		},
+		{
+			"id": "pig.attackb"
+		},
+		{
+			"id": "skadi.finale"
+		},
+		{
+			"id": "skadi.duela"
+		},
+		{
+			"id": "skadi.duelb"
+		},
+		{
+			"id": "skadi.attacka"
+		},
+		{
+			"id": "skadi.attackb"
+		},
+		{
+			"id": "skadi.attackg"
+		},
+		{
+			"id": "skadi.attackf"
+		}
+	]
+},
+{
+	"id": "skadi.coming",
+	"actionid": "kv.huntress",
+	"extantreqs": {
+		"ka.noskadi": -1,
+		"ka.difficulty": 4
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.skadi": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.setup"
+		}
+	]
+},
+{
+	"id": "skadi.duel.coming",
+	"actionid": "kv.huntress",
+	"extantreqs": {
+		"ka.noskadi": -1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.skadi": 1,
+		"ke.duelmode": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.duel.setup"
+		}
+	]
+},
+{
+	"id": "skadi.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "At dawn, each flame emits a golden glow. In the frigid air, my breath freezes into shimmering crystals of ice. The signs are unmistakable: a fearsome foe will soon hunt me down.\n\n[Skadi almost never misses your trail, but she takes longer to arrive.]",
+	"requirements": {
+		"ke.skadi": 1
+	},
+	"warmup": 120,
+	"playAudioTrack": "themeskadi.mp3",
+	"alt":[
+		{
+			"id": "kr.skadigoalsetup",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.duel.setup",
+	"actionid": "kv.huntress",
+	"label": "A Fearsome Foe",
+	"startdescription": "'Finally ready to accept your fate? Let's begin.'",
+	"requirements": {
+		"ke.skadi": 1
+	},
+	"warmup": 60,
+	"playAudioTrack": "themeskadi.mp3",
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.draw",
+	"actionid": "kv.huntress",
+	"comments": "抽取斯卡蒂的行动策略。",
+	"requirements": {
+		"ke.skadi": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.skadi": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.router"
+		}
+	]
+},
+{
+	"id": "skadi.router",
+	"actionid": "kv.huntress",
+	"comments": "这一配方链接着斯卡蒂的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"ke.skadi": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "skadi.killed"
+		},
+		{
+			"id": "skadi.finale.rage"
+		},
+		{
+			"id": "skadi.finale.consume"
+		},
+		{
+			"id": "skadi.special.heal"
+		},
+		{
+			"id": "skadi.special.delay"
+		},
+		{
+			"id": "skadi.duela.pre"
+		},
+		{
+			"id": "skadi.duelb.pre"
+		},
+		{
+			"id": "skadi.attacka.pre"
+		},
+		{
+			"id": "skadi.attackb.pre"
+		},
+		{
+			"id": "skadi.attackf.pre"
+		},
+		{
+			"id": "skadi.attackg.pre"
+		},
+		{
+			"id": "skadi.duel.pass"
+		},
+		{
+			"id": "skadi.pass"
+		}
+	]
+},
+{
+	"id": "skadi.killed",
+	"actionid": "kv.huntress",
+	"label": "My Immortal Enemy Bleeds",
+	"startdescription": "The world seems to have fallen away, as my enemy and I exhaust ourselves in our fateful duel. Time loses its meaning – hours, years, even centuries seem to have passed. Finally, fatally, my enemy makes a mistake. Just before she destroys me, I put all my strength into a strike that tears her body apart – ",
+	"description": "My enemy's flesh chips and shatters like stone, and arterial red spurts relentlessly from that horrific fracture. Yet, my enemy makes no effort to conceal her mortal wound. 'There will always be a day, when the hunter becomes the hunted … Ha. ' Her breath is ragged and weak, but her voice is resolute: 'You have fought valiantly. I cannot deny that. However, your fate will only get worse from here…' \n\nShe soon falls silent. I am unmoved by her final words. I have washed away my shame and cleared my path. My destiny still awaits — it is time to move on.",
+	"extantreqs": {
+		"wound.skadi": 7
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"purge":{
+		"wound.skadi": 99,
+		"ke.opriposte": 99
+	},
+	"aspects":{
+		"killhuntress": 1
+	},
+	"achievements": [
+	    "A_AURORANT_KILLSKADI"
+	]
+},
+{
+	"id": "skadi.finale.rage",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike — as our battle intensifies, the huntress' fearsome power waxes in tandem!\n\n[Beware! Once Skadi has four wounds, she will use her final attack regardless of conditions.]",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressd": 1
+	},
+	"extantreqs":{
+		"wound.skadi": 4
+	},
+	"effects": {
+		"ke.token": 2
+	},
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "skadi.finale.consume"
+		},
+		{
+			"id": "skadi.finale.pre"
+		}
+	]
+},
+{
+	"id": "skadi.finale.consume",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"startdescription": "A harbinger of a lethal strike — the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressd": 1
+	},
+	"extantreqs":{
+		"malice.madrugad": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needmalice.madrugad",
+			"label": "Malice",
+			"essential": {
+				"malice.madrugad": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "skadi.finale.convert"
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.failed"
+		}
+	]
+},
+{
+	"id": "skadi.finale.convert",
+	"actionid": "kv.huntress",
+	"label": "Malignant Roar",
+	"comments": "负责将吸取到的恶意转化为技能次数。",
+	"startdescription": "A harbinger of a lethal strike — the huntress continuously absorbs the seething malice of this place!\n\n[Beware! The more malice the huntress absorbs, the longer her final attack will persist.]",
+	"requirements": {
+		"ke.skadi": 1,
+		"malice.madrugad": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ke.token": 1,
+		"malice.madrugad": -1
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.consume"
+		},
+		{
+			"id": "skadi.finale.pre"
+		}
+	]
+},
+{
+	"id": "skadi.finale.failed",
+	"actionid": "kv.huntress",
+	"comments": "未能吸取任何恶意的情况下，此配方将清除策略确保猎手行动能够继续进行。",
+	"label": "Malignant Roar",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressd": 1,
+		"ke.token": -1
+	},
+	"effects":{
+		"ka.purgemarkhuntress": -99
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.finale.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.token": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.token": -1
+	},
+	"deckeffects":{
+		"kd.finale.skadi": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.finale"
+		}
+	]
+},
+{
+	"id": "skadi.finale",
+	"actionid": "kv.huntress",
+	"label": "Solar Terminator",
+	"startdescription": "On one edge, the frost of polar nights; on the other, the blazing heat of summer. Skadi swings her mystic blade with astonishing speed and power –\n\n[Skadi's final attack will repeat until the absorbed malice is exhausted, and has a high chance of killing allies used to defend. Failing to defend will permanently damage your ability cards.]",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "finaleresponse1",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "finaleresponse2",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.riposted"
+		},
+		{
+			"id": "skadi.finale.respond.edgeforge"
+		},
+		{
+			"id": "skadi.finale.respond.edgelantern"
+		},
+		{
+			"id": "skadi.finale.respond.edgewinter"
+		},
+		{
+			"id": "skadi.finale.meltingedge"
+		},
+		{
+			"id": "skadi.finale.profaneedge"
+		},
+		{
+			"id": "skadi.finale.piercingedge"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	]
+},
+{
+	"id": "skadi.finale.respond.edgeforge",
+	"label": "The Blazing Edge",
+	"startdescription": "My blazing edge meets her frozen blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.respond.edgelantern",
+	"label": "The Radiant Edge",
+	"startdescription": "My radiant edge meets her dazzling blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.respond.edgewinter",
+	"label": "The Frigid Edge",
+	"startdescription": "My frigid edge meets her incandescent blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"winter": 1,
+					"heart": 1,
+					"grail": 1,
+					"moth": 1,
+					"lantern": 1,
+					"forge": 1,
+					"knock": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.meltingedge",
+	"label": "The Molten Edge",
+	"startdescription": "My molten edge meets her frozen blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.meltingedge": 1,
+		"ka.melting": 1,
+		"edge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.profaneedge",
+	"label": "The Profane Edge",
+	"startdescription": "My profane edge meets her dazzling blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.piercingedge",
+	"label": "The Piercing Edge",
+	"startdescription": "My piercing edge meets her incandescent blade, clashing, clanging and crossing interminably… until we finally break off. We are evenly matched, this time.",
+	"grandreqs": {
+		"[panel.skadi.finalea]+[panel.skadi.finaleb]": 1,
+		"ka.piercingedge": 1,
+		"ka.piercing": 1,
+		"edge": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 50,
+			"additional": true
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.finale.end",
+	"label": "Huntress's Respite",
+	"startdescription": "The huntress's fierce assault has momentarily ceased, granting me a brief chance to catch my breath—",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.duela.pre",
+	"actionid": "kv.huntress",
+	"grandreqs": {
+		"ke.skadi": 1,
+		"ke.duelmode": 1,
+		"[ke.strategy.huntressa]+[ke.strategy.huntressf]": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadi.duela": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.duela"
+		}
+	]
+},
+{
+	"id": "skadi.duela",
+	"actionid": "kv.huntress",
+	"label": "Keener than Bronze",
+	"startdescription": "The gale cannot keep pace with her, and the earth cracks beneath her every step: my enemy simply steps forward and strikes, yet only an epic force can withstand her —\n\n[Skadi's attacks have a high chance of killing allies used to defend. Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.skadi.duela": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.riposted"
+		},
+		{
+			"id": "skadi.duela.respond.edge"
+		},
+		{
+			"id": "skadi.duela.respond.heart"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.duela.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "I call upon an equally immense strength to oppose my enemy. In the aftershock of our clash, the earth shatters and the air trembles – our weapons are barely able to withstand it. We are evenly matched, this time.",
+	"requirements": {
+		"panel.skadi.duela": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.duela.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "I call upon a pounding, unending power to contend with my enemy. In the aftershock of our clash, the earth shatters and the air trembles – our weapons are barely able to withstand it. We are evenly matched, this time.",
+	"requirements": {
+		"panel.skadi.duela": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attacka.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadia": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.attacka"
+		}
+	]
+},
+{
+	"id": "skadi.duelb.pre",
+	"actionid": "kv.huntress",
+	"grandreqs": {
+		"ke.skadi": 1,
+		"ke.duelmode": 1,
+		"[ke.strategy.huntressb]+[ke.strategy.huntressg]": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadi.duelb": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.duelb"
+		}
+	]
+},
+{
+	"id": "skadi.duelb",
+	"actionid": "kv.huntress",
+	"label": "Fiercer than the Amazons",
+	"startdescription": "An angry burst of frost-flame erupts from Skadi's palm – solid as ice but frenzied as flame, everything it touches is reduced to ash and coated in a flawless sheet of ice.\n\n[Skadi's attack has a high chance of killing allies used to defend. Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.skadi.duelb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "Equal",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Power",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.riposted"
+		},
+		{
+			"id": "skadi.duelb.respond.winter"
+		},
+		{
+			"id": "skadi.duelb.respond.forge"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.duelb.respond.winter",
+	"label": "Respond with Endurance",
+	"startdescription": "The icy chill of ending is etched deep within my soul, and the raging frost-flame is powerless against it. I need not struggle against the cold – I have become winter itself.",
+	"requirements": {
+		"panel.skadi.duelb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.duelb.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "Unrestrained flames surge within the depths of my being, almost breaking free of my flesh and blood. Perfect frost may end all things, but cannot touch my burning form.",
+	"requirements": {
+		"panel.skadi.duelb": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.deadlyattack.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.skadi.opriposte",
+			"chance": 50,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attacka.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadia": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.attacka"
+		}
+	]
+},
+{
+	"id": "skadi.attacka",
+	"actionid": "kv.huntress",
+	"label": "Lethal Javelin",
+	"startdescription": "With a deafening whistle, a spear forged of golden flame flies at me from my blind spot. Flames trail in its wake like a shooting star – \n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.skadia": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.riposted"
+		},
+		{
+			"id": "skadi.attacka.respond.winter"
+		},
+		{
+			"id": "skadi.attacka.respond.heart"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.attacka.respond.winter",
+	"label": "Respond with Finality",
+	"startdescription": "The finality of bitter cold extinguishes the spear's blazing flames, and it disappears into thin air.",
+	"requirements": {
+		"panel.skadia": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attacka.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The power of unending drumming forms an inviolable barrier, which preserves me from the huntress' attack.",
+	"requirements": {
+		"panel.skadia": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackb.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadib": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.attackb"
+		}
+	]
+},
+{
+	"id": "skadi.attackb",
+	"actionid": "kv.huntress",
+	"label": "Smouldering Fire",
+	"startdescription": "My flesh has frozen solid, and my bones creak. My soul is engulfed by scorching pain, yet everything around me is frozen and covered in snow – \n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+		"panel.skadib": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.riposted"
+		},
+		{
+			"id": "skadi.attackb.respond.forge"
+		},
+		{
+			"id": "skadi.attackb.respond.grail"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.attackb.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "The flame within me burns fiercer than this icy inferno, and is strong enough to snuff it out entirely.",
+	"requirements": {
+		"panel.skadib": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackb.respond.grail",
+	"label": "Respond with Vitality",
+	"startdescription": "My surging, blood-red vitality is enough to withstand the inferno's scorching heat.",
+	"requirements": {
+		"panel.skadib": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackf.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressf": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadif": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.attackf"
+		}
+	]
+},
+{
+	"id": "skadi.attackf",
+	"actionid": "kv.huntress",
+	"label": "A Shattering of Blades",
+	"startdescription": "In spasmodic bursts, my tools are encased in ice and snow, or become scorching hot, as if set aflame. My enemy seeks to destroy them with a curse – \n\n[Failing to defend will permanently damage your weapons and tools.]",
+	"requirements": {
+		"panel.skadif": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.attackf.respond.moth"
+		},
+		{
+			"id": "skadi.attackf.respond.knock"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.destroytoolwpn",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.attackf.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "Chaos will conceal and hide my tools from her malicious influence.",
+	"requirements": {
+		"panel.skadif": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackf.respond.knock",
+	"label": "Respond with Opening",
+	"startdescription": "Through a power of opening, I can direct the curse elsewhere.",
+	"requirements": {
+		"panel.skadif": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackg.pre",
+	"actionid": "kv.huntress",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressg": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.skadig": 1
+	},
+	"linked": [
+		{
+			"id": "skadi.attackg"
+		}
+	]
+},
+{
+	"id": "skadi.attackg",
+	"actionid": "kv.huntress",
+	"label": "Dead Silence at Night",
+	"startdescription": "The shadows are black as ink, and the chill cuts like a knife. My enemy is plotting an attack against my allies—[Failing to defend will result in your ally's death.]",
+	"requirements": {
+		"panel.skadig": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.huntressresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.huntressresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "skadi.attackg.respond.lantern"
+		},
+		{
+			"id": "skadi.attackg.respond.sh"
+		},
+		{
+			"id": "huntress.delayed"
+		},
+		{
+			"id": "kr.killally",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	]
+},
+{
+	"id": "skadi.attackg.respond.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "A radiant light shines into the treacherous shadows, forcing my enemy to retreat.",
+	"requirements": {
+		"panel.skadig": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.attackg.respond.sh",
+	"label": "Respond with Navigation",
+	"startdescription": "Through the guidance of the Histories, we traverse and identify every possible angle of attack, forcing my enemy to retreat.",
+	"requirements": {
+		"panel.skadig": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.huntress",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.traceskadifight",
+			"chance": 70,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "skadi.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.finale.pre"
+		},
+		{
+			"id": "skadi.finale.end"
+		},
+		{
+			"id": "skadi.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.riposteskadi",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "skadi.special.heal",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "The dawn grows longer and colder, and faded cinders glow with an impossible light… My enemy's power grows with that of the Madrugad. I must be cautious. \n\n[Skadi can use malice to employ more powerful abilities.]",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressc": 1
+	},
+	"tablereqs":{
+		"malice.madrugad": 1,
+		"wound.skadi": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice.madrugad",
+			"label": "Malice",
+			"required": {
+				"malice.madrugad": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.speciality.healskadi",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.special.delay",
+	"actionid": "kv.huntress",
+	"label": "Malice Gathers",
+	"startdescription": "My enemy calls upon the chilly light of the Madrugad to obstruct us – \n\n[Skadi's special strategy will extend the cooldown of exhausted resources.]",
+	"requirements": {
+		"ke.skadi": 1,
+		"ke.strategy.huntressc": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"alt": [
+		{
+			"id": "kr.speciality.delay",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.duel.pass",
+	"actionid": "kv.huntress",
+	"label": "The Huntress Circles",
+	"startdescription": "In a gale choked with snow and golden ash, my enemy and I circle each other, waiting for the other to show weakness.",
+	"requirements": {
+		"ke.duelmode": 1,
+		"ke.skadi": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.pass",
+	"actionid": "kv.huntress",
+	"label": "The Huntress Lingers",
+	"startdescription": "Smoke and golden embers smother the wind, and the drizzling sleet freezes to diamond dust. Hidden by strange visions, my enemy stalks me, poised to strike at any moment.",
+	"requirements": {
+		"ke.skadi": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarkhuntress": -99
+	},
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+},
+{
+	"id": "skadi.cooldown",
+	"label": "A Breathing Space",
+	"startdescription": "The huntress will soon resume her hunt —",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "skadi.draw"
+		}
+	]
+}
+]
+}

@@ -1,0 +1,657 @@
+{
+"recipes":[
+{
+	"id": "kr.useopwatchman1",
+	"actionid": "kv.act",
+	"label": "The Blazing Light",
+	"startdescription": "The fierce radiance from the Watchman will cleanse all the impure elements here.\n\n[The exhausted resources will be refreshed, and other cards will be consumed.]",
+	"craftable": true,
+	"warmup": 20,
+	"grandReqs": {
+		"ke.opwatchman": 1,
+		"[enemy.wolfshard]+[malice.wolfdivided]+[ke.agony]+[ke.woundsevere]": 1
+	},
+	"effects":{
+		"ke.opwatchman": -99
+	}
+},
+{
+	"id": "kr.useopwatchman2",
+	"actionid": "kv.act",
+	"label": "The Blazing Light",
+	"startdescription": "The fierce radiance from the Watchman will cleanse all the impure elements here.\n\n[The exhausted resources will be refreshed, and other cards will be consumed.]",
+	"craftable": true,
+	"warmup": 20,
+	"grandReqs": {
+		"ke.opwatchman": 1,
+		"[ke.skillimmune.exhausted]+[ke.skillprofane.exhausted]+[ke.skillwolf.exhausted]": 1
+	},
+	"effects":{
+		"ke.opwatchman": -99
+	}
+},
+{
+	"id": "kh.opecho",
+	"actionid": "kv.act",
+	"label": "Searching for the path to Crossrow?",
+	"startdescription": "The path to the Crossrow has been concealed by the power of the Velvet, but nothing can remain hidden forever – especially for the covenantal land that spreads enlightenment.\n\n[Collecting seven 'Haunting Melodies' will reveal the path to the Crossrow.]",
+	"extantreqs":{
+		"ke.vaultnola": -1,
+		"ke.searingenigma": -1,
+		"ke.goalorchard": -1,
+		"ke.numenalte": -1
+	},
+	"requirements": {
+		"ke.opecho": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.seekvaultnola",
+	"actionid": "kv.act",
+	"label": "Searching for the path to Crossrow",
+	"startdescription": "The fragmented echoes interweave into a bright melody, guiding me through the hazy mist --\n\n[This will consume seven 'Haunting Melodies' and reveal the path to Crossrow.]",
+	"maxexecutions": 1,
+	"warmup": 30,
+	"requirements": {
+		"ke.opecho": 7
+	},
+	"craftable": true,
+	"effects":{
+		"ke.opecho": -99,
+		"ke.vaultnola": 1
+	}
+},
+{
+	"id": "kr.attackskadi.opriposte",
+	"actionid": "kv.act",
+	"label": "Attacking My Enemy through Her Flaws?",
+	"startdescription": "My enemy has already shown enough flaws in the battle. It's time for her to bleed. \n\n[You could attempt to wound Skadi through a challenge, powerful <b>Edge</b>, <b>Forge</b> and <b>Winter</b> would help you succeed.]",
+	"extantreqs":{
+		"ke.skadi": 1,
+		"ke.duelmode": 1
+	},
+	"requirements": {
+		"ke.opriposte": 3
+	},
+	"craftable": true,
+	"warmup": 15,
+	"deckeffects":{
+		"kd.defense.skadi": 1
+	},
+	"linked":[
+		{
+			"id": "attackskadi.trigger"
+		}
+	]
+},
+{
+	"id": "kr.attackskadi",
+	"actionid": "kv.act",
+	"label": "Attacking My Enemy?",
+	"startdescription": "My enemy has not yet revealed enough flaws in the battle, but I can still attempt to use powerful force - or extraordinary abilities to break through her defense.\n\n[You could attempt to wound Skadi through a challenge, the powerful <b>Edge</b> and <b>Lantern</b> would help you succeed. Spending a total of three 'A Chance to Strike Back?' can make the challenge easier.]",
+	"extantreqs":{
+		"ke.skadi": 1,
+		"ke.duelmode": 1
+	},
+	"requirements": {
+		"ke.opriposte": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"effects":{
+		"panel.skadi.defensea": 1
+	},
+	"linked":[
+		{
+			"id": "attackskadi.trigger"
+		}
+	]
+},
+{
+	"id": "attackskadi.trigger",
+	"label": "@#panel.skadi.defensea|Impenetrable Defense#panel.skadi.defenseb|Twisting Defense#panel.skadi.defensec|Tenacious Defense#panel.skadi.defensed|Balanced Defense@",
+	"startdescription": "@#panel.skadi.defensea|Skadi's stance is flawless; only sheer force and transcendent skill can tear through her defense—#panel.skadi.defenseb|Intricate, inscrutable wards encircle Skadi, seeking to twist and deflect my strength—#panel.skadi.defensec|Skadi executes a versatile and exacting technique, striving to withstand my assault—#panel.skadi.defensed|The equilibrium of the Madrugad has woven an invisible defense around Skadi—@",
+	"slots": [
+		{
+			"id": "ks.needresources1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.needresources2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.needresources3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "attackskadi.failed"
+		}
+	],
+	"alt": [
+		{
+			"id": "attackskadi.profaneedge"
+		},
+		{
+			"id": "attackskadi.meltingedge"
+		},
+		{
+			"id": "attackskadi.piercingedge"
+		},
+		{
+			"id": "attackskadi.respond.edgeforge"
+		},
+		{
+			"id": "attackskadi.respond.edgelantern"
+		},
+		{
+			"id": "attackskadi.respond.edgewinter"
+		},
+		{
+			"id": "attackskadi.respond.edge"
+		},
+		{
+			"id": "attackskadi.respond.forge"
+		},
+		{
+			"id": "attackskadi.respond.lantern"
+		},
+		{
+			"id": "attackskadi.respond.winter"
+		}
+	]
+},
+{
+	"id": "attackskadi.failed",
+	"label": "Attack Thwarted!",
+	"startdescription": "My attack was easily dispelled by the enemy's defense. 'Pathetic,' Skadi scoffs.",
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99,
+		"husk": 1
+	}
+},
+{
+	"id": "attackskadi.profaneedge",
+	"label": "Profane Blade",
+	"startdescription": "Merciless radiance strips away my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.meltingedge",
+	"label": "Molten Blade",
+	"startdescription": "The inferno's searing heat melts my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.meltingedge": 1,
+		"ka.melting": 1,
+		"edge": "ka.meltingedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.piercingedge",
+	"label": "Piercing Blade",
+	"startdescription": "The final bitter cold pierces my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.piercingedge": 1,
+		"ka.piercing": 1,
+		"edge": "ka.piercingedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.edgelantern",
+	"label": "Radiant Blade",
+	"startdescription": "Merciless radiance strips away my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.edgeforge",
+	"label": "Burning Blade",
+	"startdescription": "The inferno's searing heat melts my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.edgewinter",
+	"label": "Icy Blade",
+	"startdescription": "The final bitter cold pierces my foe's defense, leaving her utterly exposed to my strike—",
+	"requirements": {
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "I tear through the foe's defense with brute force, forcing her utterly exposed to my attack—",
+	"requirements": {
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "I summon untamed flame to burn away the foe's protection, forcing her utterly exposed to my attack—",
+	"requirements": {
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.lantern",
+	"label": "Respond with Light",
+	"startdescription": "I kindle merciless light to pierce the foe's protection, forcing her utterly exposed to my attack—",
+	"requirements": {
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.respond.winter",
+	"label": "Respond with Finality",
+	"startdescription": "The final frost shatters the foe's protection, forcing her utterly exposed to my attack—",
+	"requirements": {
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "attackskadi.success"
+		}
+	]
+},
+{
+	"id": "attackskadi.success",
+	"startdescription": "I still remember the pain and shame of Caen vividly. Now, at last, I have made my enemy taste something akin to it.",
+	"effects": {
+		"wound.skadi": 1
+	}
+},
+{
+	"id": "kr.refreshabilities",
+	"actionid": "kv.act",
+	"label": "Use Resting Place",
+	"startdescription": "Withdraw from worldly affairs and take a brief respite...",
+	"description": "...then return to the task once more.",
+	"grandReqs": {
+		"ke.oprest": 1,
+		"[ke.healthexhausted]+[ke.passionexhausted]+[ke.reasonexhausted]": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"refresh": 1
+	},
+	"effects":{
+		"ke.oprest": -99
+	}
+},
+{
+	"id": "kr.gainresources.supplies",
+	"actionid": "kv.act",
+	"label": "In Exchange for Value",
+	"startdescription": "Each takes what they need.",
+	"requirements": {
+		"op": 1,
+		"neednecessities": 1,
+		"necessities": "neednecessities"
+	},
+	"craftable": true,
+	"warmup": 10,
+	"aspects": {
+		"agreement": 1
+	}
+},
+{
+	"id": "kr.gainroyalistslantern",
+	"actionid": "kv.act",
+	"label": "Clarified with Reason",
+	"startdescription": "Once gains and losses are clearly weighed, reason can take the lead.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oproyalists": 1,
+		"neglantern": 1,
+		"lantern": "neglantern",
+		"ability": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustreason": 1
+	}
+},
+{
+	"id": "kr.gainroyalistsmoth",
+	"actionid": "kv.act",
+	"label": "With Passionate Oratory",
+	"startdescription": "Passion can sway the gullible—even when the speech lacks solid grounds.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oproyalists": 1,
+		"negmoth": 1,
+		"moth": "negmoth",
+		"ability": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustpassion": 1
+	}
+},
+{
+	"id": "kr.gainroyalistsggmoth",
+	"actionid": "kv.act",
+	"label": "Lies and Bluffs",
+	"startdescription": "A flaw that can be manipulated lies at the very core of the human soul—its name is fear and uncertainty.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oproyalistsgg": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustpassion": 1
+	}
+},
+{
+	"id": "kr.gainroyalistsgggrail",
+	"actionid": "kv.act",
+	"label": "Greed and Deception",
+	"startdescription": "Before the allure of profit, reason and restraint are worth nothing.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oproyalistsgg": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustpassion": 1
+	}
+},
+{
+	"id": "kr.gainarmyggmoth",
+	"actionid": "kv.act",
+	"label": "Misguided Loyalty",
+	"startdescription": "After nightfall, everything will remain as it was—and they will not realize that the object of their loyalty has changed.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oparmygg": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustpassion": 1,
+		"exhaustreason": 1
+	}
+},
+{
+	"id": "kr.gainarmygglantern",
+	"actionid": "kv.act",
+	"label": "Reshaped Perception",
+	"startdescription": "In the blinding light, they will learn a discipline unlike any they have known before.",
+	"description": "Thus I have won their support.",
+	"requirements": {
+		"ke.oparmygg": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"agreement": 1,
+		"exhaustpassion": 1,
+		"exhaustreason": 1
+	}
+},
+{
+	"id": "kh.seizesupplies",
+	"actionid": "kv.act",
+	"label": "Salvage Usable Supplies",
+	"startdescription": "The target location may hold quite valuable materials, but I must exert effort to navigate the chaos along the way.\n\n[Meet the threshold to achieve the objective.]",
+	"requirements": {
+		"ke.opseizesupplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.seizesupplies",
+	"actionid": "kv.act",
+	"label": "Salvage Usable Supplies",
+	"startdescription": "A modicum of effort is enough to resolve the trivial troubles along the road.\n\n[This will take some time and randomly grant you useful resources, though there is a small chance of leaving traces.]",
+	"description": "These will prove handy on the journey ahead.",
+	"craftable": true,
+	"warmup": 60,
+	"grandReqs":{
+		"ke.opseizesupplies": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects":{
+		"ke.opseizesupplies": -1,
+		"necessities": 1
+	},
+	"deckeffects":{
+		"kd.seizesupplies": 2
+	}
+},
+{
+	"id": "kr.visitfarm",
+	"actionid": "kv.act",
+	"label": "Confiscating Supplies from Local Farms",
+	"startdescription": "Hunger can drive people to madness—but the gap in power, along with the fear of authority and the flames of war, can overwhelm it.",
+	"description": "Thus, they obediently hand over their surplus supplies and tighten their belts in preparation for the days ahead.",
+	"requirements": {
+		"ke.opfarm": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"effects":{
+        "ke.opfarm": -1,
+		"necessities": 1
+    },
+    "deckeffects":{
+        "kd.gathernecess": 2
+    }
+}
+]
+}

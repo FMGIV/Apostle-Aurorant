@@ -1,0 +1,59 @@
+{
+"decks": [
+{
+	"id": "kd.destr1s1",
+	"label": "？",
+	"comments": "目的地：一区第一部分",
+	"description": "......",
+	"spec": [
+	    "ke.destlondon",
+		"ke.destglasgow",
+		"ke.destpowys"
+	],
+	"resetonexhaustion": false,
+	"defaultcard": "logic.nextsector"
+},
+{
+	"id": "kd.destr1s2",
+	"label": "？",
+	"comments": "目的地：一区第二部分",
+	"description": "......",
+	"spec": [
+		"ke.destbelfast",
+		"ke.destdover",
+		"ke.destnorthumb",
+		"ke.destedinburgh"
+	],
+	"resetonexhaustion": false,
+	"defaultcard": "logic.nextsector"
+},
+{
+	"id": "kd.destr2",
+	"label": "？",
+	"comments": "目的地：二区",
+	"description": "......",
+	"spec": [
+		"ke.destkutaisi",
+		"ke.desttiflis",
+		"ke.destzest",
+		"ke.destmtsk",
+		"ke.destsigh"
+	],
+	"resetonexhaustion": false,
+	"defaultcard": "logic.nextsector"
+},
+{
+	"id": "kd.destr3",
+	"label": "？",
+	"comments": "目的地：三区",
+	"description": "......",
+	"spec": [
+		"ke.destnola",
+		"ke.destbrcg",
+		"ke.destwmlk"
+	],
+	"resetonexhaustion": false,
+	"defaultcard": "logic.nextsector"
+}
+]
+}

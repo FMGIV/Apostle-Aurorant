@@ -1,0 +1,342 @@
+{
+"elements":[
+{
+    "id": "ke.ammoa",
+    "icon": "tooledgeb",
+    "label": "Sharp Alloy Projectiles",
+    "description": "A projectile forged from multiple metals in precise ratios, containing lethal sharpness within its alloy.",
+    "aspects": {
+        "edge": 4,
+        "ka.ammo": 1,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.ammob",
+    "icon": "ingredientforgeb",
+    "label": "Refined Bitterblack Salt",
+    "description": "A lustrous black crystal, flammable and deceptively unremarkable in appearance, conceals devastating force within. Purifying this substance is now far simpler than before—so much so that it can even serve as experimental ammunition.",
+    "aspects": {
+        "forge": 6,
+        "edge": 2,
+        "knock": 2,
+        "ka.ammo": 1,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyedgea",
+    "icon": "ingredientedged",
+    "label": "Lethal Ingredient",
+    "description": "Cut at the touch.",
+    "aspects": {
+        "edge": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyforgea",
+    "icon": "ingredientforged",
+    "label": "Fiery Ingredient",
+    "description": "Heat steams.",
+    "aspects": {
+        "forge": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyforgeb",
+    "label": "Xanthotic Essence",
+    "description": "A precious essence of the Forge's works, coloured the rich gold of a summer afternoon.",
+    "aspects": {
+        "forge": 8,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyforgec",
+    "icon": "ingredientforgef",
+    "label": "Iotic Essence",
+    "description": "A powerful alchemical material often considered an intermediate product of the Forge's works, and which has now been perfectly reproduced by my own craftsmanship. It is quite pure but has yet to reach its full potential.",
+    "aspects": {
+        "forge": 12,
+        "asset": 1,
+        "supplies": 1,
+        "tag.important": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.bluegold",
+    "icon": "apostleforge.pillar3",
+    "label": "Blue Gold",
+    "description": "This is alchemy's savage summit: the deadly blue of fire outpacing light. A mortal would die if they touched it, but I won't.",
+    "unique": true,
+    "aspects": {
+        "edge": 8,
+        "forge": 8,
+        "knock": 8,
+        "lantern": 8,
+        "winter": 8,
+        "asset": 3,
+        "ka.forgeable": 1,
+        "tag.important": 1
+    },
+    "xtriggers": {
+        "exhaust": "bluegold.unstable"
+    }
+},
+{
+    "id": "bluegold.unstable",
+    "icon": "apostleforge.pillar3",
+    "label": "Unstable Blue Gold",
+    "description": "It creaks and glows with erratic radiation. It will stabilize with patient maintenance, but I can also choose unleash its power and use it up entirely.\n[This will become 'Blue Gold' after its cooldown expires. Using it in this form will consume it immediately.] ",
+    "unique": true,
+    "resaturate": true,
+    "lifetime": 300,
+    "aspects": {
+        "edge": 12,
+        "forge": 12,
+        "knock": 12,
+        "lantern": 12,
+        "winter": 12,
+        "asset": 3,
+        "tag.important": 1
+    },
+    "decayTo": "ke.bluegold",
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplygraila",
+    "icon": "ingredientgrailb",
+    "label": "Peckish Ingredient",
+    "description": "Stimulating appetite.",
+    "aspects": {
+        "grail": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyhearta",
+    "icon": "ingredientheartb",
+    "label": "Pulsant Ingredient",
+    "description": "Trembling without cease.",
+    "aspects": {
+        "heart": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyknocka",
+    "icon": "ingredientknockb",
+    "label": "Glassfinger Ingredient",
+    "description": "Gnawing at the container.",
+    "aspects": {
+        "knock": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplylanterna",
+    "icon": "ingredientlanternd",
+    "label": "Luminous Ingredient",
+    "description": "Vivid colors.",
+    "aspects": {
+        "lantern": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplymotha",
+    "icon": "ingredientmothb",
+    "label": "Whispering Ingredient",
+    "description": "Restless.",
+    "aspects": {
+        "moth": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplywintera",
+    "icon": "ingredientwinterb",
+    "label": "Bitter Ingredient",
+    "description": "Chill to the bone.",
+    "aspects": {
+        "winter": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyhistorya",
+    "icon": "toolsecrethistoriesb",
+    "label": "A Curious Paradox",
+    "description": "The tiniest flaw in a footnote of History: a strange and fragile treasure. ",
+    "aspects": {
+        "secrethistories": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyhistoryb",
+    "icon": "fragmentsecrethistoriesd",
+    "label": "Forbidden Epic",
+    "description": "The Hours braid the Histories like hair – but there will always be forgotten fragments that can be used.",
+    "aspects": {
+        "secrethistories": 8,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplymelting",
+    "icon": "ingredientforgef",
+    "label": "Beast Essence",
+    "description": "The attendants of the Lionsmith use this to breathe life into their creations during the final stage of forging.",
+    "aspects": {
+        "edge": 4,
+        "forge": 4,
+        "heart": 4,
+        "ka.melting": 1,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplypiercing",
+    "label": "Blessing of Fortitude",
+    "description": "A favoured wartime provision among the Long of the Colonel—its blessing can make a soldier more tenacious, and more lethal.",
+    "aspects": {
+        "edge": 4,
+        "winter": 4,
+        "lantern": 4,
+        "ka.piercing": 1,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyheartb",
+    "icon": "ingredientheartf",
+    "label": "Leaping Blood",
+    "description": "Once the power of persistence rises to a certain level, any liquid may reveal the aura of the Name who seems present yet absent.",
+    "aspects": {
+        "heart": 8,
+        "asset": 1,
+        "supplies": 1,
+        "ka.consumable": 1
+    },
+    "xtriggers": {
+        "use": "ke.strengtha",
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplymothb",
+    "icon": "ingredientmothf",
+    "label": "Restless Nectar",
+    "description": "The same substance can also be refined from dew gathered at the stroke of midnight. Most mortals cannot endure the delirium it brings, yet desperate artists and poets still rush to try it, one after another.",
+    "aspects": {
+        "moth": 8,
+        "asset": 1,
+        "supplies": 1,
+        "ka.consumable": 1
+    },
+    "xtriggers": {
+        "use": "ke.strengthb",
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplylanternb",
+    "icon": "ingredientlanternf",
+    "label": "Ichor Eclipse",
+    "description": "Its composition bears an uncanny resemblance to remnants of the Door in the Eye. Even when hermetically sealed in a specialized manner, its radiance still bleaches the color from anything that draws too near.",
+    "aspects": {
+        "lantern": 8,
+        "asset": 1,
+        "supplies": 1,
+        "ka.consumable": 1
+    },
+    "xtriggers": {
+        "use": "ke.strengthc",
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.supplyalloy",
+    "label": "Ys-alloy",
+    "description": "A peculiar alloy whose properties change subtly with each passing era. Harnessing this unstable power is dangerous, but my Great Work will never be achieved by ordinary means alone.",
+    "aspects": {
+        "forge": 4,
+        "lantern": 4,
+        "secrethistories": 4,
+        "asset": 1,
+        "supplies": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+}
+]
+}

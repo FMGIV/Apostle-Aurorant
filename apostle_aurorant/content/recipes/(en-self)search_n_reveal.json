@@ -1,0 +1,1315 @@
+{
+"recipes":[
+{
+	"id": "kh.abilitysearch",
+	"actionid": "kv.search",
+	"label": "Light",
+	"startdescription": "A light that wells up from the depths of my mind — I can use it to scout for opportunities in a location, or to reveal someone who is hiding.\n\n[This card can be used for rapid reconnaissance or to expose a hidden enemy.]",
+	"requirements": {
+		"lantern": 6,
+		"ability": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.revealing.enemy",
+	"actionid": "kv.search",
+	"label": "Reveal the Enemy's Location",
+	"startdescription": "They lurk in the shadows, and I shall force them into the light.\n\n[Use an Ability card that meets the requirements to reveal a hidden enemy.]",
+	"description": "The shadows are shattered — there will be no more mercy.",
+	"craftable": true,
+	"warmup": 15,
+	"requirements": {
+		"ability": 1,
+		"ka.hiddenenemy": 1,
+		"lantern": 6
+	},
+	"aspects": {
+		"exhaustreason": 1,
+		"revealenemy": 1
+	},
+	"effects": {
+		"influence": -99
+	}
+},
+{
+	"id": "kr.searching.surburb",
+	"actionid": "kv.search",
+	"label": "Search in the Fringes of Britain",
+	"startdescription": "Through shrouding mists and haze, over ancient tracks and hills—",
+	"description": "We found this thing.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ke.surburb": 1,
+		"ability": -1
+	},
+	"deckeffects": {
+		"kd.domsurburb": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "kr.searching.surburb.fast",
+	"actionid": "kv.search",
+	"label": "Search in the Fringes of Britain",
+	"startdescription": "Through shrouding mists and haze, over ancient tracks and hills—",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.surburb": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domsurburb": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.london",
+	"actionid": "kv.search",
+	"label": "Search in London",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domlondon": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domlondon": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.london.fast",
+	"actionid": "kv.search",
+	"label": "Search in London",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domlondon": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domlondon": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.glasgow",
+	"actionid": "kv.search",
+	"label": "Search in Glasgow",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domglasgow": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domglasgow": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.glasgow.fast",
+	"actionid": "kv.search",
+	"label": "Search in Glasgow",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domglasgow": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domglasgow": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.powys",
+	"actionid": "kv.search",
+	"label": "Search in Powys",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dompowys": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.dompowys": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.powys.fast",
+	"actionid": "kv.search",
+	"label": "Search in Powys",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dompowys": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.dompowys": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.belfast",
+	"actionid": "kv.search",
+	"label": "Search in Belfast",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dombelfast": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.dombelfast": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.belfast.fast",
+	"actionid": "kv.search",
+	"label": "Search in Belfast",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dombelfast": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.dombelfast": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.dover",
+	"actionid": "kv.search",
+	"label": "Search in Dover",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domdover": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domdover": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.dover.fast",
+	"actionid": "kv.search",
+	"label": "Search in Dover",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domdover": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domdover": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.northumb",
+	"actionid": "kv.search",
+	"label": "Search in Northumberland",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domnorthumb": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domnorthumb": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.northumb.fast",
+	"actionid": "kv.search",
+	"label": "Search in Northumberland",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domnorthumb": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domnorthumb": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.edinburgh",
+	"actionid": "kv.search",
+	"label": "Search in Edinburgh",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domedinburgh": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domedinburgh": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.edinburgh.fast",
+	"actionid": "kv.search",
+	"label": "Search in Edinburgh",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domedinburgh": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domedinburgh": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "kr.goalwoundpartymain",
+	"actionid": "kv.search",
+	"label": "Tracking Long: Garrisons of Triple Knot",
+	"startdescription": "They know they cannot confront me directly, which is why they maneuver in the shadows and do everything to hinder my goals... What if I force them to step into the light?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalwoundparties": 1,
+		"trace.partymain": 1
+	},
+	"effects": {
+		"ke.opwoundpartymain": 1
+	}
+},
+{
+	"id": "kr.goalsetbackpartymain",
+	"actionid": "kv.search",
+	"label": "Tracking Base: Garrisons of Triple Knot",
+	"startdescription": "They know they cannot confront me directly, which is why they've been establishing outposts all around, trying to accumulate strength behind my back... What if I force them to step into the light?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs":{
+		"ke.partymainmoving": -1
+	},
+	"requirements": {
+		"ke.goalsetbackparties": 1,
+		"trace.partymain": 1
+	},
+	"effects": {
+		"ke.opsetbackpartymain": 1
+	}
+},
+{
+	"id": "searching.countryside",
+	"actionid": "kv.search",
+	"label": "Search in the Foreign Wilderness",
+	"comments": "仅在有进阶欲望时生效。",
+	"startdescription": "Braving the gale and the cold, treading unfamiliar roads and wilds—",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.countryside": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	],
+	"linked":[
+		{
+			"id": "searching.countryside.vault"
+		},
+		{
+			"id": "searching.countryside.ascension"
+		},
+		{
+			"id": "searching.countryside.noascension"
+		}
+	]
+},
+{
+	"id": "searching.countryside.fast",
+	"actionid": "kv.search",
+	"label": "Search in the Foreign Wilderness",
+	"comments": "仅在有进阶欲望时生效。",
+	"startdescription": "Braving the gale and the cold, treading unfamiliar roads and wilds—",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.countryside": 1,
+		"ability": 1,
+		"lantern": 6
+	},
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	],
+	"linked":[
+		{
+			"id": "searching.countryside.vault"
+		},
+		{
+			"id": "searching.countryside.ascension"
+		},
+		{
+			"id": "searching.countryside.noascension"
+		}
+	]
+},
+{
+	"id": "searching.countryside.vault",
+	"actionid": "kv.search",
+	"label": "Search in the Foreign Wilderness",
+	"comments": "仅在有进阶欲望，且场上存在副本时生效。",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.countryside": 1
+	},
+	"extantreqs":{
+		"tag.ascension": 1,
+		"vault": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.domcountryside.vault": 1
+	}
+},
+{
+	"id": "searching.countryside.ascension",
+	"actionid": "kv.search",
+	"label": "Search in the Foreign Wilderness",
+	"comments": "仅在有进阶欲望时生效。",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.countryside": 1
+	},
+	"extantreqs":{
+		"tag.ascension": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.domcountryside": 1
+	}
+},
+{
+	"id": "searching.countryside.noascension",
+	"actionid": "kv.search",
+	"label": "Search in the Foreign Wilderness",
+	"comments": "仅在无进阶欲望时生效。",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.countryside": 1
+	},
+	"extantreqs":{
+		"tag.ascension": -1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.domcountryside.noascension": 1
+	}
+},
+{
+	"id": "searching.kutaisi",
+	"actionid": "kv.search",
+	"label": "Search in Kutaisi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domkutaisi": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	],
+	"linked":[
+		{
+			"id": "searching.kutaisi.ascension"
+		},
+		{
+			"id": "searching.kutaisi.noascension"
+		}
+	]
+},
+{
+	"id": "searching.kutaisi.fast",
+	"actionid": "kv.search",
+	"label": "Search in Kutaisi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domkutaisi": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	],
+	"linked":[
+		{
+			"id": "searching.kutaisi.ascension"
+		},
+		{
+			"id": "searching.kutaisi.noascension"
+		}
+	]
+},
+{
+	"id": "searching.kutaisi.ascension",
+	"actionid": "kv.search",
+	"label": "Search in Kutaisi",
+	"comments": "仅在有进阶欲望时生效。",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domkutaisi": 1
+	},
+	"extantreqs":{
+		"tag.ascension": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.domkutaisi.ascension": 1
+	}
+},
+{
+	"id": "searching.kutaisi.noascension",
+	"actionid": "kv.search",
+	"label": "Search in Kutaisi",
+	"comments": "仅在无进阶欲望时生效。",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domkutaisi": 1
+	},
+	"extantreqs":{
+		"tag.ascension": -1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.domkutaisi": 1
+	}
+},
+{
+	"id": "searching.tiflis",
+	"actionid": "kv.search",
+	"label": "Search in Tiflis",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domtiflis": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domtiflis": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.tiflis.fast",
+	"actionid": "kv.search",
+	"label": "Search in Tiflis",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domtiflis": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domtiflis": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.zest",
+	"actionid": "kv.search",
+	"label": "Search in Zestaponi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domzest": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domzest": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.zest.fast",
+	"actionid": "kv.search",
+	"label": "Search in Zestaponi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domzest": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domzest": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.mtsk",
+	"actionid": "kv.search",
+	"label": "Search in Mtskheta",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dommtsk": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.dommtsk": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.mtsk.fast",
+	"actionid": "kv.search",
+	"label": "Search in Mtskheta",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dommtsk": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.dommtsk": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.sigh",
+	"actionid": "kv.search",
+	"label": "Search in Signagi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domsigh": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domsigh": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.sigh.fast",
+	"actionid": "kv.search",
+	"label": "Search in Signagi",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domsigh": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domsigh": 1
+	},
+	"alt":[
+		{
+			"id": "kr.tracepartymain.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "kr.goalduelcomplete",
+	"actionid": "kv.search",
+	"label": "Defeat the Demigod Huntress?",
+	"startdescription": "There is no denying that Skadi is an extraordinarily dangerous and powerful foe. Yet after several exchanges, I have come to understand her mind and her abilities all the more; and where understanding is sufficient, there is no enemy that cannot be defeated—\n\n[This will consume all of your Insights, and grant you a way to defeat the Huntress.]",
+	"description": "Perhaps, with careful planning and design, I might lure her onto an open battlefield, overcome her in a true confrontation, and wash away my shame completely.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalduel": 1,
+		"trace.skadi": 7
+	},
+	"aspects": {
+		"completegoal": 1
+	},
+	"purge":{
+		"trace.skadi": 99
+	}
+},
+{
+	"id": "kr.goalwoundpartysecret",
+	"actionid": "kv.search",
+	"label": "Tracking Long: Secret Society",
+	"startdescription": "They know they cannot confront me directly, which is why they maneuver in the shadows and do everything to hinder my goals... What if I force them to step into the light?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalwoundparties": 1,
+		"trace.partysecret": 1
+	},
+	"effects": {
+		"ke.opwoundpartysecret": 1
+	}
+},
+{
+	"id": "kr.goalsetbackpartysecret",
+	"actionid": "kv.search",
+	"label": "Tracking Base: Secret Society",
+	"startdescription": "They know they cannot contend with me in open battle, and so they establish strongholds far and wide, seeking to obstruct me beyond my sight... If I force these into the light, what then?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalsetbackparties": 1,
+		"trace.partysecret": 1
+	},
+	"effects": {
+		"ke.opsetbackpartysecret": 1
+	}
+},
+{
+	"id": "searching.nola",
+	"actionid": "kv.search",
+	"label": "Search in New Orleans",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domnola": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domnola": 1
+	},
+	"alt":[
+		{
+			"id": "partysecret.setup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id": "kr.tracepartysecret.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.nola.fast",
+	"actionid": "kv.search",
+	"label": "Search in New Orleans",
+	"startdescription": "Search the entire city for opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domnola": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domnola": 1
+	},
+	"alt":[
+		{
+			"id": "partysecret.setup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id": "kr.tracepartysecret.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "searching.bounds",
+	"actionid": "kv.search",
+	"label": "Search in the Bounds",
+	"startdescription": "Through shrouding mists and haze, over ancient tracks and hills—",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.bounds": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.dombounds": 1
+	}
+},
+{
+	"id": "searching.bounds.fast",
+	"actionid": "kv.search",
+	"label": "Search in the Bounds",
+	"startdescription": "Through shrouding mists and haze, over ancient tracks and hills—",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.bounds": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.dombounds": 1
+	}
+},
+{
+	"id": "searching.brcg",
+	"actionid": "kv.search",
+	"label": "Search in Brancrug",
+	"startdescription": "Wander the gloomy, damp coastline, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dombrcg": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.dombrcg": 1
+	}
+},
+{
+	"id": "searching.brcg.fast",
+	"actionid": "kv.search",
+	"label": "Search in Brancrug",
+	"startdescription": "Wander the gloomy, damp coastline, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.dombrcg": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.dombrcg": 1
+	}
+},
+{
+	"id": "kr.goalwoundpartyenvoys",
+	"actionid": "kv.search",
+	"label": "Tracking Long: Messengers of the House of the Moon",
+	"startdescription": "They know they cannot confront me directly, which is why they maneuver in the shadows and do everything to hinder my goals... What if I force them to step into the light?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalwoundparties": 1,
+		"trace.partyenvoys": 1
+	},
+	"effects": {
+		"ke.opwoundpartyenvoys": 1
+	}
+},
+{
+	"id": "kr.goalsetbackpartyenvoys",
+	"actionid": "kv.search",
+	"label": "Tracking Base: Messengers of the House of the Moon",
+	"startdescription": "They know they cannot contend with me in open battle, and so they establish strongholds far and wide, seeking to obstruct me beyond my sight... If I force these into the light, what then?\n\n[This will consume a Trace and offer you a chance to strike back against the hostile group.]",
+	"description": "Let me see for myself.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.goalsetbackparties": 1,
+		"trace.partyenvoys": 1
+	},
+	"effects": {
+		"ke.opsetbackpartyenvoys": 1
+	}
+},
+{
+	"id": "searching.wmlk",
+	"actionid": "kv.search",
+	"label": "Search in Wounded Moon Lake",
+	"startdescription": "Wander the woodlands, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domwmlk": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domwmlk": 1
+	},
+	"alt":[
+		{
+			"id": "partyenvoys.setup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id": "kr.tracepartyenvoys.search",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "searching.wmlk.fast",
+	"actionid": "kv.search",
+	"label": "Search in Wounded Moon Lake",
+	"startdescription": "Wander the woodlands, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domwmlk": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domwmlk": 1
+	},
+	"alt":[
+		{
+			"id": "partyenvoys.setup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id": "kr.tracepartyenvoys.search",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "kr.goalorchardssetup",
+	"actionid": "kv.search",
+	"label": "Seek the Road to the Orchard",
+	"startdescription": "Following the direction Celia has shown, I will seek the road from the Bounds to the Orchard of Lights—\n\n[This will grant you access to the Orchard of Lights, but you may do so only once. Before you set out, make certain you possess the will for an ending, to face the trial of the Sun-in-Rags.]",
+	"description": "An audience with a god is unquestionably perilous; an audience with a god who favors endings is perilous to the point of madness. I hope I am prepared.",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs":{
+		"ke.bounds": 1
+	},
+	"requirements": {
+		"ke.goalorchard": 1
+	},
+	"aspects": {
+		"completegoal": 1
+	}
+},
+{
+	"id": "searching.isle",
+	"actionid": "kv.search",
+	"label": "Search in Port Noon",
+	"startdescription": "Tread the seashore sands, white as snow, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domisle": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domisle": 1
+	}
+},
+{
+	"id": "searching.isle.fast",
+	"actionid": "kv.search",
+	"label": "Search in Port Noon",
+	"startdescription": "Tread the seashore sands, white as snow, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domisle": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domisle": 1
+	}
+},
+{
+	"id": "searching.cage",
+	"actionid": "kv.search",
+	"label": "Search in Cage of Light",
+	"startdescription": "Endure pain, steel my will—seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domcage": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domcage": 1
+	},
+	"alt":[
+		{
+			"id": "wolfdivided.setup",
+			"additional": true,
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "searching.cage.fast",
+	"actionid": "kv.search",
+	"label": "Search in Cage of Light",
+	"startdescription": "Endure pain, steel my will—seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domcage": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domcage": 1
+	},
+	"alt":[
+		{
+			"id": "wolfdivided.setup",
+			"additional": true,
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "searching.ys",
+	"actionid": "kv.search",
+	"label": "Search in Ys",
+	"startdescription": "Wander the city of ice and spire, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domys": 1,
+		"ability": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects": {
+		"kd.domys": 1
+	},
+	"alt":[
+		{
+			"id": "coalition.setup",
+			"additional": true,
+			"chance": 100
+		}
+	]
+},
+{
+	"id": "searching.ys.fast",
+	"actionid": "kv.search",
+	"label": "Search in Ys",
+	"startdescription": "Wander the city of ice and spire, seeking opportunities and usable things.",
+	"description": "We found this thing.",
+	"requirements": {
+		"ke.domys": 1,
+		"lantern": 6,
+		"ability": 1
+	},
+	"warmup": 15,
+	"craftable": true,
+	"aspects": {
+		"exhaustreason": 1
+	},
+	"deckeffects": {
+		"kd.domys": 1
+	},
+	"alt":[
+		{
+			"id": "coalition.setup",
+			"additional": true,
+			"chance": 100
+		}
+	]
+}
+]
+}

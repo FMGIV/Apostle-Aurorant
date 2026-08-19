@@ -1,0 +1,715 @@
+{
+"recipes":[
+{
+	"id": "kr.timestart",
+	"actionid": "time",
+	"label": "Time Marches On",
+	"startdescription": "This body endures, yet all things change.",
+	"warmup": 60,
+	"extantreqs": {},
+	"linked": [
+		{
+			"id": "kr.timedraw"
+		}
+	],
+	"internaldeck": {
+		"spec": [
+			"ke.markcat",
+			"ke.markpig"
+		],
+		"draws": 1,
+		"resetonexhaustion": true
+	}
+},
+{
+	"id": "kr.timedraw",
+	"actionid": "time",
+	"label": "Time Marches On",
+	"startdescription": "This body endures, yet all things change.",
+	"deckeffects": {
+		"kd.seasons": 1
+	},
+	"linked": [
+		{
+			"id": "kr.timecycle"
+		}
+	]
+},
+{
+	"id": "kr.timecycle",
+	"actionid": "time",
+	"label": "Time Marches On",
+	"startdescription": "This body endures, yet all things change.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "kr.tracecheck3"
+		},
+		{
+			"id": "kr.tracecheck2"
+		},
+		{
+			"id": "kr.tracecheck1"
+		},
+		{
+			"id": "kr.timepurge"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.seasondreaming",
+			"additional": true
+		},
+		{
+			"id": "kr.seasonabnormal",
+			"additional": true
+		},
+		{
+			"id": "kr.seasonhostile",
+			"additional": true
+		},
+		{
+			"id": "kr.seasonpowerful",
+			"additional": true
+		},
+		{
+			"id": "kr.monstersetup",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.tracecheck3",
+	"actionid": "time",
+	"tablereqs": {
+		"ke.trace": 3
+	},
+	"warmup": 0,
+	"alt": [
+		{
+			"id": "partymain.coming",
+			"additional": true,
+			"chance": 90
+		},
+		{
+			"id": "skadi.coming",
+			"additional": true,
+			"chance": 100
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.timepurge"
+		}
+	]
+},
+{
+	"id": "kr.tracecheck2",
+	"actionid": "time",
+	"tablereqs": {
+		"ke.trace": 2
+	},
+	"warmup": 0,
+	"alt": [
+		{
+			"id": "partymain.coming",
+			"additional": true,
+			"chance": 60
+		},
+		{
+			"id": "skadi.coming",
+			"additional": true,
+			"chance": 80
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.timepurge"
+		}
+	]
+},
+{
+	"id": "kr.tracecheck1",
+	"actionid": "time",
+	"tablereqs": {
+		"ke.trace": 1
+	},
+	"warmup": 0,
+	"alt": [
+		{
+			"id": "partymain.coming",
+			"additional": true,
+			"chance": 30
+		},
+		{
+			"id": "skadi.coming",
+			"additional": true,
+			"chance": 60
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.timepurge"
+		}
+	]
+},
+{
+	"id": "kr.timepurge",
+	"actionid": "time",
+	"label": "Time Marches On",
+	"startdescription": "This body endures, yet all things change.",
+	"effects": {
+		"ka.season": -99
+	},
+	"linked": [
+		{
+			"id": "kr.maxwounds.crown"
+		},
+		{
+			"id": "kr.maxwounds"
+		},
+		{
+			"id": "kr.timedraw"
+		}
+	]
+},
+{
+	"id": "kr.maxwounds.crown",
+	"actionid": "time",
+	"label": "The End of Immortality?",
+	"startdescription": "终结曾离我如此遥远......而其现已再次临近。\n\n[Too late! If you still have at least seven wounds before the timer ends, you will die!]",
+	"warmup": 60,
+	"extantreqs": {
+		"ke.shatteredcrown": 1,
+		"ka.wound": 7
+	},
+	"playAudioTrack": "themedying.mp3",
+	"signalEndingFlavour": "Melancholy",
+	"linked": [
+		{
+			"id": "deathtriggerwounds.crown.skadi"
+		},
+		{
+			"id": "deathtriggerwounds.crown.cat"
+		},
+		{
+			"id": "deathtriggerwounds.crown.pig"
+		},
+		{
+			"id": "kr.deathtriggerwounds.crown"
+		},
+		{
+			"id": "kr.timedraw"
+		}
+	]
+},
+{
+	"id": "kr.maxwounds",
+	"actionid": "time",
+	"label": "The End of Immortality?",
+	"startdescription": "Immortality—a fragile lie. With enough wounds, any existence can be slain... and I am no exception.\n\n[Too late! If you still have at least three wounds before the timer ends, you will die!]",
+	"warmup": 60,
+	"extantreqs": {
+		"ke.shatteredcrown": -1,
+		"ka.wound": 3
+	},
+	"playAudioTrack": "themedying.mp3",
+	"signalEndingFlavour": "Melancholy",
+	"linked": [
+		{
+			"id": "deathtriggerwounds.skadi"
+		},
+		{
+			"id": "deathtriggerwounds.cat"
+		},
+		{
+			"id": "deathtriggerwounds.pig"
+		},
+		{
+			"id": "kr.deathtriggerwounds"
+		},
+		{
+			"id": "kr.timedraw"
+		}
+	]
+},
+{
+	"id": "deathtriggerwounds.crown.skadi",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.skadi": 1,
+		"ka.wound": 7
+	},
+	"ending": "aurorant.ending.deathskadi"
+},
+{
+	"id": "deathtriggerwounds.crown.cat",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.cat": 1,
+		"ka.wound": 7
+	},
+	"ending": "aurorant.ending.deathcat"
+},
+{
+	"id": "deathtriggerwounds.crown.pig",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.pig": 1,
+		"ka.wound": 7
+	},
+	"ending": "aurorant.ending.deathpig"
+},
+{
+	"id": "kr.deathtriggerwounds.crown",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ka.wound": 7
+	},
+	"ending": "aurorant.ending.deathwounds"
+},
+{
+	"id": "deathtriggerwounds.skadi",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.skadi": 1,
+		"ka.wound": 3
+	},
+	"ending": "aurorant.ending.deathskadi"
+},
+{
+	"id": "deathtriggerwounds.cat",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.cat": 1,
+		"ka.wound": 3
+	},
+	"ending": "aurorant.ending.deathcat"
+},
+{
+	"id": "deathtriggerwounds.pig",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ke.pig": 1,
+		"ka.wound": 3
+	},
+	"ending": "aurorant.ending.deathpig"
+},
+{
+	"id": "kr.deathtriggerwounds",
+	"actionid": "time",
+	"label": "The End of Immortality.",
+	"startdescription": "It's over—my ambition, and my torment, end here.",
+	"extantreqs": {
+		"ka.wound": 3
+	},
+	"ending": "aurorant.ending.deathwounds"
+},
+{
+	"id": "kr.seasonabnormal",
+	"actionid": "kv.season",
+	"requirements": {
+		"ke.seasonabnormal": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.printabnormal": 1
+	},
+	"linked":[
+		{
+			"id": "seasonabnormal.absorb"
+		}
+	]
+},
+{
+	"id": "seasonabnormal.absorb",
+	"actionid": "kv.season",
+	"label": "Wake-Tremor!",
+	"startdescription": "The roots of the Wake tremble from the power of war, and here, the skin of the world flaps in sickly, disordered ripples. Nothing here can operate entirely as 'normal'—\n\n[Allied units, Tools, or abilities drawn in enter cooldown. Non-immortal allies will be consumed.]",
+	"description": "It is over, for now. The tattered skin seems able to hold on a little longer, though I suspect the day of its end is coming.",
+	"slots": [
+		{
+			"id": "ks.exhaust",
+			"label": "Something or Someone",
+			"required": {
+				"ka.ally": 1,
+				"asset": 1,
+				"ability": 2
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"tag.important": 1
+			},
+			"greedy": true
+		}
+	],
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "kr.seasonhostile",
+	"actionid": "kv.season",
+	"label": "Turbulence Against the Current",
+	"startdescription": "There will always be moments like this—moments when the wheel of fate spins backward. The malice of this world has been roused, and it will manifest in some form.",
+	"warmup": 0,
+	"requirements": {
+		"ke.seasonhostile": 1
+	},
+	"effects":{
+		"ke.printgrail": 1
+	},
+	"linked": [
+		{
+			"id": "seasonhostile.router"
+		}
+	]
+},
+{
+	"id": "seasonhostile.router",
+	"actionid": "kv.season",
+	"label": "Turbulence Against the Current",
+	"startdescription": "There will always be moments like this—moments when the wheel of fate spins backward. The malice of this world has been roused, and it will manifest in some form.",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "seasonhostile.spawnfleet"
+		},
+		{
+			"id": "seasonhostile.buffwolfdivided"
+		},
+		{
+			"id": "seasonhostile.buffskadi"
+		},
+		{
+			"id": "seasonhostile.buffcat"
+		},
+		{
+			"id": "seasonhostile.buffpig"
+		},
+		{
+			"id": "seasonhostile.buffpartyenvoys"
+		},
+		{
+			"id": "seasonhostile.buffpartysecret"
+		},
+		{
+			"id": "seasonhostile.buffpartymain"
+		},
+		{
+			"id": "seasonhostile.spawnenemyr3"
+		},
+		{
+			"id": "seasonhostile.spawnenemyr2"
+		},
+		{
+			"id": "seasonhostile.spawnenemyr1"
+		},
+		{
+			"id": "seasonhostile.spawntrace"
+		}
+	]
+},
+{
+	"id": "seasonhostile.spawnenemyr3",
+	"actionid": "kv.season",
+	"label": "Hostility Converges",
+	"startdescription": "More enemies are drawn in.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.bounds": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr3": 1
+	}
+},
+{
+	"id": "seasonhostile.spawnenemyr2",
+	"actionid": "kv.season",
+	"label": "Hostility Converges",
+	"startdescription": "More enemies are drawn in.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.countryside": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr2": 1
+	}
+},
+{
+	"id": "seasonhostile.spawnenemyr1",
+	"actionid": "kv.season",
+	"label": "Hostility Converges",
+	"startdescription": "More enemies are drawn in.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.surburb": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr1": 1
+	}
+},
+{
+	"id": "seasonhostile.spawnfleet",
+	"actionid": "kv.season",
+	"label": "Hostility Converges",
+	"startdescription": "More enemies are drawn in.",
+	"warmup": 10,
+	"extantreqs": {
+		"tag.coalition": 1
+	},
+	"deckeffects": {
+		"kd.spawnfleet": 2
+	}
+},
+{
+	"id": "seasonhostile.buffwolfdivided",
+	"actionid": "kv.season",
+	"label": "Malice Condensed",
+	"startdescription": "狼的力量随其恶意的孳生而高涨。",
+	"warmup": 10,
+	"extantreqs": {
+		"tag.wolfdivided": 1
+	},
+	"effects": {
+		"malice.wolfdivided": 2
+	}
+},
+{
+	"id": "seasonhostile.buffskadi",
+	"actionid": "kv.season",
+	"label": "Malice Condensed",
+	"startdescription": "Condensed malice will strengthen power of the Huntress.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.skadi": 1
+	},
+	"effects": {
+		"malice.madrugad": 2
+	}
+},
+{
+	"id": "seasonhostile.buffcat",
+	"actionid": "kv.season",
+	"label": "Malice Condensed",
+	"startdescription": "Condensed malice will strengthen power of the Huntress.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.cat": 1
+	},
+	"effects": {
+		"malice.velvet": 1
+	},
+	"deckeffects": {
+		"malicevelvet.additional": 1
+	}
+},
+{
+	"id": "seasonhostile.buffpig",
+	"actionid": "kv.season",
+	"label": "Malice Condensed",
+	"startdescription": "Condensed malice will strengthen power of the Huntress.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.pig": 1
+	},
+	"effects": {
+		"malice.grail": 1
+	},
+	"deckeffects": {
+		"malicegrail.additional": 1
+	}
+},
+{
+	"id": "seasonhostile.buffpartyenvoys",
+	"actionid": "kv.season",
+	"label": "Gathering Malice",
+	"startdescription": "The malice of this world is heeding the call of the enemy and gathering—our troubles are about to multiply.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.partyenvoys": 1
+	},
+	"effects": {
+		"malice.moon": 2
+	}
+},
+{
+	"id": "seasonhostile.buffpartysecret",
+	"actionid": "kv.season",
+	"label": "Gathering Malice",
+	"startdescription": "The malice of this world is heeding the call of the enemy and gathering—our troubles are about to multiply.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.partysecret": 1
+	},
+	"effects": {
+		"malice.velvet": 2
+	}
+},
+{
+	"id": "seasonhostile.buffpartymain",
+	"actionid": "kv.season",
+	"label": "Gathering Malice",
+	"startdescription": "The malice of this world is heeding the call of the enemy and gathering—our troubles are about to multiply.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.partymain": 1
+	},
+	"deckeffects": {
+		"kd.maliceknots": 1,
+		"maliceknots.additional": 1
+	}
+},
+{
+	"id": "seasonhostile.spawntrace",
+	"actionid": "kv.season",
+	"label": "Malicious Infiltration",
+	"startdescription": "My foes will not overlook any detail that might expose my whereabouts. It is impossible for me to evade them forever.",
+	"warmup": 10,
+	"effects": {
+		"ke.trace": 1
+	}
+},
+{
+	"id": "kr.seasonpowerful",
+	"actionid": "kv.season",
+	"warmup": 0,
+	"requirements": {
+		"ke.seasonpowerful": 1
+	},
+	"effects":{
+		"ke.printchandler": 1
+	},
+	"linked":[
+		{
+			"id": "seasonpowerful.chandler"
+		},
+		{
+			"id": "seasonpowerful.steel"
+		},
+		{
+			"id": "seasonpowerful.sun"
+		},
+		{
+			"id": "seasonpowerful.default"
+		}
+	]
+},
+{
+	"id": "seasonpowerful.chandler",
+	"actionid": "kv.season",
+	"label": "Power Rises",
+	"startdescription": "At last, the vast machinery of the world has turned to the right position; clear power rises from a deeper source. What enlightenment will come to me today? What breakthrough might it bring?",
+	"description": "I have been stronger than this, more glorious; but even this shall suffice to make those who scorn me regret it.",
+	"warmup": 30,
+	"extantreqs":{
+		"ascensionchandler": 1
+	},
+	"deckeffects": {
+		"kd.strengthchandler": 2
+	}
+},
+{
+	"id": "seasonpowerful.steel",
+	"actionid": "kv.season",
+	"label": "Power Rises",
+	"startdescription": "At last, the vast machinery of the world has turned to the right position; clear power rises from a deeper source. What enlightenment will come to me today? What breakthrough might it bring?",
+	"description": "I have been stronger than this, more glorious; but even this shall suffice to make those who scorn me regret it.",
+	"warmup": 30,
+	"extantreqs":{
+		"ascensionsteel": 1
+	},
+	"deckeffects": {
+		"kd.strengthsteel": 2
+	}
+},
+{
+	"id": "seasonpowerful.sun",
+	"actionid": "kv.season",
+	"label": "Power Rises",
+	"startdescription": "At last, the vast machinery of the world has turned to the right position; clear power rises from a deeper source. What enlightenment will come to me today? What breakthrough might it bring?",
+	"description": "I have been stronger than this, more glorious; but even this shall suffice to make those who scorn me regret it.",
+	"warmup": 30,
+	"extantreqs":{
+		"ascensionsun": 1
+	},
+	"deckeffects": {
+		"kd.strengthsun": 2
+	}
+},
+{
+	"id": "seasonpowerful.default",
+	"actionid": "kv.season",
+	"label": "Power Rises",
+	"startdescription": "At last, the vast machinery of the world has turned to the right position; clear power rises from a deeper source. What enlightenment will come to me today? What breakthrough might it bring?",
+	"description": "I have been stronger than this, more glorious; but even this shall suffice to make those who scorn me regret it.",
+	"warmup": 30,
+	"deckeffects": {
+		"kd.strength": 2
+	}
+},
+{
+	"id": "kr.seasondreaming",
+	"actionid": "kv.dream",
+	"label": "Restless Thoughts",
+	"startdescription": "They say dreams are reflections of the light of the Watchman. If that is true, then my well‑shielded mind should be free of dreams. Yet I still dream. If I do not use this chance to contemplate something, I shall dream of my own past and deeper longings…\n\n[Place a Desire card and a specific Opportunity card to transform the Desire. If no cards are placed, you will receive random dreams and outcomes.]",
+	"requirements":{
+		"ke.seasondreaming": 1
+	},
+	"slots": [
+		{
+			"id": "dreamneeddesire",
+			"label": "Desire",
+			"required": {
+				"desire": 1
+			}
+		}
+	],
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.dreamrandom"
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.dreamhint.ascension"
+		},
+		{
+			"id": "kr.dreamdesire"
+		}
+	]
+},
+{
+	"id": "kr.monstersetup",
+	"actionid": "kv.monster",
+	"label": "Monsters Walk This Place",
+	"comments": "这一recipe链接着敌人轮次的循环，只在有敌人时触发",
+	"startdescription": "Anomalous beings walk this place, and they will not remain content merely to watch forever—",
+	"warmup": 10,
+	"extantreqs": {
+		"tag.monster": 1
+	},
+	"linked": [
+		{
+			"id": "kr.monstercycle"
+		}
+	]
+}
+]
+}

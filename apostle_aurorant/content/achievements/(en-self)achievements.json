@@ -1,0 +1,153 @@
+{
+"achievements": [
+    { 
+	"id": "CATEGORY_AURORANT", 
+	"isCategory": true,  
+	"label": "Apostle Aurorant", 
+	"iconUnlocked": "ka.newstart" 
+    },
+    { 
+        "id": "A_AURORANT_VICTORY_CHANDLER",
+        "iconLocked": "ascensionchandler", 
+        "iconUnlocked": "ascensionchandler", 
+        "label": "No Turning Aside",
+        "descriptionLocked": "This was necessary.",
+        "descriptionUnlocked": "This was necessary.",
+        "unlockMessage": "<i>This was necessary.</i>\n\n[You ascended to become the Chandler, winning the Second Dawn and bringing forward the destined dusk in advance.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VICTORY_STEEL",
+        "iconLocked": "ascensionsteel", 
+        "iconUnlocked": "ascensionsteel", 
+        "label": "Steel Revolution",
+        "descriptionLocked": "We shall at last create a new world: pure, bright, and perfect. And that shall be the Dawn most magnificent, and beautiful.",
+        "descriptionUnlocked": "We shall at last create a new world: pure, bright, and perfect. And that shall be the Dawn most magnificent, and beautiful.",
+        "unlockMessage": "<i>We shall at last create a new world: pure, bright, and perfect. And that shall be the Dawn most magnificent, and beautiful.</i>\n\n[You have become the first God-from-Steel, and you will bring the Dawn and restore the order of the entire world.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VICTORY_SUN",
+        "iconLocked": "ke.desiresun", 
+        "iconUnlocked": "ke.desiresun", 
+        "label": "The Sun Returns to Noon",
+        "descriptionLocked": "I shall walk with him under the most ascendant name... as of old.",
+        "descriptionUnlocked": "I shall walk with him under the most ascendant name... as of old.",
+        "unlockMessage": "<i>I shall walk with him under the most ascendant name... as of old.</i>\n\n[You opened the way for the Sun-in-Splendour to return, and became his most prominent Name.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VICTORY_NORMAL",
+        "iconLocked": "contentment", 
+        "iconUnlocked": "contentment", 
+        "label": "Before the Dawn",
+        "descriptionLocked": "At least for now, I already have everything I need. And that is already enough.",
+        "descriptionUnlocked": "At least for now, I already have everything I need. And that is already enough.",
+        "unlockMessage": "<i>At least for now, I already have everything I need. And that is already enough.</i>\n\n[You won this war in your own way - perhaps this is the best ending.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_DEATH_CAT",
+        "iconLocked": "ke.cat", 
+        "iconUnlocked": "ke.cat", 
+        "label": "Beneath the Soil",
+        "descriptionLocked": "I could rise no higher, nor would I ever be found.",
+        "descriptionUnlocked": "I could rise no higher, nor would I ever be found.",
+        "unlockMessage": "<i>I could rise no higher, nor would I ever be found.</i>\n\n[You were slain by the Huntress, Kitling Ripe of the Velvet.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_DEATH_PIG",
+        "iconLocked": "ke.pig", 
+        "iconUnlocked": "ke.pig", 
+        "label": "The End of Gluttony",
+        "descriptionLocked": "A sweet red tide devoured me.",
+        "descriptionUnlocked": "A sweet red tide devoured me.",
+        "unlockMessage": "<i>A sweet red tide devoured me.</i>\n\n[You were slain by the Huntress, Lagiah, the Queen Unsated of the Red Grail.]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_DEATH_SKADI",
+        "iconLocked": "ke.skadi", 
+        "iconUnlocked": "ke.skadi", 
+        "label": "A Reckoning",
+        "descriptionLocked": "The Madrugad will take her due in the end.",
+        "descriptionUnlocked": "The Madrugad will take her due in the end.",
+        "unlockMessage": "<i>The Madrugad will take her due in the end.</i>\n\n[你被昕旦的女猎手，斯卡蒂所杀。]",
+        "isHidden": false, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VILE_WITNESS",
+        "iconLocked": "ke.thespring", 
+        "iconUnlocked": "ke.thespring", 
+        "label": "Not Observed to Act",
+        "descriptionLocked": "Unmoved, still watching over his domain.",
+        "descriptionUnlocked": "Unmoved, still watching over his domain.",
+        "unlockMessage": "<i>No wave escapes his piercing, watchful eye,\nWhich shines as he surveys his watery sphere.\nThe one-eyed king appears once more in strength,\nUnmoved, still watching over his domain.</i>\n\n[You became a Name of the Witness - who watches, and is not observed to act.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VILE_WOLF",
+        "iconLocked": "enemy.wolfshard", 
+        "iconUnlocked": "enemy.wolfshard", 
+        "label": "Dawn of Blood",
+        "descriptionLocked": "One day, then, sooner than you think, the world will be all aflame.",
+        "descriptionUnlocked": "One day, then, sooner than you think, the world will be all aflame.",
+        "unlockMessage": "<i>One day, then, sooner than you think, the world will be all aflame.</i>\n\n[You were devoured by the Wolf-Divided, and he will bring the Dawn of blood.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_VILE_BONES",
+        "iconLocked": "nameofgrail", 
+        "iconUnlocked": "nameofgrail", 
+        "label": "Feast of the Blackbone",
+        "descriptionLocked": "A reckoning, is not to be postponed indefinitely.",
+        "descriptionUnlocked": "A reckoning, is not to be postponed indefinitely.",
+        "unlockMessage": "<i>A reckoning, is not to be postponed indefinitely.</i>\n\n[You were devoured by the Blackbone, and were reborn as one of her Names.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_THEBELL",
+        "iconLocked": "ke.thebell", 
+        "iconUnlocked": "ke.thebell", 
+        "label": "Shaking the Hours",
+        "descriptionLocked": "To ring this bell may scarcely be called wise, yet how rich the reward!",
+        "descriptionUnlocked": "To ring this bell may scarcely be called wise, yet how rich the reward!",
+        "unlockMessage": "<i>To ring this bell may scarcely be called wise, yet how rich the reward!</i>\n\n[You have awakened the strike-tone of the bell of Ys - the tremor that once shattered the moon and drove the sun out of the sky.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_KILLSKADI",
+        "iconLocked": "ke.opriposte", 
+        "iconUnlocked": "ke.opriposte", 
+        "label": "A Destined Victory",
+        "descriptionLocked": "I have washed away my shame and cleared my path.",
+        "descriptionUnlocked": "I have washed away my shame and cleared my path.",
+        "unlockMessage": "<i>I have washed away my shame and cleared my path.</i>\n\n[You defeated a legendary opponent - the Name of the Madrugad who hunts those might become Hours, and once defeated you in Caen.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    },
+    { 
+        "id": "A_AURORANT_KILLWOLF",
+        "iconLocked": "rkx.weakness.wolf", 
+        "iconUnlocked": "rkx.weakness.wolf", 
+        "label": "THE WOUND",
+        "descriptionLocked": "The Sun was divided, and this is its wound.",
+        "descriptionUnlocked": "The Sun was divided, and this is its wound.",
+        "unlockMessage": "<i>The Sun was divided, and this is its wound.</i>\n\n[You defeated the god of pain and unmaking, and thus bore the pain of the Sun yourself.]",
+        "isHidden": true, 
+        "category": "CATEGORY_AURORANT"
+    }
+]
+}

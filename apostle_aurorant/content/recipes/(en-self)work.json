@@ -1,0 +1,1159 @@
+{
+"recipes":[
+{
+	"id": "kh.ascensionritual.chandler7",
+	"actionid": "kv.work",
+	"label": "Necessary Sacrifice...?",
+	"startdescription": "The close of one tale is also the beginning of another.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1,
+		"ke.opnuma": 1,
+		"strength.chandler": 1,
+		"ke.searingenigma": 1,
+		"ke.thespring": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler6",
+	"actionid": "kv.work",
+	"label": "Surrender the Past...?",
+	"startdescription": "Only by surrender all that is past can one embrace a wholly new self.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1,
+		"ke.opnuma": 1,
+		"strength.chandler": 1,
+		"ke.searingenigma": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler5",
+	"actionid": "kv.work",
+	"label": "By the Will of the Chandler...?",
+	"startdescription": "If the Work of descent is to be accomplished, understanding of the Chandler's nature is indispensable.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1,
+		"ke.opnuma": 1,
+		"strength.chandler": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler4",
+	"actionid": "kv.work",
+	"label": "In the Name of the Chandler...?",
+	"startdescription": "The Chandler must bear witness to this Work, even if only as a wisp of refracted light......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1,
+		"ke.opnuma": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler3",
+	"actionid": "kv.work",
+	"label": "The Wrong Time...?",
+	"startdescription": "The Chandler cannot descend in the hours under the Hours' dominion; but there is, perhaps, one season alone which might spare it from that dominion......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler2",
+	"actionid": "kv.work",
+	"label": "A God's Remnant Power...?",
+	"startdescription": "Only by touching the power that created them, can the Loopholes of the Histories be opened. Perhaps the lingering power of some god might also serve......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.chandler1",
+	"actionid": "kv.work",
+	"label": "Eternal Loopholes...?",
+	"startdescription": "Before I begin the final working, I must first rouse the Loopholes that the gods left in the Histories—these flaws shall create the opportunity for the Chandler's descent.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ascensionchandler": 1
+	}
+},
+{
+	"id": "ascensionritual.chandler.start",
+	"actionid": "kv.work",
+	"label": "Leave a Place Without Entering It",
+	"startdescription": "The hour of ascension has come.\n\nAt last, under the witness of scattered dim light, in the name of the Sun of Dusk, I step into the misty vapours of Numa—where what happens tends to linger forever. But what I do shall be different. The treacherous Hours wove loopholes to evade Eternity, and now those very loopholes serve my turn.\n\nI stand where the Hours' grip is weakest, at the moment their dominion is most feeble—and the weave of reality shows a fatal gap: I cannot enter here, I have never entered here, yet I have arrived, and I am about to depart from this side of dream—I shall rise higher.",
+	"burnimage": "chandlerburning",
+	"craftable": true,
+    "signalEndingFlavour": "Grand",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.numenloop": 1,
+		"ke.moonfragment": 1,
+		"ke.opnuma": 1,
+		"strength.chandler": 1,
+		"ke.searingenigma": 1,
+		"ke.thespring": 1,
+		"ke.wpntwin": 1
+	},
+	"linked":[
+		{
+			"id": "ascensionritual.chandler.end"
+		}
+	]
+},
+{
+	"id": "ascensionritual.chandler.end",
+	"actionid": "kv.work",
+	"label": "Act Before One is Born",
+	"startdescription": "I have received the baptism of the Spring of Forgetting, casting aside my own existence along with the entire world. Now all that remains within me is a searing enigma and the flame of the Chandler—a flame that blazes with boundless joy, for it has waited too long, far too long for this moment.\n\nAs the searing steel tore through my flesh and blood gushed from my broken body, I realised—too late—that ascension was nothing but a base lie. I gave up my name, my self, and let the whole world forget my very being. All I have done has only served as testimony to the god who carries fire ... enabling Them to act before They were born.",
+    "description": "My consciousness has departed this side of dream, falling into utter annihilation and emptiness—Nowhere itself is not so silent. I do not belong to Nowhere. My end is deeper, colder, than death.",
+	"signalEndingFlavour": "Melancholy",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1
+	},
+	"ending": "aurorant.ending.ascensionchandler"
+},
+{
+	"id": "kh.ascensionritual.steel7",
+	"actionid": "kv.work",
+	"label": "A Whim of Creation",
+	"startdescription": "What I am to accomplish is a Work without precedent; therefore, as with my usual labours, I must summon new passions and innovations...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1,
+		"ke.skillforge": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1,
+		"ke.numenbell": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel6",
+	"actionid": "kv.work",
+	"label": "Strike the Hours...?",
+	"startdescription": "Ys, with her arts, found a tolling that could strike the Hours — I too seek to overturn the Hours' dominion and the order of the Mansus, and so I too must use this secret to recast myself into a thing equally dreadful...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1,
+		"ke.skillforge": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel5",
+	"actionid": "kv.work",
+	"label": "Purification of Fire...?",
+	"startdescription": "The Madrugad knows the Work of Forge; only her power can purify me to an inviolate state......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1,
+		"ke.skillforge": 1,
+		"ke.moonfragment": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel4",
+	"actionid": "kv.work",
+	"label": "Exaltation of Light...?",
+	"startdescription": "The Meniscate knows the Work of Forge; only her power can exalt me to a transcendent state......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1,
+		"ke.skillforge": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel3",
+	"actionid": "kv.work",
+	"label": "A Spark of Divinity...?",
+	"startdescription": "If the divine spark be wanting — though as yet imperfect — then the Work cannot be accomplished......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel2",
+	"actionid": "kv.work",
+	"label": "The Last Work...?",
+	"startdescription": "I must begin the final Work within the overflowing forge, and utterly purge from this body its last flaws and weaknesses......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.steel1",
+	"actionid": "kv.work",
+	"label": "An Apostle Who Guides...?",
+	"startdescription": "The Mansus — the House of the Sun beyond the world — is the final destination of this journey. I need a worthy one to open for me the road thither......",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"requirements": {
+		"ascensionsteel": 1
+	}
+},
+{
+	"id": "ascensionritual.steel.start",
+	"actionid": "kv.work",
+	"label": "In a Form Both Perfect and Terrible",
+	"startdescription": "The hour of ascension has come\n\nAt last, in the churning metal of the forge, guided by passion and strange fancies, I have stripped away the last of my flaws and weaknesses, forged within myself the divinity of creation and the secret to strike the Hours—and now I rise, reborn, in a form both perfect and terrible.\n\nI crush my enemies as one crushes ants; I sweep away the fissures in reality as one sweeps dust—and thus Ys endures, though it teeters on the brink, barely clinging to life.",
+	"burnimage": "steelburning",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"servant.pioneer.profane": 1,
+		"ke.theforge.full": 1,
+		"ke.skillforge": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1,
+		"ke.numenbell": 1,
+		"strength.steel": 1
+	},
+	"haltverb":{
+		"kv.boss": 1,
+		"kv.monster": 1,
+		"kv.enemyaction": 99,
+		"kv.event": 99
+	},
+	"purge":{
+		"ka.enemy": 99
+	},
+	"linked":[
+		{
+			"id": "ascensionritual.steel.end"
+		}
+	]
+},
+{
+	"id": "ascensionritual.steel.end",
+	"actionid": "kv.work",
+	"label": "In the Name of Flame and Steel",
+	"startdescription": "Behold the sea calmed, the tumult ceased. My apostle, blade as key, drives the secret that corrupts all Histories deep into the flesh of dream. Then the Savage Door—or a wound very much like it—is laid bare, and the cobalt mists of the Mansus spill forth from it like blood.\n\nI seize the wound without mercy and tear it wide open—then, bathed in surging power and the light of enlightenment, I begin to ascend.",
+	"description": "The power of the Hours wanes; my own still rises. The old reign is over. A new revolution has begun.",
+    "signalEndingFlavour": "Grand",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1
+	},
+	"ending": "aurorant.ending.ascensionsteel"
+},
+{
+	"id": "kh.ascensionritual.sun7",
+	"actionid": "kv.work",
+	"label": "The Final Resolve...?",
+	"startdescription": "To endure the pain, to accept the sacrifice, to summon forth the resolve to cast away all that one possesses here — this is the last price I must pay...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1,
+		"ke.shatteredcrown": 1,
+		"ke.thewound": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun6",
+	"actionid": "kv.work",
+	"label": "Scar of the Sun...?",
+	"startdescription": "The Wolf-Divided — the Sun's worst self, and his most grievous wound. Only when he is joined with the Sun's other selves can the Sun be reborn...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1,
+		"ke.shatteredcrown": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun5",
+	"actionid": "kv.work",
+	"label": "Gift of the Sun-in-Rags...?",
+	"startdescription": "Who burns still, yet not as it was — the Sun-in-Rags was once one of the Sun's aspects, and bound closely to him...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun4",
+	"actionid": "kv.work",
+	"label": "Price of the Madrugad...?",
+	"startdescription": "Who comes before the Sun, who goes before the Sun — the Madrugad was once one of the Sun's aspects; now she too shall bid for his return..",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1,
+		"ke.moonfragment": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun3",
+	"actionid": "kv.work",
+	"label": "Remnant Power of the Meniscate...?",
+	"startdescription": "Which was born in the Moon from Light — the Meniscate was once the Sun's night-self; her remnant power shall make possible his return...",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun2",
+	"actionid": "kv.work",
+	"label": "Enlightenment for Ascension...?",
+	"startdescription": "I require an unyielding will, to overcome the hardships and perils of the ascent.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1
+	}
+},
+{
+	"id": "kh.ascensionritual.sun1",
+	"actionid": "kv.work",
+	"label": "The Way to Return...?",
+	"startdescription": "The Sun-in-Splendor shall return by the Paths of the Sun, and I must open the way for him with knowledge.",
+	"craftable": false,
+	"hintonly": true,
+	"extantreqs":{
+		"ke.domcage": 1
+	},
+	"requirements": {
+		"ascensionsun": 1
+	}
+},
+{
+	"id": "ascensionritual.sun.start",
+	"actionid": "kv.work",
+	"label": "Second Ascension",
+	"startdescription": "The hour of ascension has come.\n\nAt last, with the most refined will, in the name of the once-highmost, I set foot once more upon the Paths of the Sun—through the piercing thorns, onto the golden stair, past the infinite deceptions of illusion...\n\nThis time, the light at the path's end is no longer distant. And I realise with a start—it is the same clear, golden, magnificent light that I once knew so well-",
+	"burnimage": "sunburning",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.numenasce": 1,
+		"strength.sun": 1,
+		"ke.moonfragment": 1,
+		"ke.duskessence": 1,
+		"ke.shatteredcrown": 1,
+		"ke.thewound": 1,
+		"ke.finalresolve": 1
+	},
+	"linked":[
+		{
+			"id": "ascensionritual.sun.end"
+		}
+	]
+},
+{
+	"id": "ascensionritual.sun.end",
+	"actionid": "kv.work",
+	"label": "The Sun Returns to Noon",
+	"startdescription": "The remnants of the Sun-in-Splendour lie not only in his many selves, but also in my blood, and in every living being that once beheld his radiance. Now, through my sacrifice, all these fragments, all this splendour, gather into one—and he returns to the world, reborn.\n\nHe is without doubt the same Sun I knew. Yet in his touch, there is something unfamiliar...something the world might call mercy.",
+    "description": "My wounds shall be healed, and my devotion shall be remembered. Thus he promised. When the turmoil has subsided, and all is over, I shall walk with him under the most ascendant name... as of old.",
+	"signalEndingFlavour": "Grand",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1
+	},
+	"ending": "aurorant.ending.ascensionsun"
+},
+{
+	"id": "kr.keepinfluence",
+	"actionid": "kv.work",
+	"label": "Maintain Influence",
+	"startdescription": "As a Name of the Chandler, I can perform a timely trick to maintain a favorable influence.\n\n[This refreshes the duration of an influence.]",
+	"description": "Tick, tock.",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1,
+		"lore": -1,
+		"tag.ascension": -1,
+		"tag.norefresh": -1,
+		"influence": 1
+	},
+	"aspects": {
+		"refresh": 1
+	}
+},
+{
+	"id": "kr.reloadshotgun",
+	"actionid": "kv.work",
+	"label": "Awaken the Ghoulish Shotgun",
+	"startdescription": "The dead are silent, but their pain and hatred are never forgotten.\n\n[This will consume Remnant and greatly enhance this weapon's attributes!]",
+	"description": "And the roar of this thing shall speak for them.",
+	"craftable": true,
+	"warmup": 10,
+	"grandreqs": {
+        "ka.forging": -1,
+		"ka.malice": -1,
+		"ke.wpnshotgun": 1,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1
+	},
+	"aspects": {
+		"reload": 1
+	}
+},
+{
+	"id": "kr.reloadshotgun2",
+	"actionid": "kv.work",
+	"label": "Awaken the Ghoulish Shotgun with Immortal Remnant",
+	"startdescription": "The dead are silent, but their pain and hatred are never forgotten.\n\n[This will consume Remnant and greatly enhance this weapon's attributes! In particular, consuming the Remnant of Long may cause this weapon to fire twice.]",
+	"description": "And the roar of this thing shall speak for them.",
+	"craftable": true,
+	"warmup": 10,
+	"grandreqs": {
+        "ka.forging": -1,
+		"ka.malice": -1,
+		"ke.wpnshotgun": 1,
+		"ke.corpselong": 1
+	},
+	"aspects": {
+		"reload2": 1
+	}
+},
+{
+	"id": "kr.reloadhammer",
+	"actionid": "kv.work",
+	"label": "Reload: Hammer of Glory",
+	"startdescription": "The unique structure of this weapon allows for a dangerous utilization of Bitterblack Salt's destructive power—\n\n[This will consume Bitterblack Salt and greatly enhance this weapon's attributes!]",
+	"description": "And this power must be released as soon as possible!",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+        "ka.forging": -1,
+		"ka.malice": -1,
+		"ke.wpnhammer": 1,
+		"ke.ammob": 1
+	},
+	"aspects": {
+		"reload": 1
+	},
+	"effects": {
+		"ka.ammo": -99
+	}
+},
+{
+	"id": "kr.reloadrifle",
+	"actionid": "kv.work",
+	"label": "Reload: Standard-issue Archaize Rifle",
+	"startdescription": "—So it can be fired again. [This will consume Alloy Projectiles and restore the weapon's uses.]",
+	"description": "Done. More forces stands ready.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ka.forging": -1,
+		"ka.malice": -1,
+		"ka.rifle": 1,
+		"ke.ammoa": 1
+	},
+	"aspects": {
+		"reload": 1
+	},
+	"effects": {
+		"ka.ammo": -99
+	}
+},
+{
+	"id": "kh.upgradelore",
+	"actionid": "kv.work",
+	"label": "Upgrade Lore?",
+	"startdescription": "Fire requires its fuel. The principle of light demands sacrifice. Transformation necessitates casting off the old self. Without sacrifice, there is no greater power.\n\n[Insert the corresponding Remnant to upgrade your Lore.]",
+	"requirements": {
+		"ka.forging": -1,
+		"ka.malice": -1,
+		"ka.workable": 1,
+		"lore": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.upgradelore",
+	"actionid": "kv.work",
+	"label": "Upgrade Lore",
+	"startdescription": "Fire requires its fuel. The principle of light demands sacrifice. Transformation necessitates casting off the old self. Without sacrifice, there is no greater power.\n\n[This will take some time, consuming Remnant and upgrading your Lore.]",
+	"description": "Thus I draw power from the sacrifice of others.",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"ka.forging": -1,
+		"ka.malice": -1,
+		"ka.workable": 1,
+		"lore": 1,
+		"remnant": 1
+	},
+	"aspects": {
+		"upgradelore": 1
+	}
+},
+{
+	"id": "kr.healwound.minor",
+	"actionid": "kv.work",
+	"label": "Heal My Wound",
+	"startdescription": "If I have excess strength, I can redirect it to the wound to accelerate its healing. [Place a 'Strength' to remove this wound.]",
+	"description": "Good as new.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.woundminor": 1,
+		"ke.strengtha": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1,
+		"healhealth": 1
+	}
+},
+{
+	"id": "kr.recoverhealth.fast",
+	"actionid": "kv.work",
+	"label": "Restore My Power",
+	"startdescription": "I can redirect power here to hasten its recovery.\n\n[This will consume a 'Strength' and restore Heath. It won't take long.]",
+	"description": "Feel brand new.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.healthrecovering": 1,
+		"ke.strengtha": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"healhealth": 1
+	}
+},
+{
+	"id": "kr.recoverhealth.slow",
+	"actionid": "kv.work",
+	"label": "Restore My Power",
+	"startdescription": "I can summon vitality to speed up this part's recovery a little.\n\n[This will consume a 'Vitality' and restore Heath. It won't take long.]",
+	"description": "Life fills anew",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.healthrecovering": 1,
+		"vitality": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"healhealth": 1
+	}
+},
+{
+	"id": "kr.recoverpassion.fast",
+	"actionid": "kv.work",
+	"label": "Restore My Spirit",
+	"startdescription": "I can redirect power here to hasten its recovery.\n\n[This will consume a 'Whimsy' and restore Passion. It will not take long.]",
+	"description": "Made new again.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.passionrecovering": 1,
+		"ke.strengthb": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"healpassion": 1
+	}
+},
+{
+	"id": "kr.recoverpassion.slow",
+	"actionid": "kv.work",
+	"label": "Restore My Spirit",
+	"startdescription": "I can use inspiration to make this part recover somewhat faster.\n\n[This will consume an 'Inspiration' and restore Passion, but it will take longer.]",
+	"description": "Returned to chaos.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.passionrecovering": 1,
+		"glimmering": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"healpassion": 1
+	}
+},
+{
+	"id": "kr.recoverreason.fast",
+	"actionid": "kv.work",
+	"label": "Restore My Spirit",
+	"startdescription": "I can redirect power here to hasten its recovery.\n\n[This will consume a 'Revelation' and restore Reason. It will not take long.]",
+	"description": "Made new again.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.reasonrecovering": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"healreason": 1
+	}
+},
+{
+	"id": "kr.recoverreason.slow",
+	"actionid": "kv.work",
+	"label": "Restore My Spirit",
+	"startdescription": "I can use my light to make this part recover somewhat faster.\n\n[This will consume an 'Erudition' and restore Reason, but it will take longer.]",
+	"description": "Returned to brightness.",
+	"requirements": {
+		"ka.forging": -1,
+		"ke.reasonrecovering": 1,
+		"erudition": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"healreason": 1
+	}
+},
+{
+	"id": "kh.solvemalice",
+	"actionid": "kv.work",
+	"label": "Malice Lingers Here",
+	"startdescription": "The power of a hostile Hour has seeped into this reality. If I do not wish to watch my enemies grow stronger by it, I would do well to invoke the appropriate power and drive it out as soon as possible.\n\n[Meet any threshold to banish Malice.]",
+	"requirements": {
+		"ka.malice": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "solvemalice.illusion.lantern",
+	"actionid": "kv.work",
+	"label": "Respond with Radiance",
+	"startdescription": "Mirrors, curved surfaces, ripples of water—even a light that is but illusion has its path. The phantasms before my eyes gradually recede.",
+	"description": "One step closer to the final goal.",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"malice.illusion": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.illusion.knock",
+	"actionid": "kv.work",
+	"label": "Respond with Opening",
+	"startdescription": "Mirrors, curved surfaces, ripples of water—even a light that is but illusion has its path. The phantasms before my eyes gradually recede.",
+	"description": "One step closer to the final goal.",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"malice.illusion": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.axe.winter",
+	"actionid": "kv.work",
+	"label": "Respond with Finality",
+	"startdescription": "To respond to the threshold with an end, to respond to closure with an end. In absolute silence, even the touch of the Horned-Axe can be dispelled.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.axe": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.axe.edge",
+	"actionid": "kv.work",
+	"label": "Respond with Conflict",
+	"startdescription": "It is said that the Horned-Axe was once also among the Edge Hours, but now she can no longer respond to brute force. The claws of the Owls have been crushed and driven back to the other side of reality.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.axe": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.forge.withforge",
+	"actionid": "kv.work",
+	"label": "Respond with Revolution",
+	"startdescription": "Born in flame, I can burn brighter than this mere spark. Today, the wrath of the Forge shall not overwhelm me.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.forge": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.forge.heart",
+	"actionid": "kv.work",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "An unceasing heart can withstand the direct strike of raging fire—no matter how fiercely it burns, my persistence shall remain unharmed.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.forge": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.grail.withgrail",
+	"actionid": "kv.work",
+	"label": "Respond with Torment",
+	"startdescription": "Torment is craving, and it is also satiation. This understanding allows me to dissolve the touch of red with my own desire.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.grail": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.grail.moth",
+	"actionid": "kv.work",
+	"label": "Respond with Yearning",
+	"startdescription": "Here lies another kind of craving, deeper and more chaotic than hunger or lust—the touch of the Grail recoils in disgust at its buzzing.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.grail": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.madrugad.forge",
+	"actionid": "kv.work",
+	"label": "Respond with Revolution",
+	"startdescription": "With fire to resist the frigid winter—the harshness of the Madrugad holds no sway over the resolve for revolution.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.madrugad": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.madrugad.winter",
+	"actionid": "kv.work",
+	"label": "Respond with Finality",
+	"startdescription": "With calm to resist scorching malice—the harshness of the Madrugad holds no sway over the will to end.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.madrugad": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.malachite.heart",
+	"actionid": "kv.work",
+	"label": "Respond with Preservation",
+	"startdescription": "Here lies the promise of ceaselessness and preservation. The malice of the Malachite shall be driven back into the Wood.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.malachite": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.malachite.grail",
+	"actionid": "kv.work",
+	"label": "Respond with Torment",
+	"startdescription": "This place harbors profound pain and torment—even the Malachite must yield to such craving.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.malachite": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.moon.lantern",
+	"actionid": "kv.work",
+	"label": "Respond with Radiance",
+	"startdescription": "There is no perfection; only pure truth and correctness can endure forever. The light of the Meniscate has been erased by merciless radiance.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.moon": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.moon.knock",
+	"actionid": "kv.work",
+	"label": "Respond with Opening",
+	"startdescription": "The path has been opened — leading to the Wood beyond the reach of moonlight. The Meniscate has been barred from this reality.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.moon": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.velvet.moth",
+	"actionid": "kv.work",
+	"label": "Respond with Deception",
+	"startdescription": "The Velvet lies silently beneath the soil, which makes it both hard to detect and easier to mislead. A clever misdirection is enough to keep me free from its disturbance.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.velvet": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.velvet.history",
+	"actionid": "kv.work",
+	"label": "Respond with Secret",
+	"startdescription": "the Velvet has a penchant for collecting secrets—I could use an enticing piece of history to distract her.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.velvet": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.wolfdivided.edge",
+	"actionid": "kv.work",
+	"label": "Respond with Destruction",
+	"startdescription": "Cunning may answer force, force may answer cunning, and unmaking may answer pain. In the face of the mightiest force, even pain itself may be unmaked.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.wolfdivided": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+},
+{
+	"id": "solvemalice.wolfdivided.winter",
+	"actionid": "kv.work",
+	"label": "Respond with Finality",
+	"startdescription": "Cunning may answer force, force may answer cunning, and finality may answer pain. In the face of the fated finality, even pain itself may be ended.",
+	"description": "This difficulty brought by the power of the Hour has been surmounted—yet there will only be more to come.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"malice.wolfdivided": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.malice": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"aspects": {
+		"exhaust": 1
+	}
+}
+]
+}

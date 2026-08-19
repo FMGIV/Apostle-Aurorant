@@ -1,0 +1,333 @@
+{
+"recipes":[
+{
+	"id": "kh.guidevaultlondon",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Paddock Bunker",
+	"startdescription": "A certain amount of <b>Forge</b> and <b>Moth</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:A Sealed Door\nRequires-8 Forge/6 Knock, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultlondon": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultglasgow",
+	"actionid": "kv.work",
+	"label": "Vault Hint: The Black Bazaar",
+	"startdescription": "A certain amount of <b>Moth</b> and <b>Lantern</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 3:Cultists\nRequires-10 Edge/8 Lantern/8 Moth",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultglasgow": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultbelfast1",
+	"actionid": "kv.work",
+	"label": "Vault Hint: The Collapsed Dock",
+	"startdescription": "A certain amount of <b>Lantern</b> and plenty of <b>Forge</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:Ruins\nRequires-8 Forge/8 Knock, Check failure does not end exploration.\n\nObstacle 3:A Necessary Procedure\nRequires-12 Edge/12 Forge, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultbelfast1": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultpowys",
+	"actionid": "kv.work",
+	"label": "Vault Hint: The Traitor's Grave",
+	"startdescription": "Plenty of <b>Knock</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:A Sealed Door\nRequires-8 Forge/6 Knock, Check failure does not end exploration.\n\nObstacle 3:A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultpowys": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultbelfast2",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Lethe's Hideout",
+	"startdescription": "A certain amount of <b>Moth</b> and plenty of <b>Edge</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:Cultists\nRequires-10 Edge/8 Lantern/8 Moth\n\nObstacle 3:Outer-Things\nRequires-12 Edge/12 Knock/12 Winter",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultbelfast2": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultdover",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Ruined Sanctuary",
+	"startdescription": "A certain amount of <b>Lantern</b> and <b>Forge</b>, or a small amount of <b>Knock</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:A Sealed Door\nRequires-8 Forge/6 Knock, Check failure does not end exploration.\n\nObstacle 2:???\n口口口口口\n\nObstacle 3:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultdover": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultedinburgh",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Sealed Chapel",
+	"startdescription": "A certain amount of <b>Knock</b> and plenty of <b>Moth</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:A Sealed Door\nRequires-8 Forge/6 Knock, Check failure does not end exploration.\n\nObstacle 3:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultedinburgh": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultnorthumb",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Breeze Collection",
+	"startdescription": "A certain amount of <b>Knock</b> and plenty of <b>Grail</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:A Sealed Door\nRequires-8 Forge/6 Knock, Check failure does not end exploration.\n\nObstacle 2:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 3:Drowning Curse\nRequires-15 Heart/15 Grail",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultnorthumb": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidethepaths",
+	"actionid": "kv.work",
+	"label": "Vault Hint: A Dream of the Paths",
+	"startdescription": "Gather all your strength, and your most potent lore to overcome the Paths of the Sun.\n\n\n\n[Scroll down for more details.]\n\n\nObstacle 1:The Wood\nRequires-14 Moth/10 Knock\n\n\nObstacle 2:The Gate of the Secret Histories\nRequires-14 Lantern/10 Secret Histories\n\n\nObstacle 3:The Path of Atonement\nRequires-20 Edge/14 Winter\n\n\nObstacle 4:Ascending Stairs\nRequires-20 Forge/10 Heart\n\n\nObstacle 5:Surging Phantasms\nRequires-Mysteries of Burning Candle",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.thepaths": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultcside1",
+	"actionid": "kv.work",
+	"label": "Vault Hint: The Forgotten Temple",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Forge</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.\n\nObstacle 2: A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.\n\nObstacle 3:Pyric Theoplasma\nRequires-20 Forge/14 Winter\n\nObstacle 4:Furnace Spark\nRequires-30 Forge/20 Heart",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultcside1": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultcside2",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Conflict on the Bounds",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Edge</b> and <b>Winter</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1: Secrecy\nRequires-8 Moth/6 Winter \n\nObstacle 2:The Wood\nRequires-14 Moth/10 Knock\n\nObstacle 3:Adepts\nRequires-12 Forge/12 Lantern/12 Winter\n\nObstacle 4:A Frantic Struggle\nRequires-20 Edge/10 Molten Edge/10 Piercing Edge",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultcside2": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaulttiflis",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Tomb of the Obdurant",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Winter</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1: Secrecy\nRequires-8 Moth/6 Winter \n\nObstacle 2:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.\n\nObstacle 3:Adepts\nRequires-12 Forge/12 Lantern/12 Winter \n\nObstacle 4:Chionic Theoplasma\nRequires-20 Winter/14 Heart",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaulttiflis": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultzest",
+	"actionid": "kv.work",
+	"label": "Vault Hint: The Monastery of the Fifth Cup",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Forge</b> and <b>Heart</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter \n\nObstacle 2:A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.\n\nObstacle 3:Chionic Theoplasma\nRequires-20 Winter/14 Heart\n\nObstacle 4:Aunt Mopsy\nRequires-20 Moth/14 Grail",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultzest": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultmtsk",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Forest of the Wolves",
+	"startdescription": "Plenty of <b>Knock</b> and <b>Heart</b> and <b>Winter</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:The Wood\nRequires-14 Moth/10 Knock \n\nObstacle 3:Chionic Theoplasma\nRequires-20 Winter/14 Heart\n\nObstacle 4:A Woman Consumed by Agony and Despair\nRequires-20 Moth/14 Winter",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultmtsk": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultsigh",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Perfumer Studio",
+	"startdescription": "Plenty of <b>Lantern</b> and <b>Moth</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration \n\nObstacle 3:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.\n\nObstacle 4:Actinic Theoplasma\nRequires-20 Lantern/14 Forge",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultsigh": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultbounds",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Orchard of Lights",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Forge</b> and <b>Heart</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.\n\nObstacle 3:Actinic Theoplasma\nRequires-20 Lantern/14 Forge\n\nObstacle 4:Chionic Theoplasma\nRequires-20 Winter/14 Heart\n\nObstacle 5:The Sun-in-Rags\nRequires-Final Resolve",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultbounds": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultnola",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Crossrow",
+	"startdescription": "Plenty of <b>Moth</b> and <b>Forge</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Secrecy\nRequires-8 Moth/6 Winter\n\nObstacle 2:The Wood\nRequires-14 Moth/10 Knock\n\nObstacle 3:A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.\n\nObstacle 4:Actinic Theoplasma\nRequires-20 Lantern/14 Forge\n\nObstacle 5:Sunset Celia\nRequires-Any 'Ascension' card",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultnola": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultbrcg",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Hush House",
+	"startdescription": "Plenty of <b>Knock</b> and <b>Heart</b> and <b>Secret Histories</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.\n\nObstacle 3:Chionic Theoplasma\nRequires-20 Winter/14 Heart.\n\nObstacle 4:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories, Check failure does not end exploration.\n\nObstacle 5:A History-Ending Truth\nRequires-30 Lantern/20 Secret Histories, Check failure does not end exploration.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultbrcg": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevaultwmlk",
+	"actionid": "kv.work",
+	"label": "Vault Hint: Path to the Lake",
+	"startdescription": "Plenty of <b>Lantern</b> and <b>Forge</b> can aid you in overcoming this vault.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:An Uncertain Location\nRequires-8 Lantern/6 Knock, Check failure does not end exploration.\n\nObstacle 2:Adepts\nRequires-12 Forge/12 Lantern/12 Winter\n\nObstacle 3:A Great Seal\nRequires-14 Forge/10 Knock, Check failure does not end exploration.\n\nObstacle 4:Pyric Theoplasma\nRequires-20 Forge/14 Winter\n\nObstacle 5:The Moon's Wound\nRequires-30 Forge/20 Knock",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ke.vaultwmlk": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevagastepspowys",
+	"actionid": "kv.work",
+	"label": "Vagabond's Steps Hint: Ogófen Finland Dù Cave",
+	"startdescription": "A certain amount of <b>Moth</b> and <b>Forge</b>can aid you in overcoming trial of the Vagabond.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:A Crossroad\nRequires-10 Lantern/8 Moth/1 Whimsy\n\nObstacle 2:Torrent\nRequires-10 Heart/8 Forge/1 Whimsy\n\nObstacle 3:A Crack\nRequires-10 Moth/8 Knock/1 Whimsy",
+	"requirements": {
+		"ke.guidebook": 1,
+        "vagasteps.powys": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevagastepsnorthumb",
+	"actionid": "kv.work",
+	"label": "Vagabond's Steps Hint: A Sanctuary Under The Waterfall",
+	"startdescription": "A certain amount of <b>Edge</b> and <b>Forge</b> and <b>Moth</b>can aid you in overcoming trial of the Vagabond.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Cliff\nRequires-10 Edge/8 Winter/1 Whimsy\n\nObstacle 2:Torrent\nRequires-10 Heart/8 Forge/1 Whimsy\n\nObstacle 3:A Crossroad\nRequires-10 Lantern/8 Moth/1 Whimsy",
+	"requirements": {
+		"ke.guidebook": 1,
+        "vagasteps.northumb": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevagastepssigh",
+	"actionid": "kv.work",
+	"label": "Vagabond's Steps Hint: Cold Light Temple",
+	"startdescription": "Plenty of <b>Heart</b> and <b>Winter</b> and <b>Secret Histories</b>can aid you in overcoming trial of the Vagabond.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Torrent\nRequires-10 Heart/8 Forge/1 Whimsy\n\nObstacle 2:Cliff\nRequires-10 Edge/8 Winter/1 Whimsy\n\nObstacle 3:Bitter Cold\nRequires-14 Winter/10 Heart/1 Whimsy\n\nObstacle 4:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories/1 Whimsy",
+	"requirements": {
+		"ke.guidebook": 1,
+        "vagasteps.sigh": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidevagastepsbounds",
+	"actionid": "kv.work",
+	"label": "Vagabond's Steps Hint: St Hydra's Study",
+	"startdescription": "Plenty of <b>Knock</b> and <b>Moth</b> and <b>Winter</b>can aid you in overcoming trial of the Vagabond.\n\n\n\n[Scroll down for more details.]\n\n\n\nObstacle 1:Torrent\nRequires-10 Heart/8 Forge/1 Whimsy\n\nObstacle 2:A Crack\nRequires-10 Moth/8 Knock/1 Whimsy\n\nObstacle 3:Cliff\nRequires-10 Edge/8 Winter/1 Whimsy\n\nObstacle 4:The Wood\nRequires-14 Moth/10 Knock/1 Whimsy\n\nObstacle 5:A Puzzling Conundrum\nRequires-14 Moth/10 Secret Histories/1 Whimsy",
+	"requirements": {
+		"ke.guidebook": 1,
+        "vagasteps.bounds": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidesunshrine",
+	"actionid": "kv.work",
+	"label": "Sun Shrine Hint",
+	"startdescription": "You need 1 'A Splendour' — the highest‑level Lantern Influence — to restore damaged Reason here.\n\nYou can combine same‑level Influences to upgrade them at the Sun Shrine, or use a 'Revelation' to upgrade any Lantern Influence regardless of level.\n\nStarting the action without playing any card will randomly grant a 6th-order Influence, but doing so carries a small chance of drawing a Malice. You may also spend Reason at a Sun Shrine to reliably gain 1 6th-order Lantern Influence.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "sunshrine": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.guidebook.exportcatalog",
+	"actionid": "kv.work",
+	"label": "Foundry Hint",
+	"startdescription": "You need 12 Forge and a 'Strength' to restore damaged Health here, but you may only do so once at each Foundry.\n\nYou may also craft useful consumables here. Pressing 'Start' will give you a list of recipes for craftable items.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.guidebook": 1,
+        "ka.forging": 1
+	},
+	"extantreqs":{
+		"ke.recipecatalog": -1
+	},
+	"effects":{
+		"ke.recipecatalog": 1
+	}
+},
+{
+	"id": "kh.guideforgeplant",
+	"actionid": "kv.work",
+	"label": "Foundry Hint",
+	"startdescription": "You need 12 Forge and a 'Strength' to restore damaged Health here, but you may only do so once at each Foundry.\n\nYou may also craft useful consumables here.",
+	"requirements": {
+		"ke.guidebook": 1,
+        "ka.forging": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.guidedefault",
+	"actionid": "kv.work",
+	"label": "The Book of Prophecy, the Book of Omniscience",
+	"startdescription": "This will no doubt grant me an advantage—but relying on prophecy is perilous.\n\n[Place in any location to gain hints. Do not do this if you prefer to explore gameplay by yourself.]",
+	"requirements": {
+		"ke.guidebook": 1
+	},
+	"craftable": false,
+	"hintonly": true
+}
+]
+}

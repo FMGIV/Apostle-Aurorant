@@ -1,0 +1,2310 @@
+{
+"recipes":[
+{
+	"id": "kr.spawntrace",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects": {
+		"ke.printgrail": 1
+	},
+	"linked":[
+		{
+			"id": "spawntrace.spawn"
+		}
+	]
+},
+{
+	"id": "spawntrace.spawn",
+	"actionid": "kv.spawn",
+	"label": "Traces Exposed!",
+	"startdescription": "My carelessness drew the attention of some adversary, and this would soon become a problem -",
+	"warmup": 10,
+	"effects": {
+		"ke.trace": 1
+	}
+},
+{
+	"id": "kr.wheeltrace",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects": {
+		"ke.printgrail": 1
+	},
+	"linked":[
+		{
+			"id": "wheeltrace.spawn"
+		}
+	]
+},
+{
+	"id": "wheeltrace.spawn",
+	"actionid": "kv.spawn",
+	"label": "Traces Exposed!",
+	"startdescription": "The idleness in the wilderness exposed my presence, which is likely to cause trouble -",
+	"warmup": 10,
+	"effects": {
+		"ke.trace": 1
+	}
+},
+{
+	"id": "kr.partygoalsetup",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.goalwoundparties": -1,
+		"ke.goalsetbackparties": -1
+	},
+	"effects": {
+		"ke.printedge": 1
+	},
+	"linked":[
+		{
+			"id": "partygoalsetup.spawn"
+		}
+	]
+},
+{
+	"id": "partygoalsetup.spawn",
+	"actionid": "kv.spawn",
+	"label": "Countermeasures...",
+	"startdescription": "This hostile party has grown to a size that poses a threat - but this has also made them relatively easier to track. Now, I can formulate targeted and effective countermeasures.",
+	"description": "Destroying the bases of the opposing groups can significantly reduce their threat and give me more time to achieve my goal; when I have enough spare strength, I can also consider directly killing their members.",
+	"warmup": 10,
+	"effects": {
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	}
+},
+{
+	"id": "kr.tracepartymain.fight",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partymain": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartymain.fight.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartymain.fight.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "This time, the enemy's careless actions revealed their traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partymain": 1
+	}
+},
+{
+	"id": "kr.tracepartymain.search",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partymain": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1,
+		"ke.fogvelvet": -1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartymain.search.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartymain.search.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "A thorough investigation of the area revealed the enemy's traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partymain": 1
+	}
+},
+{
+	"id": "kr.tracepartysecret.fight",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partysecret": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartysecret.fight.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartysecret.fight.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "This time, the enemy's careless actions revealed their traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partysecret": 1
+	}
+},
+{
+	"id": "kr.tracepartysecret.search",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partysecret": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartysecret.search.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartysecret.search.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "A thorough investigation of the area revealed the enemy's traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partysecret": 1
+	}
+},
+{
+	"id": "kr.tracepartyenvoys.fight",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partyenvoys": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartyenvoys.fight.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartyenvoys.fight.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "This time, the enemy's careless actions revealed their traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partyenvoys": 1
+	}
+},
+{
+	"id": "kr.tracepartyenvoys.search",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.partyenvoys": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1
+	},
+	"effects": {
+		"ke.printlantern": 1
+	},
+	"linked":[
+		{
+			"id": "tracepartyenvoys.search.spawn"
+		}
+	]
+},
+{
+	"id": "tracepartyenvoys.search.spawn",
+	"actionid": "kv.spawn",
+	"label": "Enemy's Traces",
+	"startdescription": "A thorough investigation of the area revealed the enemy's traces...",
+	"description": "These will come in handy when I plan my counterattack.",
+	"warmup": 5,
+	"effects": {
+		"trace.partyenvoys": 1
+	}
+},
+{
+	"id": "kr.speciality.malachite",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystnectar": 1
+	},
+	"linked":[
+		{
+			"id": "malachitespeciality.spawnshield"
+		}
+	]
+},
+{
+	"id": "malachitespeciality.spawnshield",
+	"actionid": "kv.myst",
+	"label": "Malachite's Embrace",
+	"startdescription": "My enemies have been protected by the power of the Malachite.",
+	"warmup": 10,
+	"effects":{
+		"ke.shieldmalachite": 1
+	}
+},
+{
+	"id": "kr.speciality.grail",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystgrail": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.grail.spawn"
+		}
+	]
+},
+{
+	"id": "speciality.grail.spawn",
+	"actionid": "kv.myst",
+	"label": "Apocalyptic Famine",
+	"startdescription": "The allure of the Red Grail is awakening appetite and chaos here, drawing otherworldly creatures in swarms.",
+	"warmup": 30,
+	"deckeffects":{
+		"kd.spawnenemygrail": 3
+	}
+},
+{
+	"id": "kr.speciality.axe",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystknock": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.axe.assets"
+		}
+	]
+},
+{
+	"id": "speciality.axe.assets",
+	"actionid": "kv.myst",
+	"label": "Thresholds Liminal",
+	"startdescription": "The Horned-Axe is slicing through the space, forcing some items to move away from the battle line -\n\n[The enemy's special strategy will randomly draw various resources from the battlefield, preventing you from using them for a considerable period of time.]",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needasset1",
+			"label": "Resources",
+			"required": {
+				"asset": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.needasset2",
+			"label": "Resources",
+			"required": {
+				"asset": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.needasset3",
+			"label": "Resources",
+			"required": {
+				"asset": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.axe.allies"
+		}
+	]
+},
+{
+	"id": "speciality.axe.allies",
+	"actionid": "kv.myst",
+	"label": "Thresholds Liminal",
+	"startdescription": "The Horned-Axe is slicing through the space, forcing some allies to move away from the battle line -\n\n[The enemy's special strategy will randomly draw various resources from the battlefield, preventing you from using them for a considerable period of time.]",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needally1",
+			"label": "Allies",
+			"required": {
+				"ka.ally": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.needally2",
+			"label": "Allies",
+			"required": {
+				"ka.ally": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.axe.location"
+		}
+	]
+},
+{
+	"id": "speciality.axe.location",
+	"actionid": "kv.myst",
+	"label": "Thresholds Liminal",
+	"startdescription": "The Horned-Axe is slicing through the space, forcing a strategic location to move away from the battle line -\n\n[The enemy's special strategy will randomly draw various resources from the battlefield, preventing you from using them for a considerable period of time.]",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needlocation",
+			"label": "Location",
+			"required": {
+				"ka.location": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.axe.end"
+		}
+	]
+},
+{
+	"id": "speciality.axe.end",
+	"actionid": "kv.myst",
+	"label": "Strolling There",
+	"startdescription": "Due to the barriers of reality, I am currently unable to utilize the resources there. \n\n[You are temporarily unable to use the trapped resources.]",
+	"description": "The barriers of reality finally collapsed and dissipated, and everything returned to the constraints of common sense.",
+	"warmup": 120
+},
+{
+	"id": "kr.speciality.velvet",
+	"actionid": "kv.myst",
+	"label": "Cover of the Velvet",
+	"startdescription": "My enemies have been protected by the gift from the Velvet.",
+	"warmup": 10,
+	"effects":{
+		"ke.fogvelvet": 1
+	}
+},
+{
+	"id": "kr.speciality.devour",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printdevour": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.devour.draw"
+		}
+	]
+},
+{
+	"id": "speciality.devour.draw",
+	"actionid": "kv.myst",
+	"label": "The Scourge of Gluttony",
+	"startdescription": "The insatiable desire for indulgence has been awakened. All the powerful things in this place will be offered up, allowing the Red Grail to feast.\n\n[The huntress's special strategy will randomly draw a certain amount of influence, opportunities and supplies and consume them.]",
+	"warmup": 10,
+	"linked":[
+		{
+			"id": "speciality.devour.consume1"
+		}
+	]
+},
+{
+	"id": "speciality.devour.consume1",
+	"actionid": "kv.myst",
+	"label": "The Scourge of Gluttony",
+	"startdescription": "Whether it is giving or taking, the Red Grail is never sated - and now she is enjoying her feast here.\n\n[The huntress's special strategy will randomly draw a certain amount of influence, opportunities and supplies and consume them.]",
+	"warmup": 10,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "ks.devourresources1",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.devourresources2",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.devour.consume2"
+		}
+	]
+},
+{
+	"id": "speciality.devour.consume2",
+	"actionid": "kv.myst",
+	"label": "The Scourge of Gluttony",
+	"startdescription": "Whether it is giving or taking, the Red Grail is never sated - and now she is enjoying her feast here.\n\n[The huntress's special strategy will randomly draw a certain amount of influence, opportunities and supplies and consume them.]",
+	"warmup": 10,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "ks.devourresources1",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.devourresources2",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.devour.consume3"
+		}
+	]
+},
+{
+	"id": "speciality.devour.consume3",
+	"actionid": "kv.myst",
+	"label": "The Scourge of Gluttony",
+	"startdescription": "Whether it is giving or taking, the Red Grail is never sated - and now she is enjoying her feast here.\n\n[The huntress's special strategy will randomly draw a certain amount of influence, opportunities and supplies and consume them.]",
+	"warmup": 10,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "ks.devourresources1",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.devourresources2",
+			"label": "Consumes",
+			"required": {
+				"influence": 1,
+				"op": 1,
+				"supplies": 1
+			},
+			"forbidden":{
+				"tag.important": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.devour.end"
+		}
+	]
+},
+{
+	"id": "speciality.devour.end",
+	"actionid": "kv.myst",
+	"label": "The Scourge of Gluttony",
+	"startdescription": "Finally, the terrifying hunger of the Red Cup has been temporarily satisfied.",
+	"warmup": 10
+},
+{
+	"id": "kr.knotblockmove",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystknock": 1
+	},
+	"linked":[
+		{
+			"id": "knotblockmove.spawn"
+		}
+	]
+},
+{
+	"id": "knotblockmove.spawn",
+	"actionid": "kv.myst",
+	"label": "A Desperate Struggle",
+	"startdescription": "Under the guidance of the enemy, the malice of the Knot Gods was able to completely permeate reality, and their immense power constructed an unbreakable seal -\n\n[You will be unable to leave this area.]",
+	"description": "The escape route has been cut off - I will be forced to confront the arduous battle head-on.",
+	"warmup": 10,
+	"effects":{
+		"ke.sealofknot": 1
+	}
+},
+{
+	"id": "kr.supportcat",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects":{
+		"ke.printsupport": 1
+	},
+	"linked":[
+		{
+			"id": "supportcat.spawnmalice"
+		}
+	]
+},
+{
+	"id": "supportcat.spawnmalice",
+	"actionid": "kv.spawn",
+	"label": "Malice Guided",
+	"startdescription": "Soil is turning over, shadows are boiling - the power of the Velvet has been harnessed to support the huntress.\n\n[Malice will make the huntress more dangerous.]",
+	"warmup": 10,
+	"effects":{
+		"malice.velvet": 1
+	}
+},
+{
+	"id": "kr.supportpig",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects":{
+		"ke.printsupport": 1
+	},
+	"linked":[
+		{
+			"id": "supportpig.spawnmalice"
+		}
+	]
+},
+{
+	"id": "supportpig.spawnmalice",
+	"actionid": "kv.supporthuntress",
+	"label": "Malice Guided",
+	"startdescription": "Blood dripped, senses sharpened - the power of the Red Grail has been channeled to support the hunter.\n\n[Malice will make the huntress more dangerous.]",
+	"warmup": 10,
+	"effects":{
+		"malice.grail": 1
+	}
+},
+{
+	"id": "spit.party",
+	"actionid": "kv.spit",
+	"label": "Exhausted",
+	"startdescription": "I used these resources to fend off the enemy's attack. I need to wait before I could rely on them again -",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.ripostepartymain",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "ripostepartymain.spit"
+		}
+	]
+},
+{
+	"id": "ripostepartymain.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"wound.partymain": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.ripostepartysecret",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "ripostepartysecret.spit"
+		}
+	]
+},
+{
+	"id": "ripostepartysecret.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"wound.partysecret": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.ripostepartyenvoys",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "ripostepartyenvoys.spit"
+		}
+	]
+},
+{
+	"id": "ripostepartyenvoys.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"wound.partyenvoys": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.ripostecat",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "ripostecat.spit"
+		}
+	]
+},
+{
+	"id": "ripostecat.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influencemothe": 1
+	}
+},
+{
+	"id": "kr.ripostepig",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "ripostepig.spit"
+		}
+	]
+},
+{
+	"id": "ripostepig.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influencegraile": 1
+	}
+},
+{
+	"id": "spit.lessername",
+	"actionid": "kv.spit",
+	"label": "A Chance to Fight Back?",
+	"startdescription": "Withstanding this attack required some effort, but it also forced the Name to reveal their location.",
+	"description": "If I want to fight back, this very moment would be the best time.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "lessername.spitter.sneaky"
+		}
+	]
+},
+{
+	"id": "lessername.spitter.sneaky",
+	"actionid": "kv.spit",
+	"label": "A Chance to Fight Back?",
+	"startdescription": "However, they managed to avoid my gaze. I need to put in more effort to track this one down.",
+	"warmup": 0,
+	"requirements": {
+		"tag.lessername": 1,
+		"ka.sneaky": 1
+	},
+	"aspects":{
+		"hideenemy": 1
+	}
+},
+{
+	"id": "delaylessername.spit",
+	"actionid": "kv.spit",
+	"label": "Exhausted",
+	"startdescription": "I used these resources to fend off the Name's attack. I need to wait before I could rely on them again -",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "kr.ripostelessername",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "ripostelessername.spit"
+		}
+	]
+},
+{
+	"id": "ripostelessername.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1,
+		"killenemy": 1
+	},
+	"effects":{
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "spit.huntress",
+	"actionid": "kv.spit",
+	"label": "Exhausted",
+	"startdescription": "I used these resources to fend off the huntress's attack. I need to wait before I could rely on them again -",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "skadi.deadlyattack.spit",
+	"actionid": "kv.spit",
+	"label": "Exhausted",
+	"startdescription": "I used these resources to fend off the huntress's attack. I need to wait before I could rely on them again -",
+	"warmup": 0,
+	"linked":[
+		{
+			"id": "skadi.deadlyattack.exhaust"
+		}
+	]
+},
+{
+	"id": "skadi.deadlyattack.exhaust",
+	"actionid": "kv.spit",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "skadi.deadlyattack.killally",
+			"chance": 70
+		}
+	]
+},
+{
+	"id": "skadi.deadlyattack.killally",
+	"actionid": "kv.spit",
+	"label": "Silenced and Still",
+	"startdescription": "Allies helped me fend off the huntress's attack, but this assault was too fatal for them -",
+	"warmup": 0,
+	"requirements":{
+		"ka.ally": 1
+	},
+	"aspects": {
+		"killally": 1
+	}
+},
+{
+	"id": "kr.riposteskadi",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "riposteskadi.spawnwound"
+		},
+		{
+			"id": "riposteskadi.spawntrace"
+		},
+		{
+			"id": "riposteskadi.spawninfluence"
+		}
+	]
+},
+{
+	"id": "riposteskadi.spawnwound",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"extantreqs":{
+		"ke.duelmode": 1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"wound.skadi": 1
+	}
+},
+{
+	"id": "riposteskadi.spawntrace",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"extantreqs":{
+		"ke.goalduel": 1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"trace.skadi": 1
+	}
+},
+{
+	"id": "riposteskadi.spawninfluence",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influencewintere": 1
+	}
+},
+{
+	"id": "kr.destroytoolwpn",
+	"actionid": "spit.winter",
+	"label": "Defenseless!",
+	"startdescription": "I failed to gather enough strength to confront the huntress, and this would cost me the useful tools -",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needtoolwpn",
+			"label": "Destroy!",
+			"required": {
+				"tool": 1,
+				"weapon": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.killally",
+	"actionid": "spit.winter",
+	"label": "Defenseless!",
+	"startdescription": "I failed to gather enough strength to confront the huntress, and this would cost me the helpful allies -",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needally1",
+			"label": "Lose",
+			"required": {
+				"ka.ally": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.needally2",
+			"label": "Allies",
+			"required": {
+				"ka.ally": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects":{
+		"killally": 1
+	}
+},
+{
+	"id": "kr.speciality.healskadi",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystwinter": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.healskadi.consume"
+		}
+	]
+},
+{
+	"id": "speciality.healskadi.consume",
+	"actionid": "kv.myst",
+	"label": "Guiding Life",
+	"startdescription": "Under the guidance of The Madrugad, a tremendous vitality was infused into the hunter's body, enabling his injuries to heal rapidly.\n\n[Skadi's special strategy will attempt to restore the damage she has sustained.]",
+	"warmup": 30,
+	"slots": [
+		{
+			"id": "ks.needwound1",
+			"label": "Guiding",
+			"required": {
+				"wound.skadi": 1
+			},
+			"consumes": true,
+			"greedy": true
+		},
+		{
+			"id": "ks.needwound2",
+			"label": "Life",
+			"required": {
+				"wound.skadi": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.speciality.delay",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystwinter": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.delay.hold"
+		}
+	]
+},
+{
+	"id": "speciality.delay.hold",
+	"actionid": "kv.myst",
+	"label": "Quell and Quiet",
+	"startdescription": "Everything comes to a halt under the chilling light of the Madrugad, and our efficiency will be slowed down.\n\n[Skadi's special strategy will randomly draw resources with the 'exhausted' aspect from the field, slowing down their recovery.]",
+	"warmup": 60,
+	"slots": [
+		{
+			"id": "ks.needexhausted1",
+			"label": "Exhaustion",
+			"required": {
+				"exhausted": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.needexhausted2",
+			"label": "Failure",
+			"required": {
+				"exhausted": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.vagabondgift",
+	"actionid": "kv.event",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystmoth": 1
+	},
+	"linked":[
+		{
+			"id": "vagabondgift.restorepassion"
+		},
+		{
+			"id": "vagabondgift.drawsupplies"
+		}
+	]
+},
+{
+	"id": "vagabondgift.restorepassion",
+	"actionid": "kv.event",
+	"label": "Horizon Evocation",
+	"startdescription": "A touch, or a sting – I can't be sure exactly what happened, but I did feel a certain yearning towards the distant and forbidden; my mind was agitated, as if something was about to break through within –",
+	"description": "The old yearning and passion thus emerged anew from within.",
+	"warmup": 10,
+	"tablereqs":{
+		"ke.passiondamaged": 1
+	},
+	"slots": [
+		{
+			"id": "recoverneedpassion",
+			"label": "What was Lost",
+			"required": {
+				"ke.passiondamaged": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects":{
+		"restorepassion": 1
+	}
+},
+{
+	"id": "vagabondgift.drawsupplies",
+	"actionid": "kv.event",
+	"label": "The Centipede's Treasures",
+	"startdescription": "My yearnings and passion have fully returned, but there are still many resources available here.",
+	"warmup": 10,
+	"tablereqs":{
+		"ke.passiondamaged": -1
+	},
+	"deckeffects": {
+		"kd.lootvagasteps": 4
+	}
+},
+{
+	"id": "kr.spawnagony",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects":{
+		"ke.printwinter": 1
+	},
+	"linked":[
+		{
+			"id": "spawnagony.spawn"
+		}
+	]
+},
+{
+	"id": "spawnagony.spawn",
+	"actionid":"kv.spawn",
+	"label": "An Agonizing Wound",
+	"startdescription": "A lightning-fast, overwhelming pain coursed through every inch of my body. Its intensity exceeded the limits that this mortal frame could endure. Instead, it dissipated into the air, boiling and surging -",
+	"warmup": 10,
+	"effects":{
+		"ke.agony": 1
+	}
+},
+{
+	"id": "kr.spawntwinshadow",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystwinter": 1
+	},
+	"linked":[
+		{
+			"id": "spawntwinshadow.spawn"
+		}
+	]
+},
+{
+	"id": "spawntwinshadow.spawn",
+	"actionid":"kv.spawn",
+	"label": "A Shadow of Time",
+	"startdescription": "A strange wave swept through the space surrounding me. Then, something began to take shape in the hazy dim light -",
+	"description": "Was that the reflection of the blade in the histories? Or was it its twin? Regardless, its lethal power was no less than that of a real weapon.",
+	"warmup": 10,
+	"effects":{
+		"ke.twinshadow": 1
+	}
+},
+{
+	"id": "wolfaction.attackenemy",
+	"actionid":"kv.wolfaction",
+	"warmup": 0,
+	"linked":[
+		{
+			"id": "wolfaction.revealenemy"
+		},
+		{
+			"id": "wolfaction.attackfailed",
+			"chance": 30
+		},
+		{
+			"id": "wolfaction.attacksuccess"
+		}
+	]
+},
+{
+	"id": "wolfaction.revealenemy",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "My incarnation shot out like a dark grey shadow, dragging the enemy out of their hiding place.",
+	"warmup": 10,
+	"requirements":{
+		"ka.hiddenenemy": 1,
+		"ka.enemy": 1
+	},
+	"aspects":{
+		"revealenemy": 1
+	}
+},
+{
+	"id": "wolfaction.attackfailed",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "My incarnation shot out like a dark grey shadow, but its attack movements were too chaotic and disorganized. The enemy remained unharmed.",
+	"warmup": 10,
+	"requirements":{
+		"ka.hiddenenemy": -1,
+		"ka.enemy": 1
+	}
+},
+{
+	"id": "wolfaction.attacksuccess",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "My incarnation shot out like a dark grey shadow, its sharp fangs and teeth like a raging storm tearing apart the enemy's flesh.",
+	"warmup": 10,
+	"requirements":{
+		"ka.hiddenenemy": -1,
+		"ka.enemy": 1
+	},
+	"aspects":{
+		"killenemy": 1
+	}
+},
+{
+	"id": "wolfaction.tracepartymain",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "Perceiving the repulsive scent of the enemy, the form of incarnation trembled with rage, and an angry roar pierced through the space -",
+	"description": "And the location of the enemy is clear.",
+	"warmup": 10,
+	"effects":{
+		"trace.partymain": 1
+	}
+},
+{
+	"id": "wolfaction.tracepartyenvoys",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "Perceiving the repulsive scent of the enemy, the form of incarnation trembled with rage, and an angry roar pierced through the space -",
+	"description": "And the location of the enemy is clear.",
+	"warmup": 10,
+	"effects":{
+		"trace.partyenvoys": 1
+	}
+},
+{
+	"id": "wolfaction.tracepartysecret",
+	"actionid":"kv.wolfaction",
+	"label": "My Incarnation is Hunting",
+	"startdescription": "Perceiving the repulsive scent of the enemy, the form of incarnation trembled with rage, and an angry roar pierced through the space -",
+	"description": "And the location of the enemy is clear.",
+	"warmup": 10,
+	"effects":{
+		"trace.partysecret": 1
+	}
+},
+{
+	"id": "wolfaction.spawninfluence",
+	"actionid":"kv.wolfaction",
+	"label": "Endless Hatred",
+	"startdescription": "Intense pain and hatred were boiling in the air, and the hair on Incarnation's body stood up like sharp spines. It raised its head and issued a call for annihilation -\n\n[This will give you random influences.]",
+	"description": "The underlying power responded to its call and emerged.",
+	"warmup": 10,
+	"deckeffects":{
+		"kd.wolfdrawinfluence": 2
+	}
+},
+{
+	"id": "wolfaction.holdskillimmune",
+	"actionid":"kv.wolfaction",
+	"label": "Mutual Strength",
+	"startdescription": "Feeling the power that transcends all things being reawakened, my incarnation let out an excited rumbling roar. At this moment, under the protection of the Golden Truth, our powers are rising together.\n\n[This will extend the duration of 'Eternal Dominion.']",
+	"warmup": 30,
+	"slots": [
+		{
+			"id": "ks.needskillimmune",
+			"label": "Resonance",
+			"essential": {
+				"ke.skillimmune.active": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "wolfaction.activateskillprofane",
+	"actionid":"kv.wolfaction",
+	"label": "The Torturing Light",
+	"startdescription": "My incarnation bristles with fur, emitting a bored low growl, and a painful, sharp-edged light is ignited from within it - \n\n[This will activate 'Splendorous Judgement'.]",
+	"description": "It intends to feed its thirst for destruction by my hand.",
+	"warmup": 10,
+	"aspects":{
+		"activate": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needskillimmune",
+			"label": "Activate",
+			"essential": {
+				"ke.skillprofane": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "wolfaction.refreshskill",
+	"actionid":"kv.wolfaction",
+	"label": "Inciting Destruction",
+	"startdescription": "My incarnation bristled with fur, emitting a mournful long howl. Within me, an ancient hatred emerged, which gradually transformed into a foreign power in the midst of pain - \n\n[This will restore specific exhausted lores.]",
+	"description": "And this power is constantly urging me to bring about even more destruction.",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needsunskill",
+			"label": "Lore",
+			"required": {
+				"ke.skillimmune.exhausted": 1,
+				"ke.skillprofane.exhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects":{
+		"refresh": 1
+	}
+},
+{
+	"id": "kr.summoncaccia",
+	"actionid": "kv.event",
+	"warmup": 0,
+	"effects":{
+		"ke.cacciacoming": 1
+	},
+	"linked":[
+		{
+			"id": "summoncaccia.spawn"
+		}
+	]
+},
+{
+	"id": "summoncaccia.spawn",
+	"actionid": "kv.event",
+	"label": "Summon the Support of an Ally Force",
+	"startdescription": "The incantation engraved on the carapace sent out a strange tingling vibration that felt like a burst of electric shock, followed by a shower-like rustling sound that began to echo in the sky, growing louder. No raindrops fell - that was the combined resonance of the wings of thousands of the Cross warriors vibrating. \n\n[The Caccia is coming to support.]",
+	"description": "'Hunting, beginszz.'",
+	"warmup": 60,
+	"effects":{
+		"ke.allymoth": 1,
+		"ke.allyguardians": 2,
+		"ke.allybreachers": 2,
+		"ke.allyscouts": 2
+	}
+},
+{
+	"id": "kr.summonlegion",
+	"actionid": "kv.event",
+	"warmup": 0,
+	"effects":{
+		"ke.legioncoming": 1
+	},
+	"linked":[
+		{
+			"id": "summonlegion.spawn"
+		}
+	]
+},
+{
+	"id": "summonlegion.spawn",
+	"actionid": "kv.event",
+	"label": "Summon the Support of an Ally Force",
+	"startdescription": "The small lion-head-shaped emblem in my palm grew hot, and the heat almost made me doubt if it would melt itself. Then, the earth trembled, and the rapid footsteps sounded like thunder in the mountains - the Legion's soldiers had already brought the monster to support us.\n\n[The Legion is coming to support.]",
+	"description": "'At your service.'",
+	"warmup": 60,
+	"effects":{
+		"ke.allycat": 1,
+		"ke.allyriders": 2,
+		"ke.allyadepts": 2,
+		"ke.allymedics": 2
+	}
+},
+{
+	"id": "kr.skadigoalsetup",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.goalduel": -1,
+		"ke.intentduel": -1,
+		"ke.duelmode": -1
+	},
+	"effects": {
+		"ke.printwinter": 1
+	},
+	"linked":[
+		{
+			"id": "skadigoalsetup.spawn"
+		}
+	]
+},
+{
+	"id": "skadigoalsetup.spawn",
+	"actionid": "kv.spawn",
+	"label": "My Foe is Here.",
+	"startdescription": "That was an opponent I would never mistake: her skin was as pale as burnt lime, and her long hair was golden like the cold dawn. She came towards me on the snow, but as she passed by, the flames burned even more fiercely.",
+	"description": "This one once gave me a painful and unforgettable defeat in Caen. Now she has returned again, intent on once more denying my achievements... I have paid the price for my recklessness, and this time it's her turn.",
+	"warmup": 10,
+	"effects": {
+		"ke.goalduel": 1
+	}
+},
+{
+	"id": "kr.traceskadifight",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.skadi": 1,
+		"ke.goalduel": 1,
+		"ke.duelmode": -1
+	},
+	"effects": {
+		"ke.printwinter": 1
+	},
+	"linked":[
+		{
+			"id": "traceskadifight.spawn"
+		}
+	]
+},
+{
+	"id": "traceskadifight.spawn",
+	"actionid": "kv.spawn",
+	"label": "Insight",
+	"startdescription": "Every confrontation, and every struggle, will make the enemy's intentions and capabilities clearer...",
+	"description": "Therefore, I have come to know my foe better.",
+	"warmup": 5,
+	"effects": {
+		"trace.skadi": 1
+	}
+},
+{
+	"id": "kr.skadi.opriposte",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.skadi": 1,
+		"ke.duelmode": 1
+	},
+	"effects": {
+		"ke.printwinter": 1
+	},
+	"linked":[
+		{
+			"id": "skadi.opriposte.spawn"
+		}
+	]
+},
+{
+	"id": "skadi.opriposte.spawn",
+	"actionid": "kv.spawn",
+	"label": "A flaw?",
+	"startdescription": "A fleeting hesitation, a slight deviation -",
+	"warmup": 5,
+	"effects": {
+		"ke.opriposte": 1
+	}
+},
+{
+	"id": "kr.speciality.silence",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects": {
+		"ke.silence": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.silence.hold"
+		}
+	]
+},
+{
+	"id": "speciality.silence.hold",
+	"actionid": "kv.myst",
+	"label": "Silence and Banishment",
+	"startdescription": "The Velvet is the keeper of secrets, and the immortals under her command know how to suppress knowledge.\n\n[The Secret Society will periodically disable a random lore card.]",
+	"warmup": 300,
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needlore",
+			"label": "Lore",
+			"required": {
+				"lore": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "spawnillusion.first",
+	"actionid": "kv.spawn",
+	"label": "Numerous Obstacles",
+	"startdescription": "The Messengers of the House have laid countless sinister illusions here, and the process of getting rid of them will not be pleasant.",
+	"warmup": 0,
+	"effects": {
+		"ke.printlantern": 1,
+		"malice.illusion": 7
+	}
+},
+{
+	"id": "kr.speciality.illusion",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects": {
+		"ke.printmystlantern": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.illusion.spawn"
+		}
+	]
+},
+{
+	"id": "speciality.illusion.spawn",
+	"actionid": "kv.myst",
+	"label": "Illusions Surge",
+	"startdescription": "Confused directions, distorted scenes - the Meniscate's power has brought about more troubles.\n\n[When 'Illusory Radiance' exists on the field, you will be unable to explore 'Path to the Lake'.]",
+	"warmup": 10,
+	"effects":{
+		"malice.illusion": 1
+	}
+},
+{
+	"id": "kr.speciality.reverse",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystlantern": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.reverse.absorb"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.absorb",
+	"actionid": "kv.myst",
+	"label": "Reality Reversed",
+	"startdescription": "The boundaries of reality have been distorted - previously beneficial forces have now been turned against us.",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.influenceorop",
+			"label": "Power",
+			"required": {
+				"influence": 1,
+				"op": 1
+			},
+			"forbidden":{
+				"ka.unfit": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked":[
+		{
+			"id": "speciality.reverse.edge"
+		},
+		{
+			"id": "speciality.reverse.forge"
+		},
+		{
+			"id": "speciality.reverse.grail"
+		},
+		{
+			"id": "speciality.reverse.heart"
+		},
+		{
+			"id": "speciality.reverse.knock"
+		},
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.edge",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"edge": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusione": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.forge"
+		},
+		{
+			"id": "speciality.reverse.grail"
+		},
+		{
+			"id": "speciality.reverse.heart"
+		},
+		{
+			"id": "speciality.reverse.knock"
+		},
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.forge",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"forge": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionf": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.grail"
+		},
+		{
+			"id": "speciality.reverse.heart"
+		},
+		{
+			"id": "speciality.reverse.knock"
+		},
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.grail",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"grail": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusiong": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.heart"
+		},
+		{
+			"id": "speciality.reverse.knock"
+		},
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.heart",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"heart": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionh": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.knock"
+		},
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.knock",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"knock": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionk": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.lantern"
+		},
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.lantern",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"lantern": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionl": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.moth"
+		},
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.moth",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"moth": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionm": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.winter"
+		},
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.winter",
+	"grandreqs": {
+		"[influence]+[op]": 1,
+		"winter": 1
+	},
+	"warmup": 2,
+	"effects":{
+		"enemy.illusionw": 1
+	},
+	"linked": [
+		{
+			"id": "speciality.reverse.end"
+		}
+	]
+},
+{
+	"id": "speciality.reverse.end",
+	"label": "Reversed Reality",
+	"description": "'What is without, within; what is within, without.'",
+	"warmup": 0,
+	"effects":{
+		"influence": -99,
+		"op": -99
+	},
+	"aspects":{
+		"exhaust": 1
+	}
+},
+{
+	"id": "spit.wolfdivided",
+	"actionid": "kv.spit",
+	"label": "Exhausted",
+	"startdescription": "I used these powers to fight against the Wolf, and I need to wait before I could rely on them again -",
+	"warmup": 0,
+	"linked":[
+		{
+			"id": "spit.wolfdivided.exhaust"
+		}
+	]
+},
+{
+	"id": "spit.wolfdivided.exhaust",
+	"actionid": "kv.spit",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "spit.wolfdivided.killally"
+		}
+	]
+},
+{
+	"id": "spit.wolfdivided.killally",
+	"actionid": "kv.spit",
+	"label": "Destruction and Conclusion",
+	"startdescription": "Divided and destroyed - In the face of the Wolf's rage, they had not the slightest chance.",
+	"warmup": 0,
+	"requirements":{
+		"ka.ally": 1
+	},
+	"aspects": {
+		"killally": 1
+	}
+},
+{
+	"id": "kr.speciality.spawnshards",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystedge": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.spawnshards.spawn"
+		}
+	]
+},
+{
+	"id": "speciality.spawnshards.spawn",
+	"actionid": "kv.myst",
+	"label": "Hostility Converges",
+	"startdescription": "The solid malice flowed like blood, shaping: fur, sharp claws, pointed teeth -",
+	"warmup": 10,
+	"effects":{
+		"enemy.wolfshard": 2
+	}
+},
+{
+	"id": "kr.speciality.spawnagony",
+	"actionid": "kv.myst",
+	"warmup": 0,
+	"effects":{
+		"ke.printmystwinter": 1
+	},
+	"linked":[
+		{
+			"id": "speciality.spawnagony.spawn"
+		}
+	]
+},
+{
+	"id": "speciality.spawnagony.spawn",
+	"actionid": "kv.myst",
+	"label": "Rising Hell",
+	"startdescription": "Blood drips, scars flare, flames burn, ice pierces - thousands of kinds of torment and pain all emerge here at the same time, turning this place into a true inferno.",
+	"warmup": 10,
+	"effects":{
+		"ke.agony": 3
+	}
+},
+{
+	"id": "spawncoalition.first",
+	"actionid": "kv.spawn",
+	"label": "Enemies, all around",
+	"startdescription": "The gods have dispatched their most elite troops to this forbidden sea, aiming to seize Isu's legacy for themselves; or, if they fail to win, at least prevent that power from falling into the hands of others. But now, my participation will only make the situation even more chaotic.",
+	"description": "Reality, unreality - regardless of how it is called, the foundation upon which Ys exists has long been approaching its limit. Focusing solely on fighting them is meaningless. I must complete my ultimate mission as soon as possible.",
+	"warmup": 10,
+	"effects": {
+		"enemy.namechick": 1,
+		"enemy.fleetforge": 3,
+		"enemy.namebanshee": 1,
+		"enemy.fleettwins": 3,
+		"enemy.nameeaten": 1,
+		"enemy.fleetbones": 3
+	}
+},
+{
+	"id": "kr.reducestability",
+	"actionid": "kv.event",
+	"label": "The End is Near",
+	"startdescription": "Inside the world, there are continuous terrifying rumblings; reality is warped and shrieking; the end is approaching, and Ys, beneath the waves, is once again struggling at the brink of annihilation --\n\n[Caution! If Ys loses all stability, the game will fail directly.]",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.needys",
+			"label": "Ys",
+			"essential": {
+				"ke.domys": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "reducestability.success"
+		},
+		{
+			"id": "nostability.end"
+		}
+	],
+	"linked":[
+		{
+			"id": "kr.reducestability"
+		}
+	]
+},
+{
+	"id": "reducestability.success",
+	"actionid": "kv.event",
+	"description": "The terrifying creatures then streamed out of the crack from the Bounds. Ys is getting closer and closer to the fate of destruction. Can I complete my final achievement before that? \n\n[Note! If Ys loses all stability, the game will fail directly.]",
+	"warmup": 10,
+	"requirements":{
+		"ke.domys": 1,
+		"ys.stability": 1
+	},
+	"mutations": [
+		{
+			"filter": "ke.domys",
+			"mutate": "ys.stability",
+			"level": -1,
+			"additive": true
+		}
+	],
+	"deckeffects":{
+		"kd.spawnenemyr3": 4
+	}
+},
+{
+	"id": "nostability.end",
+	"actionid": "kv.event",
+	"startdescription": "No longer able to endure any more destruction, the veil of the world was completely torn apart by the aftermath of the conflicts, thrown into the pitch-black void.",
+	"description": "It is finished - It is finished - <b>IT IS THE MERCY</b>",
+	"warmup": 10,
+	"requirements":{
+		"ke.domys": 1,
+		"ys.stability": -1
+	},
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathbones"
+},
+{
+	"id": "kr.ripostecoalition",
+	"actionid": "kv.spit",
+	"warmup": 0,
+	"effects":{
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "ripostecoalition.spit"
+		}
+	]
+},
+{
+	"id": "ripostecoalition.spit",
+	"actionid": "kv.spit",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1,
+		"killenemy": 1
+	},
+	"effects":{
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "spit.coalition",
+	"actionid": "kv.spit",
+	"label": "Enemy Repelled",
+	"startdescription": "We withstood the enemy's attack, but this process also consumed some of our strength.",
+	"description": "If we still have the strength left, we can also launch a counterattack against the enemy.",
+	"warmup": 5,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "spit.coalition.sneaky"
+		}
+	]
+},
+{
+	"id": "spit.coalition.sneaky",
+	"actionid": "kv.spit",
+	"label": "Enemy Repelled",
+	"startdescription": "And the enemy has retreated into the darkness. We need to re-locate their position.",
+	"warmup": 0,
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.sneaky": 1
+	},
+	"aspects":{
+		"hideenemy": 1
+	}
+},
+{
+	"id": "spit.coalition.filterenemy",
+	"actionid": "kv.spit",
+	"label": "The Enemy Rests",
+	"startdescription": "They will strike again soon.",
+	"warmup": 5,
+	"requirements":{
+		"ka.enemy": 1
+	}
+},
+{
+	"id": "forgeattackrivals.spit",
+	"actionid": "kv.spit",
+	"label": "The Fleets are Fighting",
+	"startdescription": "Soon, the outcome of this conflict will be revealed -",
+	"warmup": 10,
+	"linked":[
+		{
+			"id": "forgeattackrivals.failed",
+			"chance": 50
+		},
+		{
+			"id": "forgeattackrivals.success"
+		}
+	]
+},
+{
+	"id": "forgeattackrivals.failed",
+	"actionid": "kv.spit",
+	"label": "The Forge's Fleets Did not Win!",
+	"startdescription": "The fleets of the Forge had the overall advantage, but they did not cause many casualties. This is bad news for us.",
+	"warmup": 0
+},
+{
+	"id": "forgeattackrivals.success",
+	"actionid": "kv.spit",
+	"label": "The Forge's Fleets Won!",
+	"startdescription": "The fleets of the Forge mercilessly defeated their targets. The other two forces have been weakened.",
+	"warmup": 0,
+	"effects":{
+		"enemy.fleetbones": -99,
+		"enemy.fleettwins": -99
+	}
+},
+{
+	"id": "kr.callfleetforge",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects": {
+		"ke.printforge": 1
+	},
+	"linked":[
+		{
+			"id": "callfleetforge.spawn"
+		}
+	]
+},
+{
+	"id": "callfleetforge.spawn",
+	"actionid": "kv.spawn",
+	"label": "Reinforcements Arrived",
+	"startdescription": "Through the complex and confusing prohibited shipping routes, more enemies are approaching.",
+	"warmup": 10,
+	"effects": {
+		"enemy.fleetforge": 2
+	}
+},
+{
+	"id": "bonesattackrivals.spit",
+	"actionid": "kv.spit",
+	"label": "The Fleets are Fighting",
+	"startdescription": "Soon, the outcome of this conflict will be revealed -",
+	"warmup": 10,
+	"linked":[
+		{
+			"id": "bonesattackrivals.failed",
+			"chance": 50
+		},
+		{
+			"id": "bonesattackrivals.success"
+		}
+	]
+},
+{
+	"id": "bonesattackrivals.failed",
+	"actionid": "kv.spit",
+	"label": "The Blackbone's Fleets Did not Win!",
+	"startdescription": "The fleets of the Blackbone had the overall advantage, but they did not cause many casualties. This is bad news for us.",
+	"warmup": 0
+},
+{
+	"id": "bonesattackrivals.success",
+	"actionid": "kv.spit",
+	"label": "The Blackbone's Fleets Won!",
+	"startdescription": "The fleets of the Blackbone completely devoured their targets. The other two forces have been weakened.",
+	"warmup": 0,
+	"effects":{
+		"enemy.fleetforge": -99,
+		"enemy.fleettwins": -99
+	}
+},
+{
+	"id": "kr.callfleetbones",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects": {
+		"ke.printgrail": 1
+	},
+	"linked":[
+		{
+			"id": "callfleetbones.spawn"
+		}
+	]
+},
+{
+	"id": "callfleetbones.spawn",
+	"actionid": "kv.spawn",
+	"label": "Reinforcements Arrived",
+	"startdescription": "Through the complex and confusing prohibited shipping routes, more enemies are approaching.",
+	"warmup": 10,
+	"effects": {
+		"enemy.fleetbones": 2
+	}
+},
+{
+	"id": "twinsattackrivals.spit",
+	"actionid": "kv.spit",
+	"label": "The Fleets are Fighting",
+	"startdescription": "Soon, the outcome of this conflict will be revealed -",
+	"warmup": 10,
+	"linked":[
+		{
+			"id": "twinsattackrivals.failed",
+			"chance": 50
+		},
+		{
+			"id": "twinsattackrivals.success"
+		}
+	]
+},
+{
+	"id": "twinsattackrivals.failed",
+	"actionid": "kv.spit",
+	"label": "The Twins' Fleets Did not Win!",
+	"startdescription": "The fleets of the Twins had the overall advantage, but they did not cause many casualties. This is bad news for us.",
+	"warmup": 0
+},
+{
+	"id": "twinsattackrivals.success",
+	"actionid": "kv.spit",
+	"label": "The Twins' Fleets Won!",
+	"startdescription": "The fleets of the Twins tored their opponents' defense line apart. The other two forces have been weakened.",
+	"warmup": 0,
+	"effects":{
+		"enemy.fleetforge": -99,
+		"enemy.fleetbones": -99
+	}
+},
+{
+	"id": "kr.callfleettwins",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects": {
+		"ke.printheart": 1
+	},
+	"linked":[
+		{
+			"id": "callfleettwins.spawn"
+		}
+	]
+},
+{
+	"id": "callfleettwins.spawn",
+	"actionid": "kv.spawn",
+	"label": "Reinforcements Arrived",
+	"startdescription": "Through the complex and confusing prohibited shipping routes, more enemies are approaching.",
+	"warmup": 10,
+	"effects": {
+		"enemy.fleettwins": 2
+	}
+}
+]
+}

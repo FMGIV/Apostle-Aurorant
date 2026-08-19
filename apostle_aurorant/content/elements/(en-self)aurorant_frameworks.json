@@ -1,0 +1,1418 @@
+{
+"elements":[
+{
+    "id": "ke.printedge",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.edge",
+    "isHidden": true
+},
+{
+    "id": "ke.printforge",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.forge",
+    "isHidden": true
+},
+{
+    "id": "ke.printgrail",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.grail",
+    "isHidden": true
+},
+{
+    "id": "ke.printheart",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.heart",
+    "isHidden": true
+},
+{
+    "id": "ke.printknock",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.knock",
+    "isHidden": true
+},
+{
+    "id": "ke.printlantern",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.lantern",
+    "isHidden": true
+},
+{
+    "id": "ke.printmoth",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.moth",
+    "isHidden": true
+},
+{
+    "id": "ke.printwinter",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "spit.winter",
+    "isHidden": true
+},
+{
+    "id": "ke.printchandler",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "chandler",
+    "isHidden": true
+},
+{
+    "id": "ke.printabnormal",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "poison.long.way.trap",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystedge",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystedge",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystknock",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystknock",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystlantern",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystlantern",
+    "isHidden": true
+},
+{
+    "id": "ke.printdevour",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "devour",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystmoth",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "kv.myst",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystnectar",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystnectar",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystgrail",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystgrail",
+    "isHidden": true
+},
+{
+    "id": "ke.printmystwinter",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "mystwinter",
+    "isHidden": true
+},
+{
+    "id": "ke.printsupport",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "supporthuntress",
+    "isHidden": true
+},
+{
+    "id": "ke.cacciacoming",
+    "label": "？",
+    "comments": "标记飞蛾猎团正在前来。",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "caccia",
+    "isHidden": true
+},
+{
+    "id": "ke.legioncoming",
+    "label": "？",
+    "comments": "标记门关军团正在前来。",
+    "description": "......",
+    "lifetime": 0.1,
+    "verbicon": "legion",
+    "isHidden": true
+},
+{
+    "id": "ke.seasonsilent",
+    "icon": "seasonpleasantday",
+    "label": "Season of Hushed Silence",
+    "description": "A brief calm within the storm's eye.",
+    "lifetime": 1,
+    "aspects": {
+        "ka.season": 1
+    }
+},
+{
+    "id": "ke.seasonhostile",
+    "icon": "dread",
+    "label": "Season of Surging Malice",
+    "description": "Forces from beneath the skin of the world are leaking out in wrongful ways, and their ripples will bring suffering upon the world.",
+    "lifetime": 1,
+    "aspects": {
+        "ka.season": 1
+    }
+},
+{
+    "id": "ke.seasonabnormal",
+    "icon": "seasonsickness",
+    "label": "Season of Chaotic Abnormality",
+    "description": "The skin of the Wake nears the limits of its existence...",
+    "lifetime": 1,
+    "aspects": {
+        "ka.season": 1
+    }
+},
+{
+    "id": "ke.seasonpowerful",
+    "label": "The Season of Power Ascends",
+    "description": "Situations always change. Times of strength will come to pass, granting me new understandings and newfound power.",
+    "lifetime": 1,
+    "aspects": {
+        "ka.season": 1
+    }
+},
+{
+    "id": "ke.seasondreaming",
+    "icon": "memory.splendid",
+    "label": "Season of Past Stirrings",
+    "description": "A protected consciousness should be dreamless. Yet now and then, I still dream — of times past and of possibilities beyond…",
+    "lifetime": 1,
+    "aspects": {
+        "ka.season": 1
+    }
+},
+{
+    "id": "ke.progress",
+    "label": "Progress",
+    "lifetime": 1,
+    "description": "Measuring the progress toward the end."
+},
+{
+    "id": "ke.smallprogress",
+    "label": "Progress (Fragment)",
+    "description": "A minor fragment leading to the end.",
+    "lifetime": 1,
+    "isHidden": true
+},
+{
+    "id": "ke.strategyattack",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.purgemarkenemy": 1
+    },
+    "isHidden": true
+},
+{
+    "id": "monster.attack",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "isHidden": true,
+    "verbicon": "monster.attack"
+},
+{
+    "id": "ke.strategyraid",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.purgemarkenemy": 1
+    },
+    "isHidden": true
+},
+{
+    "id": "monster.raid",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "isHidden": true,
+    "verbicon": "monster.raid"
+},
+{
+    "id": "ke.strategyhide",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.purgemarkenemy": 1
+    },
+    "isHidden": true
+},
+{
+    "id": "monster.hide",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "isHidden": true,
+    "verbicon": "monster.hide"
+},
+{
+    "id": "ke.strategypass",
+    "label": "？",
+    "description": "......",
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.purgemarkenemy": 1
+    },
+    "isHidden": true
+},
+{
+    "id": "ke.markcat",
+    "label": "标记：老成仔猫",
+    "description": "猫儿这个贪玩。",
+    "lifetime": 1,
+    "isHidden": true
+},
+{
+    "id": "ke.markpig",
+    "label": "标记：无餍女王拉吉亚",
+    "description": "猪儿这个贪吃。",
+    "lifetime": 1,
+    "isHidden": true
+},
+{
+    "id": "ke.partymain",
+    "label": "Garrisons of Triple Knot",
+    "description": "A group composed of immortals who serve the Hours of the Knot, said to exist 'to guard the Bounds from threats of all new forms.' So far as their actions toward me suggest, their definition of 'threat' appears uniquely broad in its scope.",
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers": {
+        "defeatparty": "ke.partymaindefeated"
+    }
+},
+{
+    "id": "ke.partysecret",
+    "label": "Secret Society",
+    "description": "For a long time, the immortals under the Velvet have labored in shadow to conceal and contain those knowledges too dangerous for mortals. Their work has been so successful that even their very existence became nearly a secret. But now, the fall of the Calyptra has forced them to emerge from the mists, carrying out orders on behalf of their master—doing work neither elegant nor especially covert.",
+    "aspects": {
+        "ka.threat": 7,
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers": {
+        "defeatparty": "ke.partysecretdefeated"
+    }
+},
+{
+    "id": "ke.partyenvoys",
+    "label": "Messengers of the House of the Moon",
+    "description": "The House of the Moon sends forth its messenger each time, and each time the messenger is different—in eyes, in flesh, in mind... And this time, the new messengers have been charged with bringing the Moon's old wounds back to the House, to fuel the great war now underway.",
+    "verbicon": "partyenvoys",
+    "aspects": {
+        "ka.threat": 7,
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers": {
+        "defeatparty": "ke.partyenvoysdefeated"
+    }
+},
+{
+    "id": "ke.cat",
+    "label": "Kitling Ripe",
+    "verbicon": "huntress.cat",
+    "description": "'Granny's never liked you anyway, and I wouldn't mind tryin' somethin' new for a change.'",
+    "aspects": {
+        "ka.threat": 10,
+        "ka.huntressishere": 1,
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers": {
+        "banhuntress": "influencemothg"
+    }
+},
+{
+    "id": "ke.pig",
+    "label": "Lagiah, the Queen Unsated",
+    "verbicon": "huntress.pig",
+    "description": "'Poor child, come closer, closer still. Why hesitate? The fate you carry is far crueler than mine, is it not?'",
+    "aspects": {
+        "ka.threat": 10,
+        "ka.huntressishere": 1,
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers": {
+        "banhuntress": "influencegrailg"
+    }
+},
+{
+    "id": "ke.skadi",
+    "label": "Skadi, the Demigod Huntress",
+    "verbicon": "huntress.skadi",
+    "description": "'Abandon that foolish ambition. Your end awaits you here. Face me.'",
+    "aspects": {
+        "ka.threat": 12,
+        "ka.huntressishere": 1,
+        "ka.purgemarkgeneral": 1
+    },
+    "xtriggers":{
+        "killhuntress": "ke.duskessence"
+    }
+},
+{
+    "id": "logic.blocktask",
+    "label": "标记：探索阻却",
+    "description": "阻止你同时探索两个藏宝地，或同时进行两项任务。",
+    "lifetime": 0.1,
+    "isHidden": true
+},
+{
+    "id": "huntress.threat",
+    "label": "Threat",
+    "description": "As time passes, the danger level of huntress will continue to increase. [If this reaches 20, you will find yourself in an extremely perilous situation.]",
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.token",
+    "label": "？",
+    "description": "......",
+    "comments": "占位符，用于在部分配方中计数。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.husk",
+    "icon": "jumble",
+    "label": "空壳",
+    "comments": "隐藏版的空壳，持续时间更短，没有实际作用。",
+    "description": "已被耗尽之物。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.partya",
+    "label": "团体策略A",
+    "comments": "一般用于物理攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.partyb",
+    "label": "团体策略B",
+    "comments": "一般用于精神攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.partyc",
+    "label": "团体策略C",
+    "comments": "一般用于吸收恶意。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.partyd",
+    "label": "团体策略D",
+    "comments": "一般用于成长。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.partye",
+    "label": "团体策略E",
+    "comments": "用于团体独有的特殊策略。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.partyf",
+    "label": "团体策略F",
+    "comments": "一般用于待机。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkparty": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "lessername.active",
+    "label": "？",
+    "comments": "使不显要的具名者行动。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "lessername.passive",
+    "label": "？",
+    "comments": "使不显要的具名者待机。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "lessername.guarding",
+    "label": "？",
+    "comments": "不显要的具名者正在守卫，阻止玩家对绳结戍边者采取行动。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.wolfa",
+    "comments": "用于使狼攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.wolfb",
+    "comments": "用于使狼进行辅助类行动。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.wolfc",
+    "comments": "用于使狼进行特殊策略。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "ke.strategy.wolfd",
+    "comments": "用于使狼待机。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 1
+},
+{
+    "id": "panel.partymain3a",
+    "label": "面板：夜枭利爪",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 12,
+        "negknock": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partymain3b",
+    "label": "面板：圣杯之触",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neggrail": 12,
+        "negmoth": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partymain2a",
+    "label": "面板：鳌针风暴",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neggrail": 10,
+        "negforge": 6,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partymain2b",
+    "label": "面板：亵渎振响",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negheart": 10,
+        "neglantern": 6,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partysecreta",
+    "label": "面板：匿影之锋",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 12,
+        "negwinter": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partysecretb",
+    "label": "面板：难寻之秘",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neglantern": 12,
+        "neghistory": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partyenvoysa",
+    "label": "面板：无形之刃",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 12,
+        "negheart": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.partyenvoysb",
+    "label": "面板：摄心幻景",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 12,
+        "negwinter": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "ke.silence",
+    "label": "秘密结社：沉默术",
+    "description": "用于标记沉默术正在生效。",
+    "isHidden": true,
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressa",
+    "label": "猎手策略A",
+    "comments": "一般用于物理攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressb",
+    "label": "猎手策略B",
+    "comments": "一般用于精神攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressc",
+    "label": "猎手策略C",
+    "comments": "用于猎手的特殊策略。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressd",
+    "label": "猎手策略D",
+    "comments": "用于猎手的最终攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntresse",
+    "label": "猎手策略E",
+    "comments": "用于猎手待机。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressf",
+    "label": "猎手策略F",
+    "comments": "用于斯卡蒂的特殊攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.huntressg",
+    "label": "猎手策略G",
+    "comments": "用于斯卡蒂的特殊攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarkhuntress": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.duelmode",
+    "label": "？",
+    "description": "......",
+    "comments": "用于使斯卡蒂进入决斗模式。",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.immobile": 1
+    }
+},
+{
+    "id": "panel.catfinale",
+    "label": "面板：灰猫之舞",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negheart": 20,
+        "neglantern": 20,
+        "negmoth": 20,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.cata",
+    "label": "面板：阴影迫近",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negheart": 12,
+        "negedge": 8,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.catb",
+    "label": "面板：林地的幻象",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 12,
+        "negknock": 8,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.pigfinale",
+    "label": "面板：赤潮",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 20,
+        "neggrail": 20,
+        "negheart": 20,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.piga",
+    "label": "面板：四分五裂",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neggrail": 12,
+        "negedge": 8,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.pigb",
+    "label": "面板：凶险诱惑",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 12,
+        "negwinter": 8,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadia",
+    "label": "面板：赐死投枪",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negwinter": 14,
+        "negheart": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadib",
+    "label": "面板：阴燃之火",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 14,
+        "neggrail": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadif",
+    "label": "面板：摧锋破锐",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 14,
+        "negknock": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadig",
+    "label": "面板：死寂之夜",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neglantern": 14,
+        "neghistory": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadi.finalea",
+    "label": "面板：晨昏线（铸）",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.meltingedge": 12,
+        "ka.profaneedge": 12,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadi.finaleb",
+    "label": "面板：晨昏线（冬）",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.piercingedge": 12,
+        "ka.profaneedge": 12,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadi.duela",
+    "label": "面板：强壮锋利胜过青铜",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 14,
+        "negheart": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadi.duelb",
+    "label": "面板：凶猛胜过亚马逊人",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 14,
+        "negwinter": 10,
+        "ka.purgemarkhuntress": 1
+    }
+},
+{
+    "id": "panel.skadi.defensea",
+    "label": "面板：无侵之守御",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 30,
+        "ka.profaneedge": 20
+    }
+},
+{
+    "id": "panel.skadi.defenseb",
+    "label": "面板：扭曲之守御",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 15,
+        "ka.meltingedge": 10,
+        "negforge": 15
+    }
+},
+{
+    "id": "panel.skadi.defensec",
+    "label": "面板：坚忍之守御",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 15,
+        "ka.piercingedge": 10,
+        "negwinter": 15
+    }
+},
+{
+    "id": "panel.skadi.defensed",
+    "label": "面板：均衡之守御",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 15,
+        "negwinter": 15
+    }
+},
+{
+    "id": "ke.strategy.bossa",
+    "label": "BOSS策略A",
+    "comments": "用于A类攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.bossb",
+    "label": "BOSS策略B",
+    "comments": "用于B类攻击。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.bossc",
+    "label": "BOSS策略C",
+    "comments": "用于BOSS的特殊策略。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.bossd",
+    "label": "BOSS策略D",
+    "comments": "用于BOSS的第二类特殊策略。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.bosse",
+    "label": "BOSS策略E",
+    "comments": "用于BOSS切换模式。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+    "id": "ke.strategy.bossf",
+    "label": "BOSS策略F",
+    "comments": "用于BOSS待机。",
+    "isHidden": true,
+    "aspects": {
+        "ka.purgemarklogic": 1
+    },
+    "lifetime": 0.1
+},
+{
+	"id": "wolfdivided.furious",
+	"label": "裂分之狼（狂怒）",
+	"description": "用于触发狂怒模式的各类行动。",
+    "isHidden": true,
+    "verbicon": "wolf.furious",
+    "aspects":{
+        "tag.wolfdivided": 1
+    },
+	"xtriggers": {
+        "switchmode": [
+			{
+				"morpheffect": "transform",
+				"id": "wolfdivided.anguish",
+				"level": 1
+			}
+		],
+		"damageboss": [
+			{
+				"morpheffect": "mutate",
+				"id": "wound.wolfdivided",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "wolfdivided.anguish",
+	"label": "裂分之狼（伤痛）",
+	"description": "用于触发伤痛模式的各类行动。",
+    "isHidden": true,
+    "verbicon": "wolf.anguish",
+    "aspects":{
+        "tag.wolfdivided": 1
+    },
+	"xtriggers": {
+        "switchmode": [
+			{
+				"morpheffect": "transform",
+				"id": "wolfdivided.furious",
+				"level": 1
+			}
+		],
+		"damageboss": [
+			{
+				"morpheffect": "mutate",
+				"id": "wound.wolfdivided",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "dominant.forge",
+	"label": "铸炉的舰队占据优势！",
+	"description": "用于触发铸炉舰队的各类行动。",
+    "lifetime": 1,
+    "isHidden": true,
+    "verbicon": "coalition.forge",
+    "aspects":{
+        "tag.coalition": 1
+    },
+	"xtriggers": {
+        "switchmode": [
+			{
+				"morpheffect": "transform",
+				"id": "dominant.twins",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "dominant.twins",
+	"label": "孪生子的舰队占据优势！",
+	"description": "用于触发孪生子舰队的各类行动。",
+    "lifetime": 1,
+    "isHidden": true,
+    "verbicon": "coalition.twins",
+    "aspects":{
+        "tag.coalition": 1
+    },
+	"xtriggers": {
+        "switchmode": [
+			{
+				"morpheffect": "transform",
+				"id": "dominant.bones",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "dominant.bones",
+	"label": "黑骸的舰队占据优势！",
+	"description": "用于触发黑骸舰队的各类行动。",
+    "lifetime": 1,
+    "isHidden": true,
+    "verbicon": "coalition.bones",
+    "aspects":{
+        "tag.coalition": 1
+    },
+	"xtriggers": {
+        "switchmode": [
+			{
+				"morpheffect": "transform",
+				"id": "dominant.forge",
+				"level": 1
+			}
+		]
+	}
+},
+{
+    "id": "panel.wolffuriousa",
+    "label": "面板：超越死亡的恐怖",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 99,
+        "ka.profaneedge": 20,
+        "ka.purgemarklogic": 1
+    }
+},
+{
+    "id": "panel.wolffuriousb",
+    "label": "面板：湮灭之形",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 20,
+        "negheart": 14,
+        "ka.purgemarklogic": 1
+    }
+},
+{
+    "id": "panel.wolfanguisha",
+    "label": "面板：超越时间的憎恶",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negwinter": 99,
+        "ka.profaneedge": 20,
+        "ka.purgemarklogic": 1
+    }
+},
+{
+    "id": "panel.wolfanguishb",
+    "label": "面板：万古之恨",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 20,
+        "negwinter": 14,
+        "ka.purgemarklogic": 1
+    }
+},
+{
+    "id": "panel.wolfweakpoint",
+    "label": "面板：不朽神灵之血？",
+    "description": "提供对应攻击所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.meltingedge": 20,
+        "ka.piercingedge": 20,
+        "ka.profaneedge": 12,
+        "ka.purgemarklogic": 1
+    }
+},
+{
+    "id": "logic.nextsector",
+    "label": "？",
+    "comments": "移动到下一区域的指示符。",
+    "description": "......",
+    "lifetime": 1,
+    "isHidden": true
+},
+{
+    "id": "ke.dreamhinta",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.dreamhintb",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.dreamhintc",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.dreamhintd",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.dreamhinte",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "ke.dreamhintf",
+    "label": "？",
+    "description": "......",
+    "comments": "用于标记不同入梦提示。",
+    "isHidden": true,
+    "lifetime": 1
+},
+{
+    "id": "debug.halo",
+    "label": "Halo of the End",
+    "description": "<i>'Destiny decrees thy beginning;\n\nThou shalt shape its end.'</i>\n\n[Developer's test tool! Where did you find this thing?]",
+    "unique": true,
+    "burnTo": "debug.halo",
+    "aspects": {
+        "edge": 12,
+        "forge": 12,
+        "grail": 12,
+        "heart": 12,
+        "knock": 12,
+        "lantern": 12,
+        "moth": 12,
+        "secrethistories": 12,
+        "winter": 12,
+        "ka.profane": 1,
+        "tag.important": 1
+    }
+},
+{
+    "id": "debug.wpn",
+    "label": "Brizzery, the Drifting Blade",
+    "description": "In its long career, this weapon has also been called the Rebel, the Profane Sword, and the Abomination. It was, apparently, commissioned to be borne by a ranger against the hidden kings in an unknown age. So many years later, it still drifts, seeking the chosen one who can fulfill its purpose.\n\n[A dev weapon! Where did you get this?]",
+    "aspects": {
+        "edge": 8,
+        "forge": 8,
+        "grail": 8,
+        "heart": 8,
+        "knock": 8,
+        "lantern": 8,
+        "moth": 8,
+        "secrethistories": 8,
+        "winter": 8,
+        "weapon": 1,
+        "asset": 1,
+        "tag.important": 1,
+        "tag.topic": 1
+    },
+    "unique": true
+},
+{
+    "id": "debug.tool",
+    "label": "Ring of the Seven Curses",
+    "description": "Throughout its long history, countless ambitious madmen have donned this ring, seeking to unleash the boundless potential hidden within — yet the ring itself bears seven dreadful curses, causing nearly every wielder to perish from the maledictions before ever fully grasping its power. It is best not to heed its temptations. \n\n[A developer tool! Where did you find this thing?]",
+    "aspects": {
+        "edge": 6,
+        "forge": 6,
+        "grail": 6,
+        "heart": 6,
+        "knock": 6,
+        "lantern": 6,
+        "moth": 6,
+        "secrethistories": 6,
+        "winter": 6,
+        "tool": 1,
+        "asset": 1,
+        "ka.difficulty": 1,
+        "tag.important": 1
+    },
+    "unique": true
+},
+{
+    "id": "debug.ability",
+    "icon": "mystique",
+    "label": "The Candle Unarrived",
+    "description": "These candles symbolize the power of the Long yet to arrive for the Chandler. Past and future hold no meaning—the Chandler exists in totality, moving before the beginning unfolds.\n\n[A developer ability! Where did you find this thing?]",
+    "aspects": {
+        "edge": 4,
+        "forge": 4,
+        "grail": 4,
+        "heart": 4,
+        "knock": 4,
+        "lantern": 4,
+        "moth": 4,
+        "secrethistories": 4,
+        "winter": 4,
+        "ability": 1,
+        "asset": 1,
+        "tag.important": 1
+    },
+    "unique": true
+},
+{
+    "id": "debug.edgeforge",
+    "icon": "articleforgeb",
+    "label": "Blazing Edge",
+    "description": "Tests whether the recipe for countering the enemy using Blazing Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "forge": 20
+    }
+},
+{
+    "id": "debug.meltingedge",
+    "icon": "articleforgec",
+    "label": "Molten Edge",
+    "description": "Tests whether the recipe for countering the enemy using Molten Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "ka.melting": 1
+    }
+},
+{
+    "id": "debug.edgelantern",
+    "icon": "articlelanternb",
+    "label": "Radiant Edge",
+    "description": "Tests whether the recipe for countering the enemy using Radiant Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "lantern": 20
+    }
+},
+{
+    "id": "debug.profaneedge",
+    "icon": "articlelanternc",
+    "label": "Profane Edge",
+    "description": "Tests whether the recipe for countering the enemy using Profane Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "ka.profane": 1
+    }
+},
+{
+    "id": "debug.edgewinter",
+    "icon": "articlewinterb",
+    "label": "Frigid Edge",
+    "description": "Tests whether the recipe for countering the enemy using a Frigid Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "winter": 20
+    }
+},
+{
+    "id": "debug.piercingedge",
+    "icon": "articlewinterc",
+    "label": "Piercing Edge",
+    "description": "Tests whether the recipe for countering the enemy using Piercing Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 20,
+        "ka.piercing": 1
+    }
+},
+{
+    "id": "debug.maxedge",
+    "icon": "articleedgea",
+    "label": "Edge",
+    "description": "Tests whether the recipe for countering the Wolf using Edge functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "edge": 99
+    }
+},
+{
+    "id": "debug.maxwinter",
+    "icon": "articlewintera",
+    "label": "Winter",
+    "description": "Tests whether the recipe for countering the Wolf using Winter functions correctly.\n\n[A test card! Where did you even find this thing?]",
+    "aspects": {
+        "winter": 99
+    }
+},
+{
+    "id": "ke.recipecatalog",
+    "icon": "articlesecrethistoriesc",
+    "label": "Recipe Index",
+    "description": "A densely written catalog of recipes, setting out the methods for crafting various practical items I have come to know.\n[This card has no practical function; it merely lists the recipes for crafting items in the Foundry. Click any aspect to view the crafting recipes for a given category of items.]",
+    "lifetime": 300,
+    "aspects": {
+        "ka.recipeammo": 1,
+        "ka.recipealch": 1,
+        "ka.recipecons": 1,
+        "ka.recipewpn": 1,
+        "ka.unfit": 1,
+        "tag.important": 1
+    }
+}
+]
+}

@@ -1,0 +1,819 @@
+{
+"elements":[
+{
+    "id": "wound.huntress",
+    "label": "Wound of the Huntress",
+    "description": "Nothing exists that cannot be killed.",
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.shieldmalachite",
+    "label": "Garrisons of Triple Knot: Protected by the Malachite",
+    "description": "Currently, a lush and viscous protective force surrounds the enemy, making it difficult for me to inflict effective damage.\n[This card will impose one additional obstacle when you hunt members of the Garrisons of Triple Knot.]",
+    "lifetime": 300,
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.fogvelvet",
+    "icon": "ke.opfog",
+    "label": "Garrisons of Triple Knot: Hidden in the Velvet's Fog",
+    "description": "The enemy's location is concealed by the Velvet, making it far more difficult to obtain intelligence about them.\n[While this card is in play, you cannot get traces by scouting the local area.]",
+    "lifetime": 300,
+    "aspects": {
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.sealofknot",
+    "label": "Seal of the Triple Knot",
+    "description": "At present, this reality has been sealed by the malice of Hours of the Knot, forcing me to remain here and face my enemy. \n[While this card is present, you cannot leave the current area.]",
+    "lifetime": 300,
+    "unique": true,
+    "aspects": {
+        "ka.immobile": 1
+    }
+},
+{
+    "id": "ke.goalwoundparties",
+    "label": "Goal: Hunting Long",
+    "description": "Currently, the criteria for Hours to replenish Long have indeed grown extremely lax, but no organization can remain functional after suddenly losing its core, nor would anyone be foolish enough to die for a hollow, nominal title... So long as I swiftly hunt down enough members, I can make any hostile group collapse into disarray. \n[With a trace of a hostile group, you may attempt to hunt down Long from that group.]",
+    "unique": true,
+    "aspects": {
+        "ka.goal": 1,
+        "ka.local": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needpartytrace",
+            "label": "Trace",
+            "required": {
+                "trace.partymain": 1,
+                "trace.partysecret": 1,
+                "trace.partyenvoys": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "ke.goalsetbackparties",
+    "label": "Goal: Destroy a Base of Operations",
+    "description": "The strength of a cult does not depend on its members alone. In the case of my enemies, they require shrines to receive power from the Hours, storehouses to keep potent items and weapons, and, of course, sanctuaries hidden from my threats. Identify and destroy any one of these, and their effectiveness will be crippled.\n[Use a trace of a hostile group, you may attempt to dismantle their base of operations.]",
+    "unique": true,
+    "aspects":{
+        "ka.goal": 1,
+        "ka.local": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needpartytrace",
+            "label": "Trace",
+            "required": {
+                "trace.partymain": 1,
+                "trace.partysecret": 1,
+                "trace.partyenvoys": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "ke.opwoundpartymain",
+    "label": "Opportunity: Hunt Long",
+    "description": "A key member of Garrisons of Triple Knot has been exposed! I can take action to crush them. \n[Insert the card into Act to attempt to hunt down a member of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "kd.obmaina",
+				"morpheffect": "deckdraw",
+                "level": 1
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obmaing",
+				"morpheffect": "spawn"
+			}
+		],
+        "drawobmalachite": [
+			{
+				"id": "panel.obmainf",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "wound.partymain"
+            }
+        ]
+	}
+},
+{
+    "id": "ke.opsetbackpartymain",
+    "label": "Opportunity: Destroy a Base of Operations",
+    "description": "A base of the Garrisons of Triple Knot has now been exposed! I can take action to weaken them. \n[Insert the card into Act to attempt to destroy the base of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "kd.obmainb",
+				"morpheffect": "deckdraw",
+                "level": 1
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obmainh",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "ke.partymainsetback"
+            }
+        ]
+	}
+},
+{
+    "id": "ke.opwoundpartysecret",
+    "label": "Opportunity: Hunt Long",
+    "description": "A key member of the Secret Society has been exposed! I can take action to crush them. \n[Insert the card into Act to attempt to hunt down a member of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "panel.obsecreta",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obsecretc",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "wound.partysecret"
+            }
+        ]
+	}
+},
+{
+    "id": "ke.opsetbackpartysecret",
+    "label": "Opportunity: Destroy a Base of Operations",
+    "description": "A base of the Secret Society has now been exposed! I can take action to weaken them. \n[Insert the card into Act to attempt to destroy the base of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "panel.obsecretb",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obsecretd",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "ke.opecho"
+            }
+        ]
+	}
+},
+{
+    "id": "ke.opwoundpartyenvoys",
+    "label": "Opportunity: Hunt Long",
+    "description": "A Messenger of the House of the Moon has been exposed! I can take action to crush them. \n[Insert the card into Act to attempt to hunt down a member of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "panel.obenvoysa",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obenvoysc",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "wound.partyenvoys"
+            }
+        ]
+	}
+},
+{
+    "id": "ke.opsetbackpartyenvoys",
+    "label": "Opportunity: Destroy a Base of Operations",
+    "description": "A base of the Messengers has now been exposed! I can take action to weaken them. \n[Insert the card into Act to attempt to destroy the base of the hostile group.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects":{
+        "op": 1,
+        "ka.obcount": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+		{
+			"id": "ks.preparation",
+			"label": "Preparation",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+                "exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+    ],
+    "xtriggers": {
+		"drawob1": [
+			{
+				"id": "panel.obenvoysb",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "panel.obenvoysd",
+				"morpheffect": "spawn"
+			}
+		],
+        "completeaction": [
+            {
+                "id": "ke.husk"
+            }
+        ]
+	}
+},
+{
+    "id": "trace.partymain",
+    "label": "Trace: Garrisons of Triple Knot",
+    "description": "Critical information regarding the actions and base of operations of this hostile group. \n[You may use this in conjunction with a 'Goal' to attempt to counter this hostile group.]",
+    "lifetime": 300,
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "wound.partymain",
+    "icon": "bloodshed",
+    "label": "Garrisons of Triple Knot: Wastage!",
+    "description": "Losses in personnel, connections, and morale—all these require time to recover. \n[If you manage to collect all seven, you can force this hostile group to disband.]",
+    "lifetime": 2000
+},
+{
+    "id": "ke.partymainsetback",
+    "icon": "hq.abandoned",
+    "label": "Garrisons of Triple Knot: Frustrated!",
+    "description": "I have successfully destroyed a key base of the hostile group—this will significantly weaken their forces in this region. \n[Each card reduces the Threat of the corresponding hostile group by 2.]",
+    "aspects":{
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.partymaindefeated",
+    "icon": "ke.partymain",
+    "label": "Garrisons of Triple Knot: Defeated",
+    "description": "The immortals under the Hours of the Knot have been utterly defeated by me. \n[This hostile group will trouble you no more.]",
+    "resaturate": true,
+    "lifetime": 2000
+},
+{
+    "id": "trace.partysecret",
+    "label": "Trace: Secret Society",
+    "description": "Critical information regarding the actions and base of operations of this hostile group. \n[You may use this in conjunction with a 'Goal' to attempt to counter this hostile group.]",
+    "lifetime": 300,
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "wound.partysecret",
+    "icon": "bloodshed",
+    "label": "Secret Society: Wastage!",
+    "description": "Most members of the Secret Society are extremely old, and so replenishing their numbers is not an easy task. \n[If you manage to collect all seven, you can force this hostile group to disband.]",
+    "aspects":{
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.partysecretdefeated",
+    "label": "Secret Society: Defeated",
+    "description": "The immortals commanded by the Velvet have been routed. \n[This hostile group will trouble you no more.]",
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "trace.partyenvoys",
+    "label": "Trace: Messengers of the House of the Moon",
+    "description": "Critical information regarding the actions and base of operations of this hostile group. \n[You may use this in conjunction with a 'Goal' to attempt to counter this hostile group.]",
+    "lifetime": 300,
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "wound.partyenvoys",
+    "icon": "bloodshed",
+    "label": "Messengers of the House of the Moon: Wastage!",
+    "description": "Each Messenger of the House of the Moon is different, but their numbers are far from limitless. \n[If you manage to collect all seven, you can force this hostile group to disband.]",
+    "aspects":{
+        "ka.purgemarkgeneral": 1
+    }
+},
+{
+    "id": "ke.partyenvoysdefeated",
+    "label": "Messenger of the House of the Moon: Defeated",
+    "description": "The immortals commanded by the Mensicate have been routed. \n[This hostile group will trouble you no more.]",
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "ke.partymainmoving",
+    "icon": "loc.shrine.nameless",
+    "label": "Garrisons of the Triple Knot: Relocating…",
+    "description": "Following setbacks, this hostile group is rapidly redeploying its resources, temporarily preventing me from locking on to their base of operations. \n[While this card is active, you cannot destroy this hostile group's base of operations.]",
+    "lifetime": 120,
+    "aspects":{
+        "ka.local": 1
+    }
+},
+{
+    "id": "panel.obmaina",
+    "label": "面板：双角斧的掩护",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 10,
+        "negknock": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmainb",
+    "label": "面板：遁入阴影",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neglantern": 10,
+        "negwinter": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmainc",
+    "label": "面板：赤红的误导",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neggrail": 10,
+        "negmoth": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmaind",
+    "label": "面板：翠绿的诅咒",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negheart": 10,
+        "neggrail": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmaine",
+    "label": "面板：封印阻隔",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 10,
+        "negknock": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmainf",
+    "label": "面板：丰饶的庇护",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "ka.meltingedge": 8,
+        "ka.piercingedge": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmaing",
+    "label": "面板：杀死长生者",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 12,
+        "negwinter": 10,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obmainh",
+    "label": "面板：摧毁根据地",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 12,
+        "negmoth": 10,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obsecreta",
+    "label": "面板：丝绒的赠礼",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neglantern": 10,
+        "negknock": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obsecretb",
+    "label": "面板：浓重的阴影",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 10,
+        "neghistory": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obsecretc",
+    "label": "面板：杀死长生者",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negwinter": 12,
+        "ka.piercingedge": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obsecretd",
+    "label": "面板：摧毁根据地",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 12,
+        "neggrail": 10,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obenvoysa",
+    "label": "面板：逃逸之光",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "neglantern": 10,
+        "negwinter": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obenvoysb",
+    "label": "面板：群像迷宫",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negmoth": 10,
+        "negknock": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obenvoysc",
+    "label": "面板：杀死长生者",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negforge": 12,
+        "ka.meltingedge": 8,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "panel.obenvoysd",
+    "label": "面板：摧毁根据地",
+    "description": "提供临时阻碍所需属性。[此卡牌应被隐藏。]",
+    "isHidden": true,
+    "lifetime": 0.1,
+    "aspects": {
+        "negedge": 12,
+        "negwinter": 10,
+        "ka.purgemarkparty": 1
+    }
+},
+{
+    "id": "ke.goalduel",
+    "label": "Goal: Defeat the Huntress",
+    "description": "I once suffered a crushing defeat by this hated enemy, due to my arrogance and foolishness. This time will be different. I will clear all obstacles and wash away the shame — to defeat my enemy, I must first come to understand her through battle. \n[Collect seven 'Insights' to upgrade this card, granting you the means to defeat the Huntress.]",
+    "unique": true,
+    "aspects": {
+        "ka.goal": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needskaditrace1",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace2",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace3",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace4",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace5",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace6",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needskaditrace7",
+            "actionid": "kv.search",
+            "label": "Trace",
+            "required": {
+                "trace.skadi": 1
+            },
+            "consumes": true
+        }
+    ],
+    "xtriggers":{
+        "completegoal": "ke.intentduel"
+    }
+},
+{
+    "id": "trace.skadi",
+    "label": "Insight",
+    "description": "Know yourself – and know your enemy."
+},
+{
+    "id": "ke.intentduel",
+    "label": "A Fated Duel",
+    "description": "Though her prowess is fearsome, Skadi prefers to stalk stronger prey and kill them from the shadows. However, by deliberately revealing my position, I can issue a scornful challenge that will surely enrage this ruthless hunter. Let her come then! We are fated to clash. \n[When Skadi has yet to discover you, use this in 'Communicate' to summon her to your location and initiate a final duel.]",
+    "unique": true,
+    "aspects":{
+        "ka.intent": 1
+    }
+},
+{
+    "id": "ke.opriposte",
+    "label": "A Chance to Strike Back?",
+    "description": "In the heat of prolonged and intense combat, gaps will appear in the defences of even the most powerful Names. If I hold out just a bit longer, even a tiny gap could tip the scales in my favour.",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needopriposte1",
+            "actionid": "kv.act",
+            "label": "An Chance",
+            "required": {
+                "ke.opriposte": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "ks.needopriposte2",
+            "actionid": "kv.act",
+            "label": "To Strike Back",
+            "required": {
+                "ke.opriposte": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "wound.skadi",
+    "icon": "bloodshed",
+    "label": "Skadi's Wound",
+    "description": "Who is the hunter and who is the hunted <i>now</i>?"
+}
+]
+}

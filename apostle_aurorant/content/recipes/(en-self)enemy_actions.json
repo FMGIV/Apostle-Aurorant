@@ -1,0 +1,754 @@
+{
+"recipes":[
+{
+	"id": "wheel.spawnenemy",
+	"actionid": "kv.spawn",
+	"warmup": 0,
+	"effects":{
+		"ke.printgrail": 1
+	},
+	"linked": [
+		{
+			"id": "wheel.spawnenemyr3"
+		},
+		{
+			"id": "wheel.spawnenemyr2"
+		},
+		{
+			"id": "wheel.spawnenemyr1"
+		}
+	]
+},
+{
+	"id": "wheel.spawnenemyr3",
+	"actionid": "kv.spawn",
+	"label": "Fangs of the Wilds",
+	"startdescription": "The wilds have their own ancient and autonomous rhythms. Like the teeth of a gear grinding down whatever is caught between them, prolonged stillness attracts dangerous predators—",
+	"description": "This one has already been drawn forth—but who is the hunter remains to be seen.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.bounds": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr3": 1
+	}
+},
+{
+	"id": "wheel.spawnenemyr2",
+	"actionid": "kv.spawn",
+	"label": "Fangs of the Wilds",
+	"startdescription": "The wilds have their own ancient and autonomous rhythms. Like the teeth of a gear grinding down whatever is caught between them, prolonged stillness attracts dangerous predators—",
+	"description": "This one has already been drawn forth—but who is the hunter remains to be seen.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.countryside": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr2": 1
+	}
+},
+{
+	"id": "wheel.spawnenemyr1",
+	"actionid": "kv.spawn",
+	"label": "Fangs of the Wilds",
+	"startdescription": "The wilds have their own ancient and autonomous rhythms. Like the teeth of a gear grinding down whatever is caught between them, prolonged stillness attracts dangerous predators—",
+	"description": "This one has already been drawn forth—but who is the hunter remains to be seen.",
+	"warmup": 10,
+	"extantreqs": {
+		"ke.surburb": 1
+	},
+	"deckeffects": {
+		"kd.spawnenemyr1": 1
+	}
+},
+{
+	"id": "kr.monstercycle",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"comments": "这是一个过渡recipe，根据场上敌人的数量选择抽取策略的卡池。",
+	"startdescription": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "kr.monsterend"
+		},
+		{
+			"id": "kr.monsterdrawd"
+		},
+		{
+			"id": "kr.monsterdrawc"
+		},
+		{
+			"id": "kr.monsterdrawb"
+		},
+		{
+			"id": "kr.monsterdrawa"
+		}
+	]
+},
+{
+	"id": "kr.monsterend",
+	"actionid": "kv.monster",
+	"label": "Return to Silence",
+	"description": "There are no more monsters—at least for now.",
+	"warmup": 0,
+	"extantreqs": {
+		"tag.monster": -1
+	},
+	"effects": {
+		"ka.purgemarkenemy": -99
+	}
+},
+{
+	"id": "kr.monsterdrawd",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"description": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"extantreqs": {
+		"ka.enemy": 20
+	},
+	"deckeffects": {
+		"kd.strategies.monsterd": 1
+	},
+	"linked":[
+		{
+			"id": "kr.monsterrouter"
+		}
+	]
+},
+{
+	"id": "kr.monsterdrawc",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"description": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"extantreqs": {
+		"ka.enemy": 10
+	},
+	"deckeffects": {
+		"kd.strategies.monsterc": 1
+	},
+	"linked":[
+		{
+			"id": "kr.monsterrouter"
+		}
+	]
+},
+{
+	"id": "kr.monsterdrawb",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"description": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"extantreqs": {
+		"ka.enemy": 5
+	},
+	"deckeffects": {
+		"kd.strategies.monsterb": 1
+	},
+	"linked":[
+		{
+			"id": "kr.monsterrouter"
+		}
+	]
+},
+{
+	"id": "kr.monsterdrawa",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"description": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"extantreqs": {
+		"ka.enemy": 1
+	},
+	"deckeffects": {
+		"kd.strategies.monstera": 1
+	},
+	"linked":[
+		{
+			"id": "kr.monsterrouter"
+		}
+	]
+},
+{
+	"id": "kr.monsterrouter",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"startdescription": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "kr.monsterattack"
+		},
+		{
+			"id": "kr.monsterraid"
+		},
+		{
+			"id": "kr.monsterhide"
+		},
+		{
+			"id": "kr.monsterpass"
+		}
+	]
+},
+{
+	"id": "kr.monsterattack",
+	"actionid": "kv.monster",
+	"label": "The Monster is Drawing Near!",
+	"startdescription": "The intent of something is about to reveal itself—",
+	"warmup": 10,
+	"requirements": {
+		"ke.strategyattack": 1
+	},
+	"effects": {
+		"ka.purgemarkenemy": -99
+	},
+	"alt": [
+		{
+			"id": "monsterattack.trigger",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.monstercooldown"
+		}
+	]
+},
+{
+	"id": "kr.monsterraid",
+	"actionid": "kv.monster",
+	"label": "The Monster is Drawing Near!",
+	"startdescription": "The intent of something is about to reveal itself—",
+	"warmup": 10,
+	"requirements": {
+		"ke.strategyraid": 1
+	},
+	"effects": {
+		"ka.purgemarkenemy": -99
+	},
+	"alt": [
+		{
+			"id": "monsterraid.trigger",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.monstercooldown"
+		}
+	]
+},
+{
+	"id": "kr.monsterhide",
+	"actionid": "kv.monster",
+	"label": "The Monster is Drawing Near!",
+	"startdescription": "The intent of something is about to reveal itself—",
+	"warmup": 10,
+	"requirements": {
+		"ke.strategyhide": 1
+	},
+	"effects": {
+		"ka.purgemarkenemy": -99
+	},
+	"alt": [
+		{
+			"id": "monsterhide.trigger",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.monstercooldown"
+		}
+	]
+},
+{
+	"id": "kr.monsterpass",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"startdescription": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkenemy": -99
+	},
+	"linked": [
+		{
+			"id": "kr.monstercycle"
+		}
+	]
+},
+{
+	"id": "kr.monstercooldown",
+	"actionid": "kv.monster",
+	"label": "Monsters Lurk Here",
+	"startdescription": "Monsters lie in wait, sniffing out the chance to strike.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkenemy": -99
+	},
+	"linked": [
+		{
+			"id": "kr.monstercycle"
+		}
+	]
+},
+{
+	"id": "monsterattack.trigger",
+	"actionid": "kv.enemyaction",
+	"warmup": 0,
+	"effects":{
+		"monster.attack": 1
+	},
+	"linked": [
+		{
+			"id": "monsterattack.absorb"
+		}
+	]
+},
+{
+	"id": "monsterattack.absorb",
+	"actionid": "kv.enemyaction",
+	"label": "Direct Assault!",
+	"startdescription": "This one stepped straight forward, baring its fangs and claws—",
+	"description": "Yet nothing comes forth. Something is off.",
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.attackneedenemy",
+			"label": "The Enemy Comes to Attack",
+			"essential": {
+				"ka.enemy": 1,
+				"tag.monster": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects": {
+		"revealenemy": 1
+	},
+	"linked": [
+		{
+			"id": "kr.enemyaction.respond"
+		}
+	]
+},
+{
+	"id": "monsterhide.trigger",
+	"actionid": "kv.enemyaction",
+	"warmup": 0,
+	"effects":{
+		"monster.hide": 1
+	},
+	"linked":[
+		{
+			"id": "enemyhide.absorb"
+		}
+	]
+},
+{
+	"id": "enemyhide.absorb",
+	"actionid": "kv.enemyaction",
+	"label": "Enemy Concealed",
+	"startdescription": "This one draws back, shielded by dust and shadow—",
+	"description": "Let them flee. They should be glad they did not choose to press forward.",
+	"grandreqs":{
+		"monster.hide": 1
+	},
+	"warmup": 10,
+	"slots": [
+		{
+			"id": "ks.hideneedenemy",
+			"label": "Hidden Enemy",
+			"essential": {
+				"ka.enemy": 1,
+				"tag.monster": 1
+			},
+			"forbidden":{
+				"ka.hiddenenemy": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects": {
+		"hideenemy": 1
+	}
+},
+{
+	"id": "monsterraid.trigger",
+	"actionid": "kv.enemyaction",
+	"warmup": 0,
+	"effects":{
+		"monster.raid": 1
+	},
+	"linked":[
+		{
+			"id": "enemyraid.absorb"
+		}
+	]
+},
+{
+	"id": "enemyraid.absorb",
+	"actionid": "kv.enemyaction",
+	"label": "Seize the Assets!",
+	"startdescription": "The enemy circles to the flank, eyeing the supplies we have stored—\n\n[Failing to withstand this attack will not cause injury, but will permanently remove one of your assets.]",
+	"description": "Yet nothing comes forth. Something is off.",
+	"warmup": 10,
+	"grandreqs":{
+		"monster.raid": 1
+	},
+	"slots": [
+		{
+			"id": "ks.raidneedenemy",
+			"label": "The Enemy Comes to Plunder",
+			"essential": {
+				"ka.enemy": 1,
+				"tag.monster": 1
+			},
+			"greedy": true
+		}
+	],
+	"aspects": {
+		"revealenemy": 1
+	},
+	"effects":{
+		"ke.strategyraid": 1
+	},
+	"linked": [
+		{
+			"id": "kr.enemyaction.respond"
+		}
+	]
+},
+{
+	"id": "kr.enemyaction.respond",
+	"label": "To Respond?",
+	"startdescription": "Enemies are acting here—can I strike back?\n\n[Reach any threshold of the enemy to successfully defend.]",
+	"requirements": {
+		"ka.enemy": 1
+	},
+	"slots": [
+		{
+			"id": "needresponse",
+			"label": "Defense",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "enemyattack.destroyhealth"
+		},
+		{
+			"id": "enemyattack.damagehealth"
+		},
+		{
+			"id": "enemyraid.consume"
+		}
+	],
+	"alt": [
+		{
+			"id": "enemyaction.riposted"
+		},
+		{
+			"id": "enemyaction.respond.edge"
+		},
+		{
+			"id": "enemyaction.respond.forge"
+		},
+		{
+			"id": "enemyaction.respond.grail"
+		},
+		{
+			"id": "enemyaction.respond.heart"
+		},
+		{
+			"id": "enemyaction.respond.knock"
+		},
+		{
+			"id": "enemyaction.respond.lantern"
+		},
+		{
+			"id": "enemyaction.respond.moth"
+		},
+		{
+			"id": "enemyaction.respond.winter"
+		},
+		{
+			"id": "enemyaction.delayed"
+		}
+	]
+},
+{
+	"id": "enemyattack.destroyhealth",
+	"label": "Defenseless!",
+	"description": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 0,
+	"grandreqs": {
+		"ka.enemy": 1,
+		"ka.deadly": 1,
+		"monster.attack": 1
+	},
+	"alt": [
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "enemyattack.damagehealth",
+	"label": "Defenseless!",
+	"description": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 0,
+	"grandreqs": {
+		"ka.enemy": 1,
+		"monster.attack": 1
+	},
+	"alt": [
+		{
+			"id": "kr.damagehealth",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "enemyraid.consume",
+	"label": "Unprepared!",
+	"startdescription": "I cannot spare a hand to deal with the enemy from the flank—now the losses are spiraling out of control—",
+	"description": "These assets can no longer be recovered.",
+	"warmup": 10,
+	"grandreqs": {
+		"ka.enemy": 1,
+		"monster.raid": 1
+	},
+	"slots": [
+		{
+			"id": "raidneedasset",
+			"label": "Loss!",
+			"required": {
+				"asset": 1
+			},
+			"forbidden": {
+				"tag.important": 1
+			},
+			"greedy": true,
+			"consumes": true
+		}
+	]
+},
+{
+	"id": "enemyaction.riposted",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "Blazing wrath seizes my mind and body, burning through every stray of soul and every inch of flesh—",
+	"description": "While rage endures, this body cannot be felled. Those who scorn my power shall pay the price.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ke.skillriposte": 1
+	},
+	"aspects": {
+		"exhaust": 1,
+		"killenemy": 1
+	},
+	"effects":{
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "enemyaction.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "Speech was the weapon that won the first war. And the language of force speaks louder than words.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.forge",
+	"label": "Respond with Revolution",
+	"startdescription": "Arms as the hammer, battlefield as the anvil—here shall I kindle the fires of change.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.grail",
+	"label": "Respond with Torment",
+	"startdescription": "All living things yield to the lure of the Grail, yet its essence is torment. I shall prove it.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The shadow of war is a contest of preservation, and my preservation will not end today.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.knock",
+	"label": "Respond with Opening",
+	"startdescription": "Nothing can truly be sealed shut. Their lives shall cross the threshold and spill outward.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.lantern",
+	"label": "Respond with Ruthlessness",
+	"startdescription": "The Glory casts an indifferent gaze upon this place, and in its turn I shall deliver a judgment equally devoid of mercy.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "Yearning is the spark that sets the soul ablaze, yet it may just as easily spiral into chaos. They will rush into the flames.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.winter",
+	"label": "Respond with Silence",
+	"startdescription": "Words end here. Even in silence there is power—a power that brings an end.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"linked": [
+		{
+			"id": "enemyaction.respond.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.delayed",
+	"label": "Cast the Trick That Perturbs Time",
+	"startdescription": "Time, a flame ever shifting. Paradoxical lore disrupts its undulation, warping its scale and stretching it—\n\n[This will delay this attack for a time.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "enemyaction.redirecting"
+		}
+	]
+},
+{
+	"id": "enemyaction.redirecting",
+	"label": "Cast the Trick That Perturbs Time",
+	"startdescription": "This cannot easily alter the ties of cause and effect, but at least it can buy me a little more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "kr.enemyaction.respond"
+		}
+	]
+},
+{
+	"id": "enemyaction.respond.end",
+	"label": "Enemy Repelled",
+	"description": "Thus the enemy has been driven back.",
+	"warmup": 0,
+	"requirements": {
+		"ka.enemy": 1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"linked": [
+		{
+			"id": "enemyaction.sneaky.end"
+		}
+	]
+},
+{
+	"id": "enemyaction.sneaky.end",
+	"label": "Fading into Shadow",
+	"description": "The enemy has been thwarted here, yet has seized the chance to retreat back into the shadows. How cunning.",
+	"warmup": 0,
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.sneaky": 1
+	},
+	"aspects": {
+		"hideenemy": 1
+	}
+}
+]
+}

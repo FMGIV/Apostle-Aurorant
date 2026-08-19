@@ -1,0 +1,836 @@
+{
+    "elements":[
+{
+    "id": "lorechandlera",
+    "label": "A Twin-Shadows' Secret",
+    "description": "'How can two candles cast a single shadow?' For most who seek the Chandler, this riddle bars the way. For me, however, its answer is not so obscure.",
+    "aspects": {
+        "forge": 1,
+        "lantern": 1,
+        "moth": 1,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlera.exhausted",
+        "upgradelore": "lorechandlerb"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpsea": 1,
+                "ke.corpseb": 1,
+                "ke.corpsec": 1,
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlera.exhausted",
+    "icon": "lorechandlera",
+    "label": "A Twin-Shadows' Secret (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlera",
+    "resaturate": true,
+    "lifetime": 240,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlerb",
+    "label": "An Uncrowned Ceremony",
+    "description": "A series of cryptic and contradictory invocations that point — indirectly — to a deity who ascends at dusk, yet remains uncrowned.",
+    "aspects": {
+        "forge": 2,
+        "lantern": 2,
+        "moth": 2,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlerb.exhausted",
+        "upgradelore": "lorechandlerc"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpsea": 1,
+                "ke.corpseb": 1,
+                "ke.corpsec": 1,
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlerb.exhausted",
+    "icon": "lorechandlerb",
+    "label": "An Uncrowned Ceremony (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlerb",
+    "resaturate": true,
+    "lifetime": 210,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlerc",
+    "label": "A Burning Surmise",
+    "description": "'Who is the Chandler?' Before the dust settles, this question can never be truly answered — yet those immortals who serve them faithfully may come to know an approximation.",
+    "aspects": {
+        "forge": 3,
+        "lantern": 3,
+        "moth": 3,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlerc.exhausted",
+        "upgradelore": "lorechandlerd"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpsea": 1,
+                "ke.corpseb": 1,
+                "ke.corpsec": 1,
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlerc.exhausted",
+    "icon": "lorechandlerc",
+    "label": "A Burning Surmise (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlerc",
+    "resaturate": true,
+    "lifetime": 180,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlerd",
+    "label": "The Chandler's Names",
+    "description": "The Chandler can leave places he has never entered, and so every Name of the Chandler may emulate Him in breaking in and slipping away. I have already used this secret to cheat death once. May I never have need of it again.",
+    "aspects": {
+        "forge": 4,
+        "lantern": 4,
+        "moth": 4,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlerd.exhausted",
+        "upgradelore": "lorechandlere"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlerd.exhausted",
+    "icon": "lorechandlerd",
+    "label": "The Chandler's Names (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlerd",
+    "resaturate": true,
+    "lifetime": 150,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlere",
+    "label": "Art of the Unusual Artisan",
+    "description": "Every fusion allows the old flame to be reborn in a new vessel. While wax endures, the candle never dies.",
+    "aspects": {
+        "forge": 5,
+        "lantern": 5,
+        "moth": 5,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlere.exhausted",
+        "upgradelore": "lorechandlerf"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlere.exhausted",
+    "icon": "lorechandlere",
+    "label": "Art of the Unusual Artisan (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlere",
+    "resaturate": true,
+    "lifetime": 120,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlerf",
+    "label": "A Paradox of Light and Shadow",
+    "description": "Illusions and lies lead us astray from the Glory, yet in doing so, they become reflections of the truth. Things that seem contradictory often share a common essence—and it is through this that the Chandler comes to understand the Glory.",
+    "aspects": {
+        "forge": 6,
+        "lantern": 6,
+        "moth": 6,
+        "lore": 1,
+        "ka.workable": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlerf.exhausted",
+        "upgradelore": "lorechandlerg"
+    },
+    "slots": [
+        {
+            "id": "ks.needcorpse",
+            "actionId": "kv.work",
+            "label": "Sacrifice",
+            "required": {
+                "ke.corpselong": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "lorechandlerf.exhausted",
+    "icon": "lorechandlerf",
+    "label": "A Paradox of Light and Shadow (Exhausted)",
+    "description": "[You need to wait for a short while before using it again. Each upgrade allows the lore to recover faster.]",
+    "decayTo": "lorechandlerf",
+    "resaturate": true,
+    "lifetime": 90,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "lorechandlerg",
+    "label": "Mysteries of Burning Candle",
+    "description": "While lighting the way ahead, one is always shaping oneself. The paradoxical nature of the candle frees it from the bonds of common logic, yet also dooms it to never fully know itself—for the latter changes without end.",
+    "unique": true,
+    "aspects": {
+        "forge": 7,
+        "lantern": 7,
+        "moth": 7,
+        "lore": 1
+    },
+    "xtriggers": {
+        "exhaust": "lorechandlerg.exhausted",
+        "turntosun": "loresung",
+        "turntosteel": "loresteelg"
+    }
+},
+{
+    "id": "lorechandlerg.exhausted",
+    "icon": "lorechandlerg",
+    "label": "Mysteries of Burning Candle (Exhausted)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "decayTo": "lorechandlerg",
+    "resaturate": true,
+    "unique": true,
+    "lifetime": 60,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "ke.skilldraw",
+    "label": "Borrowed Majesty",
+    "description": "Leverage the contradictory nature of time and borrow strength from one's future self – this is the mystery of 'acting before one is born'. Although the power I can presently call forth is limited and unstable, this extraordinary feat is still frightening enough for my enemies.\n[Use this in 'Work' to gain Influences.]",
+    "unique": true,
+    "aspects": {
+        "edge": 3,
+        "grail": 3,
+        "heart": 3,
+        "knock": 3,
+        "secrethistories": 3,
+        "lore": 1,
+        "score.chandler": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skilldraw.exhausted",
+        "exhaustskilldraw": "ke.skilldraw.exhausted"
+    }
+},
+{
+    "id": "ke.skilldraw.exhausted",
+    "icon": "ke.skilldraw",
+    "label": "Borrowed Majesty (Exhausted)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.chandler": 1
+    },
+    "lifetime": 240,
+    "decayTo": "ke.skilldraw"
+},
+{
+    "id": "ke.skillgreed",
+    "label": "Unending Greed",
+    "description": "My greed is as fire flying upwards – always taking more, always desiring more. When I unleash this greed, all things will yield to its viciousness.\n[Use this in 'Work' with any Influence to refresh its duration and greatly increase its Aspects.]",
+    "unique": true,
+    "aspects": {
+        "lore": 1,
+        "score.chandler": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skillgreed.exhausted",
+        "exhaustskillgreed": "ke.skillgreed.exhausted"
+    },
+    "slots": [
+		{
+			"id": "ks.buffinfluence",
+			"label": "Exalt",
+            "actionId": "kv.work",
+			"forbidden": {
+                "ka.promoted": 1
+			},
+            "essential":{
+                "influence": 1
+            }
+		}
+	]
+},
+{
+    "id": "ke.skillgreed.exhausted",
+    "icon": "ke.skillgreed",
+    "label": "Unending Greed (Exhausted)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.chandler": 1
+    },
+    "lifetime": 180,
+    "decayTo": "ke.skillgreed"
+},
+{
+    "id": "ke.skilltime",
+    "label": "Time's Falsehood",
+    "description": "To a mortal, time marches inexorably forward. But for the Chandler and His Names, it is inconsequential to make something happen a little sooner or a little later – all it takes is a little trick.\n[This can sometimes delay an enemy attack. It can also be used it 'Work' to restore a damaged Ability.]",
+    "unique": true,
+    "aspects": {
+        "forge": 3,
+        "lantern": 3,
+        "moth": 3,
+        "secrethistories": 3,
+        "winter": 3,
+        "lore": 1,
+        "score.chandler": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skilltime.exhausted",
+        "exhaustskilltime": "ke.skilltime.exhausted"
+    },
+    "slots": [
+		{
+			"id": "ks.recoverdamage",
+			"label": "Restore",
+            "actionId": "kv.work",
+            "required":{
+                "ka.damaged": 1
+            }
+		},
+		{
+			"id": "ks.needstrength",
+			"label": "Strength",
+            "actionId": "kv.work",
+            "consumes": true,
+            "required":{
+                "ke.strengtha": 1,
+                "ke.strengthb": 1,
+                "ke.strengthc": 1,
+                "strength.chandler": 1
+            }
+		}
+	]
+},
+{
+    "id": "ke.skilltime.exhausted",
+    "icon": "ke.skilltime",
+    "label": "Time's Falsehood (Exhausted)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.chandler": 1
+    },
+    "lifetime": 300,
+    "decayTo": "ke.skilltime"
+},
+{
+    "id": "loresteelg",
+    "icon": "fragmentforgeg",
+    "label": "Paean of Steel",
+    "description": "There are patterns underlying reforging, revolution and conquest. These are hymns to gods that have yet-to-come and are soon-to-arrive.",
+    "unique": true,
+    "aspects": {
+        "edge": 7,
+        "forge": 7,
+        "lantern": 7,
+        "lore": 1
+    },
+    "xtriggers": {
+        "exhaust": "loresteelg.exhausted"
+    }
+},
+{
+    "id": "loresteelg.exhausted",
+    "icon": "fragmentforgeg",
+    "label": "Paean of Steel (Overheated)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "decayTo": "loresteelg",
+    "resaturate": true,
+    "unique": true,
+    "lifetime": 60,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+	"id": "ke.skillforge",
+	"label": "Forge Heart",
+    "description": "I have harnessed the spark of creation for my own, and its great power can shape the world and refine my very essence. My body is now a weapon, an anvil, and the source of change.\n[You can use this to craft items or restore damaged Health.]",
+	"unique": true,
+    "aspects": {
+		"ka.forging": 1,
+        "score.steel": 1
+	},
+	"slots": [
+		{
+			"id": "forgeneedbase",
+			"label": "Forge",
+			"required": {
+				"ka.forgeable": 1,
+                "remnant": 1
+			}
+		},
+		{
+			"id": "forgeneedware",
+			"label": "Tool",
+			"required": {
+				"weapon": 1,
+				"tool": 1
+			}
+		},
+		{
+			"id": "forgeneedtech",
+			"label": "Technique",
+			"required": {
+				"lore": 1,
+                "memory": 1
+			}
+		},
+		{
+			"id": "forgeneedhelp",
+			"label": "Help",
+			"required": {
+				"ka.ally": 1,
+				"ability": 1
+			}
+		},
+		{
+			"id": "forgeneedop",
+			"label": "Chance",
+			"required": {
+				"op": 1
+			},
+			"forbidden":{
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "forgeneedfuel1",
+			"label": "Fuel",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		},
+		{
+			"id": "forgeneedfuel2",
+			"label": "Fuel",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		},
+		{
+			"id": "forgeneedfuel3",
+			"label": "Fuel",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		}
+	],
+    "xtriggers": {
+        "exhaustforgeplant": "ke.skillforge.cooldown"
+    }
+},
+{
+    "id": "ke.skillforge.cooldown",
+    "icon": "ke.skillforge",
+    "label": "Forge Heart (Overheated)",
+    "description": "The flame rages wildly within. It will settle down eventually, but I can also vent its power ahead of time.\n[This will become the 'Forge Heart' when it is used, or after its cooldown expires.]",
+    "unique": true,
+    "aspects": {
+        "forge": 8,
+        "heart": 8,
+        "lore": 1,
+        "score.steel": 1
+    },
+    "lifetime": 240,
+    "decayTo": "ke.skillforge",
+    "xtriggers": {
+        "exhaust": "ke.skillforge"
+    }
+},
+{
+    "id": "ke.skillremake",
+    "label": "Remake",
+    "description": "Through baptism in the forge's fire, I now hold the flame of change in the palm of my hand: all things, whether they are or have yet to be, can be remade with fire.\n[Use this in 'Work' to remove a special Aspect from an enemy.]",
+    "unique": true,
+    "aspects": {
+        "forge": 8,
+        "moth": 8,
+        "lore": 1,
+        "score.steel": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skillremake.exhausted",
+        "exhaustskillremake": "ke.skillremake.exhausted"
+    },
+    "slots": [
+		{
+			"id": "ks.weakenenemy",
+			"label": "Change",
+            "actionId": "kv.work",
+            "required":{
+                "ka.enemy": 1
+            }
+		}
+	]
+},
+{
+    "id": "ke.skillremake.exhausted",
+    "icon": "ke.skillremake",
+    "label": "Remake (Overheated)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.steel": 1
+    },
+    "lifetime": 180,
+    "decayTo": "ke.skillremake"
+},
+{
+    "id": "ke.skillriposte",
+    "label": "Incandescent Wrath",
+    "description": "My body and spirit have been reforged anew, and an unceasing rage blazes within me. When it breaks free, any enemy that dares to attack will be burnt to ashes by this wild power.\n[This can be used to defend against an attack from any source, and will launch a counterattack against the enemy who initiated the attack. The counterattack will ignore any of the enemy's special Aspects.]",
+    "unique": true,
+    "aspects": {
+        "edge": 8,
+        "forge": 8,
+        "lore": 1,
+        "score.steel": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skillriposte.exhausted"
+    }
+},
+{
+    "id": "ke.skillriposte.exhausted",
+    "icon": "ke.skillriposte",
+    "label": "Incandescent Wrath (Overheated)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.steel": 1
+    },
+    "lifetime": 300,
+    "decayTo": "ke.skillriposte"
+},
+{
+    "id": "loresung",
+    "icon": "fragmentlanterng",
+    "label": "Golden Order",
+    "description": "The laws and wisdom of a time long past still shine with a perfect and dazzling light",
+    "unique": true,
+    "aspects": {
+        "edge": 7,
+        "lantern": 7,
+        "winter": 7,
+        "lore": 1
+    },
+    "xtriggers": {
+        "exhaust": "loresung.exhausted"
+    }
+},
+{
+    "id": "loresung.exhausted",
+    "icon": "fragmentlanterng",
+    "label": "Golden Order (Dimmed)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "decayTo": "loresung",
+    "resaturate": true,
+    "unique": true,
+    "lifetime": 60,
+    "aspects": {
+        "exhausted": 1
+    }
+},
+{
+    "id": "ke.skillprofane",
+    "icon": "ke.skillprofane",
+    "overlays": [
+        {
+            "image": "ke.skillprofane",
+            "grayscale": true,
+            "color": "#000000"
+        }
+    ],
+    "label": "Splendorous Judgement (Dormant)",
+    "description": "When we strike, we do so with clarity and without mercy. Only then can we bring certain death to our enemy. This is how the Sun, my kinsman and mentor, judged the wicked in an age I had almost forgotten.\n[Activate this in 'Work' with Lantern and Edge Influence of at least tier 12 each. When activated, this can be used when attacking to nullify all of an enemy's special Aspects.]",
+    "unique": true,
+    "aspects": {
+        "lantern": 6,
+        "edge": 6,
+        "lore": 1,
+        "score.sun": 1
+    },
+    "slots": [
+		{
+			"id": "ks.influence1",
+			"label": "Guidance",
+			"required": {
+                "edge": 1,
+				"lantern": 1
+			},
+            "essential":{
+                "influence": 1
+            },
+            "consumes": true
+		},
+		{
+			"id": "ks.influence2",
+			"label": "Strength",
+			"required": {
+                "edge": 1,
+				"lantern": 1
+			},
+            "essential":{
+                "influence": 1
+            },
+            "consumes": true
+		}
+	],
+    "xtriggers": {
+        "activate": "ke.skillprofane.active",
+        "exhaust": "ke.skillprofane.exhausted"
+    }
+},
+{
+    "id": "ke.skillprofane.active",
+    "icon": "ke.skillprofane",
+    "label": "Splendorous Judgement (Dazzling)",
+    "description": "When we strike, we do so with clarity and without mercy. Only then can we bring certain death to our enemy. This is how the Sun, my kinsman and mentor, judged the wicked in an age I had almost forgotten.\n[Use this when attacking to nullify all of an enemy's special Aspects.]",
+    "unique": true,
+    "aspects": {
+        "lantern": 12,
+        "edge": 12,
+        "ka.profane": 1,
+        "lore": 1,
+        "score.sun": 1
+    },
+    "xtriggers": {
+        "exhaust": "ke.skillprofane.exhausted"
+    }
+},
+{
+    "id": "ke.skillprofane.exhausted",
+    "icon": "ke.skillprofane",
+    "label": "Splendorous Judgement (Dimmed)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "lifetime": 120,
+    "decayTo": "ke.skillprofane",
+    "aspects": {
+        "exhausted": 1,
+        "tag.wolfrefresh": 1,
+        "score.sun": 1
+    },
+    "xtriggers": {
+        "refresh": "ke.skillprofane"
+    }
+},
+{
+    "id": "ke.skillimmune",
+    "icon": "ke.skillimmune",
+    "overlays": [
+        {
+            "image": "ke.skillimmune",
+            "grayscale": true,
+            "color": "#000000"
+        }
+    ],
+    "label": "Eternal Dominion (Dormant)",
+    "description": "The Sun is not as he was, but his universal dominion remains etched deep in the fabric of the world. While we can only briefly call upon faint traces of that dominion, the laws of that old Sun are enough to negate every attack.\n[While this is active, you are immune to all attacks against you.]",
+    "unique": true,
+    "aspects": {
+        "lantern": 8,
+        "winter": 8,
+        "lore": 1,
+        "score.sun": 1
+    },
+    "xtriggers": {
+        "activate": "ke.skillimmune.active",
+        "exhaust": "ke.skillimmune.exhausted"
+    }
+},
+{
+    "id": "ke.skillimmune.active",
+    "icon": "ke.skillimmune",
+    "label": "Eternal Dominion (Glorious)",
+    "description": "I have called upon long-forgotten laws and have become invincible.\n[While this is active, you are immune to all attacks against you.]",
+    "unique": true,
+    "lifetime": 60,
+    "aspects": {
+        "score.sun": 1
+    },
+    "decayTo": "ke.skillimmune.exhausted",
+    "xtriggers": {
+        "exhaust": "ke.skillimmune.exhausted"
+    }
+},
+{
+    "id": "ke.skillimmune.exhausted",
+    "icon": "ke.skillimmune",
+    "label": "Eternal Dominion (Dimmed)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "lifetime": 240,
+    "decayTo": "ke.skillimmune",
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "tag.wolfrefresh": 1,
+        "score.sun": 1
+    },
+    "xtriggers": {
+        "refresh": "ke.skillimmune"
+    }
+},
+{
+    "id": "ke.skillwolf",
+    "icon": "ke.skillwolf",
+    "overlays": [
+        {
+            "image": "ke.skillwolf",
+            "grayscale": true,
+            "color": "#000000"
+        }
+    ],
+    "label": "Incarnation of Malice (Dormant)",
+    "description": "'The Sun and his shadow were divided, and his splendour was thus unmatched.' The Sun took his most hateful aspects, and crystallized them, severed them, exalted them. In so doing, his manifested glory became even more splendid. If I have the resolve to follow his example, I too can compel the most malicious facets of myself into service.\n[This can restore a damaged ability and call forth an incarnation of your malice.]",
+    "unique": true,
+    "aspects": {
+        "edge": 8,
+        "winter": 8,
+        "lore": 1,
+        "score.sun": 1
+    },
+    "slots": [
+		{
+			"id": "ks.needdamaged",
+			"label": "Divide",
+            "essential":{
+                "ka.damaged": 1
+            }
+		}
+	],
+    "xtriggers": {
+        "activate": "ke.skillwolf.active",
+        "exhaust": "ke.skillwolf.exhausted"
+    }
+},
+{
+    "id": "ke.skillwolf.active",
+    "icon": "ke.skillwolf",
+    "label": "Incarnation of Malice",
+    "description": "Its eyes burn with an unceasing hatred for all that is. I fear it hates me above all else, and I must admit the feeling is mutual. However, we will cooperate for our mutual benefit. For now.",
+    "unique": true,
+    "lifetime": 1,
+    "aspects": {
+        "score.sun": 1
+    },
+    "decayTo": "ke.skillwolf.exhausted"
+},
+{
+    "id": "ke.skillwolf.exhausted",
+    "icon": "ke.skillwolf",
+    "label": "Incarnation of Malice (Exhausted)",
+    "description": "[You need to wait for a short while before using it again.]",
+    "resaturate": true,
+    "unique": true,
+    "aspects": {
+        "exhausted": 1,
+        "score.sun": 1
+    },
+    "lifetime": 180,
+    "decayTo": "ke.skillwolf"
+}
+]
+}

@@ -1,0 +1,111 @@
+{
+"recipes": [
+{
+	"id": "kr.startstep2",
+	"label": "A Moment of Calm",
+	"actionId": "kv.talk",
+	"effects": {
+		"ke.desirechandler": 1
+	},
+	"startdescription": "In this secluded corner of the postwar ruins, the silence around me feels so unfamiliar—I had grown accustomed to the sound of people arguing, making promises, and negotiating interests in my presence...",
+	"description": " — Yet this is also a rare, undisturbed opportunity for contemplation. I did not let it go to waste and reconsidered the goals and plans I ought to pursue now. By the time the sky began to lighten, I had already formed a rough scheme in mind.",
+	"warmup": 20,
+	"craftable": false,
+	"alt": [
+		{
+			"id": "kr.startstep3",
+			"chance": 100,
+			"additional": true
+		},
+		{
+			"id": "kr.startstep4",
+			"chance": 100,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.startstep3",
+	"label": "Regroup",
+	"actionId": "kv.search",
+	"effects": {
+		"ke.dawn": 1
+	},
+	"startdescription": "To continue my work as discreetly as possible, I must traverse the perilous lands scarred by war...",
+	"description": "I should scout my current location anew; perhaps I can salvage some useful resources.",
+	"warmup": 10,
+	"craftable": false
+},
+{
+	"id": "kr.startstep4",
+	"label": "The Path of Pragmatism",
+	"actionId": "kv.work",
+	"effects": {
+		"lorechandlera": 1
+	},
+	"startdescription": "I have expended skill and strength to avert my own destruction. To attain a state equal to or greater than before, absolute pragmatism is essential.",
+	"description": "Study creation, refine the skills—I shall practice firsthand to gain the necessary insights.",
+	"warmup": 10,
+	"craftable": false
+},
+{
+	"id": "kr.startstep5",
+	"label": "Preparations",
+	"actionId": "kv.search",
+	"startdescription": "A long expedition awaits… Naturally, I must gather enough resources to leave this place before it can begin.",
+	"description": "This should barely last for a while.",
+	"maxexecutions": 1,
+	"requirements": {
+		"ke.domcaen": 1
+	},
+	"effects": {
+		"necessities": 3
+	},
+	"warmup": 15,
+	"craftable": true,
+	"alt": [
+		{
+			"id": "kr.startstep6",
+			"chance": 100,
+			"additional": true
+		},
+		{
+			"id": "kr.startstep7",
+			"chance": 100,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.startstep6",
+	"label": "The Flames of War Rage On",
+	"actionId": "kv.act",
+	"effects": {
+		"ke.wpnrifle.3": 1
+	},
+	"startdescription": "The malignant fires of conflict continue to scorch this world, with no sign of abatement yet in sight...",
+	"description": "Take up arms and ready my defense, for the dangers ahead will only grow.",
+	"warmup": 10,
+	"craftable": false
+},
+{
+	"id": "kr.startstep7",
+	"label": "Ready to Move",
+	"actionId": "kv.move",
+	"startdescription": "A destination—",
+	"description": "A destination destined to be temporary, yet still better than wandering blindly. [Time begins to flow.]",
+	"deckeffects": {
+		"kd.destr1s1": 1
+	},
+	"warmup": 10,
+	"craftable": false,
+	"alt": [
+		{
+			"id": "kr.timestart",
+			"chance": 100,
+			"additional": true
+		}
+	]
+}
+]
+}

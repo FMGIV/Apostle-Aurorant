@@ -1,0 +1,1023 @@
+{
+"recipes":[
+{
+	"id": "kr.dreamhint.ascension",
+	"actionid": "kv.dream",
+	"label": "Contemplation: Ascension",
+	"startdescription": "I will take this chance to examine my goal more closely.",
+	"comments": "抽取随机梦境提示，并根据需求导向不同文本配方。",
+	"requirements": {
+		"desire": 1,
+		"tag.ascension": 1
+	},
+	"deckeffects":{
+		"kd.dreamhints.ascension": 1
+	},
+	"linked": [
+		{
+			"id": "kr.dreamhint.ascensionchandlera"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlera.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerb"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerb.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerc"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerc.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerd"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerd.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlere"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlere.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerf"
+		},
+		{
+			"id": "kr.dreamhint.ascensionchandlerf.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteela"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteela.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelb"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelb.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelc"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelc.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteeld"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteeld.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteele"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteele.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelf"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsteelf.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsuna"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsuna.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunb"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunb.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunc"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunc.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsund"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsund.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsune"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsune.complete"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunf"
+		},
+		{
+			"id": "kr.dreamhint.ascensionsunf.complete"
+		}
+	]
+},
+{
+	"id": "kr.dreamhint.ascensionchandlera",
+	"actionid": "kv.dream",
+	"label": "The Mare's Assistance",
+	"startdescription": "The Chandler's birth was never meant to arrive in this age, within the hours governed by the Hours. In Zestaponi, I once had dealings with an emissary of the Mare—perhaps she might find a way to aid me in the feat of disrupting time...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhinta": 1
+	},
+	"extantreqs":{
+		"ke.theredflower": -1,
+		"ke.opnuma": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlera.complete",
+	"actionid": "kv.dream",
+	"label": "The Mare's Assistance [Completed]",
+	"startdescription": "The Chandler's birth was never meant to arrive in this age, within the hours governed by the Hours. In Zestaponi, I once had dealings with an emissary of the Mare—perhaps she might find a way to aid me in the feat of disrupting time...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerb",
+	"actionid": "kv.dream",
+	"label": "The Herald of Dusk",
+	"startdescription": "When the final moment comes, I must use a vessel of extraordinary import to sever my past self, and thereby embrace rebirth in the flame of the Chandler—forged from Divine Metal, it shall summon the power of contradiction and the twilight of endings...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintb": 1
+	},
+	"extantreqs":{
+		"ke.wpntwin": -1,
+		"ke.wpntwin.exhausted": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerb.complete",
+	"actionid": "kv.dream",
+	"label": "The Herald of Dusk [Completed]",
+	"startdescription": "When the final moment comes, I must use a vessel of extraordinary import to sever my past self, and thereby embrace rebirth in the flame of the Chandler—forged from Divine Metal, it shall summon the power of contradiction and the twilight of endings...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerc",
+	"actionid": "kv.dream",
+	"label": "The Nature of the Chandler",
+	"startdescription": "To accomplish the work of descent, an understanding of the Chandler's essence is essential. Sunset Celia—my birth mother, and the guardian of Crossrow—has always known the Chandler and its mysteries...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintc": 1
+	},
+	"extantreqs":{
+		"ke.searingenigma": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerc.complete",
+	"actionid": "kv.dream",
+	"label": "The Nature of the Chandler [Completed]",
+	"startdescription": "To accomplish the work of descent, an understanding of the Chandler's essence is essential. Sunset Celia—my birth mother, and the guardian of Crossrow—has always known the Chandler and its mysteries...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintc": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerd",
+	"actionid": "kv.dream",
+	"label": "Loopholes in the Histories",
+	"startdescription": "The gods who adjudicate History will never stand idly by as the Chandler descends, but even their authority is far from perfect. In the Hush House of Brancrug, where knowledge grows wild and unchecked, I may grasp the lore to undermine their dominion...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintd": 1
+	},
+	"extantreqs":{
+		"ke.numenloop": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerd.complete",
+	"actionid": "kv.dream",
+	"label": "Loopholes in the Histories [Completed]",
+	"startdescription": "The gods who adjudicate History will never stand idly by as the Chandler descends, but even their authority is far from perfect. In the Hush House of Brancrug, where knowledge grows wild and unchecked, I may grasp the lore to undermine their dominion...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintd": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlere",
+	"actionid": "kv.dream",
+	"label": "The Remnant Power of the Meniscate",
+	"startdescription": "The Meniscate, the Hour of beauty and revelation—her light distinguishes the possible from the real, and the loopholes between Histories open in response to her call. I cannot seek her aid, but her lost remnant power may serve a similar purpose—deep in that distant, frozen forest, beneath the silent lake...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhinte": 1
+	},
+	"extantreqs":{
+		"ke.moonfragment": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlere.complete",
+	"actionid": "kv.dream",
+	"label": "The Remnant Power of the Meniscate [Completed]",
+	"startdescription": "The Meniscate, the Hour of beauty and revelation—her light distinguishes the possible from the real, and the loopholes between Histories open in response to her call. I cannot seek her aid, but her lost remnant power may serve a similar purpose—deep in that distant, frozen forest, beneath the silent lake...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhinte": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerf",
+	"actionid": "kv.dream",
+	"label": "The Fated Place: Port Noon",
+	"startdescription": "Beyond the storm-torn seas, a refuge still remains for immortals forsaken by the world. That, too, is the terminus of my journey. When all is prepared, I shall there cast off my former self and greet a glorious rebirth...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintf": 1
+	},
+	"extantreqs":{
+		"ke.domisle": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionchandlerf.complete",
+	"actionid": "kv.dream",
+	"label": "The Fated Place: Port Noon [Completed]",
+	"startdescription": "Beyond the storm-torn seas, a refuge still remains for immortals forsaken by the world. That, too, is the terminus of my journey. When all is prepared, I shall there cast off my former self and greet a glorious rebirth...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionchandler": 1,
+		"ke.dreamhintf": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteela",
+	"actionid": "kv.dream",
+	"label": "Shattered Divinity",
+	"startdescription": "To realize the grand ambition of ascent, inner divinity is indispensable: even if imperfect, even if broken—I can feel that, in the foreign wilderness, something is waiting...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhinta": 1
+	},
+	"extantreqs":{
+		"ke.skillforge": -1,
+		"ke.skillforge.cooldown": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteela.complete",
+	"actionid": "kv.dream",
+	"label": "Shattered Divinity [Completed]",
+	"startdescription": "To realize the grand ambition of ascent, inner divinity is indispensable: even if imperfect, even if broken—I can feel that, in the foreign wilderness, something is waiting...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelb",
+	"actionid": "kv.dream",
+	"label": "Purification of the Madrugad",
+	"startdescription": "The Madrugad knows the Works of Forge, and she has sent her Name, Skadi, to hunt me, seeking to end my Work. If I can defeat her in battle, the remnants of her power may allow me to refine myself further...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintb": 1
+	},
+	"extantreqs":{
+		"ke.duskessence": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelb.complete",
+	"actionid": "kv.dream",
+	"label": "Purification of the Madrugad [Completed]",
+	"startdescription": "The Madrugad knows the Works of Forge, and she has sent her Name, Skadi, to hunt me, seeking to end my Work. If I can defeat her in battle, the remnants of her power may allow me to refine myself further...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelc",
+	"actionid": "kv.dream",
+	"label": "Cataclysmic Truth",
+	"startdescription": "As the Work nears its end, I must open a passage to the Mansus—and only a truth dangerous and corrupt enough can achieve such a feat. I may find revelation at Crossrow—one of the nine great libraries, and a place where the aviform gods exchange secrets...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintc": 1
+	},
+	"extantreqs":{
+		"ke.numenalte": -1,
+		"servant.pioneer": -1,
+		"servant.pioneer.profane": -1,
+		"servant.pioneer.exhausted": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelc.complete",
+	"actionid": "kv.dream",
+	"label": "Cataclysmic Truth [Completed]",
+	"startdescription": "As the Work nears its end, I must open a passage to the Mansus—and only a truth dangerous and corrupt enough can achieve such a feat. I may find revelation at Crossrow—one of the nine great libraries, and a place where the aviform gods exchange secrets...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintc": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteeld",
+	"actionid": "kv.dream",
+	"label": "Strike the Hours",
+	"startdescription": "Ys, with her art, has found a chime that can shake the Hours. I too seek to overturn the rule of the Hours and the order of the Mansus, so I too must reforge myself into something equally dreadful. At Hush House of Brancrug, where knowledge grows wild beyond control, I may grasp the wisdom that forged the bells...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintd": 1
+	},
+	"extantreqs":{
+		"ke.numenbell": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteeld.complete",
+	"actionid": "kv.dream",
+	"label": "Strike the Hours [Completed]",
+	"startdescription": "Ys, with her art, has found a chime that can shake the Hours. I too seek to overturn the rule of the Hours and the order of the Mansus, so I too must reforge myself into something equally dreadful. At Hush House of Brancrug, where knowledge grows wild beyond control, I may grasp the wisdom that forged the bells...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintd": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteele",
+	"actionid": "kv.dream",
+	"label": "Purification of the Meniscate",
+	"startdescription": "The Meniscate knows the Works of Forge, and governs beauty and truth. Her light can elevate creations to an extraordinary realm. I cannot seek her aid, but her lost remnant power may serve a similar purpose—deep in that distant, frozen forest, beneath the silent lake...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhinte": 1
+	},
+	"extantreqs":{
+		"ke.moonfragment": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteele.complete",
+	"actionid": "kv.dream",
+	"label": "Purification of the Meniscate [Completed]",
+	"startdescription": "The Meniscate knows the Works of Forge, and governs beauty and truth. Her light can elevate creations to an extraordinary realm. I cannot seek her aid, but her lost remnant power may serve a similar purpose—deep in that distant, frozen forest, beneath the silent lake...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhinte": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelf",
+	"actionid": "kv.dream",
+	"label": "The Fated Place: Ys",
+	"startdescription": "Beyond the mundane seas, a city built of orichalc and amber, coral and ice lies behind the waves. She knows the forbidden things that could shake the Hours' dominion. And that is the terminus of my journey. When all is ready, I shall forge there a perfect and terrible body, and open the way to the Mansus...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintf": 1
+	},
+	"extantreqs":{
+		"ke.domys": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsteelf.complete",
+	"actionid": "kv.dream",
+	"label": "The Fated Place: Ys [Completed]",
+	"startdescription": "Beyond the mundane seas, a city built of orichalc and amber, coral and ice lies behind the waves. She knows the forbidden things that could shake the Hours' dominion. And that is the terminus of my journey. When all is ready, I shall forge there a perfect and terrible body, and open the way to the Mansus...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsteel": 1,
+		"ke.dreamhintf": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsuna",
+	"actionid": "kv.dream",
+	"label": "The Afterglow of the Old Sun",
+	"startdescription": "Before I reclaim the old sun, I must fully inherit his will. In that afterglow left behind on the path lie his past, his arts, and his lingering thoughts—which shall manifest again under the splendor...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhinta": 1
+	},
+	"extantreqs":{
+		"ke.finalresolve": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsuna.complete",
+	"actionid": "kv.dream",
+	"label": "The Afterglow of the Old Sun [Completed]",
+	"startdescription": "Before I reclaim the old sun, I must fully inherit his will. In that afterglow left behind on the path lie his past, his arts, and his lingering thoughts—which shall manifest again under the splendor...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunb",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Madrugad",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Madrugad has sent her Name to hunt me, and I must defeat her and offer up her remnant power...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintb": 1
+	},
+	"extantreqs":{
+		"ke.duskessence": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunb.complete",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Madrugad [Completed]",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Madrugad has sent her Name to hunt me, and I must defeat her and offer up her remnant power...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunc",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Sun-in-Rags",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Sun-in-Rags, who awaits the end of all things and of himself, and Sunset Celia—my birth mother, also the guardian of Crossrow—once walked beside him...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintc": 1
+	},
+	"extantreqs":{
+		"ke.shatteredcrown": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunc.complete",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Sun-in-Rags [Completed]",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Sun-in-Rags, who awaits the end of all things and of himself, and Sunset Celia—my birth mother, also the guardian of Crossrow—once walked beside him...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintc": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsund",
+	"actionid": "kv.dream",
+	"label": "The Paths of the Sun",
+	"startdescription": "The path that crosses walls, woods, and bounds, leading to the Glory, is the Sun's greatest legacy, and in the end, he shall return by it. At the Hush House of Brancrug, where knowledge grows wild beyond control, I may grasp the knowledge that will allow me to ascend once more...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintd": 1
+	},
+	"extantreqs":{
+		"ke.numenasce": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsund.complete",
+	"actionid": "kv.dream",
+	"label": "The Paths of the Sun [Completed]",
+	"startdescription": "The path that crosses walls, woods, and bounds, leading to the Glory, is the Sun's greatest legacy, and in the end, he shall return by it. At the Hush House of Brancrug, where knowledge grows wild beyond control, I may grasp the knowledge that will allow me to ascend once more...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintd": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsune",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Meniscate",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Meniscate, who was involved the Disfiguration of the Sun, and whose remnant power thus fell into the depths of a distant, frozen forest, beneath that silent lake...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhinte": 1
+	},
+	"extantreqs":{
+		"ke.moonfragment": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsune.complete",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Meniscate [Completed]",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Meniscate, who was involved the Disfiguration of the Sun, and whose remnant power thus fell into the depths of a distant, frozen forest, beneath that silent lake...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhinte": 1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunf",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Wolf-Divided",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Wolf-Divided, the most terrible scar of the Sun—his power is essential to the Sun's return; and he now struggles at the southern end of the world, in a prison of light and glass...",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintf": 1
+	},
+	"extantreqs":{
+		"ke.domcage": -1
+	}
+},
+{
+	"id": "kr.dreamhint.ascensionsunf.complete",
+	"actionid": "kv.dream",
+	"label": "Price of the Four: the Wolf-Divided [Completed]",
+	"startdescription": "When the Sun was divided, His splendor scattered among his many selves and aspects. Therefore, if the Sun is to return, all four of its inheritors must pay the corresponding price.The Wolf-Divided, the most terrible scar of the Sun—his power is essential to the Sun's return; and he now struggles at the southern end of the world, in a prison of light and glass...\n\n[This entry is complete. You may focus on the remaining dream hints.]",
+	"warmup": 30,
+	"requirements": {
+		"ascensionsun": 1,
+		"ke.dreamhintf": 1
+	}
+},
+{
+	"id": "kr.dreamdesire",
+	"actionid": "kv.dream",
+	"label": "Contemplation: Desire",
+	"startdescription": "I will take this chance to examine my goal more closely.",
+	"requirements": {
+		"desire": 1
+	},
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "kr.dreamhint.desire"
+		}
+	]
+},
+{
+	"id": "kr.dreamhint.desire",
+	"actionid": "kv.dream",
+	"label": "Contemplation: Desire",
+	"startdescription": "The realization of desire is a long and grand process—I may plan more carefully; or, if reality diverges from my initial expectations, I can change my desire. There is still time.\n\n[Leave this empty to receive the next hint, or place a specific Influence to transform Desire.]",
+	"requirements": {
+		"desire": 1,
+		"tag.ascension": -1
+	},
+	"slots": [
+		{
+			"id": "dreamneedinfluence",
+			"label": "A Chance?",
+			"required": {
+				"influence": 1
+			}
+		}
+	],
+	"deckeffects":{
+		"kd.dreamhints.desire": 1
+	},
+	"warmup": 30,
+	"alt": [
+		{
+			"id": "swtichdesire.dawn"
+		},
+		{
+			"id": "swtichdesire.noon"
+		},
+		{
+			"id": "swtichdesire.sunset"
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.dreamhint.desirechandlera"
+		},
+		{
+			"id": "kr.dreamhint.desirechandlerb"
+		},
+		{
+			"id": "kr.dreamhint.desirechandlerc"
+		},
+		{
+			"id": "kr.dreamhint.desirechandlerd"
+		},
+		{
+			"id": "kr.dreamhint.desiresteela"
+		},
+		{
+			"id": "kr.dreamhint.desiresteelb"
+		},
+		{
+			"id": "kr.dreamhint.desiresteelc"
+		},
+		{
+			"id": "kr.dreamhint.desiresteeld"
+		},
+		{
+			"id": "kr.dreamhint.desiresteele"
+		},
+		{
+			"id": "kr.dreamhint.desiresuna"
+		},
+		{
+			"id": "kr.dreamhint.desiresunb"
+		},
+		{
+			"id": "kr.dreamhint.desiresunc"
+		}
+	]
+},
+{
+	"id": "kr.dreamhint.desirechandlera",
+	"actionid": "kv.dream",
+	"label": "Divine Metal",
+	"startdescription": "For refining my own essence and forging an immortal body to rival the gods, I spent years creating this noble metal. I must retrieve them from various cities across Britain if I am to continue advancing my plan.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desirechandler": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desirechandlerb",
+	"actionid": "kv.dream",
+	"label": "Secret of the Chandler",
+	"startdescription": "To become a vessel for the Chandler, I must master all of their arts. The esoteric knowledge they are made of awaits somewhere ahead on my journey—but first, I must refine the skills I already possess to their utmost perfection before I can comprehend them.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desirechandler": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desirechandlerc",
+	"actionid": "kv.dream",
+	"label": "Lost Power",
+	"startdescription": "The path to my goal is fraught with dangers and challenges, and I had best prepare sufficiently. Seeking to restore all my lost abilities would be a wise choice.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desirechandler": 1,
+		"ke.dreamhintc": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desirechandlerd",
+	"actionid": "kv.dream",
+	"label": "The Paths of the Sun",
+	"startdescription": "The Paths of the Sun—on that great road connecting the Bounds and the Glory, lies the secret of ascension. There, I must prove my resolve to the Chandler, to reclaim the right to bear the birth of divinity.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desirechandler": 1,
+		"ke.dreamhintd": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresteela",
+	"actionid": "kv.dream",
+	"label": "Divine Metal",
+	"startdescription": "For refining my own essence and forging an immortal body to rival the gods, I spent years creating this noble metal. I must retrieve them from various cities across Britain if I am to continue advancing my plan.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresteel": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresteelb",
+	"actionid": "kv.dream",
+	"label": "Name of Steel",
+	"startdescription": "A herald of the Chandler, a shadow of Ghribi...Though his form resembles battleships of the waking world, my ally possesses a nature far more intricate than his appearance suggests. Perhaps, at the right moment, the power of threshold and flame may open a new path for me...",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresteel": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresteelc",
+	"actionid": "kv.dream",
+	"label": "Refining the Skill",
+	"startdescription": "'Power is Knowledge.' The power of a new god cannot exist without knowledge, but knowledge cannot be created from nothing—it is synthesized from different domains. Before beginning the true Work, I must master the mysteries of the Chandler...",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresteel": 1,
+		"ke.dreamhintc": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresteeld",
+	"actionid": "kv.dream",
+	"label": "Lost Power",
+	"startdescription": "The path to my goal is fraught with dangers and challenges, and I had best prepare sufficiently. Seeking to restore all my lost abilities would be a wise choice.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresteel": 1,
+		"ke.dreamhintd": 1
+	},
+	"extantreqs":{
+		"ka.damaged": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresteele",
+	"actionid": "kv.dream",
+	"label": "The Paths of the Sun",
+	"startdescription": "My fate is inextricably bound to this place. If I can tread and understand that path, I may gain revelations to realize a new desire.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresteel": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresuna",
+	"actionid": "kv.dream",
+	"label": "Refining the Skill",
+	"startdescription": "The Sun has been divided and is nowhere to be found, but I believe he still has lost arts surviving—and lost knowledge must be built upon existing foundations to reveal meaning. Before beginning the true Work, I must first master the arts I already possess...",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresun": 1,
+		"ke.dreamhinta": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresunb",
+	"actionid": "kv.dream",
+	"label": "The Paths of the Sun",
+	"startdescription": "The Paths of the Sun—a key part of the Sun's Design. If I can tread and understand that path, I may obtain insight from his legacy.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresun": 1,
+		"ke.dreamhintb": 1
+	}
+},
+{
+	"id": "kr.dreamhint.desiresunc",
+	"actionid": "kv.dream",
+	"label": "Lost Power",
+	"startdescription": "The path to my goal is fraught with dangers and challenges, and I had best prepare sufficiently. Seeking to restore all my lost abilities would be a wise choice.",
+	"warmup": 30,
+	"requirements": {
+		"ke.desiresun": 1
+	}
+},
+{
+	"id": "swtichdesire.dawn",
+	"actionid": "kv.dream",
+	"label": "To Bring the Dawn",
+	"startdescription": "In the breaking light of dawn, my thoughts turn to new possibilities...",
+	"description": "Perhaps this is the only goal worth pursuing.",
+	"requirements": {
+		"desire": 1,
+		"ke.dawn": 1,
+		"tag.ascension": -1
+	},
+	"aspects": {
+		"switchtosteel": 1
+	},
+	"effects": {
+		"influence": -99
+	}
+},
+{
+	"id": "swtichdesire.noon",
+	"actionid": "kv.dream",
+	"label": "To Return the Noon",
+	"startdescription": "In the brilliant light of noon, my thoughts turn to that once-magnificent Sun...",
+	"description": "Perhaps this is the only goal worth pursuing.",
+	"requirements": {
+		"desire": 1,
+		"ke.noon": 1,
+		"tag.ascension": -1
+	},
+	"aspects": {
+		"switchtosun": 1
+	},
+	"effects": {
+		"influence": -99
+	}
+},
+{
+	"id": "swtichdesire.sunset",
+	"actionid": "kv.dream",
+	"label": "Sunset Has Arrived",
+	"startdescription": "In the red light of dusk, my thoughts turn to that Sun which has not yet come but is destined to arrive...",
+	"description": "Perhaps this is the only goal worth pursuing.",
+	"requirements": {
+		"desire": 1,
+		"ke.sunset": 1,
+		"tag.ascension": -1
+	},
+	"aspects": {
+		"switchtochandler": 1
+	},
+	"effects": {
+		"influence": -99
+	}
+},
+{
+	"id": "kr.dreamrandom",
+	"actionid": "kv.dream",
+	"label": "Wandering Thoughts...",
+	"startdescription": "I clear my mind and let my thoughts drift along with inspiration—",
+	"requirements": {
+		"desire": -1
+	},
+	"warmup": 30,
+	"deckeffects": {
+		"kd.randomdream": 1
+	},
+	"linked": [
+		{
+			"id": "kr.randomdream.contentment"
+		},
+		{
+			"id": "kr.randomdream.dread"
+		},
+		{
+			"id": "kr.randomdream.fleeting"
+		},
+		{
+			"id": "kr.randomdream.grief"
+		},
+		{
+			"id": "kr.randomdream.influenceforgec"
+		},
+		{
+			"id": "kr.randomdream.influencegrailc"
+		},
+		{
+			"id": "kr.randomdream.influencelanternc"
+		},
+		{
+			"id": "kr.randomdream.strengtha"
+		},
+		{
+			"id": "kr.randomdream.strengthc"
+		},
+		{
+			"id": "kr.randomdream.restlessness"
+		}
+	]
+},
+{
+	"id": "kr.randomdream.contentment",
+	"actionid": "kv.dream",
+	"label": "A Fleeting Moment of Ease",
+	"startdescription": "Tonight I shall dream of brief comfort.",
+	"description": "Tonight, in my dream, I follow the footsteps of my birth mother—Sunset Celia—through warm, bright corridors, witnessing the hidden wonders and marvels of histories in the light; the piercing aura about her is indeed unsettling, but to the lingering melody of Crossrow, her steps are always so light and joyful, and on her face, there always lingers an elusive, faint smile…\n\nThen I wake and realize such times are long gone. The beauty of childhood was a lie—we had simply not yet understood the cruelty of the world. But memories strive with all their might to remain as they were.",
+	"requirements": {
+		"desire": -1,
+		"contentment": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.dread",
+	"actionid": "kv.dream",
+	"label": "A Fearsome Foe",
+	"startdescription": "Tonight I shall dream of a fearsome enemy.",
+	"description": "Tonight, I return once more to the battlefield of Caen. Power and the thrill of regained freedom made me arrogant, leading me recklessly into the fray—until that fire was utterly extinguished by a bone‑deep chill. I had not imagined that a Name not even numbered among the Corrivality could be so formidable. When we clashed, her blade shone like the dawn, cleaving cold night from blazing sun—\n\nI awaken soon after, not without terror in my breast. She will come for me again, I am certain. I need only consider how I shall match her when that time comes.",
+	"requirements": {
+		"desire": -1,
+		"dread": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.fleeting",
+	"actionid": "kv.dream",
+	"label": "Halls of Bygone Days",
+	"startdescription": "Tonight I shall dream of old companions.",
+	"description": "Tonight, I dream of a grand and spacious hall. Friends from days gone by sit with me around a great round table, sharing food, wine, tales of distant places, and veiled interests and suspicions… Among them are not only humans but also Long, Carapace Crosses, and yet older peoples whose names are now lost: I myself am the greatest oddity, and so I have never minded keeping company beyond the mainstream. Goblets clink, lamps burn long into the night.  \n\nBefore I know it, I have awoken—and realize most of those faces are no more. There is loss in my heart, but even more, solace: this world is so vast that even one as peculiar as I can find a place to belong.",
+	"requirements": {
+		"desire": -1,
+		"fleeting": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.grief",
+	"actionid": "kv.dream",
+	"label": "Sins",
+	"startdescription": "Tonight I shall dream of sorrow.",
+	"description": "Every soul has its shadow. Tonight, in that hazy darkness, all those I failed and all who died by my betrayal silently watch me, accusing me of my sins. And I have no answer. Is justice not merely a beautiful lie? Is loyalty not a shackle the strong bind upon the weak? If one loses all power for its sake, who then will remember his virtues?\n\nYet even though I have long understood the chain of cause and effect, bitterness remains in my heart… a sorrow I can do nothing about, and cannot forget.",
+	"requirements": {
+		"desire": -1,
+		"ke.grief": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influenceforgec",
+	"actionid": "kv.dream",
+	"label": "Fire of Change",
+	"startdescription": "Tonight I shall dream of rage.",
+	"description": "Change always meets resistance, and thus before every revolution, there must be anger. Tonight, on a golden battlefield, I fight without end against those enemies who deny transformation. Why will they not understand? Why do they resist the revolution? Every blow I strike carries a fanatic fury and a primal bloodlust: if they insist on denying and despising my existence, then let me change them with my own hands.\n\nEven now that I am awake, my blood still boils with that wild rage. I shall spare not a single foe; I shall tolerate not even a shred of disgrace.",
+	"requirements": {
+		"desire": -1,
+		"influenceforgec": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influencegrailc",
+	"actionid": "kv.dream",
+	"label": "Red Vision",
+	"startdescription": "Tonight I shall dream of something red.",
+	"description": "Tonight, I dream of a being that once tempted me. Under the cover of night, we lose ourselves in abandon, sharing that forbidden sweetness of desire… Then, from a certain moment, my sight is flooded with red, and I find myself madly tearing at some unrecognizable flesh—flesh that was once my own blood, created by me. I know this is wrong, but a voracious hunger stops me from halting: show me the red within you, more, and still more.\n\nI wake in a cold sweat, but that hunger—that hunger has not faded, leaving me parched as a long‑drought desert.",
+	"requirements": {
+		"desire": -1,
+		"influencegrailc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.influencelanternc",
+	"actionid": "kv.dream",
+	"label": "Glorious Days",
+	"startdescription": "Tonight I shall dream of radiance.",
+	"description": "Tonight, I dream of more glorious years. Together with other Names, I walked alongside my blood‑kin and mentor—the Sun that walks the House—and as we passed, even the gods paid their respects. I gaze upon that sun of old and am stung to tears. Then I realize: I have grown accustomed to a dimmed world.\n\nAnd then I wake. Today, everything I see glimmers with a faint light.",
+	"requirements": {
+		"desire": -1,
+		"influencelanternc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.strengtha",
+	"actionid": "kv.dream",
+	"label": "Night Without Dreams",
+	"startdescription": "Tonight I shall dream of…",
+	"description": "Tonight, there is no dream. I close my eyes, and when I open them again, it is already dawn. I almost believe I never slept—until I rise and find my flesh truly restored in strength.",
+	"requirements": {
+		"desire": -1,
+		"ke.strengtha": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.strengthc",
+	"actionid": "kv.dream",
+	"label": "A Pitiful Insight",
+	"startdescription": "Tonight I shall dream of pitiful gains.",
+	"description": "Tonight, I dream again of those unbearable years… George Collers, the one and only warden of Brancrug Prison, was a thorough and utter madman, a rarity even across the Wake. After performing the vilest experiments upon this wretched flesh, he would sometimes speak to me of the Histories—one‑sidedly, of course—about the various similarities and differences between the Invisible and the Great Arts, from the collapse of the Sun to the reign of the Worms…\n\nAnd though I have hated him with every fibre of my being, I must admit that some of what he said was just <i>goddamned</i> right—a fact that infuriates me most of all. Tonight, once again, I have gained these insights I wish I had never gained.",
+	"requirements": {
+		"desire": -1,
+		"ke.strengthc": 1
+	},
+	"warmup": 30
+},
+{
+	"id": "kr.randomdream.restlessness",
+	"actionid": "kv.dream",
+	"label": "Unbearable Past",
+	"startdescription": "Tonight I shall dream of the cell.",
+	"description": "Tonight, I am trapped again in that stifling, narrow oubliette. The cage is made of mere mortal materials, yet no matter how I struggle, scream, and strike its walls with all my fury, the enchantments upon it dissolve my strength, rendering my resistance like fists pounding into cotton. Damned Great Arts, damned noble blood.\n\nWas I not born with a great destiny? Is my calling not to remake the world and bring about a higher revolution? Yet I could not even change a common iron cage. Even now that I am awake, that restless, stifled resentment lingers in my heart, refusing to fade.",
+	"requirements": {
+		"desire": -1,
+		"restlessness": 1
+	},
+	"warmup": 30
+}
+]
+}

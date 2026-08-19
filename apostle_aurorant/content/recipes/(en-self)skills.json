@@ -1,0 +1,1274 @@
+{
+"recipes":[
+{
+	"id": "kr.useskilldraw",
+	"actionid": "kv.work",
+	"label": "Invoke a Power Beyond the Common Order",
+	"startdescription": "By relying upon secrets that can unsettle the very essence of time and space, I shall, for a brief moment, cast off the shackles of law and draw forth wondrous power from the future... but the outcome may prove other than I wish. Those who manipulate reality should always take care not to be undone by their own tricks.\n\n[This will generate a number of random Influences.]",
+	"description": "When crossing the layered ramparts raised by the gods, what power might reveal itself?",
+	"craftable": true,
+	"warmup": 10,
+	"grandreqs": {
+		"ke.skilldraw": 1,
+		"influence": -1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"exhaustskilldraw": 1
+	},
+	"deckeffects": {
+		"kd.skilldrawinfluence": 2,
+		"kd.skilldrawstrength": 2
+	}
+},
+{
+	"id": "kr.useskillgreed",
+	"actionid": "kv.work",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "The power of the Chandler is walled behind manifold barriers of Law in this age, yet His greed and hunger have never waned, and they never cease to shape the course of history. If I but guide it, even the faintest dream-power may be elevated by it to fierce heights.\n\n[This will refresh the duration of the Influence and strengthen all of its aspects of Principles.]",
+	"craftable": true,
+	"warmup": 0,
+	"grandreqs": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"refresh": 1
+	},
+	"linked": [
+		{
+			"id": "skillgreed.buffedge"
+		},
+		{
+			"id": "skillgreed.buffforge"
+		},
+		{
+			"id": "skillgreed.buffgrail"
+		},
+		{
+			"id": "skillgreed.buffheart"
+		},
+		{
+			"id": "skillgreed.buffknock"
+		},
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffedge",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"edge": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "edge",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffforge"
+		},
+		{
+			"id": "skillgreed.buffgrail"
+		},
+		{
+			"id": "skillgreed.buffheart"
+		},
+		{
+			"id": "skillgreed.buffknock"
+		},
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffforge",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"forge": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "forge",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffgrail"
+		},
+		{
+			"id": "skillgreed.buffheart"
+		},
+		{
+			"id": "skillgreed.buffknock"
+		},
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffgrail",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"grail": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "grail",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffheart"
+		},
+		{
+			"id": "skillgreed.buffknock"
+		},
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffheart",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"heart": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "heart",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffknock"
+		},
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffknock",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"knock": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "knock",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.bufflantern"
+		},
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.bufflantern",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"lantern": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "lantern",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffmoth"
+		},
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffmoth",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"moth": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "moth",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffsh"
+		},
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffsh",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"secrethistories": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "secrethistories",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffsh",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"secrethistories": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "secrethistories",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.buffwinter"
+		},
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.buffwinter",
+	"label": "Guide the Power of Greed and Hunger",
+	"startdescription": "......",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1,
+		"winter": 1
+	},
+	"warmup": 2,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "winter",
+			"level": 6,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "skillgreed.endpromotion"
+		}
+	]
+},
+{
+	"id": "skillgreed.endpromotion",
+	"label": "Guide the Power of Greed and Hunger",
+	"description": "Before the desire of a god, even reality itself is twisted.",
+	"requirements": {
+		"ke.skillgreed": 1,
+		"influence": 1
+	},
+	"warmup": 0,
+	"mutations": [
+		{
+			"filter": "influence",
+			"mutate": "ka.promoted",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"aspects":{
+		"exhaustskillgreed": 1
+	}
+},
+{
+	"id": "kh.useskilltime",
+	"actionid": "kv.work",
+	"label": "The Trick That Perturbs Time?",
+	"startdescription": "Should this body suffer a grievous blow, I may channel a kindred power and cast the trick that perturbs time, restoring myself fully to an unharmed state.\n\n[Provide the corresponding Influence to fully restore a seriously wounded Ability.]",
+	"craftable": false,
+	"hintonly": true,
+	"requirements": {
+		"ke.skilltime": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	}
+},
+{
+	"id": "skilltime.restorehealth",
+	"actionid": "kv.work",
+	"label": "The Trick That Perturbs Time",
+	"startdescription": "Drawn by a kindred power, the disturbed time begins to flow backward at the site of the wound—\n\n[This will consume the Influence, and fully restore a seriously wounded ability.]",
+	"description": "Until all is made whole again",
+	"craftable": true,
+	"warmup": 60,
+	"grandreqs": {
+		"ke.skilltime": 1,
+		"[ke.healthdamaged]+[ke.woundsevere]": 1,
+		"ke.strengtha": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"restorehealth": 1,
+		"exhaustskilltime": 1
+	}
+},
+{
+	"id": "skilltime.restorepassion",
+	"actionid": "kv.work",
+	"label": "The Trick That Perturbs Time",
+	"startdescription": "Drawn by a kindred power, the disturbed time begins to flow backward at the site of the wound—\n\n[This will consume the Influence, and fully restore a seriously wounded ability.]",
+	"description": "Until all is made whole again",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"ke.skilltime": 1,
+		"ke.passiondamaged": 1,
+		"ke.strengthb": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"restorepassion": 1,
+		"exhaustskilltime": 1
+	}
+},
+{
+	"id": "skilltime.restorereason",
+	"actionid": "kv.work",
+	"label": "The Trick That Perturbs Time",
+	"startdescription": "Drawn by a kindred power, the disturbed time begins to flow backward at the site of the wound—\n\n[This will consume the Influence, and fully restore a seriously wounded ability.]",
+	"description": "Until all is made whole again",
+	"craftable": true,
+	"warmup": 60,
+	"requirements": {
+		"ke.skilltime": 1,
+		"ke.reasondamaged": 1,
+		"ke.strengthc": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"restorereason": 1,
+		"exhaustskilltime": 1
+	}
+},
+{
+	"id": "kr.useskillremake1",
+	"actionid": "kv.work",
+	"label": "Remaking with Fire",
+	"startdescription": "The fiery power will kindle a merciless change within the enemy.\n\n[This will remove one trait from the enemy.]",
+	"craftable": true,
+	"warmup": 0,
+	"grandreqs": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"[ka.buffering]+[ka.resistant]+[ka.revival]": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"linked": [
+		{
+			"id": "skillremake.removebuffering"
+		},
+		{
+			"id": "skillremake.removedeadly"
+		},
+		{
+			"id": "skillremake.removeresistant"
+		},
+		{
+			"id": "skillremake.removerevival"
+		},
+		{
+			"id": "skillremake.removesneaky"
+		},
+		{
+			"id": "skillremake.removetwisting"
+		},
+		{
+			"id": "skillremake.removevengeful"
+		}
+	]
+},
+{
+	"id": "kr.useskillremake2",
+	"actionid": "kv.work",
+	"label": "Remaking with Fire",
+	"startdescription": "The fiery power will kindle a merciless change within the enemy.\n\n[This will remove one trait from the enemy.]",
+	"craftable": true,
+	"warmup": 0,
+	"grandreqs": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"[ka.sneaky]+[ka.twisting]+[ka.vengeful]": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"linked": [
+		{
+			"id": "skillremake.removebuffering"
+		},
+		{
+			"id": "skillremake.removedeadly"
+		},
+		{
+			"id": "skillremake.removeresistant"
+		},
+		{
+			"id": "skillremake.removerevival"
+		},
+		{
+			"id": "skillremake.removesneaky"
+		},
+		{
+			"id": "skillremake.removetwisting"
+		},
+		{
+			"id": "skillremake.removevengeful"
+		}
+	]
+},
+{
+	"id": "skillremake.removebuffering",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.buffering": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.buffering",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removedeadly",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.deadly": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.deadly",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removeresistant",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.resistant": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.resistant",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removerevival",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.revival": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.revival",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removesneaky",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.sneaky": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.sneaky",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removetwisting",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.twisting": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.twisting",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "skillremake.removevengeful",
+	"label": "Remaking with Fire",
+	"description": "More amenable to work, and easier to kill.",
+	"requirements": {
+		"ke.skillremake": 1,
+		"ka.enemy": 1,
+		"ka.vengeful": 1
+	},
+	"warmup": 30,
+	"aspects":{
+		"exhaustskillremake": 1
+	},
+	"mutations": [
+		{
+			"filter": "ka.enemy",
+			"mutate": "ka.vengeful",
+			"level": -1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "kr.activateskillprofane",
+	"actionid": "kv.work",
+	"label": "Invoke the Radiant Power of Defiance",
+	"startdescription": "The great power of light and defiance shall witness whether we destroy, or are destroyed.\n\n[This will activate this lore, allowing it to nullify all of the enemy's traits on attack.]",
+	"description": "No mercy, no exception—only a certain end waiting to be revealed.",
+	"craftable": true,
+	"warmup": 10,
+	"grandreqs": {
+		"ke.skillprofane": 1,
+		"[edge]+[lantern]": 24,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects": {
+		"activate": 1
+	},
+	"effects":{
+		"influence": -99
+	}
+},
+{
+	"id": "kr.activateskillimmune",
+	"actionid": "kv.work",
+	"label": "Invoke the Principle of Old Glory",
+	"startdescription": "Remnants of the age of the Sun-in-Splendour still lie deep within reality, glimmering like golden threads woven into common cloth. I may offer power to briefly restore its former glory—\n\n[This will activate this lore, and for a short time render any attack against you futile.]",
+	"description": "In days to come, the old golden truth shall once more shelter the blood of the Sun—though only for a moment.",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ke.skillimmune": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects": {
+		"activate": 1
+	},
+	"haltverb": {
+		"kv.damage": 99
+	}
+},
+{
+	"id": "kr.activateskillwolf",
+	"actionid": "kv.work",
+	"label": "Rending the Worst Part of Myself",
+	"startdescription": "Indescribable agony seethes within me. But I clench my jaw, steady my thoughts, and continue this cruel lesson—\n\n[This will summon your worst Half, heal any serious injury laid upon you, and generate an 'Agonizing Wound'.]",
+	"description": "My failures, my shadows, my regrets, my wounds, and countless other parts I cannot name all pour into that unseen wound, gathering into something utterly distorted—",
+	"craftable": true,
+	"warmup": 20,
+	"requirements": {
+		"ke.skillwolf": 1,
+		"ka.workable": -1,
+		"ka.forging": -1,
+		"ka.malice": -1
+	},
+	"aspects":{
+		"restorehealth": 1,
+		"restorepassion": 1,
+		"restorereason": 1
+	},
+	"effects":{
+		"ke.agony": 1
+	},
+	"alt": [
+		{
+			"id": "kr.wolfsetup",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ke.skillwolf": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "kr.wolfsetup",
+	"actionid": "kv.wolf",
+	"label": "The Wolf Walks Here",
+	"startdescription": "That thing tears free of my body, and in a shriek of agony it further takes shape: claws, teeth, grey-black fur, now solid as a true beast, now wispy as drifting smoke. As long as the unseen wound remains, it may linger in this world.\n\n[While 'Agonizing Wound' is present, your Half will fight for you.]",
+	"warmup": 20,
+	"aspects":{
+		"activate": 1
+	},
+	"linked":[
+		{
+			"id": "kr.wolfdraw"
+		}
+	]
+},
+{
+	"id": "kr.wolfdraw",
+	"actionid": "kv.wolf",
+	"comments": "抽取狼的行动策略。",
+	"requirements": {
+		"ke.skillwolf.active": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategieswolf": 1
+	},
+	"linked": [
+		{
+			"id": "kr.wolfrouter"
+		}
+	]
+},
+{
+	"id": "kr.wolfrouter",
+	"actionid": "kv.wolf",
+	"comments": "链接着所有可能的recipe，决定狼如何行动。",
+	"requirements": {
+		"ke.skillwolf.active": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "kr.wolfquit"
+		},
+		{
+			"id": "kr.wolfattack"
+		},
+		{
+			"id": "kr.wolfburnmalice"
+		},
+		{
+			"id": "kr.wolftrace.partyenvoys"
+		},
+		{
+			"id": "kr.wolftrace.partysecret"
+		},
+		{
+			"id": "kr.wolftrace.partymain"
+		},
+		{
+			"id": "kr.wolfbuff"
+		},
+		{
+			"id": "kr.wolfholdskill"
+		},
+		{
+			"id": "kr.wolfactivateskill"
+		},
+		{
+			"id": "kr.wolfrefreshskill"
+		},
+		{
+			"id": "kr.wolfpass"
+		}
+	]
+},
+{
+	"id": "kr.wolfquit",
+	"actionid": "kv.wolf",
+	"label": "Return to Stillness",
+	"startdescription": "Freed from the wound's binding, my wolf-shaped Half soon begins to dissolve, to crumble—",
+	"description": "In the end, only a foul reek of rust lingers upon the air.",
+	"extantreqs": {
+		"ke.agony": -1
+	},
+	"warmup": 20
+},
+{
+	"id": "kr.wolfattack",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Hunt",
+	"startdescription": "My Half has locked upon its prey, ready to strike—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.agony": 1,
+		"ka.enemy": 1
+	},
+	"requirements": {
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfa": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needenemy",
+			"label": "Enemy",
+			"required": {
+				"ka.enemy": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfattack.confirmed"
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.wolfdraw"
+		}
+	]
+},
+{
+	"id": "wolfattack.confirmed",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Hunt",
+	"startdescription": "My Half has locked upon its prey, ready to strike—",
+	"requirements": {
+		"ka.enemy": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.attackenemy",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "kr.wolfburnmalice",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Balefire",
+	"startdescription": "The baleful fire of my Half is burning the lingering malice of this place—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.agony": 1,
+		"ka.malice": 1
+	},
+	"requirements": {
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfb": 1
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice",
+			"label": "Malice",
+			"required": {
+				"ka.malice": 1
+			},
+			"greedy": true,
+			"consumes": true
+		}
+	],
+	"linked": [
+		{
+			"id": "kr.wolfdraw"
+		}
+	]
+},
+{
+	"id": "kr.wolftrace.partyenvoys",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Hunt",
+	"startdescription": "Scenting the loathsome breath of the foe, my Half's form trembles with fury, and a roar pierces the space—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.partyenvoys": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1,
+		"ke.agony": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfb": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.tracepartyenvoys",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolftrace.partysecret",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Hunt",
+	"startdescription": "Scenting the loathsome breath of the foe, my Half's form trembles with fury, and a roar pierces the space—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.partysecret": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1,
+		"ke.agony": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfb": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.tracepartysecret",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolftrace.partymain",
+	"actionid": "kv.wolf",
+	"label": "The Wolf's Hunt",
+	"startdescription": "Scenting the loathsome breath of the foe, my Half's form trembles with fury, and a roar pierces the space—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.partymain": 1,
+		"ke.goalwoundparties": 1,
+		"ke.goalsetbackparties": 1,
+		"ke.agony": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfb": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.tracepartymain",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolfbuff",
+	"actionid": "kv.wolf",
+	"label": "Ceaseless Spite",
+	"startdescription": "Intense pain and hatred seethe in the air; my Half's fur bristles like thorns, and it lifts its head to howl a summons to annihilation—",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.agony": 1
+	},
+	"grandreqs":{
+		"ke.skillwolf.active": 1,
+		"[ke.strategy.wolfa]+[ke.strategy.wolfb]": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.spawninfluence",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolfholdskill",
+	"actionid": "kv.wolf",
+	"comments": "即时recipe，用于及时触发延长永恒统御持续时间的效果。文字描述由后续的delay recipe完成。",
+	"warmup": 0,
+	"extantreqs": {
+		"ke.agony": 1,
+		"ke.skillimmune.active": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfc": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfholdskill.delay"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.holdskillimmune",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "wolfholdskill.delay",
+	"label": "Symbiotic Glory",
+	"startdescription": "Sensing that the power surpassing all things has been roused anew, my Half lets out an eager, rumbling growl. Now, sheltered beneath the golden truth, our strength surges together.",
+	"warmup": 20,
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	]
+},
+{
+	"id": "kr.wolfactivateskill",
+	"actionid": "kv.wolf",
+	"label": "Light of Agony",
+	"startdescription": "My Half shakes its coat, loosing a vexed, low snarl, and a blade-like light of agony is kindled from within—\n\n[Your Half is attempting to activate Splendorous Judgement.]",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.agony": 1,
+		"ke.skillprofane": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfc": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.activateskillprofane",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolfrefreshskill",
+	"actionid": "kv.wolf",
+	"label": "Inciting Ruin",
+	"startdescription": "My Half shakes its coat and looses a shrill, mournful howl. Within me wells an ancient hatred, which, in its torment, slowly transforms into a power utterly other—\n\n[Your Half is attempting to restore a specific lore currently on cooldown.]",
+	"warmup": 20,
+	"extantreqs": {
+		"ke.agony": 1,
+		"tag.wolfrefresh": 1
+	},
+	"requirements":{
+		"ke.skillwolf.active": 1,
+		"ke.strategy.wolfc": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfcooldown"
+		}
+	],
+	"alt":[
+		{
+			"id": "wolfaction.refreshskill",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.wolfcooldown",
+	"label": "The Wolf Walks Here",
+	"startdescription": "My Half paces and runs in the shadows like a beast, watching for the chance to bring forth annihilation and agony.",
+	"warmup": 20,
+	"linked": [
+		{
+			"id": "kr.wolfdraw"
+		}
+	]
+},
+{
+	"id": "kr.wolfpass",
+	"actionid": "kv.wolf",
+	"label": "The Wolf Walks Here",
+	"startdescription": "My Half paces and runs in the shadows like a beast, watching for the chance to bring forth annihilation and agony.",
+	"extantreqs":{
+		"ke.agony": 1
+	},
+	"requirements": {
+		"ke.skillwolf.active": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "kr.wolfdraw"
+		}
+	]
+}
+]
+}

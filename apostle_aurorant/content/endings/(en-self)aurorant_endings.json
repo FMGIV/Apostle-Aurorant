@@ -1,0 +1,133 @@
+{
+"endings": [
+{
+    "id": "aurorant.ending.deathmind",
+    "label": "ALL IS LOST",
+    "description": "When the mind is utterly broken, life loses all meaning. And so my soul shattered into pieces, dragged into the shadows of despair. I am a failure, a mistake, a shame left unspoken.\n\n[You lacked sufficient Reason and Passion, and you died from the mind assault.]",
+    "image": "death.mind",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathwounds",
+    "label": "DEATH OF THE BODY",
+    "description": "The wounds I bore surpassed the frail limits of this flesh, and my bound soul shall perish alongside it. As consciousness sank into darkness, I did not trouble myself to recall any fragments from the past: all the injustice and torment this body endured have proven this world so distorted, so depraved, that it deserves nothing but utter upheaval—not a single trace of attachment remains.\nAs for where they will find me, or how they will remember me — I care not. I feel nothing but contempt for it all.\n\n[You have died from sustaining excessive wounds.]",
+    "image": "death.wound",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathbones",
+    "label": "FEAST OF THE BLACKBONE",
+    "description": "Our struggle eventually pushed this reality to its limits, causing a terrifying tremor. The image of Ys shattered into pieces like a mirror before my eyes, and I began to fall, plunging into an extremely deep, extremely cold, and extremely void realm... However, the sharp teeth of the Blackbone seized me before that, and then bit down heavily, without mercy. In the extreme pain, I was completely devoured and reduced to nothing, but even in that piercing void, there were still some things remaining: cruel bloodlust, the calmness of death, and that ancient hatred that never fades and has no end. Therefore, I will join the fallen ones forgotten by the world, devoured by the waves, and conspire with the Blackbone for her revenge. Eventually, the blood of every massacre will flow into the sea, and every erased name will be able to return - a reckoning, is not to be postponed indefinitely.\n\n[Congratulations on a anti-victory. You have wrestled the mod to its knees. There are other paths.]",
+    "image": "blackbones",
+    "flavour": "Vile",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_VILE_BONES",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathwolf",
+    "label": "DAWN OF BLOOD",
+    "description": "<i>The phenomenon of the sun is by no means accidental; recently, reports from the continents, islands, even the Americas, as well as from more distant lands have all shown the same results: proliferating marks, shadows, bloodstains, and abnormal light phenomena that cause pain... This is not hyperbole. More and more signs indicate that the New King's folly has indeed caused him to be devoured by the Wolf, and the Wolf might even have devoured part of the Door in the Eye during his struggle to break free - although the latter claim is not yet supported by conclusive evidence, we must prepare for the worst. Now, we must gather all possible allies and invest all available forces, even if this means breaking many rules and prohibitions, because what we are facing is far more than just worldly enemies. Yes, I fully understand - to prevent the deterioration of the war, we have sacrificed a lot, but to prevent the arrival of the Wolf's feast, we must prepare everything we can, at any cost.</i>\n\nAddress excerpts from Nocturnal Secretary Lee, London, 1945\n[Congratulations on a anti-victory. You have wrestled the mod to its knees. There are other paths.]",
+    "image": "wolfdivided",
+    "flavour": "Vile",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_VILE_WOLF",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.witness",
+    "label": "NOT OBSERVED TO ACT",
+    "description": "In 1947, the British Privy Council and the government cabinet finally took action and held a state funeral in London for Henry the Ninth, the New King of Britain. There was no body, nor any relics, only an empty coffin marching silently in the procession. Many members of the invisible world all believed that he did not die in Caen as the official account stated. There were even rumors claiming that he had gone to foreign countries for some reason after that, but no one could determine his final destination. In the Port Noon, those who were not yet forgotten often felt a faint stabbing pain in the back of their necks, as if someone was watching from an invisible place - especially during the crossing of the stormy sea and arriving here. They regarded this as a sign of some mysterious god who is not observed to act. No one connected the two events.\n<i>'Alone it stands, perched high atop a rock\nThat rises from a tossing, troubled sea.\nNo wave escapes his piercing, watchful eye\nWhich shines as he surveys his watery sphere.\nThe one-eyed king appears once more in strength,\nUnmoved, still watching over his domain.'</i>\n - Martin Rizley, from 'The Lighthouse'.\n[Congratulations on a anti-victory. You have wrestled the mod to its knees. There are other paths.]",
+    "image": "notorious",
+    "flavour": "Vile",
+    "anim": "DramaticLight",
+    "achievements": "A_AURORANT_VILE_WITNESS",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathskadi",
+    "label": "A RECKONING",
+    "description": "<i>'- Listen, as usual, I wouldn't give a damn about those useless chatter and complaints. But you really surprised me today, stupid enough to think that I am...cruel.Oh. Considering that several of you have just taken up this position, I'm making an exception and giving you an opportunity to figure out the situation. How many of you have heard of the Madrugad's servants tearing apart the British line in Caen, like slicing a damn piece of butter? And how many of you don't know that her huntress have just completely destroyed the King on their island, who is almost god-like? So, if there's any fool who thinks he's smart enough to deceive her gaze and escape with those debts, don't pretend to be a Reckoner anymore. Just go ahead and try. Now，before I change my mind，all of you get out of here immediately.'</i>\n\n——The Reckoner Lords Conference, Kovans, 1945\n[You were slain by Skadi, the Madrugad's huntress. The path to greatness is often paved with setbacks; may you achieve glory in another history.]",
+    "image": "madrugad",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_DEATH_SKADI",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathpig",
+    "label": "THE END OF GLUTTONY",
+    "description": "I was engulfed by the ravenous thirst of the red tide, and within it, Lagiah devoured me through every one of her orifices—in an intoxicating sweetness of agony, most of me was torn apart and dissolved, while the remnant was preserved as a memento of a feast of triumph. That remainder shall watch in red visions as the Queen Unsated claims and consumes life, until at last it too is exhausted, celebrating an even grander and more splendid banquet.\n\n[You were slain by the Huntress, Lagiah, the Queen Unsated of the Red Grail. The path to greatness is often paved with setbacks; may you achieve glory in another history.]",
+    "image": "redgrail",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_DEATH_PIG",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.deathcat",
+    "label": "BENEATH THE SOIL",
+    "description": "Clutched tight by the venomous Name, my being was torn from my spirit—the former devoured to sate the creature's hunger, the latter buried deep in the soil of The Wood, rotting alongside a thousand long-forgotten souls. I tried to scream, but no sound escaped, no response stirred. I could rise no higher, nor would I ever be found. All that remains is to wait—until the end of all histories.\n\n[You were slain by the Huntress, Kitling Ripe of the Velvet. The path to greatness is often paved with setbacks; may you achieve glory in another history.]",
+    "image": "velvet",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_DEATH_CAT",
+    "BGmusic": ""
+},
+{
+    "id": "aurorant.ending.ascensionchandler",
+    "label": "NO TURNING ASIDE",
+    "description": "The night draws near. But before the final hour, the house of sky in the far distance at last shows forth a clear golden light—heralding the Dawn, and my victory. The old me has fallen in blood, plunged into a void deeper than Nowhere itself; the new me rises from the light, becoming the most terrible god here. I was once the most ancient Hour, and now I am also the first Sun to descend. My fire once shaped the course of history through light and shadow; now it shall burn the whole world—and the Hours themselves. I am the destined beginning, and the irresistible end. When the war in the firmament subsides, when the earth returns to peace, when the apostles proclaim the final oracles, they will come to understand: all of this was necessary.\n\n[Congratulations on a major victory. Perhaps one in twenty players ever achieve even a minor victory: fewer still rise this far. We, and Janus, salute you.]",
+    "image": "chandler",
+    "flavour": "Grand",
+    "anim": "DramaticLightEvil",
+    "achievements": "A_AURORANT_VICTORY_CHANDLER",
+    "BGmusic": "victorychandler.mp3"
+},
+{
+    "id": "aurorant.ending.ascensionsteel",
+    "label": "STEEL REVOLUTION",
+    "description": "In the Mansus, I climbed along the path of the Glory, ascending to the supreme pinnacle; by force I seized the seat that judges all Histories, and henceforth I walk the House of the Sun in the name of steel and flame. In the Wake, foundries and workshops of the Kingdom tremble with life, and the songs of new Names echo across the sky. The spark of revolution has been lit. With each passing night, darkness retreats a step before the light. One day, the night shall be burnt away entirely, and our enemies will come — from within the waking world and beyond — to stop the Dawn from breaking. But they are but fuel for the revolutionary fire. When the dim sky is dyed by its radiance, when the silent earth is kindled by its heat, when all that is rotten is consumed by that flame—then we shall at last create a new world: pure, bright, and perfect. And that shall be the Dawn most magnificent, and beautiful.\n\n[Congratulations on a major victory. Perhaps one in twenty players ever achieve even a minor victory: fewer still rise this far. We, and Janus, salute you.]",
+    "image": "newking",
+    "flavour": "Grand",
+    "anim": "DramaticLightCool",
+    "achievements": "A_AURORANT_VICTORY_STEEL",
+    "BGmusic": "victorysteel.mp3"
+},
+{
+    "id": "aurorant.ending.ascensionsun",
+    "label": "THE SUN RETURNS TO NOON",
+    "description": "To heal the Sun's scars is no easy task. I have taken the deepest of those wounds into myself, and this body has been weakened thereby. Yet the Sun still permits me to return, now and then, to walk the world as his most manifest self — sometimes in winter, sometimes in spring. By day, the sky shines bright as the kingdom's coin; by night, the old, lost songs echo without end. The Dawn has come. In this gentler light, even the deepest hurts may be healed—for the world, and for me. One day, we shall all be ready, and the Sun will begin his procession once more, scattering his golden, splendid radiance to every corner of dream… and we shall all find our perfect, most beautiful ending...\n\n[Congratulations on a major victory. Perhaps one in twenty players ever achieve even a minor victory: fewer still rise this far. We, and Janus, salute you.]",
+    "image": "sunsplendid",
+    "flavour": "Grand",
+    "anim": "DramaticLightCool",
+    "achievements": "A_AURORANT_VICTORY_SUN",
+    "BGmusic": "victorysun.mp3"
+},
+{
+    "id": "aurorant.ending.ascensionfailed",
+    "label": "NOT ASCENDED ENOUGH",
+    "description": "'I'm too tired to bother distinguishing which year it is. For such a long time, I've been fighting against the immortal opponents, battling against inferior adversaries, avoiding the Hours and their sinister Names, searching for opportunities in the darkest and most dangerous corners; I gave up my position, my identity, and my self to pursue the path of ascension - now the world has changed into an unfamiliar form, and there is still no place for me in the House of the Sun. Perhaps indeed, some opportunities, once missed, are eternal, and that position has never belonged to me...But I cannot bear the cost of accepting it. I have gone too far down this path; perhaps at some point in the distant past, I could have chosen to turn back.'\n\n-- 'Conversation with the Lost', the Bounds, 1978",
+    "image": "notorious",
+    "flavour": "Melancholy",
+    "anim": "DramaticLightEvil",
+    "achievements": "XXX"
+},
+{
+    "id": "aurorant.ending.normal",
+    "label": "BEFORE THE DAWN",
+    "description": "'The reconstruction work proceeded surprisingly smoothly – in just a few years, the kingdom's scars have begun to show signs of healing. The living have taken the place of the dead, and bright new bricks have been piled up on the charred ruins – looking at all this, sometimes I feel that perhaps the mortals are not as meaningless as I thought before. So, when you ask me if I regret my choice, my answer is: No. I have my throne, my wealth, and the remaining power, and my people also love me. I know that these things are destined not to last forever, but at least for now, I already have everything I need. And that is already enough. No matter how fate arranges things for me in the future, I think I can accept it calmly.'\n\n - 'With the one Who Favored Music', New Orleans, 1952",
+    "image": "moonlitcastle",
+    "flavour": "Grand",
+    "anim": "DramaticLightCool",
+    "achievements": "A_AURORANT_VICTORY_NORMAL",
+    "BGmusic": "victorychandler.mp3"
+}
+]
+}

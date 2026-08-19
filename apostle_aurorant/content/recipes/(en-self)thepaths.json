@@ -1,0 +1,929 @@
+{
+    "recipes":[
+{
+	"id": "kh.thepathschandler",
+	"actionid": "kv.move",
+	"label": "It Avails Nothing",
+	"startdescription": "I have consecrated myself to the cause of the Chandler's Apostle, and the Paths of the Sun now avails me nothing.\n\n[Your destiny awaits somewhere far more distant.]",
+	"requirements": {
+		"ke.thepaths": 1
+	},
+	"extantreqs":{
+		"ascensionchandler": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.thepathssteel",
+	"actionid": "kv.move",
+	"label": "It Avails Nothing",
+	"startdescription": "Not this path—I must forge my own way to the Mansus.\n\n[Your destiny awaits somewhere far more distant.]",
+	"requirements": {
+		"ke.thepaths": 1
+	},
+	"extantreqs":{
+		"ascensionsteel": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.thepathssun",
+	"actionid": "kv.move",
+	"label": "It Avails Nothing",
+	"startdescription": "I must first reclaim the many things that have been lost, and only then may I bring back that splendid Sun from this path.\n\n[Not yet. Perhaps you have only just completed your first exploration, or perhaps you still lack certain ending conditions.]",
+	"requirements": {
+		"ke.thepaths": 1
+	},
+	"extantreqs":{
+		"ascensionsun": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "thepaths.startexploration",
+	"actionid": "kv.move",
+	"label": "Ascending the Paths of the Sun",
+	"startdescription": "The Sun has opened the Paths that lead to the Glory — where, it is said, abide the mysteries of eternity and the answers to all questions. Perhaps, at the end of this road, I too shall find my destiny.\n\n[Overcome all obstacles to complete the expedition. Before you begin, you may commit three cards in preparation.]",
+	"craftable": true,
+    "requirements": {
+		"ke.thepaths": 1
+	},
+	"extantreqs": {
+		"tag.ascension": -1
+	},
+    "warmup": 30,
+	"playAudioTrack": "themethepaths.mp3",
+	"slots": [
+		{
+			"id": "ks.pathspreparation1",
+			"label": "Prepare",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+                "ka.ally": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.pathspreparation2",
+			"label": "to Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+                "ka.ally": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.pathspreparation3",
+			"label": "Obstacles",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+                "ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.obtrigger"
+		}
+	]
+},
+{
+	"id": "thepaths.obtrigger",
+	"actionid": "kv.move",
+	"label": "？",
+	"comments": "根据进度数量抽取不同的阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"alt": [
+		{
+			"id": "thepaths.drawob5"
+		},
+		{
+			"id": "thepaths.drawob4"
+		},
+		{
+			"id": "thepaths.drawob3"
+		},
+		{
+			"id": "thepaths.drawob2"
+		},
+		{
+			"id": "thepaths.drawob1"
+		}
+	]
+},
+{
+	"id": "thepaths.drawob5",
+	"comments": "抽取第五个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 5,
+		"ke.progress": 4
+	},
+	"aspects": {
+		"drawob5": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.obrouter"
+		}
+	]
+},
+{
+	"id": "thepaths.drawob4",
+	"comments": "抽取第四个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 4,
+		"ke.progress": 3
+	},
+	"aspects": {
+		"drawob4": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.obrouter"
+		}
+	]
+},
+{
+	"id": "thepaths.drawob3",
+	"comments": "抽取第三个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 3,
+		"ke.progress": 2
+	},
+	"aspects": {
+		"drawob3": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.obrouter"
+		}
+	]
+},
+{
+	"id": "thepaths.drawob2",
+	"comments": "抽取第二个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 2,
+		"ke.progress": 1
+	},
+	"aspects": {
+		"drawob2": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.obrouter"
+		}
+	]
+},
+{
+	"id": "thepaths.drawob1",
+	"comments": "抽取第一个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 1
+	},
+	"aspects": {
+		"drawob1": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.obrouter"
+		}
+	]
+},
+{
+	"id": "thepaths.obrouter",
+	"actionid": "kv.move",
+	"comments": "这一配方链接着所有探索日之道途时将会出现的阻碍。",
+	"requirements": {
+		"ka.obcount": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "thepaths.obthewood"
+		},
+		{
+			"id": "thepaths.obthegate"
+		},
+		{
+			"id": "thepaths.obthethorns"
+		},
+		{
+			"id": "thepaths.obthestairs"
+		},
+		{
+			"id": "thepaths.obthephantoms"
+		}
+	]
+},
+{
+	"id": "thepaths.presson",
+	"label": "Press On",
+	"startdescription": "I cast this obstacle behind me and press on toward the light at the road's end —",
+	"warmup": 30,
+	"linked": [
+		{
+			"id": "thepaths.obtrigger"
+		}
+	]
+},
+{
+	"id": "thepaths.fail",
+	"label": "Beyond My Strength",
+	"startdescription": "Unable to pass the Path's trials, I am forced out of the dream of the ascent — and all that remains is to wait until the next opportunity comes.\n\n[If the expedition fails, the Dream will be lost; but you may still obtain another Dream card by searching the area.]",
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+        "ke.thepaths": -99,
+		"ka.obstacle": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "thepaths.obthewood",
+	"label": "Obstacle: The Wood",
+	"startdescription": "The entrance to the road lies hidden in a secret corner of the Wood. I need strength to show the way.\n\n[Meet any threshold of the obstacle to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thewood": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thewood.pressmoth"
+		},
+		{
+			"id": "thewood.pressknock"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thewood.pressmoth",
+	"label": "The Wood: Inspiration",
+	"startdescription": "I follow where instinct leads. The shadows of the Wood shift and waver, but I always find the way.",
+	"requirements": {
+		"obstacle.thewood": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thewood.pressknock",
+	"label": "The Wood: Guidance",
+	"startdescription": "The power of opening knows the art of finding doors. By its guidance, I pass through the ever-shifting Wood.",
+	"requirements": {
+		"obstacle.thewood": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.obthegate",
+	"label": "Obstacle: A Gate of the Secret Histories",
+	"startdescription": "The gate's position is fixed, but I still need some fitting power to make it manifest.\n\n[Meet any threshold of the obstacle to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thegate": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thegate.presslantern"
+		},
+		{
+			"id": "thegate.presshistory"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thegate.presslantern",
+	"label": "A Gate of the Secret Histories: Expose",
+	"startdescription": "Merciless light reveals all that is concealed.",
+	"requirements": {
+		"obstacle.thegate": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thegate.presshistory",
+	"label": "A Gate of the Secret Histories: Enticement",
+	"startdescription": "Beguiled by a power from another History, the gate has manifested here.",
+	"requirements": {
+		"obstacle.thegate": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.obthethorns",
+	"label": "Obstacle: The Path of Atonement",
+	"startdescription": "To pass the obstacle ahead, I must endure suffering beyond common imagining — my will and resolve will be put to the test.\n\n[Meet any threshold of the obstacle to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thethorns": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thethorns.pressedge"
+		},
+		{
+			"id": "thethorns.presswinter"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thethorns.pressedge",
+	"label": "The Path of Atonement: Fortitude",
+	"startdescription": "Resolve, keener than a blade — though pain claws at me a hundred times, my steps remain unshaken.",
+	"requirements": {
+		"obstacle.thethorns": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thethorns.presswinter",
+	"label": "The Path of Atonement: Endurance",
+	"startdescription": "Breath held still, thoughts gathered deep — the lessons of endurance will bear me through this trial.",
+	"requirements": {
+		"obstacle.thethorns": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.obthestairs",
+	"label": "Obstacle: Ascending Stairs",
+	"startdescription": "A long and agonizing ascent awaits. Only a strong and steadfast power can raise me higher.\n\n[Meet any threshold of the obstacle to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thestairs": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thestairs.pressforge"
+		},
+		{
+			"id": "thestairs.pressheart"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thestairs.pressforge",
+	"label": "Ascending Stairs: Pragmatism",
+	"startdescription": "Craft and pragmatism are the foundation of all Work — I shall climb with strength that cannot be moved.",
+	"requirements": {
+		"obstacle.thestairs": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thestairs.pressheart",
+	"label": "Ascending Stairs: Ceaselessness",
+	"startdescription": "An astonishing vitality boils within me, so that I cannot stop — and cannot be stopped.",
+	"requirements": {
+		"obstacle.thestairs": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.obthestairs",
+	"label": "Obstacle: Ascending Stairs",
+	"startdescription": "A long and agonizing ascent awaits. Only a strong and steadfast power can raise me higher.\n\n[Meet any threshold of the obstacle to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thestairs": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thestairs.pressforge"
+		},
+		{
+			"id": "thestairs.pressheart"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thestairs.pressforge",
+	"label": "Ascending Stairs: Pragmatism",
+	"startdescription": "Craft and pragmatism are the foundation of all Work — I shall climb with strength that cannot be moved.",
+	"requirements": {
+		"obstacle.thestairs": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thestairs.pressheart",
+	"label": "Ascending Stairs: Ceaselessness",
+	"startdescription": "An astonishing vitality boils within me, so that I cannot stop — and cannot be stopped.",
+	"requirements": {
+		"obstacle.thestairs": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.obthephantoms",
+	"label": "Obstacle: Surging Phantasms",
+	"startdescription": "Visions of the Glory unfold endlessly before my eyes; I need a mystery profound enough to resist their deception.\n\n[Provide the highest grade of Lore to advance the expedition.]",
+	"warmup": 60,
+	"requirements": {
+		"obstacle.thephantoms": 1
+	},
+	"slots": [
+		{
+			"id": "ks.pathsresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+                "secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thephantoms.presslore"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.fail"
+		}
+	]
+},
+{
+	"id": "thephantoms.presslore",
+	"label": "Surging Phantasms: Mystery",
+	"startdescription": "Even unborn, the Chandler knows the truths of the Glory. I shall go forward by His guidance.",
+	"grandreqs": {
+		"obstacle.thephantoms": 1,
+		"lorechandlerg": 1
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "thepaths.complete"
+		},
+		{
+			"id": "thepaths.presson"
+		}
+	]
+},
+{
+	"id": "thepaths.complete",
+	"label": "The Glory, Close at Hand",
+	"startdescription": "I have reached the limit of my own advance — what destiny awaits me?",
+	"warmup": 30,
+	"requirements": {
+		"ke.thepaths": 1,
+		"ka.obcount": 1,
+		"ke.progress": "ka.obcount"
+	},
+	"linked": [
+		{
+			"id": "thepaths.upgradedesire"
+		}
+	]
+},
+{
+	"id": "thepaths.complete",
+	"label": "The Glory, Close at Hand",
+	"startdescription": "I have reached the limit of my own advance — what destiny awaits me?",
+	"warmup": 30,
+	"requirements": {
+		"ke.thepaths": 1,
+		"ka.obcount": 1,
+		"ke.progress": "ka.obcount"
+	},
+	"linked": [
+		{
+			"id": "thepaths.upgradedesire"
+		}
+	]
+},
+{
+	"id": "thepaths.upgradedesire",
+	"actionid": "kv.move",
+	"label": "A Spark of Possibility",
+	"startdescription": "The Glory is close at hand...... but for now, only a power that verges upon the divine can overcome that final obstacle.",
+	"requirements": {
+		"ke.thepaths": 1,
+		"desire": -1
+	},
+	"warmup": 30,
+	"slots": [
+		{
+			"id": "ks.pathsneeddesire",
+			"label": "Desire",
+			"required": {
+				"desire": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "thepaths.upgradechandler"
+		},
+		{
+			"id": "thepaths.upgradesteel"
+		},
+		{
+			"id": "thepaths.upgradesun"
+		}
+	],
+	"linked": [
+		{
+			"id": "thepaths.upgradedesire"
+		}
+	]
+},
+{
+	"id": "thepaths.upgradechandler",
+	"actionid": "kv.move",
+	"label": "A Spark of Possibility",
+	"startdescription": "The baptism of the Glory's light has changed me forever. I have sacrificed the rest of myself for my true desire; my soul and my craft are made new thereby.",
+	"description": "I shall devote myself to the Work of the Apostle, to bring about the birth of the Candle-maker...... The road of the Sun is of no use to me now; I shall find my own destiny elsewhere.",
+	"burnimage": "chandlerburning",
+	"requirements": {
+		"ke.desirechandler": 1
+	},
+	"aspects":{
+		"upgradedesire": 1,
+		"exhaust": 1
+	},
+	"effects": {
+		"ke.thepaths": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"deckeffects":{
+		"kd.mystchandler": 3
+	}
+},
+{
+	"id": "thepaths.upgradesteel",
+	"actionid": "kv.move",
+	"label": "A Spark of Possibility",
+	"startdescription": "The baptism of the Glory's light has changed me forever. I have sacrificed the rest of myself for my true desire; my soul and my craft are made new thereby.",
+	"description": "I shall devote myself to the seeking of the means of change and transformation, refining this body until it can be strengthened no further...... When the scheme is complete, I shall, by my own hand and with might to rival the gods, open the road to the Mansus.",
+	"burnimage": "steelburning",
+	"requirements": {
+		"ke.desiresteel": 1
+	},
+	"aspects":{
+		"upgradedesire": 1,
+		"turntosteel": 1,
+		"exhaust": 1
+	},
+	"effects": {
+		"ke.thepaths": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "thepaths.upgradesun",
+	"actionid": "kv.move",
+	"label": "A Spark of Possibility",
+	"startdescription": "The baptism of the Glory's light has changed me forever. I have sacrificed the rest of myself for my true desire; my soul and my craft are made new thereby.",
+	"description": "I shall devote myself to the welcoming of the Sun's return...... When the scheme is complete, I shall return to this place, journey to the Glory, and bring back that magnificent Sun of old.",
+	"requirements": {
+		"ke.desiresun": 1
+	},
+	"aspects":{
+		"upgradedesire": 1,
+		"turntosun": 1,
+		"exhaust": 1
+	},
+	"effects": {
+		"ke.storysuna": 1,
+		"ke.thepaths": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+}
+]
+}

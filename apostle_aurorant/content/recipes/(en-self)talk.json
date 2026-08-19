@@ -1,0 +1,763 @@
+{
+"recipes":[
+{
+	"id": "kr.startduel",
+	"actionid": "kv.talk",
+	"label": "Huntress and Prey",
+	"startdescription": "Spare not the sharpness of your words—but I keep my mind cool and composed. Upon the letter-paper, the script I leave behind is clear and firm. With luck, at least one of us will see their wish granted this day.\n\n[Once you begin this battle, there is no turning back.]",
+	"description": "She is powerful—the countless hunts of the long years have forged the renown she bears today. But glory also blinds—so let this blindness be her last.",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs": {
+		"ke.skadi": -1,
+		"ka.noskadi": -1
+	},
+	"requirements": {
+		"ke.intentduel": 1
+	},
+	"effects":{
+		"ke.intentduel": -1
+	},
+	"haltverb": {
+		"kv.move": 1,
+		"kv.huntress": 1
+	},
+	"purge":{
+		"ke.skadi": 99
+	},
+    "alt":[
+		{
+			"id": "skadi.duel.coming",
+			"additional": "true"
+		}
+	]
+},
+{
+	"id": "kr.useredflower",
+	"actionid": "kv.talk",
+	"label": "In the Forgotten Lands Beyond the Binding, Summon the Mare",
+	"startdescription": "The Beach-Crow, the Sister-and-Witch, and the Vagabond know the interstices and flaws of Histories, but the Mare also knows its inner workings—and only she would delight in the world burning for it. The binding of this place's law has grown loose; I shall summon her aid here.",
+	"description": "The flowers have burned away, the Mare's touch pierces the veil, evoking a false season: the years lose their course; time a river, memory a bird—",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs":{
+		"ke.domisle": 1
+	},
+	"requirements": {
+		"ke.theredflower": 1
+	},
+	"effects": {
+		"ke.theredflower": -1,
+		"ke.opnuma": 1
+	}
+},
+{
+	"id": "kh.useredflower",
+	"actionid": "kv.talk",
+	"label": "Summon the Mare...?",
+	"startdescription": "The Beach-Crow, the Sister-and-Witch, and the Vagabond know the interstices and flaws of Histories, but the Mare also knows its inner workings—and only she would delight in the world burning for it—but the binding of this place's law is too tight; I must seek elsewhere to summon her aid.",
+	"craftable": false,
+	"hintonly": true,
+	"requirements": {
+		"ke.theredflower": 1
+	}
+},
+{
+	"id": "kr.usesummoncaccia",
+	"actionid": "kv.talk",
+	"label": "Summon the Aid of an Allied Host?",
+	"startdescription": "[This will consume one use of the item and summon the aid of an allied host for you.]",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs":{
+		"ke.cacciacoming": -1,
+		"tag.caccia": -1
+	},
+	"grandreqs": {
+		"[summon.caccia]+[summoncaccia.2]+[summoncaccia.1]": 1
+	},
+	"aspects": {
+		"summon": 1
+	},
+	"alt":[
+		{
+			"id": "kr.summoncaccia",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.usesummonlegion",
+	"actionid": "kv.talk",
+	"label": "Summon the Aid of an Allied Host?",
+	"startdescription": "[This will consume one use of the item and summon the aid of an allied host for you.]",
+	"craftable": true,
+	"warmup": 10,
+	"extantreqs":{
+		"ke.legioncoming": -1,
+		"tag.legion": -1
+	},
+	"grandreqs": {
+		"[summon.legion]+[summonlegion.2]+[summonlegion.1]": 1
+	},
+	"aspects": {
+		"summon": 1
+	},
+	"alt":[
+		{
+			"id": "kr.summonlegion",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "talkto.servants",
+	"actionid": "kv.talk",
+	"label": "Reclaim the Flame of Creation?",
+	"startdescription": "This being exists and acts by virtue of my divine flame—if I deem it no longer of value, I may destroy it and use that flame to create something more useful.\n\n[When the number of 'Flame Bearer' on the field exceeds the limit, you can no longer create special allies via 'Forge Heart'. Placing Lore can destroy this special ally, making room for new creations.]",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ka.servant": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needlore",
+			"label": "Lore",
+			"required": {
+				"lore": 1
+			}
+		}
+	],
+    "alt":[
+		{
+			"id": "kr.destroyservants" 
+		}
+	]
+},
+{
+	"id": "kr.destroyservants",
+	"label": "Reclaim the Flame of Creation",
+	"startdescription": "[This will destroy this special ally, making room for new creations.]",
+	"description": "Creation and destruction are two faces of the same whole.",
+	"requirements": {
+		"ka.servant": 1,
+		"lore": 1
+	},
+	"aspects": {
+		"killally": 1
+	}
+},
+{
+	"id": "talkto.npccat",
+	"actionid": "kv.talk",
+	"label": "Meeting With the Leader of Légion du Seuil?",
+	"startdescription": "'Yes, we were once on good terms with the warriors of the Owl, but the Grail's ambition made the Knot the first to cross the line, and Golden General could not tolerate it.'\n\n'Now we can finally contend with our own brothers and sisters—far more interesting than before, is it not? So what is it you seek in this desolate wilderness, <i>Your Majesty</i>?'",
+    "description": "'No offense, but there's no way I can take this back to my boss.'",
+	"requirements": {
+		"ke.npccat": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+    "slots": [
+        {
+            "id": "ks.needdesire",
+            "label": "Intention",
+            "required": {
+                "desire": 1
+            }
+        }
+    ],
+	"alt":[
+		{
+			"id": "talkto.npccat.ascension"
+		}
+	]
+},
+{
+	"id": "talkto.npccat.ascension",
+	"actionid": "kv.talk",
+	"label": "Consult With the Leader of Légion du Seuil",
+	"startdescription": "@#ascensionsun|'Pfft — HAHAHA — ahem... No, no, it's nothing. I mean — I fully support your cause, and my Patron would be delighted to see it realised.'\n\n'It's just... I'd rather thought you'd be different from our dear Major Morozova. Who's that? Pay them no mind. Just an amusing fool, haha.'\n\n'Anyway — please, take this. If The Knot, or anything else, stands in your way again... use it to call on us.'#|'Interesting — it's very interesting! Ahem, I mean — I fully support your cause, and my Patron would be delighted to see it realised.\n\n'Anyway — please, take this. If The Knot, or anything else, stands in your way again... use it to call on us. Let us make them bleed.'@",
+	"requirements": {
+		"ke.npccat": 1,
+		"tag.ascension": 1
+	},
+	"aspects": {
+		"agreement": 1
+	}
+},
+{
+	"id": "talkto.npcmoth",
+	"actionid": "kv.talk",
+	"label": "Meeting With the Leader of the Moth's Caccia?",
+	"startdescription": "'The Mothszz King — hee yearnethzz — for the Gloryee — We, by hiszz behest, enssure the Dawn, comeszz. Enheritour, sheltere. The Knotszz — the Red Grail, clk — ommon foeszz. Mightss we be — leagued?'",
+    "description": "'Wherefore, hold backlk? Make plain thyyy — longing. If we be road — fellowszz, then must we fight together —'",
+	"requirements": {
+		"ke.npcmoth": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+    "slots": [
+        {
+            "id": "ks.needdesire",
+            "label": "Intention",
+            "required": {
+                "desire": 1,
+				"tag.topic": 1
+            }
+        }
+    ],
+	"alt":[
+		{
+			"id": "talkto.npcmoth.ascension"
+		},
+		{
+			"id": "talkto.npcmoth.debugwpn"
+		}
+	]
+},
+{
+	"id": "talkto.npcmoth.ascension",
+	"actionid": "kv.talk",
+	"label": "Consult With the Leader of the Moth's Caccia",
+	"startdescription": "'Thy craving ringszz — true. Thou and I, mustzz — fight together. This pledge, take thou. If straitszz beset theeeez — call to us, and we sszhall, come.'",
+	"requirements": {
+		"ke.npcmoth": 1,
+		"tag.ascension": 1
+	},
+	"aspects": {
+		"agreement": 1
+	}
+},
+{
+	"id": "talkto.npcmoth.debugwpn",
+	"actionid": "kv.talk",
+	"label": "Consult with the leader of the Moth's Caccia...?",
+	"startdescription": "'How, camestzz — thou by this? This thing — was mine oncce. But that, is no more. Then, my name, waszz other. Lostzz —'",
+	"description": "'Thou, no ranger — More like, one of the Kingszz. Clk—annot, be sureee, though. Not even, me. Thy destiny — burden — mysteryzz. Realizze, change, everything. I, expectantszz  — '",
+	"requirements": {
+		"ke.npcmoth": 1,
+		"debug.wpn": 1
+	},
+	"effects": {
+		"dread": 1,
+		"fascination": 1
+	}
+},
+{
+	"id": "talkto.royalists",
+	"actionid": "kv.talk",
+	"label": "Order My followers to gather supplies",
+	"startdescription": "Given the current situation, this task is perilous and difficult, but I will convince them it is necessary.\n\n[This will consume this card and grant you a certain amount of Supplies.]",
+    "description": "The process was not pleasant, but it was a necessary act.",
+	"extantreqs":{
+		"tag.wild": -1
+	},
+	"requirements": {
+		"ke.allyroyalists": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"effects":{
+        "ke.allyroyalists": -1,
+		"necessities": 2
+    },
+    "deckeffects":{
+        "kd.gathernecess": 2
+    }
+},
+{
+	"id": "talkto.army",
+	"actionid": "kv.talk",
+	"label": "Command This Unit to Further Scout the Area",
+	"startdescription": "Conduct a thorough, carpet-style search for those potential opportunities I may have missed.\n\n[This will cause this card to degrade into an Opportunity and grant you some relatively uncommon resources. You can't do this in the cities.]",
+    "description": "Gains have been made—but before the next mission, I must resupply them.",
+	"extantreqs":{
+		"tag.wild": 1
+	},
+	"requirements": {
+		"ke.allyarmy": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects":{
+        "exhaustarmy": 1
+    },
+    "deckeffects":{
+        "kd.talktoarmyresult": 1
+    }
+},
+{
+	"id": "kh.routingforcekutaisi",
+	"actionid": "kv.talk",
+	"label": "The Call of Fate",
+	"startdescription": "I can feel fate waiting in the east — the moment must not be lost; I must set out at once.\n\n[You must travel to Kutaisi.]",
+	"craftable": false,
+	"hintonly": true,
+	"requirements": {
+		"domicile": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": 1
+	}
+},
+{
+	"id": "kr.routing.london",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in London",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domlondon": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "kr.routing.glasgow",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Glasgow",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domglasgow": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "kr.routing.powys",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Powys",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.dompowys": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s1": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s1"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r1s1",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"deckeffects":{
+		"kd.destr1s2": 1
+	}
+},
+{
+	"id": "kr.routing.belfast",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Belfast",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.dombelfast": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.dover",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Dover",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domdover": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.northumb",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Northumberland",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domnorthumb": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.edinburgh",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Edinburgh",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domedinburgh": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr1s2": 1
+	},
+	"extantreqs": {
+		"ke.destkutaisi": -1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r1s2"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r1s2",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"effects":{
+		"ke.destkutaisi": 1
+	}
+},
+{
+	"id": "kr.routing.kutaisi",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Kutaisi",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domkutaisi": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.tiflis",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Tiflis",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domtiflis": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.zest",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Zestaponi",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domzest": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.mtsk",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Mtskheta",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.dommtsk": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r2"
+	    }
+	]
+},
+{
+	"id": "kr.routing.sigh",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Signagi",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domsigh": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr2": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r2"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r2",
+	"actionid": "kv.talk",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"linked":[
+		{
+			"id": "routing.nextsector.r2.noascension"
+		},
+		{
+			"id": "routing.nextsector.r2.ascension"
+		}
+	]
+},
+{
+	"id": "routing.nextsector.r2.ascension",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"extantreqs":{
+		"tag.ascension": 1
+	},
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"deckeffects":{
+		"kd.destr3": 1
+	}
+},
+{
+	"id": "routing.nextsector.r2.noascension",
+	"actionid": "kv.talk",
+	"label": "No More Destinations?",
+	"description": "What I have planned for the next step is not yet clear—in the turmoil at hand, I fear no chance of ascent remains to be found. Yet I have gathered strength enough along the road; if I set out at once and return within Britain, I might yet win this war by common means.",
+	"warmup": 30,
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"extantreqs":{
+		"tag.ascension": -1
+	},
+	"ending": "aurorant.ending.normal"
+},
+{
+	"id": "kr.routing.nola",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in New Orleans",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domnola": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr3": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r3"
+	    }
+	]
+},
+{
+	"id": "kr.routing.brcg",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Brancrug",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.dombrcg": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr3": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r3"
+	    }
+	]
+},
+{
+	"id": "kr.routing.wmlk",
+	"actionid": "kv.talk",
+	"label": "Planning the Path Ahead in Wounded Moon Lake",
+	"startdescription": "I have accomplished the objectives I set for this place. Where can I continue advancing my plans?",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"requirements": {
+	    "ke.domwmlk": 1
+	},
+	"warmup": 30,
+	"craftable": true,
+	"deckeffects":{
+		"kd.destr3": 1
+	},
+	"linked": [
+	    {
+		"id": "routing.nextsector.r3"
+	    }
+	]
+},
+{
+	"id": "routing.nextsector.r3",
+	"actionid": "kv.talk",
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"warmup": 0,
+	"linked":[
+		{
+			"id": "routing.destined.ascensionchandler"
+		},
+		{
+			"id": "routing.destined.ascensionsteel"
+		},
+		{
+			"id": "routing.destined.ascensionsun"
+		}
+	]
+},
+{
+	"id": "routing.destined.ascensionchandler",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"warmup": 0,
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"extantreqs":{
+		"ascensionchandler": 1,
+		"ke.destisle": -1
+	},
+	"effects":{
+		"ke.destisle": 1
+	}
+},
+{
+	"id": "routing.destined.ascensionsteel",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"warmup": 0,
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"extantreqs":{
+		"ascensionsteel": 1,
+		"ke.destys": -1
+	},
+	"effects":{
+		"ke.destys": 1
+	}
+},
+{
+	"id": "routing.destined.ascensionsun",
+	"actionid": "kv.talk",
+	"description": "Another destination. Another stepping stone paving the path toward Dawn.",
+	"warmup": 0,
+	"requirements": {
+	    "logic.nextsector": 1
+	},
+	"extantreqs":{
+		"ascensionsun": 1,
+		"ke.destcage": -1
+	},
+	"effects":{
+		"ke.destcage": 1
+	}
+}
+]
+}

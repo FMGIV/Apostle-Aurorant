@@ -1,0 +1,710 @@
+{
+    "recipes":[
+{
+	"id": "lessername.setup",
+	"actionid": "kv.lessername",
+	"label": "Someone Has Arrived",
+	"startdescription": "We are warned by the occlusion of the sun, the flickering of the lamps, and the whispered scheming of the swollen, twisted shadows. The signs are unmistakable, a powerful foe has arrived alongside my enemy.",
+	"warmup": 120,
+	"playAudioTrack": "themetension.mp3",
+	"deckeffects": {
+		"kd.lessername": 1
+	},
+	"linked": [
+		{
+			"id": "lessername.draw"
+		}
+	]
+},
+{
+	"id": "lessername.draw",
+	"actionid": "kv.lessername",
+	"comments": "抽取不显要具名的行动策略。",
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.lessername": 1
+	},
+	"linked": [
+		{
+			"id": "lessername.router"
+		}
+	]
+},
+{
+	"id": "lessername.router",
+	"actionid": "kv.lessername",
+	"comments": "链接着所有可能的recipe，决定不显要具名如何行动。",
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "lessername.defeated"
+		},
+        {
+            "id": "lessername.entering"
+        },
+        {
+            "id": "lessername.attack"
+        },
+        {
+            "id": "lessername.prowl"
+        },
+        {
+            "id": "lessername.wander"
+        }
+	]
+},
+{
+	"id": "lessername.defeated",
+	"actionid": "kv.lessername",
+	"label": "The Name is Defeated!",
+	"startdescription": "At last, this troublesome foe has fallen ——",
+    "description": "With the enemy's patron dead, we can continue our fight on <i>equal</i> terms.",
+	"warmup": 20,
+	"tablereqs":{
+		"tag.defeatedname": 1
+	},
+    "aspects":{
+        "defeatname": 1
+    },
+	"slots": [
+		{
+			"id": "ks.needdefeatedname",
+			"label": "击败",
+			"essential": {
+		        "tag.defeatedname": 1,
+		        "wound.lessername": 3
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "lessername.entering",
+	"actionid": "kv.lessername",
+	"label": "The Name Prepares to Act?",
+	"startdescription": "Candlelight flickers and footsteps echo – the enemy is about to act!",
+	"warmup": 20,
+    "requirements":{
+        "tag.lessername": -1,
+        "lessername.active": 1
+    },
+	"extantreqs":{
+		"tag.lessername": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needname",
+			"label": "Enemy",
+			"essential": {
+                "ka.enemy": 1,
+		        "tag.lessername": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "lessername.entered"
+		}
+	],
+    "linked":[
+        {
+            "id": "lessername.entering"
+        },
+		{
+			"id": "lessername.router"
+		}
+    ]
+},
+{
+	"id": "lessername.entered",
+	"actionid": "kv.lessername",
+	"label": "The Name is About to Act!",
+	"startdescription": "Candlelight flickers and footsteps echo – the enemy is about to act!",
+	"warmup": 20,
+    "requirements":{
+        "tag.lessername": 1,
+        "lessername.active": 1
+    },
+    "aspects":{
+        "revealenemy": 1
+    },
+	"effects": {
+        "lessername.guarding": 1,
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.draw"
+		}
+	]
+},
+{
+	"id": "lessername.attack",
+	"actionid": "kv.lessername",
+	"label": "The Name Attacks!",
+	"startdescription": "Though less powerful than their more eminent counterparts, a Name is  not an enemy to be taken lightly. I must respond to this attack carefully and swiftly -- \n\n[Failing to defend will permanently damage your ability cards.]",
+	"requirements": {
+        "lessername.active": 1,
+		"tag.lessername": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.nameresponse1",
+			"label": "Oppose",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.nameresponse2",
+			"label": "The Name",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "lessername.riposted"
+		},
+		{
+			"id": "lessername.respondedge"
+		},
+		{
+			"id": "lessername.respondforge"
+		},
+		{
+			"id": "lessername.respondgrail"
+		},
+		{
+			"id": "lessername.respondheart"
+		},
+		{
+			"id": "lessername.respondknock"
+		},
+		{
+			"id": "lessername.respondlantern"
+		},
+		{
+			"id": "lessername.respondmoth"
+		},
+		{
+			"id": "lessername.respondwinter"
+		},
+		{
+			"id": "lessername.delayed"
+		},
+		{
+			"id": "kr.destroyrandom",
+			"additional": true
+		}
+	],
+	"linked": [
+        {
+            "id": "lessername.deadly"
+        },
+		{
+			"id": "lessername.cooldown"
+		}
+	]
+},
+{
+	"id": "lessername.deadly",
+    "actionid": "kv.lessername",
+	"warmup": 0,
+	"grandreqs": {
+		"tag.lessername": 1,
+		"ka.deadly": 1
+	},
+	"alt": [
+		{
+			"id": "kr.damagerandom",
+			"additional": true
+		}
+	],
+    "linked":[
+        {
+            "id": "lessername.cooldown"
+        }
+    ]
+},
+{
+	"id": "lessername.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"tag.lessername": 1,
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostelessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondedge",
+	"label": "Respond with Force",
+	"startdescription": "I crush the Name's attack with overwhelming force, forcing a retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondforge",
+	"label": "Respond with Flame",
+	"startdescription": "I unleash a furious, searing inferno, forcing the Name to retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondgrail",
+	"label": "Respond with Vitality",
+	"startdescription": "The power of blood and vitality swallows all encroaching harm, forcing the Name to retreat. ",
+	"requirements": {
+		"tag.lessername": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondheart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The power of unending drumming forms an inviolable barrier, forcing the Name to retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondknock",
+	"label": "Respond with Dispersion",
+	"startdescription": "The principle of opening dissipates the Name's attack, forcing a retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondlantern",
+	"label": "Respond with Radiance",
+	"startdescription": "I unleash a deadly, blinding light, forcing the Name to retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondmoth",
+	"label": "Respond with Chaos",
+	"startdescription": "Chaotic influences disrupt the Name's attack, forcing a retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.respondwinter",
+	"label": "Respond with Finality",
+	"startdescription": "An apocalyptic frost surges from deep within me, forcing the Name to retreat.",
+	"requirements": {
+		"tag.lessername": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99,
+		"lessername.guarding": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.lessername",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"tag.lessername": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.delayed",
+	"label": "A Trick to Distort Time",
+	"startdescription": "Time is a flickering, unpredictable flame. The Chandler's paradoxical mysteries disrupt its flow, and distort it, stretching it – \n\n[This will delay an attack for a while.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "lessername.redirecting"
+		}
+	],
+	"alt": [
+		{
+			"id": "delaylessername.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "lessername.redirecting",
+	"label": "A Trick to Distort Time",
+	"startdescription": "This trick won't break causality <i>that</i> easily, but it will buy me more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "lessername.attack"
+		}
+	]
+},
+{
+	"id": "lessername.cooldown",
+	"label": "The Name Regroups",
+	"startdescription": "The Name has retreated for now, and waits for another opportunity to act.",
+	"warmup": 20,
+	"linked": [
+		{
+			"id": "lessername.draw"
+		}
+	]
+},
+{
+	"id": "lessername.prowl",
+	"label": "The Name Prowls",
+	"startdescription": "The Name prowls in the shadows, protecting the feebler underlings and their base camp.\n\n[You cannot take action against the Garrisons of the Triple Knot while a Name is prowling.]",
+	"warmup": 20,
+	"requirements":{
+		"tag.lessername": 1,
+		"lessername.passive": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.draw"
+		}
+	]
+},
+{
+	"id": "lessername.wander",
+	"label": "The Name Wanders",
+	"startdescription": "The Name wanders the locals pathways and landmarks, looking for a chance to wreak havoc.\n\n[Hurry – the Name will act soon.]",
+	"warmup": 20,
+	"requirements":{
+		"tag.lessername": -1,
+		"lessername.passive": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "lessername.draw"
+		}
+	]
+}
+]
+}

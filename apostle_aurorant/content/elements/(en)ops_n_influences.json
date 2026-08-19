@@ -1,0 +1,774 @@
+{
+"elements":[
+{
+    "id": "ke.strengtha",
+    "label": "Strength",
+    "description": "Flesh and bone quiver beneath the weight of the unnatural. Excess vitality courses through the veins, spilling out from the fingertips. The signs of strength are undeniable.",
+    "lifetime": 180,
+    "aspects": {
+        "heart": 6,
+        "edge": 4,
+        "influence": 1,
+        "ability": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.strengtha"
+    }
+},
+{
+    "id": "ke.strengthb",
+    "label": "Whimsy",
+    "description": "Inspiration kindles flame, and change follows.",
+    "lifetime": 180,
+    "aspects": {
+        "moth": 6,
+        "forge": 4,
+        "deception": 1,
+        "influence": 1,
+        "ability": 1
+    },
+    "xtriggers": {
+        "exhaustpassion": "husk",
+        "exhaust": "husk",
+        "refresh": "ke.strengthb"
+    }
+},
+{
+    "id": "ke.strengthc",
+    "label": "Revelation",
+    "description": "Clarity of mind like glass, thoughts swift as light—today, the Glory has bestowed its gift.",
+    "lifetime": 180,
+    "aspects": {
+        "lantern": 6,
+        "secrethistories": 4,
+        "influence": 1,
+        "ability": 1
+    },
+    "slots": [
+        {
+            "id": "searchtarget",
+            "actionId": "kv.search",
+            "label": "Target",
+            "description": "Insert hidden enemies to reveal them, or insert a city for rapid reconnaissance.",
+            "required": {
+                "ka.hiddenenemy": 1,
+                "domicile": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "exhaustreason": "husk",
+        "exhaust": "husk",
+        "refresh": "ke.strengthc"
+    }
+},
+{
+    "id": "strength.chandler",
+    "icon": "mystique",
+    "label": "Twilight",
+    "description": "The faintest glimmer of possibility, foreshadowing the magnificent sunset yet to come.",
+    "lifetime": 60,
+    "aspects": {
+        "edge": 2,
+        "forge": 2,
+        "lantern": 2,
+        "moth": 2,
+        "winter": 2,
+        "influence": 1,
+        "deception": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "strength.chandler"
+    }
+},
+{
+    "id": "strength.steel",
+    "icon": "ascensionpowerf",
+    "label": "Innovation",
+    "description": "The starting point of every great creation.",
+    "lifetime": 180,
+    "aspects": {
+        "forge": 6,
+        "lantern": 6,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "strength.steel"
+    }
+},
+{
+    "id": "strength.sun",
+    "label": "Enlightenment",
+    "description": "Understanding that something is necessary and inevitable, and facing it with confidence and composure.",
+    "lifetime": 180,
+    "aspects": {
+        "edge": 6,
+        "lantern": 6,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "strength.sun"
+    }
+},
+{
+    "id": "ke.grief",
+    "icon": "apostlelantern.pillar2",
+    "label": "Grief",
+    "description": "Matters we dread to face, yet are powerless to change.",
+    "lifetime": 300,
+    "aspects": {
+        "winter": 6,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.grief"
+    }
+},
+{
+    "id": "ke.agony",
+    "icon": "curse_dread",
+    "label": "Agonizing Wound",
+    "description": "Some pains are so intense that they can bring about destruction even without physically existing. This pain could destroy me, but it will also destroy my enemies. \n[This counts as a wound. Sustaining three wounds of any kind at once will prove fatal. This cannot be refreshed by 'Work'.]",
+    "lifetime": 600,
+    "aspects": {
+        "edge": 6,
+        "winter": 6,
+        "ka.wound": 1,
+        "influence": 1,
+        "tag.norefresh": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.wasteland",
+    "label": "A Wasteland",
+    "description": "No danger, nor any worth to speak of.",
+    "lifetime": 1
+},
+{
+    "id": "ke.dawn",
+    "icon": "op.dawn",
+    "label": "Dawn",
+    "description": "A new day, new possibilities. \n[Use this card during the Season of Past Stirrings along with a Desire card to change the game objective.]",
+    "lifetime": 60,
+    "aspects": {
+        "knock": 4,
+        "lantern": 4,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.dawn"
+    }
+},
+{
+    "id": "ke.noon",
+    "label": "Noon",
+    "description": "Still bright, but its former colors are no more. \n[Use this card during the Season of Past Stirrings along with a Desire card to change the game objective.]",
+    "lifetime": 60,
+    "aspects": {
+        "lantern": 4,
+        "forge": 4,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.noon"
+    }
+},
+{
+    "id": "ke.sunset",
+    "icon": "op.sunset",
+    "label": "Sunset",
+    "description": "The heat of light is most intense in the afternoon—though nightfall is not far off.\n[Use this card during the Season of Past Stirrings along with a Desire card to change the game objective.]",
+    "lifetime": 60,
+    "aspects": {
+        "forge": 4,
+        "winter": 4,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.sunset"
+    }
+},
+{
+    "id": "ke.night",
+    "icon": "op.night",
+    "label": "Night",
+    "description": "Night is cold, yet merciful: it promises darkness, silence, and concealment.",
+    "lifetime": 60,
+    "aspects": {
+        "moth": 4,
+        "winter": 4,
+        "deception": 1,
+        "influence": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk",
+        "refresh": "ke.night"
+    }
+},
+{
+    "id": "ke.opfog",
+    "label": "Fog",
+    "description": "Heavy, misty fog provides concealment.",
+    "lifetime": 180,
+    "aspects": {
+        "moth": 6,
+        "deception": 1,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opmoonlight",
+    "label": "Moonlight",
+    "description": "What is within, without; what is without, within. The Meniscate once gazed upon this place.",
+    "lifetime": 180,
+    "aspects": {
+        "knock": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opchill",
+    "label": "Chill",
+    "description": "The cold of ice and snow stings the flesh, yet from it we may learn patience and silence.",
+    "lifetime": 180,
+    "aspects": {
+        "winter": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opgale",
+    "label": "Gale",
+    "description": "A razor sharp gale sweeps away everything in its path.",
+    "lifetime": 180,
+    "aspects": {
+        "edge": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.oprain",
+    "label": "Rain",
+    "description": "The wound of the earth heals through this baptism.",
+    "lifetime": 180,
+    "aspects": {
+        "heart": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opflames",
+    "label": "Flame",
+    "description": "Power shall find its release in its warm touch.",
+    "lifetime": 180,
+    "aspects": {
+        "forge": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opwaves",
+    "icon": "obstacle.riptide",
+    "label": "Tide",
+    "description": "Ceaseless flow, endless devouring. Occasionally, a hint of coral-like scent slips through—ancient and faint—or perhaps it is merely illusion.",
+    "lifetime": 180,
+    "aspects": {
+        "grail": 6,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.oprumour",
+    "icon": "rumour",
+    "label": "Rumours",
+    "description": "Unverifiable rumours from which hard facts are impossible to glean. They could be hinting at some grander truth, but they're more likely just worthless speculation.",
+    "lifetime": 60,
+    "aspects": {
+        "secrethistories": 4,
+        "moth": 2,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opalloy",
+    "label": "Ys' Assistance",
+    "description": "No craftsman could produce that extraordinary alloy, without the unique arts of Ys. \n[Use in 'Work' with the 'Forge Heart' to create Ys-alloy.]",
+    "lifetime": 180,
+    "aspects": {
+        "forge": 2,
+        "lantern": 2,
+        "secrethistories": 2,
+        "op": 1
+    },
+    "xtriggers": {
+        "exhaust": "husk"
+    }
+},
+{
+    "id": "ke.opammoa",
+    "label": "Opportunity: To Make A Kind of Special Ammunition?",
+    "description": "can command the craftsmen of this place to forge these specialized bullets for me, so long as I supply the necessary materials. [An opportunity to exchange Necessities for ammunition.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.ammoa"
+    }
+},
+{
+    "id": "ke.opammob",
+    "label": "Opportunity: Gunpowder From Adepts?",
+    "description": "I know of a few adepts who've stashed away some delightfully dangerous items in a secluded part of the district. They aren't usually willing to trade—but only a fool will turn down more practical supplies right now.[An opportunity to exchange Necessities for consumable.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities1",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        },
+        {
+            "id": "ks.necessities2",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.ammob"
+    }
+},
+{
+    "id": "ke.opfarm",
+    "icon": "vaultshiresdefault",
+    "label": "Opportunity: A Farm?",
+    "description": "The times may be tense, but farmers always try to keep extra supplies stocked—I can personally pay them a visit and help take inventory of their reserves. [An opportunity to get a few Necessities.]",
+    "lifetime": 180,
+    "aspects": {
+        "op": 1,
+        "ka.unfit": 1
+    }
+},
+{
+    "id": "ke.opsupplyheartb",
+    "label": "Opportunity: An Invigorating Preparation?",
+    "description": "A few Heart adepts here know the arts of preservation and ceaseless motion. Some hard currency would suffice to have them perform the work for me. [An opportunity to exchange Necessities for consumable.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities1",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        },
+        {
+            "id": "ks.necessities2",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.supplyheartb"
+    }
+},
+{
+    "id": "ke.opsupplymothb",
+    "label": "Opportunity: A Preparation That Stirs Passion?",
+    "description": "A few Moth adepts here possess the craft of refining substances of chaos at midnight. Some hard currency would suffice to have them perform the work for me. [An opportunity to exchange Necessities for consumable.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities1",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        },
+        {
+            "id": "ks.necessities2",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.supplymothb"
+    }
+},
+{
+    "id": "ke.opsupplylanternb",
+    "label": "Opportunity: An Illuminating Preparation?",
+    "description": "A few Lantern adepts here know the arts of guiding Mansus-light. Some hard currency would suffice to have them perform the work for me. [An opportunity to exchange Necessities for consumable.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 2,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities1",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        },
+        {
+            "id": "ks.necessities2",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.supplylanternb"
+    }
+},
+{
+    "id": "ke.oproyalists",
+    "label": "Opportunity: Support From Royalists?",
+    "description": "It is no great task to rally my followers once more—I need only find the right words, then spare a little breath to speak them. [An opportunity to gain mundane support.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neglantern": 6,
+        "negmoth": 6,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needability",
+            "label": "Ability",
+            "description": "Insert an appropriate ability to achieve alignment.",
+            "required": {
+                "ability": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.allyroyalists"
+    }
+},
+{
+    "id": "ke.oparmy",
+    "label": "Opportunity: Support From Army?",
+    "description": "A force loyal to me is garrisoned here. As long as necessary provisions are supplied, they will fight for me. [An opportunity to gain mundane support.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neednecessities": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.necessities",
+            "label": "Necessities",
+            "description": "Place enough Necessities to complete the trade.",
+            "consumes": true,
+            "required": {
+                "necessities": 1
+            }
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.allyarmy"
+    }
+},
+{
+    "id": "ke.oparmygg",
+    "icon": "ke.oparmy",
+    "label": "Opportunity: Cajole Support From Army?",
+    "description": "An idle unit is temporarily stationed here. I could use a little trick to get them to fight for me. [An opportunity to gain mundane support.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neglantern": 10,
+        "negmoth": 10,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needability",
+            "label": "Ability",
+            "description": "Insert an appropriate ability to achieve alignment.",
+            "required": {
+                "ability": 1
+            }
+        },
+        {
+            "id": "ks.oporinfluence",
+            "label": "Opportunity",
+            "description": "Insert a condition conducive to achieving the objective.",
+            "required": {
+                "influence": 1,
+                "op": 1
+            },
+            "consumes": true
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.allyarmy"
+    }
+},
+{
+    "id": "ke.oproyalistsgg",
+    "icon": "ke.oproyalists",
+    "label": "Opportunity: Potential Royalists?",
+    "description": "Though this land is remote and unfamiliar, there are still some notables here who could become my allies. [An opportunity to gain mundane support.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "neggrail": 10,
+        "negmoth": 10,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needability",
+            "label": "Ability",
+            "description": "Insert an appropriate ability to achieve alignment.",
+            "required": {
+                "ability": 1
+            }
+        },
+        {
+            "id": "ks.oporinfluence",
+            "label": "Opportunity",
+            "description": "Insert a condition conducive to achieving the objective.",
+            "required": {
+                "influence": 1,
+                "op": 1
+            },
+            "consumes": true
+        }
+    ],
+    "xtriggers": {
+        "agreement": "ke.allyroyalists"
+    }
+},
+{
+    "id": "ke.opseizesupplies",
+    "label": "Opportunity: Seize Supplies?",
+    "description": "A shipment of precious wartime supplies was intercepted mid‑route by conflict and artillery. With just a little more time, they will all be mine.[An opportunity to get Necessities.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "negheart": 4,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needability",
+            "label": "Effort",
+            "required": {
+                "ability": 1
+            },
+            "forbidden": {
+                "ka.unfit": 1,
+                "exhausted": 1
+            },
+            "consumes": true
+        }
+    ]
+},
+{
+    "id": "ke.oprest",
+    "icon": "hq.townhouse",
+    "label": "Opportunity: A Place to Rest?",
+    "description": "A quiet and secluded spot, where I can rest and regroup. Though it's nothing special, a chance to rest is especially precious given the circumstances. [An opportunity to refresh an ability.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needabilityexhausted",
+            "label": "Recover",
+            "required": {
+                "ke.healthexhausted": 1,
+                "ke.passionexhausted": 1,
+                "ke.reasonexhausted": 1
+            }
+        }
+    ]
+},
+{
+    "id": "ke.opecho",
+    "label": "Haunting Melodies",
+    "description": "An ethereal, mellifluous tune that lingers in the mind. It also resembles the never-ending melody of Crossrow. Only, it is quite faint, as if coming from somewhere far, far away. \n[Seven of these will guide you to Crossrow.]",
+    "aspects": {
+        "op": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.needecho1",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        },
+        {
+            "id": "ks.needecho2",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        },
+        {
+            "id": "ks.needecho3",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        },
+        {
+            "id": "ks.needecho4",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        },
+        {
+            "id": "ks.needecho5",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        },
+        {
+            "id": "ks.needecho6",
+            "consumes": true,
+            "essential": {
+                "ke.opecho": 1
+            }
+        }
+    ]
+},
+{
+    "id": "ke.opnuma",
+    "label": "<i>Numa</i>",
+    "unique": true,
+    "description": "A cold, heavy mist seeps through every crevice. Between History and Eternity, ambiguous truths clash. In this season, the Hours' dominion over the Histories is at its weakest.",
+    "aspects": {
+        "op": 1,
+        "secrethistories": 6
+    }
+},
+{
+    "id": "ke.opwatchman",
+    "icon": "ascensionenlightenmentb",
+    "label": "The Watchman's Assistance",
+    "description": "The Watchman is not compassionate; though we stand together, he will not heal or shelter me. But his light can burn away the obstacles in my path, or cleanse any impurities within me. \n[This can be used to remove certain negative effects, or refresh certain resources.]",
+    "lifetime": 300,
+    "aspects": {
+        "op": 1,
+        "ka.unfit": 1
+    },
+    "slots": [
+        {
+            "id": "ks.watchmanburns",
+            "label": "Burn",
+            "consumes": true,
+            "required": {
+                "enemy.wolfshard": 1,
+                "ke.agony": 1,
+                "malice.wolfdivided": 1,
+                "ke.woundsevere": 1,
+                "ke.skillwolf.exhausted": 1,
+                "ke.skillprofane.exhausted": 1,
+                "ke.skillimmune.exhausted": 1
+            }
+        }
+    ]
+}
+]
+}

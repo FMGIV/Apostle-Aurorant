@@ -1,0 +1,1678 @@
+{
+"elements":[
+{
+	"id": "kt.enemy",
+	"label": "敌人模板",
+	"aspects": {
+		"ka.enemy": 1
+	},
+	"slots": [
+		{
+			"id": "attackresource1",
+			"label": "How to condemn?",
+			"required": {
+				"moth": 1,
+				"lantern": 1,
+				"forge": 1,
+				"edge": 1,
+				"winter": 1,
+				"heart": 1,
+				"grail": 1,
+				"knock": 1
+			}
+		},
+		{
+			"id": "attackresource2",
+			"label": "How to battle?",
+			"required": {
+				"ability": 1,
+				"weapon": 1,
+				"tool": 1
+			}
+		},
+		{
+			"id": "attackresource3",
+			"label": "How to triumph?",
+			"required": {
+				"op": 1,
+				"influence": 1,
+				"supplies": 1
+			}
+		}
+	]
+},
+{
+	"id": "kt.hiddenenemy",
+	"label": "隐匿敌人模板",
+	"aspects": {
+		"ka.hiddenenemy": 1,
+		"ka.enemy": 1
+	}
+},
+{
+	"id": "ke.corpsea",
+	"label": "Remnant",
+	"description": "Still pulsing.",
+	"lifetime": 300,
+	"aspects": {
+		"grail": 4,
+		"winter": 4,
+		"remnant": 1
+	},
+	"xtriggers": {
+		"exhaust": "husk"
+	}
+},
+{
+	"id": "ke.corpseb",
+	"label": "Remnant",
+	"description": "Still capable of burning.",
+	"lifetime": 300,
+	"aspects": {
+		"grail": 4,
+		"winter": 4,
+		"remnant": 1
+	},
+	"xtriggers": {
+		"exhaust": "husk"
+	}
+},
+{
+	"id": "ke.corpsec",
+	"label": "Remnant",
+	"description": "Still lingering cold.",
+	"lifetime": 300,
+	"aspects": {
+		"grail": 4,
+		"winter": 4,
+		"remnant": 1
+	},
+	"xtriggers": {
+		"exhaust": "husk"
+	}
+},
+{
+	"id": "ke.corpselong",
+	"icon": "risen.grail",
+	"label": "Corpse of Long",
+	"description": "A faint remnant of power still lingers within this corpse, preventing it from decay and dissolution.",
+	"lifetime": 1000,
+	"aspects": {
+		"grail": 6,
+		"winter": 6,
+		"remnant": 1
+	},
+	"xtriggers": {
+		"exhaust": [
+			{
+				"morpheffect": "transform",
+				"id": "husk",
+				"level": 1
+			}
+		],
+		"extract": [
+			{
+				"morpheffect": "transform",
+				"id": "husk",
+				"level": 1
+			},
+			{
+				"morpheffect": "deckdraw",
+				"id": "kd.extractcorpselong",
+				"level": 4
+			}
+		]
+	}
+},
+{
+	"id": "enemy.redrisen",
+	"label": "Red Servants",
+	"description": "Thanks to the touch of the Red Grail, those who die of famine remain trapped in endless hunger even after life has faded.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 6,
+		"neggrail": 6,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.redrisen.hidden",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.redrisen.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.redrisen",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.bear",
+	"label": "Brutal Percussigant",
+	"description": "A beast that has forgotten its duty of preservation. Its instincts now grant it a menace it did not possess before.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 8,
+		"negheart": 6,
+		"negmoth": 6,
+		"ka.twisting": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.bear.hidden",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.bear.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.bear",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.prophet",
+	"icon": "spirit_grailc_moth",
+	"label": "A Famished Undergoer",
+	"description": "A sticky, bewildering mass of tentacles. It seems somewhat clumsy, but when hungry, this thing can become quite troublesome.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 8,
+		"neggrail": 8,
+		"negmoth": 8,
+		"ka.buffering": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.prophet.hidden",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.prophet.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.prophet",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.fungus",
+	"label": "Stumbling Fungus",
+	"description": "Those who fall within the Bounds find their bodies overtaken by a notorious fungus, becoming mere zombies driven by base instinct, staggering forward. Filled with mycelia, they lack organs or weak points, making them exceptionally difficult to kill.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 8,
+		"negforge": 8,
+		"neglantern": 8,
+		"ka.resistant": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.fungus.hidden",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.fungus.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.fungus",
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.serpent",
+	"icon": "guardian_serpent",
+	"label": "Wandering Serpent",
+	"description": "Not all serpents remain blindly loyal to their Mother. This one has found purpose anew, a fresh hunting ground—and sharpened its cunning in the process of adaptation.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 12,
+		"negwinter": 8,
+		"ka.sneaky": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.serpent.hidden",
+		"killenemy": "ke.corpsec",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.serpent.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.serpent",
+		"killenemy": "ke.corpsec",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.spirits",
+	"label": "Gisting Spirits",
+	"description": "A pitiful and misshapen creation—composed of the fet of wronged souls, drawn to each other, entangled and blended.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negforge": 8,
+		"neglantern": 8,
+		"negknock": 8,
+		"ka.revival": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.spirits.hidden",
+		"killenemy": "ke.corpsec",
+		"killrevival": "enemy.spirits.reviving",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.spirits.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.spirits",
+		"killenemy": "ke.corpsec",
+		"killrevival": "enemy.spirits.reviving",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.spirits.reviving",
+	"label": "Gisting Spirits (Reviving)",
+	"icon": "enemy.spirits",
+	"resaturate": true,
+	"description": "A pitiful and misshapen creation—composed of the fet of wronged souls, drawn to each other, entangled and blended.\n\n[This enemy will return to its original form once the countdown ends, but one additional attack will be enough to permanently eliminate it.]",
+	"inherits": "kt.enemy",
+	"lifetime": 180,
+	"decayTo": "enemy.spirits",
+	"aspects": {
+		"negforge": 6,
+		"negknock": 6,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.spirits.hidden",
+		"killenemy": "ke.corpsec",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.steam",
+	"label": "Offscum Caligine",
+	"description": "A byproduct of the Forge-of-Days's work, now corrupted and broken from absorbing too many impurities.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negforge": 6,
+		"negwinter": 6,
+		"ka.buffering": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.steam.hidden",
+		"killenemy": "ke.corpseb",
+		"killany": "ke.corpseb"
+	}
+},
+{
+	"id": "enemy.steam.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.steam",
+		"killenemy": "ke.corpseb",
+		"killany": "ke.corpseb"
+	}
+},
+{
+	"id": "enemy.wolfshard",
+	"label": "Wolf's Abhorrence",
+	"description": "The faintest trace of pain and hatred from the Wolf-Divided—or one of Its Name—yet so intense it makes the air seethe; if I try to deny its presence, something will surely be destroyed.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negheart": 8,
+		"neglantern": 8,
+		"ka.deadly": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.wolfshard.hidden",
+		"killenemy": "ke.grief",
+		"killany": "ke.grief"
+	}
+},
+{
+	"id": "enemy.wolfshard.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.wolfshard",
+		"killenemy": "ke.grief",
+		"killany": "ke.grief"
+	}
+},
+{
+	"id": "majormorozova",
+	"label": "'Major Morozova'",
+	"description": "A disciple of the Scarred Captain, a Soviet officer, foe of my sharp-tongued ally. I have no wish to entangle myself in the web of an Edge dyad, yet Isolde will pay the price for her reckless mockery of Name. Perhaps this is exactly what she intended all along.",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negedge": 12,
+		"negforge": 12,
+		"ka.resistant": 1,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "majormorozova.hidden",
+		"killenemy": "izolda.defeated",
+		"killany": "izolda.defeated"
+	}
+},
+{
+	"id": "majormorozova.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"revealenemy": "majormorozova",
+		"killenemy": "izolda.defeated",
+		"killany": "izolda.defeated"
+	}
+},
+{
+	"id": "izolda.defeated",
+	"label": "A Remnant of Morozova?",
+	"description": "Snow-pale, stained with the blood-red light of the god which is not as it was. It will soon fade like melting snow.",
+	"aspects": {
+		"winter": 8,
+		"remnant": 1
+	},
+	"lifetime": 120
+},
+{
+	"id": "enemy.namej",
+	"icon": "nameofheart",
+	"label": "Ju'lian, the Risen",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, it will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negwinter": 10,
+		"ka.resistant": 1,
+		"ka.revival": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namej.reviving1",
+		"killany": "enemy.namej.wound1",
+		"killenemy": "enemy.namej.wound1"
+	}
+},
+{
+	"id": "enemy.namej.wound1",
+	"icon": "nameofheart",
+	"label": "Ju'lian, the Risen",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negwinter": 10,
+		"ka.resistant": 1,
+		"ka.revival": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namej.reviving2",
+		"killany": "enemy.namej.wound2",
+		"killenemy": "enemy.namej.wound2"
+	}
+},
+{
+	"id": "enemy.namej.wound2",
+	"icon": "nameofheart",
+	"label": "Ju'lian, the Risen",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negwinter": 10,
+		"ka.resistant": 1,
+		"ka.revival": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namej.defeated",
+		"killany": "enemy.namej.defeated",
+		"killenemy": "enemy.namej.defeated"
+	}
+},
+{
+	"id": "enemy.namej.reviving1",
+	"icon": "nameofheart",
+	"label": "Ju'lian, the Risen",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 100,
+	"decayTo": "enemy.namej",
+	"aspects": {
+		"negheart": 15,
+		"negwinter": 10,
+		"ka.resistant": 1,
+		"ka.revival": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namej.reviving2",
+		"killany": "enemy.namej.wound2",
+		"killenemy": "enemy.namej.wound2"
+	}
+},
+{
+	"id": "enemy.namej.reviving2",
+	"icon": "nameofheart",
+	"label": "Ju'lian, the Risen",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"lifetime": 100,
+	"resaturate": true,
+	"decayTo": "enemy.namej.reviving1",
+	"aspects": {
+		"negheart": 15,
+		"negwinter": 10,
+		"ka.resistant": 1,
+		"ka.revival": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namej.defeated",
+		"killany": "enemy.namej.defeated",
+		"killenemy": "enemy.namej.defeated"
+	}
+},
+{
+	"id": "enemy.namej.defeated",
+	"icon": "defeatednames",
+	"label": "Ju'lian Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influenceheartg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.nameb",
+	"icon": "nameofheart",
+	"label": "Brizzery, the Glorious",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negedge": 10,
+		"ka.buffering": 1,
+		"ka.twisting": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameb.wound1",
+		"killenemy": "enemy.nameb.wound1"
+	}
+},
+{
+	"id": "enemy.nameb.wound1",
+	"icon": "nameofheart",
+	"label": "Brizzery, the Glorious",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negedge": 10,
+		"ka.buffering": 1,
+		"ka.twisting": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameb.wound2",
+		"killenemy": "enemy.nameb.wound2"
+	}
+},
+{
+	"id": "enemy.nameb.wound2",
+	"icon": "nameofheart",
+	"label": "Brizzery, the Glorious",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negedge": 10,
+		"ka.buffering": 1,
+		"ka.twisting": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameb.defeated",
+		"killenemy": "enemy.nameb.defeated"
+	}
+},
+{
+	"id": "enemy.nameb.defeated",
+	"icon": "defeatednames",
+	"label": "Brizzery Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influenceheartg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namel",
+	"icon": "nameofknock",
+	"label": "Lynn, the Dark Plume",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negknock": 15,
+		"negwinter": 10,
+		"ka.sneaky": 1,
+		"ka.resistant": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.namel.hidden",
+		"killany": "enemy.namel.wound1",
+		"killenemy": "enemy.namel.wound1"
+	}
+},
+{
+	"id": "enemy.namel.wound1",
+	"icon": "nameofknock",
+	"label": "Lynn, the Dark Plume",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negknock": 15,
+		"negwinter": 10,
+		"ka.sneaky": 1,
+		"ka.resistant": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.namel.hidden1",
+		"killany": "enemy.namel.wound2",
+		"killenemy": "enemy.namel.wound2"
+	}
+},
+{
+	"id": "enemy.namel.wound2",
+	"icon": "nameofknock",
+	"label": "Lynn, the Dark Plume",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negknock": 15,
+		"negwinter": 10,
+		"ka.sneaky": 1,
+		"ka.resistant": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.namel.hidden2",
+		"killany": "enemy.namel.defeated",
+		"killenemy": "enemy.namel.defeated"
+	}
+},
+{
+	"id": "enemy.namel.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.namel",
+		"killenemy": "enemy.namel.wound1",
+		"killany": "enemy.namel.wound1"
+	}
+},
+{
+	"id": "enemy.namel.hidden1",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.namel.wound1",
+		"killenemy": "enemy.namel.wound2",
+		"killany": "enemy.namel.wound2"
+	}
+},
+{
+	"id": "enemy.namel.hidden2",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.namel.wound2",
+		"killenemy": "enemy.namel.defeated",
+		"killany": "enemy.namel.defeated"
+	}
+},
+{
+	"id": "enemy.namel.defeated",
+	"icon": "defeatednames",
+	"label": "Lynn Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influenceknockg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namei",
+	"icon": "nameofwinter",
+	"label": "Ifurzelda, the Cruel",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negwinter": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.resistant": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namei.wound1",
+		"killenemy": "enemy.namei.wound1"
+	}
+},
+{
+	"id": "enemy.namei.wound1",
+	"icon": "nameofwinter",
+	"label": "Ifurzelda, the Cruel",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negwinter": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.resistant": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namei.wound2",
+		"killenemy": "enemy.namei.wound2"
+	}
+},
+{
+	"id": "enemy.namei.wound2",
+	"icon": "nameofwinter",
+	"label": "Ifurzelda, the Cruel",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negwinter": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.resistant": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namei.defeated",
+		"killenemy": "enemy.namei.defeated"
+	}
+},
+{
+	"id": "enemy.namei.defeated",
+	"icon": "defeatednames",
+	"label": "Ifurzelda Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influencewinterg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namek",
+	"icon": "nameofgrail",
+	"label": "Kleitus, the Witch King",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negedge": 10,
+		"neglantern": 10,
+		"ka.resistant": 1,
+		"ka.twisting": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namek.wound1",
+		"killenemy": "enemy.namek.wound1"
+	}
+},
+{
+	"id": "enemy.namek.wound1",
+	"icon": "nameofgrail",
+	"label": "Kleitus, the Witch King",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negedge": 10,
+		"neglantern": 10,
+		"ka.resistant": 1,
+		"ka.twisting": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namek.wound2",
+		"killenemy": "enemy.namek.wound2"
+	}
+},
+{
+	"id": "enemy.namek.wound2",
+	"icon": "nameofgrail",
+	"label": "Kleitus, the Witch King",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negedge": 10,
+		"neglantern": 10,
+		"ka.resistant": 1,
+		"ka.twisting": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namek.defeated",
+		"killenemy": "enemy.namek.defeated"
+	}
+},
+{
+	"id": "enemy.namek.defeated",
+	"icon": "defeatednames",
+	"label": "Kleitus Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influencegrailg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namew",
+	"icon": "nameofgrail",
+	"label": "Woldomato, the Terrible",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 15,
+		"negwinter": 15,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namew.wound1",
+		"killenemy": "enemy.namew.wound1"
+	}
+},
+{
+	"id": "enemy.namew.wound1",
+	"icon": "nameofgrail",
+	"label": "Woldomato, the Terrible",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 15,
+		"negwinter": 15,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namew.wound2",
+		"killenemy": "enemy.namew.wound2"
+	}
+},
+{
+	"id": "enemy.namew.wound2",
+	"icon": "nameofgrail",
+	"label": "Woldomato, the Terrible",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 15,
+		"negwinter": 15,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namew.defeated",
+		"killenemy": "enemy.namew.defeated"
+	}
+},
+{
+	"id": "enemy.namew.defeated",
+	"icon": "defeatednames",
+	"label": "Woldomato Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influencegrailg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namee",
+	"icon": "nameofnectar",
+	"label": "Elm, the Daughter of Nectar",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 10,
+		"ka.buffering": 1,
+		"ka.revival": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namee.wound1",
+		"killenemy": "enemy.namee.wound1",
+		"killrevival": "enemy.namee.reviving1"
+	}
+},
+{
+	"id": "enemy.namee.wound1",
+	"icon": "nameofnectar",
+	"label": "Elm, the Daughter of Nectar",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 10,
+		"ka.buffering": 1,
+		"ka.revival": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namee.wound2",
+		"killenemy": "enemy.namee.wound2",
+		"killrevival": "enemy.namee.reviving2"
+	}
+},
+{
+	"id": "enemy.namee.reviving1",
+	"icon": "nameofnectar",
+	"label": "Elm, the Daughter of Nectar",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 100,
+	"decayTo": "enemy.namee",
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 10,
+		"ka.buffering": 1,
+		"ka.revival": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namee.reviving2",
+		"killany": "enemy.namee.wound2",
+		"killenemy": "enemy.namee.wound2"
+	}
+},
+{
+	"id": "enemy.namee.wound2",
+	"icon": "nameofnectar",
+	"label": "Elm, the Daughter of Nectar",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 10,
+		"ka.buffering": 1,
+		"ka.revival": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namee.defeated",
+		"killenemy": "enemy.namee.defeated",
+		"killrevival": "enemy.namee.defeated"
+	}
+},
+{
+	"id": "enemy.namee.reviving2",
+	"icon": "nameofnectar",
+	"label": "Elm, the Daughter of Nectar",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 100,
+	"decayTo": "enemy.namee",
+	"aspects": {
+		"neggrail": 15,
+		"negforge": 10,
+		"ka.buffering": 1,
+		"ka.revival": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killrevival": "enemy.namee.defeated",
+		"killany": "enemy.namee.defeated",
+		"killenemy": "enemy.namee.defeated"
+	}
+},
+{
+	"id": "enemy.namee.defeated",
+	"icon": "defeatednames",
+	"label": "Elm Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influencegrailg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.nameh",
+	"icon": "nameofnectar",
+	"label": "Hella, the Defiler",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negmoth": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.vengeful": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameh.wound1",
+		"killenemy": "enemy.nameh.wound1"
+	}
+},
+{
+	"id": "enemy.nameh.wound1",
+	"icon": "nameofnectar",
+	"label": "Hella, the Defiler",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negmoth": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.vengeful": 1,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameh.wound2",
+		"killenemy": "enemy.nameh.wound2"
+	}
+},
+{
+	"id": "enemy.nameh.wound2",
+	"icon": "nameofnectar",
+	"label": "Hella, the Defiler",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, she will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negmoth": 15,
+		"negedge": 10,
+		"ka.deadly": 1,
+		"ka.vengeful": 1,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.nameh.defeated",
+		"killenemy": "enemy.nameh.defeated"
+	}
+},
+{
+	"id": "enemy.nameh.defeated",
+	"icon": "defeatednames",
+	"label": "Hella Has Been Defeated",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influencemothg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.namea",
+	"icon": "nameofheart",
+	"label": "An Aspect of Janus, a Thousand Hearts as One",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"neggrail": 15,
+		"negheart":15,
+		"negknock": 15,
+		"negmoth": 15,
+		"negwinter": 15,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namea.wound1",
+		"killenemy": "enemy.namea.wound1"
+	}
+},
+{
+	"id": "enemy.namea.wound1",
+	"icon": "nameofheart",
+	"label": "An Aspect of Janus, a Thousand Hearts as One",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"neggrail": 15,
+		"negheart":15,
+		"negknock": 15,
+		"negmoth": 15,
+		"negwinter": 15,
+		"wound.lessername": 1,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namea.wound2",
+		"killenemy": "enemy.namea.wound2"
+	}
+},
+{
+	"id": "enemy.namea.wound2",
+	"icon": "nameofheart",
+	"label": "An Aspect of Janus, a Thousand Hearts as One",
+	"description": "A lesser Name under the Knot gods—limited in worth, mediocre in strength… in any case, it has now been assigned to obstruct my work.\n[A moderately powerful enemy who requires three successful attacks to defeat. While present, he will interfere with your actions against the Garrisons of Triple Knot.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"neggrail": 15,
+		"negheart":15,
+		"negknock": 15,
+		"negmoth": 15,
+		"negwinter": 15,
+		"wound.lessername": 2,
+		"tag.lessername": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namea.defeated",
+		"killenemy": "enemy.namea.defeated"
+	}
+},
+{
+	"id": "enemy.namea.defeated",
+	"icon": "defeatednames",
+	"label": "Aspect of Janus Has Been Banished...?",
+	"description": "This lesser Name has been thoroughly defeated by me. For now, no more such beings will come to trouble me.",
+	"resaturate": true,
+	"aspects": {
+		"ka.purgemarkgeneral": 1,
+		"tag.defeatedname": 1,
+		"wound.lessername": 3
+	},
+    "xtriggers": {
+		"defeatname": [
+    		{
+				"id": "influenceheartg",
+                "morpheffect": "transform"
+			},
+			{
+				"id": "kd.lootlessername",
+				"level": 4,
+				"morpheffect": "deckdraw"
+			}
+		]
+	}
+},
+{
+	"id": "enemy.illusione",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negedge": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusione",
+		"killenemy": "influenceedge",
+		"killany": "influenceedge"
+	}
+},
+{
+	"id": "enemy.illusionf",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negforge": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionf",
+		"killenemy": "influenceforge",
+		"killany": "influenceforge"
+	}
+},
+{
+	"id": "enemy.illusiong",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"neggrail": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusiong",
+		"killenemy": "influencegrail",
+		"killany": "influencegrail"
+	}
+},
+{
+	"id": "enemy.illusionh",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negheart": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionh",
+		"killenemy": "influenceheart",
+		"killany": "influenceheart"
+	}
+},
+{
+	"id": "enemy.illusionk",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negknock": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionk",
+		"killenemy": "influenceknock",
+		"killany": "influenceknock"
+	}
+},
+{
+	"id": "enemy.illusionl",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"neglantern": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionl",
+		"killenemy": "influencelantern",
+		"killany": "influencelantern"
+	}
+},
+{
+	"id": "enemy.illusionm",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negmoth": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionm",
+		"killenemy": "influencemoth",
+		"killany": "influencemoth"
+	}
+},
+{
+	"id": "enemy.illusionw",
+	"label": "Invertion",
+	"description": "A phantom reflection of a true power, elevated by the touch of the Meniscate into a malevolent existence.\n[This enemy cannot enter a hidden state by taking cover, but it refreshes its own duration.]",
+	"inherits": "kt.enemy",
+	"lifetime": 600,
+	"aspects": {
+		"negwinter": 8,
+		"tag.monster": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.illusionw",
+		"killenemy": "influencewinter",
+		"killany": "influencewinter"
+	}
+},
+{
+	"id": "enemy.namechick",
+	"label": "Furnace Pheasant, the Pyre Lord",
+	"description": "<i>'To steal the divinity of a Great One was already madness—and now you dare to seek to outshine her radiance… the Forge shall never tolerate such presumption. Ungrateful traitor, you shall be consumed by flame here.'</i>\n[A powerful foe, one that cannot be utterly vanquished—but may be temporarily held at bay.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negmoth": 15,
+		"negforge":15,
+		"ka.meltingedge": 10,
+		"ka.resistant": 1,
+		"ka.deadly": 1
+	},
+	"decayTo": "enemy.namechick.defeated",
+	"xtriggers": {
+		"killany": "enemy.namechick.defeated",
+		"killenemy": "enemy.namechick.defeated"
+	}
+},
+{
+	"id": "enemy.namechick.defeated",
+	"icon": "enemy.namechick",
+	"label": "Furnace Pheasant, Reforging",
+	"description": "Furnace Pheasant will return with greater fury, but she needs time.\n[This enemy will recover once the countdown expires.]",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 300,
+	"decayTo": "enemy.namechick"
+},
+{
+	"id": "enemy.fleetforge",
+	"icon": "cultforge_1",
+	"label": "Steel-Burning Destroyer",
+	"description": "To evade the devouring and obstruction of the sea, the candescents hide within great steel constructs, wielding fearsome cannons as they wage war far and wide—useful, yet still a tired trick.\n[When this enemy acts, it will unite with its kin to launch an assault.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negforge": 7,
+		"negedge": 7,
+		"negwinter": 5,
+		"ka.buffering": 1
+	},
+	"xtriggers": {
+		"killenemy": "ke.corpseb",
+		"killany": "ke.corpseb"
+	}
+},
+{
+	"id": "enemy.namebanshee",
+	"label": "Banshee, the Oracle",
+	"description": "<i>'You have transgressed the taboos of the Chancel, defied the prohibitions of the Heaven-Territory—ambitious wretch, I shall here execute the will of the Three, and erase you with the song of the Histories' End.'</i>\n[A powerful foe, one that cannot be utterly vanquished—but may be temporarily held at bay.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"negheart": 15,
+		"negwinter":15,
+		"ka.piercingedge": 10,
+		"ka.revival": 1,
+		"ka.twisting": 1
+	},
+	"decayTo": "enemy.namebanshee.defeated",
+	"xtriggers": {
+		"killrevival": "enemy.namebanshee.reviving",
+		"killany": "enemy.namebanshee.defeated",
+		"killenemy": "enemy.namebanshee.defeated"
+	}
+},
+{
+	"id": "enemy.namebanshee.reviving",
+	"label": "Banshee, Lingering",
+	"icon": "enemy.namebanshee",
+	"unique": true,
+	"resaturate": true,
+	"description": "The vexing sound of separation and restraint has yet to fully fade—I must take action against the envoy of the Chancel once more—\n[This enemy will revert to its original state after the countdown ends, requiring one more attack to be fully driven back.]",
+	"inherits": "kt.enemy",
+	"decayTo": "enemy.namebanshee",
+	"lifetime": 100,
+	"aspects": {
+		"negheart": 10,
+		"negwinter":10,
+		"ka.piercingedge": 6,
+		"ka.twisting": 1
+	},
+	"xtriggers": {
+		"killany": "enemy.namebanshee.defeated",
+		"killenemy": "enemy.namebanshee.defeated"
+	}
+},
+{
+	"id": "enemy.namebanshee.defeated",
+	"icon": "enemy.namebanshee",
+	"label": "Banshee, Regrouping",
+	"description": "Those who serve the Twins are all strong in Heart, and their banshee song will ring out again… but not yet.\n[This enemy will recover once the countdown expires.]",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 300,
+	"decayTo": "enemy.namebanshee"
+},
+{
+	"id": "enemy.fleettwins",
+	"icon": "cultheart_1",
+	"label": "Pearl Cleaver",
+	"description": "Witches, sirens, and sorcerers guide their gleaming fleets as they race across the sea like birds in flight. They may not be skilled in battle, but they are clearly adept at exploiting the domain of the Twins.\n[When this enemy acts, it will unite with its kin to launch an assault.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"negheart": 7,
+		"negedge": 7,
+		"negknock": 5,
+		"ka.twisting": 1
+	},
+	"xtriggers": {
+		"killenemy": "ke.corpsea",
+		"killany": "ke.corpsea"
+	}
+},
+{
+	"id": "enemy.nameeaten",
+	"label": "'Mr.Eaten, the Dark",
+	"description": "<i>'Our regrets… the blood debts of the gods… shall at last be repaid…'</i>\n[A powerful foe, one that cannot be utterly vanquished—but may be temporarily held at bay.]",
+	"inherits": "kt.enemy",
+	"unique": true,
+	"aspects": {
+		"neggrail": 15,
+		"neglantern":15,
+		"ka.profaneedge": 10,
+		"ka.sneaky": 1,
+		"ka.vengeful": 1
+	},
+	"decayTo": "enemy.nameeaten.defeated",
+	"xtriggers": {
+		"hideenemy": "enemy.nameeaten.hidden",
+		"killany": "enemy.nameeaten.defeated",
+		"killenemy": "enemy.nameeaten.defeated"
+	}
+},
+{
+	"id": "enemy.nameeaten.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"decayTo": "enemy.nameeaten.defeated",
+	"xtriggers": {
+		"revealenemy": "enemy.nameeaten",
+		"killenemy": "enemy.nameeaten.defeated",
+		"killany": "enemy.nameeaten.defeated"
+	}
+},
+{
+	"id": "enemy.nameeaten.defeated",
+	"icon": "enemy.nameeaten",
+	"label": "'Mr.Eaten', Concealing",
+	"description": "The Eaten One has retreated deep into the dark waters, seeking shelter within his abhorrent power…\n[This enemy will recover once the countdown expires.]",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 300,
+	"decayTo": "enemy.nameeaten"
+},
+{
+	"id": "enemy.fleetbones",
+	"icon": "cultgrail_1",
+	"label": "Servants of the Nameless",
+	"description": "The drowned, sea-monsters, many-armed beings, and other unspeakable things that should not exist are roused by the calamity beneath the waves, piloting broken and rotting hulks as they prowl through the shadows.\n[When this enemy acts, it will unite with its kin to launch an assault.]",
+	"inherits": "kt.enemy",
+	"aspects": {
+		"neggrail": 7,
+		"negedge": 7,
+		"neglantern": 5,
+		"ka.sneaky": 1,
+		"tag.fleetbones": 1
+	},
+	"xtriggers": {
+		"hideenemy": "enemy.fleetbones.hidden",
+		"killenemy": "ke.corpsec",
+		"killany": "ke.corpsec"
+	}
+},
+{
+	"id": "enemy.fleetbones.hidden",
+	"icon": "ke.hiddenenemy",
+	"label": "A Hidden Enemy",
+	"description": "An objective yet unclear. [Cannot attack this enemy. Placing 'Revelation' or 'Gift from Glory' into Search with it to reveal.]",
+	"inherits": "kt.hiddenenemy",
+	"aspects": {
+		"tag.fleetbones": 1
+	},
+	"xtriggers": {
+		"revealenemy": "enemy.fleetbones",
+		"killenemy": "ke.corpsec",
+		"killany": "ke.corpsec"
+	}
+}
+]
+}

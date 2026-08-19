@@ -1,0 +1,1478 @@
+{
+"elements": [
+{
+	"id": "kt.forgeplant",
+	"label": "Foundry Template",
+	"aspects": {
+		"ka.location": 1,
+		"ka.forging": 1
+	},
+	"slots": [
+		{
+			"id": "forgeneedbase",
+			"label": "Forge",
+			"actionid": "kv.work",
+			"required": {
+				"ka.forgeable": 1
+			}
+		},
+		{
+			"id": "forgeneedware",
+			"label": "Tool",
+			"actionid": "kv.work",
+			"required": {
+				"weapon": 1,
+				"tool": 1
+			}
+		},
+		{
+			"id": "forgeneedlore",
+			"label": "Technique",
+			"actionid": "kv.work",
+			"required": {
+				"lore": 1
+			}
+		},
+		{
+			"id": "forgeneedhelp",
+			"label": "Help",
+			"actionid": "kv.work",
+			"required": {
+				"ka.ally": 1,
+				"ability": 1
+			}
+		},
+		{
+			"id": "forgeneedop",
+			"label": "Chance",
+			"actionid": "kv.work",
+			"required": {
+				"op": 1
+			},
+			"forbidden":{
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "forgeneedfuel1",
+			"label": "Fuel",
+			"actionid": "kv.work",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		},
+		{
+			"id": "forgeneedfuel2",
+			"label": "Fuel",
+			"actionid": "kv.work",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		},
+		{
+			"id": "forgeneedfuel3",
+			"label": "Fuel",
+			"actionid": "kv.work",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"consumes": true
+		}
+	]
+},
+{
+	"id": "forgeplant.london",
+	"label": "Royal Small Arms Factory",
+	"description": "Built in the early last century, the Small Arms Factory has faithfully produced firearms and ammunition for the British cause throughout a hundred years. Even today, as the city suffers bombings and the ground nears collapse, the factory's furnaces have not ceased burning. If only the newly established branch factories could be as diligent as this one itself.",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "forgeplant.dover",
+	"icon": "sprawl",
+	"label": "'Cradle of Gods'",
+	"description": "According to Hokobald himself, this place was to be where 'the gods of gold and bronze' would be crafted—which would have been his greatest, though not final, masterpiece. I suppose his grand design will never come to pass, yet some of the equipment here may still be of use to me.",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "forgeplant.tiflis",
+	"icon": "sprawl",
+	"label": "Workbench of the Proterant",
+	"description": "One of my subordinates once promised me that he would bring about a revolution and the skills of the Lionsmith in this city. Then less than a month later, he was torn apart by the claws of Labhite. It's even possible that this place is where that monster was born.",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "forgeplant.zest",
+	"icon": "sprawl",
+	"label": "Idle Alloy Workshop",
+	"description": "The production plan for this city is far from being free, but my contact managed to secure me a reasonably suitable factory. No one would ask too much - the Soviets were doing similar things in their factories as well.",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "forgeplant.nola",
+	"icon": "sprawl",
+	"label": "Higgins Industries",
+	"description": "After a brief discussion of the design drawings, the ambitious founder agreed to prepare a safe and secluded workspace for me. The smartest businessmen are rarely troublesome, since they always know exactly what they are doing.",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "forgeplant.bounds",
+	"icon": "sprawl",
+	"label": "The Field Armory",
+	"description": "When dealing with the troubles at the British border earlier, I had fought several battles with one of the leaders of the Company of the Wolf-in-Gold. He pointed out to me a military arsenal that the regiment had set up on the Bounds: 'I'm afraid we don't have any weapons you can consider valuable here, but I'll have my men stand aside - so that you can do it yourself.'",
+	"inherits": "kt.forgeplant",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	},
+	"xtriggers": {
+		"exhaustforgeplant": [
+			{
+				"morpheffect": "mutate",
+				"id": "forgeplant.exhausted",
+				"level": 1
+			}
+		]
+	}
+},
+{
+	"id": "kt.sunshrine",
+	"icon": "sunshrine",
+	"label": "Sun Shrine Template",
+	"aspects": {
+		"ka.location": 1,
+		"sunshrine": 1
+	},
+	"slots": [
+		{
+			"id": "shrineintent",
+			"label": "Intention",
+			"description": "Why I came?",
+			"required": {
+				"ability": 1,
+				"influence": 1,
+				"memory": 1,
+				"ka.damaged": 1
+			}
+		},
+		{
+			"id": "shrineconsumes",
+			"label": "Consecrate",
+			"description": "What to Offer?",
+			"required": {
+				"influence": 1,
+				"supplies": 1
+			},
+			"essential": {
+				"lantern": 1
+			},
+			"consumes": true
+		}
+	]
+},
+{
+	"id": "sunshrine.glasgow",
+	"icon": "sunshrine",
+	"label": "Beneath St. Kenedig Church",
+	"description": "This secluded temple is far older than many of the current gods. In that long-ago era that is well-known, its loyalty briefly belonged to that magnificent sun; when it collapsed, the persecuted believers turned to the queen of ants for refuge. Now it has once again dedicated its faith to the sun - but the sun is no longer what it once was, and there is more than one of it. The construction of mortals can sometimes be astonishingly long-lasting.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.edinburgh",
+	"label": "Rosslyn Chapel",
+	"description": "Since the occurrence of the Intercalate, this humble church located in the outskirts of the city has been dedicated to providing shelter for the sun worshippers. Personnel changes, the replacement of tiles - and later, even the object of their faith changed, but the priests still persisted in this duty until today.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.kutaisi",
+	"icon": "sunshrine",
+	"label": "Darkroom of the Monastery",
+	"description": "The cold and splendid light once enveloped the entire city. Now, only faint glimmers can be seen wandering among the bricks and stones here.\n'Much is taken, much abides.' Mortals who had not witnessed that era said so.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.countryside",
+	"icon": "sunshrine",
+	"label": "Secluded Refuge",
+	"description": "In that war hundreds of years ago, the devotees of the sun joined forces with the sisters of the Knot to defend against their common enemy. This place was where they jointly established a sacred sanctuary at that time. Although the doctrines and the gods they followed were different, the devotees of the sun still inscribed the name of the Knot on the inscriptions to commemorate their assistance.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.mtsk",
+	"icon": "sunshrine",
+	"label": "Jvari Monastery",
+	"description": "On that mountain top, between the rocks and the waves, Apostles established the original place of worship for the kingdom in the name of the Sun. Later, the Soviets, who were not fond of religion, never interfered with the worship here: perhaps out of sympathy, or perhaps out of reverence.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.bounds",
+	"icon": "sunshrine",
+	"label": "The Sage-Knight's Shrine",
+	"description": "Beside that well-known blue cottage, the current houseowner is still properly maintaining the place where the previous owner used to offer sacrifices. 'For the sake of our past friendship, I'll allow you to stay a little longer, but don't bring your enemies here either,' she warned. 'I already have enough refugees here. Oh, almost forgot - tell me another secret.'",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "sunshrine.wmlk",
+	"icon": "sunshrine",
+	"label": "Sunken Sanctuary",
+	"description": "Half submerged in water, half dry and bright - was this ancient lunar sanctuary always like this from the beginning, or did it gradually get submerged by the lake over the long years? The inscriptions have been washed away and are now illegible, but the powerful magic has remained until this day. Perhaps this place truly won the favor of the gods by accident.",
+	"inherits": "kt.sunshrine",
+	"unique": true,
+	"aspects": {
+		"ka.local": 1
+	}
+},
+{
+	"id": "kt.vagasteps",
+	"label": "Vagasteps Template",
+	"aspects": {
+		"vagasteps": 1,
+		"ka.local": 1,
+		"ka.location": 1
+	}
+},
+{
+	"id": "vagasteps.powys",
+	"icon": "seal_hiddendoor",
+	"label": "Ogófen Finland Dù Cave",
+	"description": "Faintly glowing footprints crossed the hills and valleys, penetrated the cracks in the rocks, and eventually plunged into the darkness below. No matter what treasures the Centipede left at a deeper level, the path leading to it is clearly not going to be easy. It would be best to make adequate preparations for it.",
+	"inherits": "kt.vagasteps",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"drawob1": [
+			{
+				"id": "obstacle.crossroad",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.riptide",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.crack",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "vagasteps.northumb",
+	"icon": "seal_hiddendoor",
+	"label": "The Waterfell Sanctuary",
+	"description": "The True Sisterhood - this group of mavericks who broke away from the Knot suffered persecution from the more mainstream beliefs in every era. After losing the majority of their members, their base location in northern England became a complete mystery - at least for mortals and immortals alike.",
+	"inherits": "kt.vagasteps",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"drawob1": [
+			{
+				"id": "obstacle.cliff",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.riptide",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.crossroad",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "vagasteps.sigh",
+	"icon": "starshatteredfane",
+	"label": "Cold Light Temple",
+	"description": "The-Sun-Splendid had a close friendship with the Vagabond. In a certain era, they used the continuous mountains as a shelter and gathered in a snow-covered temple to discuss secrets together. At that time, there were no conflicts between them. At that time, the Vagabond never hid her tracks.",
+	"inherits": "kt.vagasteps",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"drawob1": [
+			{
+				"id": "obstacle.riptide",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.cliff",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.chill",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "vagasteps.bounds",
+	"icon": "cultsecrethistories_1",
+	"label": "St Hydra's Study",
+	"description": "At least in one history, the St Hydra Society, who was dedicated to researching the five major histories and their complex sub-branches, would establish their base of operations at the weakest point of the Bounds. Currently, their members are nowhere to be found, but the traces of the Centipede are still very fresh.",
+	"inherits": "kt.vagasteps",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"drawob1": [
+			{
+				"id": "obstacle.riptide",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.crack",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.cliff",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.thewood",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "kt.vault",
+	"label": "Vault Template",
+	"aspects": {
+		"vault": 1,
+		"ka.local": 1,
+		"ka.location": 1
+	},
+	"slots": [
+		{
+			"id": "vaultneedresources",
+			"label": "Resources",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}	
+		},
+		{
+			"id": "vaultneednecessities",
+			"label": "Necessities",
+			"essential": {
+				"necessities": 1
+			},
+			"consumes": true
+		}
+	]
+},
+{
+	"id": "ke.vaultlondon",
+	"icon": "locationvaultu2",
+	"label": "Paddock Bunker",
+	"description": "Before the situation deteriorated, I personally oversaw the construction of this facility by the troops to protect the key part of my grand plan - perhaps it was protected too perfectly, so that even the German bombings failed to cause the slightest damage. Now, concealing the opening of its door has become a torment for me.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 2
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "divinemetal"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.door",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultglasgow",
+	"icon": "hq.abandoned",
+	"label": "The Black Bazaar",
+	"description": "Fervent rumors spread throughout the streets and alleys, claiming that a 'prophetic book' from the other side of the continent would be auctioned off at a high price here: its predictions were always accurate, although people could only see part of the content on the pages. If the rumors were true, then it should rightfully belong to me; otherwise......I was planning to clear this place off anyway.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.guidebook"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.cultists",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultpowys",
+	"icon": "vaultshires4",
+	"label": "The Traitors' Grave",
+	"description": "Forge-of-Days, deceived, devoured the leader of the Red Rose herself. Yet after that disaster, the fate of the remaining kin faded into the shadows of history. Now the aged trail of the Centipede has led me here—foreseeing this moment, or merely to show me something? Perhaps I will never know. Or perhaps knowing never mattered.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.wpnhammer"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.door",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultbelfast1",
+	"icon": "vaultcapital3",
+	"label": "The Collapsed Dock",
+	"description": "The German bombing struck with sudden and unforeseen ferocity: before anyone could react, a blast of staggering magnitude had utterly demolished my ally's berthing area, and their own equipment proved inadequate for the cleanup—as the supervisor explained to me. Yet, in this world, nothing truly occurs without warning; there are only oversights and fleeting strokes of luck.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.allyship"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.ruins",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.allyship",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultbelfast2",
+	"icon": "loc.shrine.nameless",
+	"label": "Lethe's Hideout",
+	"description": "In the recent airstrike, one of the caches I had prepared for the great cause suffered damage beyond expectation, giving this rabble—urged on by the Obliviates—a chance to plunder amidst the chaos. It is time to reclaim what is mine and make them pay the price for their deeds.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "divinemetal"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.cultists",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.trespasser",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultdover",
+	"icon": "cultforge_1",
+	"label": "Ruined Shelter",
+	"description": "This scarcely concealed refuge bears clear signs of violence and chilled orichalc blood. Hokobald's fate seems grim, yet I can still search the place carefully and salvage any remaining resources worth using.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.toolforgelantern"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.door",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.ultimatedefense",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultnorthumb",
+	"icon": "vaultcontinent5",
+	"label": "Breeze Collection",
+	"description": "Despite being miles away from the coastline, the third holder of the pearl drowned with his lungs filled with saltwater. This thoroughly terrified the locals, leading them to believe the pearl—or even the building itself—was cursed. Even left unattended, no thief dared to steal from it. Superstition sometimes has its advantages.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.toolheartwinter"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.door",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.drowningcurse",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultedinburgh",
+	"icon": "vaultcapital5",
+	"label": "Sealed chapel",
+	"description": "'Come to me.' My friend's handwriting pointed to a remote and recently closed chapel.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 3
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.allybright",
+				"morpheffect": "transform"
+			},
+			{
+				"id": "ke.toolknocksh",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.door",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultcside1",
+	"icon": "vaultloneandlevelsands1",
+	"label": "The Forgotten Temple",
+	"description": "The curtain of reality emitted a series of terrifying rumblings, distorting both space and vision. Then, on the previously vast wasteland, a broken temple that no one had ever worshipped emerged. It seems that some of the secrets that the gods had been trying to hide have resurfaced due to the collapse of the Wake.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask.ascensionsteel": [
+			{
+				"id": "ke.skillforge",
+				"morpheffect": "transform"
+			}
+		],
+		"completetask": [
+			{
+				"id": "ke.spark",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.nameofforge",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.spark",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultcside2",
+	"label": "Conflicts on the Bounds",
+	"description": "An extremely fierce battle broke out near the border. One of the opposing sides was an enemy I was quite familiar with, while the other side... was a force that I had completely failed to anticipate.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.wasteland",
+				"morpheffect": "transform"
+			},
+			{
+				"id": "kd.npcsupport",
+				"morpheffect": "deckdraw",
+                "level": 1
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.thewood",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.adepts",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.conflict",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "temp.thepaths",
+	"icon": "ke.numenasce",
+	"label": "A Dream of the Paths?",
+	"description": "A marvellous dream is gradually taking shape.......",
+	"lifetime": 1,
+	"resaturate": true,
+	"decayto": "ke.thepaths"
+},
+{
+	"id": "ke.thepaths",
+	"icon": "ke.numenasce",
+	"label": "A Dream of the Paths",
+	"description": "The path carved by the Sun does not exist in reality, nor is it entirely present in dreams. Instead, it exists above both of these. However, in certain extremely special locations, it might be possible to capture a certain kind of dream that lies between reality and illusion, allowing the dreamer to have the opportunity to glimpse the true appearance of the path and even attempt to climb it themselves.",
+	"unique": true,
+	"lifetime": 60,
+	"aspects": {
+		"ka.location": 1,
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.husk"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.thewood",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.thegate",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.thethorns",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.thestairs",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.thephantoms",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaulttiflis",
+	"icon": "location.cemetery",
+	"label": "Tomb of the Obdurant",
+	"description": "This ancient tomb was built to commemorate a bygone kingdom. During the final battle, the king and his soldiers fought bravely against enemies many times their number. The Colonel's soldiers respected their perseverance and determination, but did not approve of the technology they created for this purpose.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.wpnshotgun",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.adepts",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.nameofwinter",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultzest",
+	"icon": "vaultlandbeyondforest5",
+	"label": "The Monastery of the Fifth Cup",
+	"description": "The Chandler and the gods-from-Nowhere are fundamentally different, but both require a certain degree of breaking through the limitations of the laws in order to become real - this is the reason why I once made contact with this patroness of this place. Perhaps she can still assist me now.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask.ascensionchandler": [
+			{
+				"id": "ke.toolgrailmoth",
+				"morpheffect": "transform"
+			},
+			{
+				"id": "ke.theredflower",
+				"morpheffect": "spawn"
+			}
+		],
+		"completetask": [
+			{
+				"id": "ke.toolgrailmoth",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.nameofwinter",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.aunt",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultmtsk",
+	"icon": "vaultcontinent3",
+	"label": "Forest of the Wolves",
+	"description": "In a more glorious era, the holy city once had a powerful guardian who protected the believers from the evil forces in both dreams and reality. However, after her death, her whereabouts became unknown. Some believed she had passed away, while many others believed she was still walking among us, but her essence had undergone a tremendous transformation.......so that she even befriended the wolves.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.allysad",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.thewood",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.nameofwinter",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.allysad",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultsigh",
+	"label": "Perfumer Studio",
+	"description": "At certain special times, by crossing certain specific intersections, ignoring the road signs and remembering the number of turns in your mind, you may have the chance to find a workshop filled with a fragrant aroma. The owner there will sell addictive exotic scents when in a good mood... The legends of ordinary people can manage to depict Invisible Arts in such a mysterious way.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 4
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.allypicky",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.nameoflantern",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultnola",
+	"label": "Crossrow",
+	"description": "A magnificent yet dilapidated garden mansion, its caretakers hold reverence for both the Watchman and the Vagabond. Here, the warm lights never go out, and the pleasant melodies never cease.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"completetask.ascensionchandler": [
+			{
+				"id": "ke.searingenigma",
+				"morpheffect": "transform"
+			}
+		],
+		"completetask.ascensionsun": [
+			{
+				"id": "ke.goalorchard",
+				"morpheffect": "transform"
+			}
+		],
+		"completetask.ascensionsteel": [
+			{
+				"id": "ke.numenalte",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.thewood",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.nameoflantern",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.celia",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultbrcg",
+	"label": "Hush House",
+	"description": "'Understanding and writing down the truth is one thing, putting the truth into practice is another.' The current administrator stated this in the letter. 'I have accomplished the former through my words, but the remaining part can only be realized by you personally.' Fate eventually brought me back to this castle on the limestone, and here I will once again create new possibilities.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"completetask.ascensionchandler": [
+			{
+				"id": "ke.numenloop",
+				"morpheffect": "transform"
+			}
+		],
+		"completetask.ascensionsun": [
+			{
+				"id": "ke.numenasce",
+				"morpheffect": "transform"
+			}
+		],
+		"completetask.ascensionsteel": [
+			{
+				"id": "ke.numenbell",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.nameofwinter",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.numen",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultwmlk",
+	"label": "Path to the Lake",
+	"description": "At the end of the fog-shrouded path lies the unhealed wound where the Meniscate falls in the Intercalate. If I could reach that place, I might be able to try to draw out the remaining strength from the wound - but her messengers will definitely not let me pass easily.\n[You cannot explore this vault with any 'Illusory Radiance' present,.]",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.moonfragment",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.uncertainlocation",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.adepts",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.greatseal",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.nameoflantern",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.moonfragment",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.vaultbounds",
+	"icon": "contentment",
+	"label": "Orchard of Lights",
+	"description": "This orchard, renowned for its bright fruits and peaceful mist, was once the sacred place of the Sun. But the Sun-in-Rags, the god who is not what it was, still walks here to this day. Now I have been granted the right to visit it - but only once.",
+	"inherits": "kt.vault",
+	"unique": true,
+	"aspects": {
+		"ka.obcount": 5
+	},
+	"xtriggers": {
+		"completetask": [
+			{
+				"id": "ke.shatteredcrown",
+				"morpheffect": "transform"
+			}
+		],
+		"drawob1": [
+			{
+				"id": "obstacle.secrecy",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob2": [
+			{
+				"id": "obstacle.puzzle",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob3": [
+			{
+				"id": "obstacle.nameoflantern",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob4": [
+			{
+				"id": "obstacle.nameofwinter",
+				"morpheffect": "spawn"
+			}
+		],
+		"drawob5": [
+			{
+				"id": "obstacle.suninrags",
+				"morpheffect": "spawn"
+			}
+		]
+	}
+},
+{
+	"id": "ke.thespring",
+	"label": "The Witness's Spring",
+	"description": "In an unknown moment, the elusive god of action created this spring of water on the land of the Noon Plains. Those immortals, either tired of all the disputes in the world or wanting to escape the threats from their enemies, would come here to receive its blessing - if it could even be called a blessing at all.",
+	"unique": true,
+	"aspects": {
+		"ka.location": 1
+	}
+},
+{
+	"id": "ke.theforge",
+	"icon": "apostleforge.pillar1",
+    "overlays": [
+        {
+            "image": "apostleforge.pillar1",
+            "grayscale": true,
+            "color": "#000000"
+        }
+    ],
+	"label": "The Uncrowning Forge",
+	"description": "In that long-forgotten ancient era, when Ys was known as a kingdom, her queen once offered the crown to the forge, thereby forging the bell that governs the stars - and even to this day, the remaining power of this sacrifice can still be found in this forge. Only it can melt the alloy from Ys and make it serve my will.\n[Fill this with Ys-alloy, then it will assist you in achieving your ultimate goal.]",
+	"unique": true,
+	"aspects": {
+        "ka.local": 1,
+		"ka.location": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needalloy1",
+			"label": "Fill",
+			"consumes": true,
+			"essential": {
+				"ke.supplyalloy": 1
+			}
+		},
+		{
+			"id": "ks.needalloy2",
+			"label": "Alloy",
+			"consumes": true,
+			"essential": {
+				"ke.supplyalloy": 1
+			}
+		},
+		{
+			"id": "ks.needalloy3",
+			"label": "More",
+			"consumes": true,
+			"essential": {
+				"ke.supplyalloy": 1
+			}
+		},
+		{
+			"id": "ks.needalloy4",
+			"label": "And",
+			"consumes": true,
+			"essential": {
+				"ke.supplyalloy": 1
+			}
+		},
+		{
+			"id": "ks.needalloy5",
+			"label": "More",
+			"consumes": true,
+			"essential": {
+				"ke.supplyalloy": 1
+			}
+		}
+	],
+	"xtriggers":{
+		"fill": "ke.theforge.full"
+	}
+},
+{
+	"id": "ke.theforge.full",
+	"icon": "apostleforge.pillar1",
+	"label": "The Uncrowning Forge: Full!",
+	"description": "The alloy unique to Ys churned within the smelting forge, the flying sparks bursting into brilliant light - the Hour-shaking bell might be terrifying, but it is by no means the greatest creation of this thing.\n[This card can be used to further enhance a certain ally, and...]",
+	"unique": true,
+	"aspects": {
+		"forge": 10,
+		"lantern": 10,
+		"secrethistories": 10,
+		"ka.forgeable": 1,
+        "ka.local": 1,
+		"ka.location": 1
+	},
+	"xtriggers":{
+		"exhaust": "ke.theforge"
+	}
+},
+{
+	"id": "ke.thebell",
+	"label": "The Bell of Ys",
+	"description": "Its first tremor shattered the moon and expelled the sun from the sky; its reverberation made the gods tremble with fear, so Ys was banished beyond the waves. Centuries passed, and the no-longer-real Ys dared not once again evoke its terrifying sound, for it would harm itself more than the gods. However, the moment of survival or doom will eventually come... [Placing this in 'Move' will strike the bell, and destroy a large number of enemies on the battlefield - but it will also worsen the instability of Ys. Use with caution.]",
+	"unique": true,
+	"aspects": {
+		"edge": 20,
+		"forge": 20,
+		"lantern": 20,
+		"winter": 20,
+		"secrethistories": 20,
+		"ka.profane": 1,
+        "ka.local": 1,
+		"ka.location": 1
+	},
+	"xtriggers":{
+		"exhaust": "thebell.exhausted"
+	}
+},
+{
+	"id": "thebell.exhausted",
+	"icon": "ke.thebell",
+	"label": "The Bell of Ys (Trembling)",
+	"description": "Don't get it wrong - this object can withstand more strikes, but reality just can't bear it.",
+	"unique": true,
+	"resaturate": true,
+	"lifetime": 1000,
+	"decayto": "ke.thebell",
+	"aspects": {
+		"exhausted": 1,
+        "ka.local": 1,
+		"ka.location": 1
+	},
+    "induces": [
+        {
+            "id": "kr.reducestability",
+            "additional": true,
+            "chance": 100
+        }
+    ]
+}
+]
+}

@@ -1,0 +1,1505 @@
+{
+"recipes":[
+{
+	"id": "kh.servantpioneer",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to Perfection?",
+	"startdescription": "No Key-Holder will open the way for a newborn Hour seeking to overthrow the established order. To accomplish my final work, I must create someone able to do so for me. As a counterfeit reflection of Ghirbi, Fissifer has long had the potential to do so. With the aid of Ys-alloy and the power of Forge and Lantern, I could forge into his essence a mystery capable of ending History……\n\n[Provide at least 30 levels of <b>Forge </b> and <b>Lantern</b> for your ally to ascend even higher. Notably, this recipe also requires at least 1 'Innovation' and 'Numen: a Merciless Alteration'.]",
+	"extantreqs":{
+		"ke.domys": 1
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"[servant.fissifer]+[servant.fissifer.melting]+[servant.fissifer.piercing]": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantpioneer",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to Perfection",
+	"startdescription": "'The sins of the Hours, will ultimately bury them ––'",
+	"craftable": true,
+	"warmup": 60,
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"forge": 30,
+		"lantern": 30,
+		"ke.numenalte": 1,
+		"ke.theforge.full": 1,
+		"strength.steel": 1,
+		"[servant.fissifer]+[servant.fissifer.melting]+[servant.fissifer.piercing]": 1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantpioneer.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantpioneer.spawn",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to Perfection",
+	"description": "'––And upon that foundation, shall we forge a new destiny.'\n\n[After he has finished charging, Fissifer's attacks will nullify all enemy attributes.]",
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.numenalte": -1,
+		"servant.fissifer.exhausted": -1,
+		"servant.pioneer": 1
+	}
+},
+{
+	"id": "kh.craftalloy",
+	"actionid": "kv.work",
+	"label": "Refine an Alloy with Ys' Assistance?",
+	"startdescription": "The process of smelting this alloy differs from all my previous work: in addition to Forge and Lantern, it requires the use of the Secret Histories...... \n\n[Provide at least 12 levels of <b>Forge </b> and <b>Lantern</b> and 6 levels of <b>Secret History</b> to craft Ys-alloy. Notably, this recipe also requires at least 2 supplies and the involvement of 'Ys' Assistance'.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"ke.opalloy": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftalloy",
+	"actionid": "kv.work",
+	"label": "Refine an Alloy with Ys' Assistance",
+	"startdescription": "The artisan of Ys use their unique craftsmanship to infuse the mysteries of Secret History into metal.",
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 12,
+		"lantern": 12,
+		"secrethistories": 6,
+		"supplies": 2,
+		"ke.opalloy": 1
+	},
+	"craftable": true,
+	"warmup": 45,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftalloy.spawn"
+		}
+	]
+},
+{
+	"id": "craftalloy.spawn",
+	"actionid": "kv.work",
+	"label": "Refine an Alloy with Ys' Assistance",
+	"description": "This will help me achieve my ascension.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplyalloy": 1
+	}
+},
+{
+	"id": "kh.servantfissifer",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to An Essential State?",
+	"startdescription": "The time has come to free my ally from the burden of his shell, and refine him to his essential state. In this state, and at the right time, he will be able to forge a new path for me…..\n\n[Provide at least 30 levels of <b>Forge </b> for your ally to ascend higher. Notably, this recipe also requires at least 1 'Innovation', 1 card with the 'Molten' aspect and 1 card with the 'Piercing' aspect.]",
+	"extantreqs":{
+		"ka.servant": -11,
+		"ke.skillforge": 1
+	},
+	"requirements": {
+		"ke.allyship": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantfissifer",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to An Essential State",
+	"startdescription": "'It's about time. Now, focus on doing what must be done –– what you should've done long ago.'",
+	"craftable": true,
+	"warmup": 60,
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"requirements": {
+		"forge": 30,
+		"ke.allyship": 1,
+		"ke.skillforge": 1,
+		"strength.steel": 1,
+		"ka.melting": 1,
+		"ka.piercing": 1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantfissifer.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantfissifer.spawn",
+	"actionid": "kv.work",
+	"label": "Ascension – Refined to An Essential State",
+	"description": "'Let's turn this place upside down.'\n[The ascended Fissifer cannot be easily destroyed, and will switch between 'Molten' and 'Piercing' aspect after he has finished charging.]",
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.allyship.exhausted": -1,
+		"servant.fissifer": 1
+	}
+},
+{
+	"id": "kh.servantmachinery",
+	"actionid": "kv.work",
+	"label": "Create a Colossus to End All Nights?",
+	"startdescription": "Blue Gold harbours an incredible, terrifying power, and I know how that power may be controlled and channelled through complex mechanical structures. The engineering will be costly and arduous, but once complete, I will have an unstoppable colossus.\n\n[Provide at least 20 levels of <b>Forge</b> and <b>Lantern</b> and <b>Winter</b> to craft this exceptionally powerful special ally. Notably, this recipe also requires at least 1 'Blue Gold' and 3 supplies.]",
+	"extantreqs":{
+		"ka.servant": -10
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.bluegold": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantmachinery",
+	"actionid": "kv.work",
+	"label": "Create a Colossus to End All Nights",
+	"startdescription": "<b>Forge</b> builds its form, <b>Lantern</b> guides its radiant power, and <b>Winter</b> suppresses stray energy flows and prevents it from imploding. The arduous work consumes an exorbitant amount of materials, but the outcome is worth it.",
+	"craftable": true,
+	"warmup": 120,
+	"extantreqs":{
+		"ka.servant": -10
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.bluegold": 1,
+		"forge": 20,
+		"lantern": 20,
+		"winter": 20,
+		"supplies": 3
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantmachinery.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantmachinery.spawn",
+	"actionid": "kv.work",
+	"label": "Create a Colossus to End All Nights",
+	"description": "End the night, and make your own dawn.\n\n[When fully charged, the Dawn Megaton's attacks nullify all enemy attributes.]",
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"bluegold.unstable": -1,
+		"servant.machinery": 1
+	}
+},
+{
+	"id": "kh.servantimmortala",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal?",
+	"startdescription": "Just as the Lionsmith makes monsters, we can remake this corpse with fire and infuse it with savage vitality. \n\n[Provide at least 20 levels of <b>Edge</b> and 10 levels of <b>Forge</b> and <b>Heartr</b> to transform a Long corpse into a special ally. Notably, this recipe also requires at least 1 'Strength' and 1 card with the 'Molten' aspect.]",
+	"extantreqs":{
+		"ka.servant": -12
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.corpselong": 1,
+		"ke.strengtha": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantimmortala",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal",
+	"startdescription": "Infuse the Long corpse with savage vitality, and bestow it with the arts of valiant struggle and the mysteries of flame.",
+	"extantreqs":{
+		"ka.servant": -12
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.corpselong": 1,
+		"edge": 20,
+		"forge": 10,
+		"heart": 10,
+		"ke.strengtha": 1,
+		"ka.melting": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantimmortala.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantimmortala.spawn",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal",
+	"description": "The fallen Long rises once again as a warrior. This time, they swear loyalty to me.\n\n[Once they have finished charging, the Immortal Guards will gain the 'Molten' aspect.]",
+	"warmup": 0,
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"effects": {
+		"servant.immortala": 1
+	}
+},
+{
+	"id": "kh.servantimmortalb",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal?？",
+	"startdescription": "Just as the Chiliarch raises the dead with a shattering, reconstituting force, we can infuse this corpse with a sharp power.\n\n[Provide at least 20 levels of <b>Edge</b> and 10 levels of <b>Lantern</b> and <b>Winter</b> to transform a Long corpse into a special ally. Notably, this recipe also requires at least 1 'Revelation' and 1 card with the 'Piercing' aspect.]",
+	"extantreqs":{
+		"ka.servant": -12
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.corpselong": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantimmortalb",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal",
+	"startdescription": "Infuse the Long corpse with the light of revelation, and bestow it with the arts of cunning struggle and the mysteries of ending.",
+	"extantreqs":{
+		"ka.servant": -12
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.corpselong": 1,
+		"edge": 20,
+		"lantern": 10,
+		"winter": 10,
+		"ke.strengthc": 1,
+		"ka.piercing": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantimmortalb.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantimmortalb.spawn",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal",
+	"description": "The fallen Long rises once again as a warrior. This time, they swear loyalty to me.\n\n[Once they have finished charging, the Immortal Guards will gain the 'Piercing' aspect.]",
+	"warmup": 0,
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"effects": {
+		"servant.immortalb": 1
+	}
+},
+{
+	"id": "kh.craftimmortals",
+	"actionid": "kv.work",
+	"label": "Awaken the Remnant Power of an Immortal?",
+	"startdescription": "Though they have been destroyed, a trace of the Long's power remains within their corpse. I can infuse my own power to transform it and reawaken these remains….\n\n[Offer 'Strength' or 'Revelation' to receive more detailed hints.]",
+	"extantreqs":{
+		"ka.servant": -12
+	},
+	"requirements": {
+		"ke.skillforge": 1,
+		"ke.corpselong": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.servantflame",
+	"actionid": "kv.work",
+	"label": "Summon a Fiery, Flawed Spirit?",
+	"startdescription": "Guided by my imagination, I can summon a rudimentary, flawed spirit from these remains. It may be short-lived and clumsy, but might also be cost-effective……\n\n[Provide at least 16 levels of <b>Forge</b> and 8 levels of <b>Edge</b> and <b>Moth</b> to transform these remains into two single-use special allies. Notably, this recipe also requires at least 1 'Whimsy' and 2 influences.]",
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1,
+		"ke.strengthb": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantflame",
+	"actionid": "kv.work",
+	"label": "Summon a Fiery, Flawed Spirit",
+	"startdescription": "<b>Forge</b> to impart heat, <b>Edge</b> to ensure lethality, <b>Moth</b> to find their target.",
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"forge": 16,
+		"edge": 8,
+		"moth": 8,
+		"influence": 2,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1,
+		"ke.strengthb": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantflame.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantflame.spawn",
+	"actionid": "kv.work",
+	"label": "Summon a Fiery, Flawed Spirit",
+	"description": "They sit there, awaiting the moment of their destruction.\n\n[These two special allies will be destroyed after use.]",
+	"warmup": 0,
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"effects": {
+		"servant.flame": 2
+	}
+},
+{
+	"id": "kh.servantlight",
+	"actionid": "kv.work",
+	"label": "Summon a Bright, Flawed Spirit?",
+	"startdescription": "Guided by my imagination, I can summon a rudimentary, flawed spirit from these remains. It may be short-lived and clumsy, but might also be cost-effective……\n\n[Provide at least 16 levels of <b>Lantern</b> and 8 levels of <b>Knock</b> and <b>Winter</b> to transform these remains into two single-use special allies. Notably, this recipe also requires at least 1 'Revelation' and 2 influences.]",
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftservantlight",
+	"actionid": "kv.work",
+	"label": "Summon a Bright, Flawed Spirit",
+	"startdescription": "<b>Lantern</b> to impart light, <b>Knock</b> to guide the way, <b>Winter</b> to imbue patience.",
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"lantern": 16,
+		"knock": 8,
+		"winter": 8,
+		"influence": 2,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftservantlight.spawn"
+		}
+	]
+},
+{
+	"id": "craftservantlight.spawn",
+	"actionid": "kv.work",
+	"label": "Summon a Bright, Flawed Spirit",
+	"description": "They sit there, awaiting the moment of their destruction.\n\n[These two special allies will be destroyed after use.]",
+	"warmup": 0,
+	"requirements": {
+		"ke.skillforge": 1
+	},
+	"effects": {
+		"servant.light": 2
+	}
+},
+{
+	"id": "kh.craftminions",
+	"actionid": "kv.work",
+	"label": "Summon a Spirit from Ordinary Remains",
+	"startdescription": "These remains are incomplete and lack power——there is almost nothing left to work with.\n\n[Provide 'Whismy' or 'Revelation' to receive more detailed hints.]",
+	"extantreqs":{
+		"ka.servant": -11
+	},
+	"grandreqs": {
+		"ke.skillforge": 1,
+		"[ke.corpsea]+[ke.corpseb]+[ke.corpsec]": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.skillsteel",
+	"actionid": "kv.work",
+	"label": "The Arts of Mystic Forging?",
+	"startdescription": "A truly great revolution must begin with oneself: guided by my vision, I will work with unceasing and unwavering determination, refining myself until I am as strong as can be...\n\n[Provide at least 30 levels of <b>Forge</b> and 20 levels of <b>Heart</b> to begin the rite of mystic forging. Notably, this recipe also requires at least 1 'Innovation' and 1 'Divine Metal'. Before beginning the work, ensure that the 'Forge Heart' is not used in this recipe and is not in an Overheated state.]",
+	"extantreqs":{
+		"ascensionsteel": 1,
+		"ke.skillforge": 1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"ka.forging": 1,
+		"strength.steel": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.unlockskillsteel",
+	"actionid": "kv.work",
+	"label": "The Arts of Mystic Forging",
+	"startdescription": "The flame is quenched; the ritual is complete—why rely on the power of external objects? This very body is the instrument that breaks the stalemate.",
+	"craftable": true,
+	"warmup": 60,
+	"extantreqs":{
+		"ascensionsteel": 1
+	},
+	"tablereqs":{
+		"ke.skillforge": 1
+	},
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 30,
+		"heart": 20,
+		"divinemetal": 1,
+		"strength.steel": 1,
+		"ke.skillforge": -1,
+		"forgeplant.exhausted": -1
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "ks.needskillforge",
+			"label": "Forge Heart",
+			"essential": {
+				"ke.skillforge": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "unlockskillsteel.draw"
+		}
+	]
+},
+{
+	"id": "unlockskillsteel.draw",
+	"actionid": "kv.work",
+	"label": "The Arts of Mystic Forging",
+	"description": "The flame is quenched; the ritual is complete—why rely on the power of external objects? This very body is the instrument that breaks the stalemate.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"divinemetal.exhausted": -1
+	},
+	"deckeffects":{
+		"kd.skillsteel": 1
+	}
+},
+{
+	"id": "kh.divinemetal.ascensionsteel",
+	"actionid": "kv.work",
+	"label": "The Arts of Mystic Forging…..",
+	"startdescription": "The unceasing flame of creation has fused with my very being, granting me the ability to further transform myself; when my innovative passions are ignited, my revolution will continue...\n\n[Insert a special influence to gain further clues.]",
+	"extantreqs":{
+		"ascensionsteel": 1,
+		"ke.skillforge": 1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.craftwpntwin",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon?",
+	"startdescription": "My mind is astir with a strange, fascinating idea: I might be able to forge a unique weapon, by calling upon two conflicting forces during the process of forging and tempering, and infusing the metal with the paradoxical power of the Chandler. Of course, a great power of <b>Edge</b> is necessary before work can begin……\n\n[Provide at least 20 levels of <b>Edge</b> and 10 levels of <b>Forge</b> and <b>Winter</b> to craft a unique and powerful weapon. Notably, this recipe also requires at least 1 'Twilight'.] ",
+	"extantreqs":{
+		"ascensionchandler": 1,
+		"ke.wpntwin": -1,
+		"ke.wpntwin.exhausted": -1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"strength.chandler": 1,
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftwpntwin",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon",
+	"startdescription": "A bizarre flame surges from the core of the metal—— blazing with unbearable heat yet radiating piercing cold. I followed my inspiration and whimsy in this work, and though the results were not as expected, this will undoubtedly be a special weapon……\n\n[This will consume 'Divine Metal' and forge it into a unique and powerful weapon.]",
+	"extantreqs":{
+		"ascensionchandler": 1,
+		"ke.wpntwin": -1,
+		"ke.wpntwin.exhausted": -1
+	},
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 20,
+		"forge": 10,
+		"winter": 10,
+		"divinemetal": 1,
+		"strength.chandler": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftwpntwin.spawn"
+		}
+	]
+},
+{
+	"id": "craftwpntwin.spawn",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon",
+	"description": "The erratic flames gradually coalesce, and fuse completely within the blade. I stand up to examine my creation: a pair of peculiar, searing double-edge blades. They would undoubtedly shatter any formless defences, and may even hold some even more elusive power……\n\n[This weapon has the 'Molten' aspect, and may produce unexpected effects when used.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"divinemetal.exhausted": -1,
+		"ke.wpntwin": 1
+	}
+},
+{
+	"id": "kh.craftwpnspike",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon?",
+	"startdescription": "My mind is occupied by thoughts born of a cold and sharp resolve: I have sacrificed a great deal to reach this point, and perhaps it is time that my enemies suffer true retribution. This will be a shining instrument of pain, that will inflict suffering on both my enemies and myself……\n\n[Provide at least 24 levels of <b>Edge</b> and 12 levels of <b>Lantern</b> and <b>Winter</b> to craft a unique and powerful weapon. Notably, this recipe also requires at least 1 'Enlightenment'.]",
+	"extantreqs":{
+		"ascensionsun": 1,
+		"ke.wpnspike": -1,
+		"ke.wpnspike.exhausted": -1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"strength.sun": 1,
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftwpnspike",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon",
+	"startdescription": "Agony, despair, and that eternal, unhealing wound——this cruel weapon will inflict pain on its wielder and its victims in equal measure. \n\n[This will consume 'Divine Metal' and forge it into a unique and powerful weapon.]",
+	"extantreqs":{
+		"ascensionsun": 1,
+		"ke.wpnspike": -1,
+		"ke.wpnspike.exhausted": -1
+	},
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 24,
+		"lantern": 12,
+		"winter": 12,
+		"divinemetal": 1,
+		"strength.sun": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftwpnspike.spawn"
+		}
+	]
+},
+{
+	"id": "craftwpnspike.spawn",
+	"actionid": "kv.work",
+	"label": "Forge a Sacred Weapon",
+	"description": "The Sun has his ruthless side, and before he completes his pilgrimage, we must all pay the necessary price.\n\n[This weapon has the 'Piercing' aspect, and may produce unexpected effects when used.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"aspects": {
+		"exhaustforgeplant": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"divinemetal.exhausted": -1,
+		"ke.wpnspike": 1
+	}
+},
+{
+	"id": "kh.divinewpn",
+	"actionid": "kv.work",
+	"label": "Craft a Divine Weapon?",
+	"startdescription": "This sacred metal is no longer central to my current plans, but they may still help me achieve my goals in another way…...\n\n[Insert a special influence to gain further clues.]",
+	"extantreqs":{
+		"tag.ascension": 1,
+		"ascensionsteel": -1,
+		"ke.wpntwin": -1,
+		"ke.wpntwin.exhausted": -1,
+		"ke.wpnspike": -1,
+		"ke.wpnspike.exhausted": -1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.divinemetal",
+	"actionid": "kv.work",
+	"label": "The Time is Not Right",
+	"startdescription": "The future remains shrouded in a mist of countless possibilities; I should not rashly use such precious resources at this time.\n\n[The purpose of this item will be revealed later in the game.]",
+	"extantreqs":{
+		"tag.ascension": -1
+	},
+	"requirements": {
+		"divinemetal": 1,
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.restorehealth",
+	"actionid": "kv.work",
+	"label": "To Reforge This Part of Myself?",
+	"startdescription": "This portion of power is too severely damaged to restore—but what is destroyed can be reforged.\n\n[Provide a 'Strength' card and a <b>Forge</b> of at least tier 12 to recover Heath.]",
+	"requirements": {
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1,
+		"ke.healthdamaged": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kh.reforgewound",
+	"actionid": "kv.work",
+	"label": "To Reforge a Permanent Wound?",
+	"startdescription": "The wound runs too deep, beyond what flesh can mend—but I can reforge this body of mine, and the injury will vanish as my form is reshaped.\n\n[Provide a 'Strength' card and a <b>Forge</b> of at least tier 12 to remove an Unhealing Wound.]",
+	"requirements": {
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1,
+		"ke.woundsevere": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.restorehealthorwound",
+	"actionid": "kv.work",
+	"label": "To Reforge What Was Ruined",
+	"startdescription": "I will temper strength into this flesh amid raging flames, making it as tough and resilient as before.\n\n[This will restore you, but you may only do this once per Foundry.]",
+	"requirements": {
+		"ka.forging": 1,
+		"forgeplant.exhausted": -1,
+		"ka.damaged": 1,
+		"forge": 12,
+		"ke.strengtha": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"exhaust": 1,
+		"exhaustforgeplant": 1
+	},
+	"linked": [
+		{
+			"id": "restorehealthorwound.spawn"
+		}
+	]
+},
+{
+	"id": "restorehealthorwound.spawn",
+	"actionid": "kv.work",
+	"label": "To Reforge What Was Ruined",
+	"startdescription": "Through baptism by fire, this body has been transformed and renewed. ",
+	"warmup": 0,
+	"aspects": {
+		"restorehealth": 1
+	}
+},
+{
+	"id": "kh.craftbluegold",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge: The Pinnacle of Excellence?",
+	"startdescription": "As the later operations of the Forge draw to a close, Iotic Essence is once more refined in intense heat and purified to its absolute limit…. \n\n[Provide at least 40 levels of <b>Forge </b> and 20 levels of <b>Lantern</b> to refine Iotic Essence. Notably, this recipe also requires at least 1 unit of Iotic Essence.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"ke.supplyforgec": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftbluegold",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge: The Pinnacle of Excellence",
+	"startdescription": "I will further embody the teachings of <b>Forge</b> and <b>Lantern</b> to attain the pinnacle of mastery – ",
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 40,
+		"lantern": 20,
+		"ke.supplyforgec": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftbluegold.spawn"
+		}
+	]
+},
+{
+	"id": "craftbluegold.spawn",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge: The Pinnacle of Excellence",
+	"description": "Red thrills to blue.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.bluegold": 1
+	}
+},
+{
+	"id": "kh.craftsupplyforgec",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge?",
+	"startdescription": "In the later operations of the Forge, the Madrugad yields to the true Forge of Days, and the essence begins to redden. My relationship with my blood relative is hardly warm, but I still remember her instructions on crafting.\n\n[Provide at least 30 levels of <b>Forge </b> and 15 levels of <b>Lantern</b> to refine Iotic Essence. Notably, this recipe also requires at least 2 units of Xanthotic Essence.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"ke.supplyforgeb": 2
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplyforgec",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge",
+	"startdescription": "The Forge is ingenious and ruthless – my work must not only recreate the ingenuity of <b>Forge</b> but also embody the mercilessness of <b>Lantern</b>.",
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 30,
+		"lantern": 15,
+		"ke.supplyforgeb": 2
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplyforgec.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplyforgec.spawn",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Forge",
+	"description": "Yellow ripens to red.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplyforgec": 1
+	}
+},
+{
+	"id": "kh.craftsupplyforgeb",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Madrugad?",
+	"startdescription": "In certain operations of the Forge, sunlight is said to overcome moonlight, as we pass from the Meniscate to the Madrugad. I will attempt to replicate this process.\n\n[Provide at least 20 levels of <b>Forge </b> and 8 levels of <b>Lantern</b> and <b>Winter</b> to refine Xanthotic Essence. Notably, this recipe also requires at least 2 units of Refined Bitterblack Salts.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"ke.ammob": 2
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplyforgeb",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Madrugad",
+	"startdescription": "Replicate the work of she who goes before the Sun: <b>Forge</b> is essential for shaping，while <b>Lantern</b> represents the light of daybreak，and <b>Winter</b> the biting cold of dawn.",
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 20,
+		"lantern": 8,
+		"winter": 8,
+		"ke.ammob": 2
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplyforgeb.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplyforgeb.spawn",
+	"actionid": "kv.work",
+	"label": "Reconstruct the Work of the Madrugad",
+	"description": "Black clarifies to yellow.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplyforgeb": 1
+	}
+},
+{
+	"id": "kh.craftwpntooth",
+	"actionid": "kv.work",
+	"label": "Create a Molten Monster Part?",
+	"startdescription": "The core principles of different weapons share similarities—if I have a weapon as reference, supplemented with sufficient Edge and a touch of Forge and Grail, I can craft a savage monster part.\n\n[Provide no less than 12 levels of <b>Edge</b> and 6 levels of <b>Forge</b> and <b>Grail</b> to create a weapon with 'Piercing' aspect. Notably, this recipe also requires at least 1 weapon, 1 Supply, and 1 Influence.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"supplies": 1,
+		"weapon": 1,
+		"edge": 6,
+		"[forge]+[grail]": 6
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftwpntooth",
+	"actionid": "kv.work",
+	"label": "Create a Molten Monster Part",
+	"startdescription": "<b>Edge</b> calls forth brutal lethality,  while the craft of <b>Forge</b> and <b>Grail</b> infuses it with an all-consuming desire and infernal heat.",
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 12,
+		"forge": 6,
+		"grail": 6,
+		"supplies": 1,
+		"influence": 1,
+		"weapon": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftwpntooth.spawn"
+		}
+	]
+},
+{
+	"id": "craftwpntooth.spawn",
+	"actionid": "kv.work",
+	"label": "Create a Molten Monster Part",
+	"description": "This will be especially effective against otherworldly enemies.\n\n[This is a Molten weapon that can be acquired repeatedly, but each piece can only be used once.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.wpntooth": 1
+	}
+},
+{
+	"id": "kh.craftwpnspear",
+	"actionid": "kv.work",
+	"label": "Create A Cunning Thrown Weapon?",
+	"startdescription": "The core principles of different weapons share similarities—if I have a weapon as reference, supplemented with sufficient Edge and a touch of Winter and Knock, I can craft an ancient thrown weapon.\n\n[Provide no less than 12 levels of <b>Edge</b> and 6 levels of <b>Knock</b> and <b>Winter</b> to create a weapon with 'Piercing' aspect. Notably, this recipe also requires at least 1 weapon, 1 Supply, and 1 Influence.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"supplies": 1,
+		"weapon": 1,
+		"edge": 6,
+		"[winter]+[knock]": 6
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftwpnspear",
+	"actionid": "kv.work",
+	"label": "Create A Cunning Thrown Weapon",
+	"startdescription": "<b>Edge</b> ensures basic lethality,  while the rites of <b>Winter</b> and <b>Knock</b> grant it a cunning that bypasses extraordinary defenses and a poison potent enough to pierce flesh and bone.",
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 12,
+		"winter": 6,
+		"knock": 6,
+		"supplies": 1,
+		"influence": 1,
+		"weapon": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftwpnspear.spawn"
+		}
+	]
+},
+{
+	"id": "craftwpnspear.spawn",
+	"actionid": "kv.work",
+	"label": "Create A Cunning Thrown Weapon",
+	"description": "This will be especially effective against tough, tenacious enemies.\n\n[This is a Piercing weapon that can be acquired repeatedly, but each piece can only be used once.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.wpnspear": 1
+	}
+},
+{
+	"id": "kh.craftsupplymelting",
+	"actionid": "kv.work",
+	"label": "Craft a Molten Object of Strife?",
+	"startdescription": "If I have a weapon as a reference, along with sufficient Edge, a small amount of Forge and Heart, I can craft a wild object of strife.\n\n[Provide at least 12 levels of <b>Edge</b>, 6 levels of <b>Forge</b> and 6 levels of <b>Heart</b> to produce two supplies with 'Molten' aspect. Notably, this formula also requires at least 1 weapon, 1 Supply, and 1 Influence to participate.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"weapon": 1,
+		"supplies": 1,
+		"edge": 6,
+		"[forge]+[heart]": 6
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplymelting",
+	"actionid": "kv.work",
+	"label": "Craft a Molten Object of Strife",
+	"startdescription": "<b>Edge</b> is the essential principle for objects of strife, <b>Forge</b> shapes the form, and <b>Heart</b> grants life.",
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 12,
+		"forge": 6,
+		"heart": 6,
+		"supplies": 2,
+		"weapon": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplymelting.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplymelting.spawn",
+	"actionid": "kv.work",
+	"label": "Craft a Molten Object of Strife",
+	"description": "This will be particularly effective against enemies with extraordinary defenses.\n\n[Items with the 'Molten' aspect can nullify an enemy's 'Buffering' and 'Twisting' during an attack.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplymelting": 2
+	}
+},
+{
+	"id": "kh.craftsupplypiercing",
+	"actionid": "kv.work",
+	"label": "Craft a Piercing Object of Strife?",
+	"startdescription": "If I have a weapon as a reference, along with sufficient Edge, a small amount of Lantern and Winter, I can craft a piercing object of strife.\n\n[Provide at least 12 levels of <b>Edge</b>, 6 levels of <b>Winter</b> and 6 levels of <b>Lantern</b> to produce two supplies with 'Piercing' aspect. Notably, this formula also requires at least 1 weapon, 1 Supply, and 1 Influence to participate.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"weapon": 1,
+		"supplies": 1,
+		"edge": 6,
+		"[winter]+[lantern]": 6
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplypiercing",
+	"actionid": "kv.work",
+	"label": "Craft a Piercing Object of Strife",
+	"startdescription": "<b>Edge</b> is the essential principle for objects of strife, <b>Winter</b> deepens endurance, and <b>Lantern</b> enlightens wisdom.",
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 12,
+		"winter": 6,
+		"lantern": 6,
+		"supplies": 2,
+		"weapon": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplypiercing.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplypiercing.spawn",
+	"actionid": "kv.work",
+	"label": "Craft a Piercing Object of Strife",
+	"description": "This will be particularly effective against those tenacious and hardy enemies.\n\n[Items with the 'Piercing' aspect can nullify an enemy's 'Resistant' and 'Revival' when attacking.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplypiercing": 2
+	}
+},
+{
+	"id": "kh.craftammob",
+	"actionid": "kv.work",
+	"label": "Refining A Volatile and Hazardous Substance?",
+	"startdescription": "By adding additional Forge along with an appropriate measure of Edge and Winter, one can refine Bitterblack Salt from ordinary forge materials.\n\n[Supply no less than 12 levels of <b>Forge</b>, 4 levels of <b>Edge</b>, and 4 levels of <b>Winter</b> to produce two portions of Refined Bitterblack Salt. Notably, this recipe also requires at least 2 Supplies and the use of a tool.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"forge": 6,
+		"[winter]+[edge]": 4,
+		"supplies": 1,
+		"tool": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftammob",
+	"actionid": "kv.work",
+	"label": "Refining A Volatile and Hazardous Substance",
+	"startdescription": "<b>Forge</b> unleashes the potential of the fuel, while <b>Edge</b> and <b>Winter</b> enhance its resilience.",
+	"requirements": {
+		"ka.forging": 1,
+		"forge": 12,
+		"edge": 4,
+		"winter": 4,
+		"supplies": 2,
+		"tool": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftammob.spawn"
+		}
+	]
+},
+{
+	"id": "craftammob.spawn",
+	"actionid": "kv.work",
+	"label": "Refining A Volatile and Hazardous Substance",
+	"description": "They will later stir even more fascinating transformations.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.ammob": 2
+	}
+},
+{
+	"id": "kh.craftammoa",
+	"actionid": "kv.work",
+	"label": "Craft Some Basic Ammunition by Myself?",
+	"startdescription": "These days you really have to handle everything on your own.\n\n[Provide at least 10 levels of <b>Edge</b> and 6 levels of <b>Forge</b> to create two Alloy Projectiles. Notably, this recipe also requires a minimum of 2 Supplies and one tool to participate.]",
+	"grandreqs": {
+		"ka.forging": 1,
+		"edge": 5,
+		"forge": 3,
+		"supplies": 1,
+		"tool": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftammoa",
+	"actionid": "kv.work",
+	"label": "Craft Some Basic Ammunition by Myself",
+	"startdescription": "Infuse more <b>Edge</b> to enhance sharpness, and apply a touch of <b>Forge</b> for basic shaping.",
+	"requirements": {
+		"ka.forging": 1,
+		"edge": 10,
+		"forge": 6,
+		"supplies": 2,
+		"tool": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftammoa.spawn"
+		}
+	]
+},
+{
+	"id": "craftammoa.spawn",
+	"actionid": "kv.work",
+	"label": "Craft Some Basic Ammunition by Myself",
+	"description": "This will grant me more leeway in the journey ahead.",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.ammoa": 2
+	}
+},
+{
+	"id": "kh.craftsupplyheartb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Evoke Vitality?",
+	"startdescription": "When the power of Heart is sufficiently strong, I can compress the pulsation of rebirth into a small vial of preparation for future use.\n\n[Requires at least 12 levels of <b>Heart</b> to produce a higher-grade Heart ingredient. Specifically, this formula also requires at least 1 Ability, 1 Supply, and 1 Influence to partake.]",
+	"requirements": {
+		"ka.forging": 1,
+		"heart": 6,
+		"ability": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplyheartb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Evoke Vitality",
+	"startdescription": "When the power of Heart is sufficiently strong, I can compress the pulsation of rebirth into a small vial of preparation for future use.",
+	"requirements": {
+		"ka.forging": 1,
+		"heart": 12,
+		"ability": 1,
+		"supplies": 1,
+		"influence": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplyheartb.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplyheartb.spawn",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Evoke Vitality",
+	"description": "I can use it as an aid in overcoming challenges, or simply enjoy its effects for myself.\n\n[Using this resource grants a 'Strength' card.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplyheartb": 1
+	}
+},
+{
+	"id": "kh.craftsupplymothb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Stir Passion?",
+	"startdescription": "When the power of Moth is sufficiently strong, I can compress the buzzing fervor into a small vial of preparation for future use.\n\n[Requires at least 12 levels of <b>Moth</b> to produce a higher-grade Moth ingredient. Specifically, this formula also requires at least 1 Ability, 1 Supply, and 1 Influence to partake.]",
+	"requirements": {
+		"ka.forging": 1,
+		"moth": 6,
+		"ability": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplymothb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Stir Passion",
+	"startdescription": "When the power of Moth is sufficiently strong, I can compress the buzzing fervor into a small vial of preparation for future use.",
+	"requirements": {
+		"ka.forging": 1,
+		"moth": 12,
+		"ability": 1,
+		"supplies": 1,
+		"influence": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplymothb.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplymothb.spawn",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Stir Passion",
+	"description": "I can use it as an aid in overcoming challenges, or simply enjoy its effects for myself.\n\n[Using this resource grants a 'Whimsy' card.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplymothb": 1
+	}
+},
+{
+	"id": "kh.craftsupplylanternb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Induce Epiphany?",
+	"startdescription": "When the power of Lantern is sufficiently strong, I can compress the searing radiance into a small vial of preparation for future use.\n\n[Requires at least 12 levels of <b>Lantern</b> to produce a higher‑grade Lantern ingredient. Specifically, this formula also requires at least 1 Ability, 1 Supply, and 1 Influence to partake.]",
+	"requirements": {
+		"ka.forging": 1,
+		"lantern": 6,
+		"ability": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.craftsupplylanternb",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Induce Epiphany",
+	"startdescription": "When the power of Lantern is sufficiently strong, I can compress the searing radiance into a small vial of preparation for future use.",
+	"requirements": {
+		"ka.forging": 1,
+		"lantern": 12,
+		"ability": 1,
+		"supplies": 1,
+		"influence": 1
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "craftsupplylanternb.spawn"
+		}
+	]
+},
+{
+	"id": "craftsupplylanternb.spawn",
+	"actionid": "kv.work",
+	"label": "Craft A Preparation to Induce Epiphany",
+	"description": "I can use it as an aid in overcoming challenges, or simply enjoy its effects for myself.\n\n[Using this resource grants a 'Revelation' card.]",
+	"requirements": {
+		"ka.forging": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"ke.supplylanternb": 1
+	}
+},
+{
+	"id": "craftguide.weapons",
+	"actionid": "kv.work",
+	"label": "Forging Art: Creations of the Corrivality?",
+	"startdescription": "Given sufficiently strong <b>Edge</b>, paired with a measure of <b>Forge</b> or <b>Winter</b>, I might be able to replicate some creations made specifically for the Corrivality……",
+	"grandreqs": {
+		"ka.forging": 1,
+		"weapon": 1,
+		"[influence]+[supplies]": 2
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.ammo",
+	"actionid": "kv.work",
+	"label": "Forging Art: Ammunition?",
+	"startdescription": "To produce ammunition in bulk, I still need sufficiently strong <b>Edge</b> or <b>Forge</b>.",
+	"requirements": {
+		"ka.forging": 1,
+		"tool": 1,
+		"supplies": 2
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.strengthspawners",
+	"actionid": "kv.work",
+	"label": "Forging Art: Preparations?",
+	"startdescription": "To craft preparations, I still need sufficiently strong <b>Heart</b>, <b>Lantern</b> or <b>Moth</b>.",
+	"requirements": {
+		"ka.forging": 1,
+		"ability": 1,
+		"influence": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.suppliesandinfluence",
+	"actionid": "kv.work",
+	"label": "Forging Art: Blending Ingredient and Influence",
+	"startdescription": "Now I need tools to shape the outcome. Or, by unleashing more abilities, I can craft something that may ignite my own potential in the future…\n\n[Commit a card with the Tool, Weapon, or Ability for further guidance.]",
+	"requirements": {
+		"ka.forging": 1,
+		"influence": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.moresupplies",
+	"actionid": "kv.work",
+	"label": "Forging Art: More Ingredient?",
+	"startdescription": "These materials are already enough to produce ammunition in bulk, but I still need a Tool for assistance.\n\n[Commit a card with the Tool aspect for hints on manufacturing ammunition, or use more cards of other kinds to attempt crafting different items.]",
+	"requirements": {
+		"ka.forging": 1,
+		"supplies": 2
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.influence",
+	"actionid": "kv.work",
+	"label": "Forging Art: Influence?",
+	"startdescription": "The difference between the Invisible Arts and mundane labor is that the former can properly channel forces beneath the skin of the world.\n\n[Commit a card with the Supplies aspect for further guidance.]",
+	"requirements": {
+		"ka.forging": 1,
+		"influence": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "craftguide.supplies",
+	"actionid": "kv.work",
+	"label": "Forging Art: Ingredients?",
+	"startdescription": "Even the greatest craftsman cannot create something from nothing. That is why these materials are needed.\n\n[Most recipes require Supplies to participate. Commit more Supplies or cards of other kinds for further guidance.]",
+	"requirements": {
+		"ka.forging": 1,
+		"supplies": 1
+	},
+	"craftable": false,
+	"hintonly": true
+}
+]
+}

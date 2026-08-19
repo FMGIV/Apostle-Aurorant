@@ -1,0 +1,752 @@
+{
+"elements":[
+{
+    "id": "kt.destregion1",
+    "label": "模板：一区目的地城市",
+    "aspects": {
+        "destination": 1,
+        "tag.region1": 1,
+        "ka.distance": 2
+    },
+    "slots": [
+        {
+            "id": "movenecessities",
+            "label": "Necessities",
+            "description": "Essential supplies for the journey.",
+            "essential": {
+                "necessities": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "moveneeddomicile",
+            "label": "Current Location",
+            "description": "To arrive, one must first depart.",
+            "essential": {
+                "domicile": 1
+            }
+        }
+    ],
+    "xtriggers":{
+        "depart":[
+            {
+                "id": "ke.surburb",
+                "morpheffect": "spawn"
+            }
+        ]
+    }
+},
+{
+    "id": "kt.destregion2",
+    "label": "模板：二区目的地城市",
+    "aspects": {
+        "destination": 1,
+        "tag.region2": 1,
+        "ka.distance": 3
+    },
+    "slots": [
+        {
+            "id": "movenecessities",
+            "label": "Necessities",
+            "description": "Essential supplies for the journey.",
+            "essential": {
+                "necessities": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "moveneeddomicile",
+            "label": "Current Location",
+            "description": "To arrive, one must first depart.",
+            "essential": {
+                "domicile": 1
+            }
+        }
+    ],
+    "xtriggers":{
+        "depart":[
+            {
+                "id": "ke.countryside",
+                "morpheffect": "spawn"
+            }
+        ]
+    }
+},
+{
+    "id": "kt.destregion3",
+    "label": "模板：三区目的地城市",
+    "aspects": {
+        "destination": 1,
+        "tag.region3": 1,
+        "ka.distance": 4
+    },
+    "slots": [
+        {
+            "id": "movenecessities",
+            "label": "Necessities",
+            "description": "Essential supplies for the journey.",
+            "essential": {
+                "necessities": 1
+            },
+            "consumes": true
+        },
+        {
+            "id": "moveneeddomicile",
+            "label": "Current Location",
+            "description": "Current Location",
+            "essential": {
+                "domicile": 1
+            }
+        }
+    ],
+    "xtriggers":{
+        "depart":[
+            {
+                "id": "ke.bounds",
+                "morpheffect": "spawn"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.surburb",
+    "label": "On the Fringes of Britain",
+    "description": "In these days as the skin of the world gradually weakens, nights grow longer, and the boundaries between reality and the Bounds begin to blur. These were once paths and hills I knew well, yet now they often emanate an unsettling sense of unfamiliarity.",
+    "aspects": {
+        "tag.wild": 1,
+        "domicile": 1,
+        "ka.difficulty": 1
+    }
+},
+{
+    "id": "ke.domcaen",
+    "icon": "sprawl",
+    "label": "Caen in the Midst of War",
+    "description": "The conflict did not cease in my absence. As the war worsens, the skin of the world cracks and fragments, and abhorrent things pour forth from its wounds... It is time to leave.",
+    "unique": true,
+    "aspects": {
+        "domicile": 1
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destlondon",
+    "label": "London",
+    "description": "The army anxiously awaits reports from the front lines, while the council is in turmoil over the false news of my death... I shall find a way to reassure them, though not with a truly grand or public return.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domlondon",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domlondon",
+    "label": "London",
+    "description": "Transportation has nearly collapsed after months of bombing, and most buildings have been toppled and crushed beyond recognition. Convenience is a thing of the past—it's time to personally reclaim what can still be used.",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1,
+        "domicile": 1
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destglasgow",
+    "label": "Glasgow",
+    "description": "Since the Great Depression that began years ago and persists to this day, gangs and adept organizations have become malignant growths entrenched deep in this city. As the war situation worsened, their illicit activities have—bafflingly—grown in scale and audacity to such an extent that even some intriguing rumors have reached my ears. Perhaps a field visit might indeed yield a few unexpected findings.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domglasgow",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domglasgow",
+    "label": "Glasgow",
+    "description": "The chaos of wartime mobilization has become the perfect cover for illegal operations—while factories run at full capacity and supplies are strictly rationed, adepts and mobsters are busy running black markets in the shadows. This is far more biting than many satirical novels I've read.",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1,
+        "domicile": 1
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destpowys",
+    "label": "Powys",
+    "description": "In some uncertain day of the distant past, an aged yet ever-moving traveler passed through the hills and mountains of this land. It is said that she left behind a gift for a sovereign yet to come, hidden somewhere in a deep, secret cave—and that gift still awaits discovery. If the tale holds true, perhaps it could improve my current situation.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.dompowys",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.dompowys",
+    "label": "Powys",
+    "description": "Across the vast hills and plains, the sounds of soldiers drilling echo with the wind. Herds of livestock are driven by shepherds and farmers, hastily retreating into the distance. Someone must always be sacrificed for war.",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1,
+        "domicile": 1
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destbelfast",
+    "label": "Belfast",
+    "description": "Ever since the north fell under the shadow of war, my loyal future Name—or so he firmly believes—has been steadfastly protecting our vassal's capital along the coastline, never leaving its side. That is, until he was buried under rubble by an unexpected airstrike, and the locals couldn't even manage to free him themselves. We'd better not keep him waiting too long.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.dombelfast",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.dombelfast",
+    "label": "Belfast",
+    "description": " There was once a foolish and naive belief that the areas west of the North Strait would 'never be directly affected, no matter what.' Yet the still-burning shells in this city have made the situation all too clear. No one can remain untouched by war.",
+    "unique": true,
+    "aspects": {
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destdover",
+    "label": "Dover",
+    "description": "Since the Great Retreat concluded, it has been several months since I last heard from my ally in Dover—the one who has committed the Crime of the Sky. If this alone weren't strange enough, his failure to write and complain about our declining control over the skies is even more bewildering. If I set out now to uncover the truth, perhaps I can still recover some of his legacy.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domdover",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domdover",
+    "label": "Dover",
+    "description": "The Great Retreat — it was indeed a humiliation that we had to carry it out, yet the White Cliffs of Dover will bear witness to Britain fighting to the last breath on sea and in the air. Britain has retreated in war more than once before, but not today, not here.",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destnorthumb",
+    "label": "Northumberland",
+    "description": "On a night when the artillery fire ceased for a moment, a pearl was washed ashore along a coastline bristling with fortresses and gun emplacements—glowing as if it belonged to another era. Yet each of its successive owners had met their end by drowning. Artifacts of such potent enchantment are rare; its power shall be mine.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domnorthumb",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domnorthumb",
+    "label": "Northumberland",
+    "description": "On a night when the artillery fire ceased for a moment, a pearl was washed ashore along a coastline bristling with fortresses and gun emplacements—glowing as if it belonged to another era. Yet each of its successive owners had met their end by drowning. Artifacts of such potent enchantment are rare; its power shall be mine.",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destedinburgh",
+    "label": "Edinburgh",
+    "description": "A friend serving in the Church of the Sun arranged to meet me here. I hope he hasn't brought along a companion from Italy—I'd rather not miss our meeting or waste time because of it.",
+    "inherits": "kt.destregion1",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domedinburgh",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domedinburgh",
+    "label": "Edinburgh",
+    "description": "Months on, disturbances against local Italians persist. Now, every few steps down the street, one passes a smashed building. Mortal trifles always reduce due efficiency.",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.countryside",
+    "icon": "wilderness",
+    "label": "The Foreign Wilderness",
+    "description": "The fire of conflict has not yet ignited across this vast land, but fissures are already spreading silently beneath the Skin. Hasten your steps.",
+    "aspects": {
+        "mark.sunshrine": 1,
+        "tag.wild": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    }
+},
+{
+    "id": "ke.destkutaisi",
+    "label": "Kutaisi",
+    "description": "To the east lies an ancient and cosmopolitan city: it has sung of the rise of kings and endured the pain of war; once bathed in eternal golden radiance, it later witnessed that radiance fall into ruin. Yet it remains unbowed—and so too does the path of ascent that leads to the Glory. Perhaps, while the Hours are busy tearing at one another, I may continue writing my fate here.",
+    "inherits": "kt.destregion2",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domkutaisi",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domkutaisi",
+    "label": "Kutaisi",
+    "description": "I have seen this city in brighter days—seas change, glory is fleeting—but the faint light of that road must still remain somewhere. Somewhere very close.",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.desttiflis",
+    "label": "Tiflis",
+    "description": "I am certain that the Chiliarch's adepts guards an ancient relic here, one that may ease the journey ahead. If there is any downside, it is that the Soviets will hardly welcome an uninvited guest at such a time.",
+    "inherits": "kt.destregion2",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domtiflis",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domtiflis",
+    "label": "Tiflis",
+    "description": "Walking through streets so eerily quiet, realizing that this city has somehow weathered another turbulent decade, brings a profound sense of unreality. The scent of revolution is sweet, but perhaps compromise is the norm.",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destzest",
+    "label": "Zestaponi",
+    "description": "A young and vibrant industrial city, and the home of one of the nine great libraries—I share certain interests with its guardian. Perhaps it is not too late to seek cooperation once more.",
+    "inherits": "kt.destregion2",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domzest",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domzest",
+    "label": "Zestaponi",
+    "description": "The echoes of former church bells have been replaced by the roar of steel, and the great factories throb like the heart of a colossal beast, ceaselessly pumping war-fuel into the empire. Young, rugged, passionate—I would be a liar if I claimed not to like this city.",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destmtsk",
+    "label": "Mtskheta",
+    "description": "The ancient holy city has fallen silent under the new order, but the traces of the past do not fade so easily. Returning here, I might still reclaim some lost things.",
+    "inherits": "kt.destregion2",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.dommtsk",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.dommtsk",
+    "label": "Mtskheta",
+    "description": "Between the streets and buildings, the marks of history are everywhere. Old churches and bell towers silently endure the weathering of wind and rain. Some cities are destined to embrace the future; others belong to the past.",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destsigh",
+    "label": "Signagi",
+    "description": "I have had several pleasant conversations with an ancient immortal, over shared interests. She has settled here for some time to study intoxicating secrets. I suspect she, too, is growing weary of the current Soviet regime.",
+    "inherits": "kt.destregion2",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domsigh",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domsigh",
+    "label": "Signagi",
+    "description": "Ruined and broken towers, quiet and dreary streets, low hills covered in wildflowers, and endless distant mountains. There is a faint, illusory sweetness in the air—appearing and disappearing, making one doubt whether it was ever truly there at all.",
+    "unique": true,
+    "aspects": {
+        "mark.vagasteps": 1,
+        "domicile": 1,
+        "ka.difficulty": 2
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.bounds",
+    "label": "The Bounds",
+    "description": "Lofty and arid remote passages—fissures and nets woven by ten thousand years of time.",
+    "aspects": {
+        "mark.forgeplant": 1,
+        "mark.sunshrine": 1,
+        "mark.vagasteps": 1,
+        "tag.wild": 1,
+        "domicile": 1,
+        "ka.difficulty": 3
+    }
+},
+{
+    "id": "ke.destnola",
+    "label": "New Orleans",
+    "description": "A garden city in the far west—said to be the first location where the aviform gods congregate, and certainly one of the libraries' locations. To ensure my great work is finally realized, I will need the aid of its guardian.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domnola",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domnola",
+    "icon": "ke.destnola",
+    "label": "New Orleans",
+    "description": "This city remains as warm and bright as I remember, but the ceaseless melody I once knew so well is gone. The colour of the mist carries a strange darkness, and instinct tells me I must not let my guard down here.",
+    "unique": true,
+    "aspects": {
+        "mark.forgeplant": 1,
+        "domicile": 1,
+        "ka.difficulty": 3
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destbrcg",
+    "label": "Brancrug",
+    "description": "Weather-beaten yet still standing—a grey rock in the sea, a refuge for all the world might consider impure... and also my former prison and place of torment. The House once endured my wrath, and now it has been restored by a remarkable successor. Perhaps some necessary secrets still await me here.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.dombrcg",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.dombrcg",
+    "icon": "ke.destbrcg",
+    "label": "Brancrug",
+    "description": "Damp, dim, cramped—this isolated island is as familiar as ever, tiresome, far from the turmoil of conflict. Adepts and travellers huddle in its shadows seeking shelter; perhaps I, too, can catch my breath here before my purpose is fulfilled.",
+    "unique": true,
+    "aspects": {
+        "domicile": 1,
+        "ka.difficulty": 3
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destwmlk",
+    "icon": "end.cheko",
+    "label": "Wounded Moon Lake",
+    "description": "When the Sun was disfigured, its aspects and self were scarred by that terrible wound. A fragment of the Moon fell into the depths of a cold forest, carving a curved scar into the earth. If all goes well, I may attempt to reclaim this abandoned power.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "aspects": {
+        "mark.sunshrine": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domwmlk",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domwmlk",
+    "icon": "end.cheko",
+    "label": "Wounded Moon Lake",
+    "description": "Deep within the dead and frozen taiga, an unnaturally still lake reflects the moonlight with a perfect, mercurial sheen. Something flickers and lingers in the hazy shadows among the trees. It seems I am not the only visitor tonight.",
+    "unique": true,
+    "aspects": {
+        "domicile": 1,
+        "mark.sunshrine": 1,
+        "ka.difficulty": 3
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destisle",
+    "icon": "vaulteveningislesdefault",
+    "label": "Port Noon",
+    "description": "My final destination lies far across the luminous sea—where forgotten Longs seek the protection of the Witness, and the Hours' grip on reality is weakest. In the midst of raging war, this is a rare and unparalleled opportunity.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domisle",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domisle",
+    "icon": "vaulteveningislesdefault",
+    "label": "Port Noon",
+    "description": "My final destination lies far across the luminous sea—where forgotten Longs seek the protection of the Witness, and the Hours' grip on reality is weakest. In the midst of raging war, this is a rare and unparalleled opportunity.",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1,
+        "ka.noskadi": 1,
+        "ka.nopartymain": 1,
+        "domicile": 1,
+        "ka.difficulty": 3
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destcage",
+    "label": "Cage of Light",
+    "description": "Far across the cold ocean, there is a prison prepared for the Sun's worst self. There, the Watchman contends in a final struggle with the Wolf-Divided, and the Red Sun may yet reconcile with its most ancient nature. But I shall arrive bearing a new possibility—one that may be better for everyone.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domcage",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domcage",
+    "icon": "ke.destcage",
+    "label": "Cage of Light",
+    "description": "Stinging light, exploding flames, and endless frost and snow. This is a veritable hell on earth—but unlike the accounts in the scriptures, it is brighter here, and bitterly cold.",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1,
+        "ka.noskadi": 1,
+        "ka.nopartymain": 1,
+        "domicile": 1,
+        "ka.difficulty": 3
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+},
+{
+    "id": "ke.destunknown",
+    "icon":"gloverandglover_difficultbossa_job",
+    "label": "Destiny to Unknow",
+    "description": "Keep going forward and step into the unknown road......",
+    "aspects": {
+        "destination": 1
+    },
+    "xtriggers": {
+        "arrive": "husk"
+    }
+},
+{
+    "id": "ke.destys",
+    "label": "Ys",
+    "description": "Thus far, I have refined my essence to the limits of my ability—but to approach perfection and fully seize the talents of a god, I must forge a very special alloy. The Hours will not permit me to find it anywhere in the Wake or the Dream—but they hold no sway over the proscribed city beyond the wave.",
+    "inherits": "kt.destregion3",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1
+    },
+    "xtriggers":{
+        "arrive":[
+            {
+                "id": "ke.domys",
+                "morpheffect": "transform"
+            }
+        ]
+    }
+},
+{
+    "id": "ke.domys",
+    "icon": "ke.destys",
+    "label": "Ys",
+    "description": "A city built of orichalc and amber, coral and ice and snow, barely maintaining the last shreds of order amidst towering waves and cannon fire. Ys is not malicious; Ys has never been trustworthy—but for now, Ys has no other choice.",
+    "unique": true,
+    "aspects": {
+        "ka.destined": 1,
+        "ka.noskadi": 1,
+        "ka.nopartymain": 1,
+        "domicile": 1,
+        "ka.difficulty": 3,
+        "ys.stability": 7
+    },
+    "xtriggers":{
+        "depart": "ke.husk"
+    }
+}
+]
+}

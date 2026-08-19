@@ -1,0 +1,282 @@
+{
+"recipes":[
+{
+	"id": "kr.startstep1",
+	"label": "Learn From Perilous Experiences",
+	"actionId": "kv.abandon",
+	"requirements": {
+		"ke.failure": 1
+	},
+	"effects": {
+		"ke.healthdamaged": 2,
+		"ke.reasondamaged": 2,
+		"ke.passiondamaged": 2,
+		"ke.domcaen": 1,
+		"ke.failure": -1
+	},
+	"startdescription": "To take the field at Caen in person was a foolish move: monsters, Long, Names, and those from higher places who watch from within dreams—all sought my destruction, precisely because what I left undone would threaten their standing. They very nearly succeeded.",
+	"description": "But for an avatar of the Chandler, there will always be a path forward. Even if it's but a narrow passage, just enough for my survival...",
+	"warmup": 10,
+	"craftable": true,
+	"alt": [
+		{
+			"id": "kr.startstep2",
+			"chance": 100,
+			"additional": true
+		}
+	]
+},
+{
+	"id": "kr.abandon.assets.start",
+	"actionid": "kv.abandon",
+	"label": "Relinquish Assets",
+	"startdescription": "Perhaps I need to travel light. Or maybe I've simply had enough of something useless.\n\n[Discarded items cannot be recovered, but you may place any Ability card to halt this process.]",
+	"craftable": true,
+	"requirements": {
+		"asset": 1,
+		"ka.consumable": -1,
+		"tag.summonsign": -1
+	},
+	"grandreqs": {
+		"[loadable]+[ammo]": -2
+	},
+	"linked": [
+		{
+			"id": "kr.abandon.assets.confirm"
+		}
+	]
+},
+{
+	"id": "kr.abandon.assets.confirm",
+	"actionid": "kv.abandon",
+	"label": "Last Chance",
+	"startdescription": "If I change my mind, it's still not too late to retrieve it now.\n\n[Use any Ability card to cancel this process.]",
+	"description": "It's over. I'm free of this thing.",
+	"warmup": 10,
+	"requirements": {
+		"asset": 1
+	},
+	"slots": [
+		{
+			"id": "abandon.needskill",
+			"label": "Ability?",
+			"required": {
+				"ability": 1
+			},
+			"forbidden": {
+				"ka.damaged": 1
+			}
+		}
+	],
+	"effects": {
+		"asset": -99
+	},
+	"alt": [
+		{
+			"id": "kr.abandon.assets.cancelled"
+		}
+	]
+},
+{
+	"id": "kr.abandon.assets.cancelled",
+	"actionid": "kv.abandon",
+	"label": "Retrieved",
+	"description": "This one will stay with me for a while longer.",
+	"requirements": {
+		"ability": 1
+	}
+},
+{
+	"id": "kr.useconsumable",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "[This will consume the items and exert their effects, and this process cannot be undone.]",
+	"description": "[This item has been consumed.]",
+	"craftable": true,
+	"warmup": 10,
+	"requirements": {
+		"ka.consumable": 1
+	},
+	"aspects": {
+		"use": 1
+	}
+},
+{
+	"id": "kr.extractcorpsea",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "I shall liberate the refined essence from within the remnant, sparing it from decay and dissolution.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ke.corpsea": 1
+	},
+	"linked": [
+		{
+			"id": "extractcorpsea.draw"
+		}
+	]
+},
+{
+	"id": "extractcorpsea.draw",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "This portion will endure longer, and has the chance to become something even greater.",
+	"craftable": false,
+	"requirements": {
+		"ke.corpsea": 1,
+		"remnant": 1
+	},
+	"effects": {
+		"remnant": -1
+	},
+	"deckeffects": {
+		"kd.extractcorpsea": 1
+	}
+},
+{
+	"id": "kr.extractcorpseb",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "I shall liberate the refined essence from within the remnant, sparing it from decay and dissolution.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ke.corpseb": 1
+	},
+	"linked": [
+		{
+			"id": "extractcorpseb.draw"
+		}
+	]
+},
+{
+	"id": "extractcorpseb.draw",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "This portion will endure longer, and has the chance to become something even greater.",
+	"craftable": false,
+	"requirements": {
+		"ke.corpseb": 1,
+		"remnant": 1
+	},
+	"effects": {
+		"remnant": -1
+	},
+	"deckeffects": {
+		"kd.extractcorpseb": 1
+	}
+},
+{
+	"id": "kr.extractcorpsec",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "I shall liberate the refined essence from within the remnant, sparing it from decay and dissolution.",
+	"craftable": true,
+	"warmup": 30,
+	"requirements": {
+		"ke.corpsec": 1
+	},
+	"linked": [
+		{
+			"id": "extractcorpsec.draw"
+		}
+	]
+},
+{
+	"id": "extractcorpsec.draw",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "This portion will endure longer, and has the chance to become something even greater.",
+	"craftable": false,
+	"requirements": {
+		"ke.corpsec": 1,
+		"remnant": 1
+	},
+	"effects": {
+		"remnant": -1
+	},
+	"deckeffects": {
+		"kd.extractcorpsec": 1
+	}
+},
+{
+	"id": "kr.extractcorpselong",
+	"actionid": "kv.abandon",
+	"label": "Refine the Usable",
+	"startdescription": "Within the remains of Long lies the secret of immortality—not only can I extract practical materials from them, but I can also transform certain intangible aspects into my own strength, though this will require a little more time.",
+	"description": "Done. All of these shall aid me in achieving greater ambitions.",
+	"craftable": true,
+	"warmup": 60,
+	"grandreqs": {
+		"ke.corpselong": 1
+	},
+	"aspects":{
+		"extract": 1
+	},
+	"deckeffects": {
+		"kd.strength": 2
+	}
+},
+{
+	"id": "kh.covertrace",
+	"actionid": "kv.abandon",
+	"label": "Cover My Trace",
+	"startdescription": "As we walk through this world, it is hard to leave no trace—but there are always ways to cover them up.\n\n[Place two cards with the Assists Deception attribute, or one Assists Deception card and one Ability card with <b>Moth</b>, to conceal Trace.]",
+	"requirements": {
+		"ke.trace": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.covertracedeception",
+	"actionid": "kv.abandon",
+	"label": "Cover With Deception",
+	"startdescription": "I used this to set up a clever misdirection, shifting attention elsewhere.\n\n[A safe and swift way to cover tracks, but consumes two cards with Assists Deception.]",
+	"description": "Done. They will find the 'truth' I prepared in advance.",
+	"requirements": {
+		"ke.trace": 1,
+		"deception": 2
+	},
+	"craftable": true,
+	"warmup": 30,
+	"aspects": {
+		"covertrace": 1
+	}
+},
+{
+	"id": "kr.covertracepassion",
+	"actionid": "kv.abandon",
+	"label": "Cover With Chaos",
+	"startdescription": "A bit of simple misdirection, just a little imagination needed.\n\n[Consumes only one card with Assists Deception, but the process is lengthy and may entail risks.]",
+	"description": "Done. My tracks have become indecipherable.",
+	"requirements": {
+		"ke.trace": 1,
+		"deception": 1,
+		"ke.passion": 1
+	},
+	"craftable": true,
+	"warmup": 60,
+	"aspects": {
+		"covertrace": 1
+	}
+},
+{
+	"id": "kr.izoldadefeated.start",
+	"actionid": "kv.abandon",
+	"label": "Final Words of the Long",
+	"requirements": {
+		"izolda.defeated": 1
+	},
+	"effects": {
+		"influencewinterg": 1,
+		"izolda.defeated": -1
+	},
+	"startdescription": "I approached the Long whom I had defeated with ease. Her remains were crusted with an alien frost, and no sound came from her anymore—the rest of the air's sounds too had crystallized into ice, silently melting against my skin. And I heard…",
+	"description": "…I heard her words, her memories, unfolding in my mind like a long narrative poem. Loneliness. Fear. An ending. The faded glory of former days. Hatred instilled by teaching. Fleeting love and care, however stern. And how a fool-loyal one, on the orders of her commander and dearest kin, killed him with love, how she lived for the dead, how she hated change and betrayal, how she was hounded and oppressed by her own people to the very end… And at last, I brought death before her. She barely resisted. She said she felt no pain then, no despair, and no bitterness. The Long spoke her final words, yet the dense chill did not lift. Perhaps I can make use of this cold.",
+	"warmup": 60,
+	"craftable": true
+}
+]
+}

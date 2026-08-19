@@ -1,0 +1,1922 @@
+{
+    "recipes":[
+{
+	"id": "kh.partymainguarded",
+	"actionid": "kv.act",
+	"label": "Garrisons of Triple Knot: Protected by a Name",
+	"startdescription": "A Name lurks in the shadows, protecting the minions of the Triple Knot and their base camp. Though they pose little threat, taking action now will be ineffective. \n\n[You cannot take action against the Garrisons of the Triple Knot while a Name is prowling.]",
+	"extantreqs":{
+		"lessername.guarding": 1
+	},
+	"grandReqs": {
+		"[ke.opwoundpartymain]+[ke.opsetbackpartymain]": 1
+	},
+	"craftable": false,
+	"hintonly": true
+},
+{
+	"id": "kr.woundpartymain",
+	"actionid": "kv.act",
+	"label": "Hunt the Long: Garrisons of Triple Knot",
+	"startdescription": "Hunting down this exposed Long will thwart the hostile faction. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges—one random, one fixed—to damage this hostile faction.]",
+	"extantreqs":{
+		"ke.partymain": 1,
+		"lessername.guarding": -1
+	},
+	"requirements": {
+		"ke.opwoundpartymain": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "kr.setbackpartymain",
+	"actionid": "kv.act",
+	"label": "Destroy Base Camp: Garrisons of Triple Knot",
+	"startdescription": "Destroying this exposed base camp will cripple this hostile group. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges—one random, one fixed—to reduce the threat of the hostile group.]",
+	"extantreqs":{
+		"ke.partymain": 1,
+		"lessername.guarding": -1,
+		"ke.partymainmoving": -1
+	},
+	"requirements": {
+		"ke.opsetbackpartymain": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "kr.woundpartysecret",
+	"actionid": "kv.act",
+	"label": "Hunt the Long: Secret Society",
+	"startdescription": "Hunting down this exposed Long will thwart the hostile faction. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges to damage this hostile faction.]",
+	"extantreqs":{
+		"ke.partysecret": 1
+	},
+	"requirements": {
+		"ke.opwoundpartysecret": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "kr.setbackpartysecret",
+	"actionid": "kv.act",
+	"label": "Destroy Base Camp: Secret Society",
+	"startdescription": "Destroying this exposed base camp will cripple this hostile group. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges to destroy this hostile faction's base camp. Success will give you one 'A Haunting Melody' card.]",
+	"extantreqs":{
+		"ke.partysecret": 1
+	},
+	"requirements": {
+		"ke.opsetbackpartysecret": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "kr.woundpartyenvoys",
+	"actionid": "kv.act",
+	"label": "Hunt the Long: The Messengers of the House of the Moon ",
+	"startdescription": "Hunting down this exposed Long will thwart the hostile faction. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges to damage this hostile faction.]",
+	"extantreqs":{
+		"ke.partyenvoys": 1
+	},
+	"requirements": {
+		"ke.opwoundpartyenvoys": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "kr.setbackpartyenvoys",
+	"actionid": "kv.act",
+	"label": "Destroy Base Camp: The Messengers of the House of the Moon ",
+	"startdescription": "Destroying this exposed base camp will cripple this hostile group. I can carry little with me—this strike must be swift and lethal.\n\n[You must pass two challenges to destroy this hostile faction's base camp. Success will remove one 'Illusory Radiance' card.]",
+	"extantreqs":{
+		"ke.partyenvoys": 1
+	},
+	"requirements": {
+		"ke.opsetbackpartyenvoys": 1
+	},
+	"craftable": true,
+	"warmup": 15,
+	"linked":[
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "fightparty.obtrigger",
+	"actionid": "kv.act",
+	"label": "？",
+	"comments":"根据进度数量抽取不同的阻碍。",
+	"startdescription": "......",
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "fightparty.drawobmalachite"
+		},
+		{
+			"id": "fightparty.drawob2"
+		},
+		{
+			"id": "fightparty.drawob1"
+		}
+	]
+},
+{
+	"id": "fightparty.drawobmalachite",
+	"label": "？",
+	"comments": "抽取特殊Obstacle: 环杉之拥",
+	"startdescription": "......",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.shieldmalachite": 1
+	},
+	"requirements": {
+        "ka.obcount": 2,
+		"ke.opwoundpartymain": 1,
+		"ke.progress": 1
+	},
+	"aspects": {
+		"drawobmalachite": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.router"
+		}
+	]
+},
+{
+	"id": "fightparty.drawob2",
+	"label": "？",
+	"comments": "抽取第二个阻碍。",
+	"startdescription": "......",
+	"warmup": 0,
+	"requirements": {
+        "ka.obcount": 2,
+		"ke.progress": 1
+	},
+	"aspects": {
+		"drawob2": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.router"
+		}
+	]
+},
+{
+	"id": "fightparty.drawob1",
+	"label": "？",
+	"comments": "抽取第一个阻碍。",
+	"startdescription": "......",
+	"warmup": 0,
+	"requirements": {
+        "ka.obcount": 1
+	},
+	"aspects": {
+		"drawob1": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.router"
+		}
+	]
+},
+{
+	"id": "fightparty.router",
+	"actionid": "kv.act",
+	"label": "？",
+	"comments":"这一配方链接着所有对抗敌对团体时可能出现的阻碍。",
+	"startdescription": "......",
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "fightparty.obmaina"
+		},
+		{
+			"id": "fightparty.obmainb"
+		},
+		{
+			"id": "fightparty.obmainc"
+		},
+		{
+			"id": "fightparty.obmaind"
+		},
+		{
+			"id": "fightparty.obmaine"
+		},
+		{
+			"id": "fightparty.obmainf"
+		},
+		{
+			"id": "fightparty.obmaing"
+		},
+		{
+			"id": "fightparty.obmainh"
+		},
+		{
+			"id": "fightparty.obsecreta"
+		},
+		{
+			"id": "fightparty.obsecretb"
+		},
+		{
+			"id": "fightparty.obsecretc"
+		},
+		{
+			"id": "fightparty.obsecretd"
+		},
+		{
+			"id": "fightparty.obenvoysa"
+		},
+		{
+			"id": "fightparty.obenvoysb"
+		},
+		{
+			"id": "fightparty.obenvoysc"
+		},
+		{
+			"id": "fightparty.obenvoysd"
+		}
+	]
+},
+{
+	"id": "fightparty.buffer",
+	"label": "Advancing the Action",
+	"startdescription": "Now that I have overcome this obstacle, I can continue to draw nearer to my goal—",
+	"warmup": 15,
+	"linked": [
+		{
+			"id":"fightparty.complete"
+		},
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "fightparty.lucky",
+	"label": "Overwhelming Power",
+	"startdescription": "Even without proper preparation, sheer overwhelming force still grants me the chance to disregard their resistance—\n\n[Thanks to the disparity in strength, you always have a small probability to bypass challenge conditions when confronting hostile groups.]",
+	"warmup": 15,
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.complete"
+		},
+		{
+			"id": "fightparty.obtrigger"
+		}
+	]
+},
+{
+	"id": "fightparty.failed",
+	"label": "Unsuccessful Action!",
+	"startdescription": "Their hasty resistance couldn't harm me, but it bought them enough time to relocate. The strength of this hostile group remains undiminished.",
+	"warmup": 15,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "fightparty.obmaina",
+	"label": "Challenge: Cover of the Horned-Axe",
+	"startdescription": "My target seeks to invoke the Horned-Axe to obstruct my progress—\n\n[Meet any threshold to pass the challenge.]",
+
+
+
+	"warmup": 30,
+	"requirements": {
+		"panel.obmaina": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmaina.edge"
+		},
+		{
+			"id": "obmaina.knock"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmaina.edge",
+	"label": "Respond with Force",
+	"startdescription": "Brutal force tears straight through the Horned‑Axe's defenses. I remain unhindered.",
+	"requirements": {
+		"panel.obmaina": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmaina.knock",
+	"label": "Respond with Opening",
+	"startdescription": "Serpents are the visitors which may not be denied.",
+	"requirements": {
+		"panel.obmaina": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmainb",
+	"label": "Challenge: Fade into Shadows",
+	"startdescription": "My target is attempting to conceal their trail and flee—\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmainb": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmainb.lantern"
+		},
+		{
+			"id": "obmainb.winter"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmainb.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "But under the light, they have nowhere to hide.",
+	"requirements": {
+		"panel.obmainb": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainb.winter",
+	"label": "Respond with Patience",
+	"startdescription": "A little extra calm and patience is enough to deal with their tricks.",
+	"requirements": {
+		"panel.obmainb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmainc",
+	"label": "Challenge: The Red's Misdirection",
+	"startdescription": "My target is attempting to distract me with the temptations of the Red Grail—\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmainc": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmainc.grail"
+		},
+		{
+			"id": "obmainc.moth"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmainc.grail",
+	"label": "Respond with Torment",
+	"startdescription": "Understanding the nature of the Red Grail allows me to counter temptation with torment, thus I am not obstructed.",
+	"requirements": {
+		"panel.obmainc": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainc.moth",
+	"label": "Respond with Yearning",
+	"startdescription": "Even the Red Grail is deeply troubled by the buzzing in the skull—I can exploit the contradictions within its power to break free from temptation.",
+	"requirements": {
+		"panel.obmainc": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmaind",
+	"label": "The Curse of Verdancy",
+	"startdescription": "My target is attempting to drive me back with their patron's curse—\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmaind": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmaind.heart"
+		},
+		{
+			"id": "obmaind.grail"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmaind.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "Unceasing agitation is enough to completely shut out feeble curses.",
+	"requirements": {
+		"panel.obmaind": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmaind.grail",
+	"label": "Respond with Torment",
+	"startdescription": "I brim with red vitality—an attack of this level is far from enough to harm me.",
+	"requirements": {
+		"panel.obmaind": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmaine",
+	"label": "Challenge: Sealed Incantation",
+	"startdescription": "My target is attempting to block me with a sealing incantation—\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmaine": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmaine.forge"
+		},
+		{
+			"id": "obmaine.knock"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmaine.forge",
+	"label": "Respond with Flame",
+	"startdescription": "Closed things may be shaped, altered, and then opened.",
+	"requirements": {
+		"panel.obmaine": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmaine.knock",
+	"label": "Respond with Opening",
+	"startdescription": "Serpents are the visitors which may not be denied.",
+	"requirements": {
+		"panel.obmaine": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmainf",
+	"label": "Challenge: Embrace of the Malachite",
+	"startdescription": "I must break the protective power of the Malachite in a single strike and kill my target—\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmainf": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmainf.edgeforge"
+		},
+		{
+			"id": "obmainf.meltingedge"
+		},
+		{
+			"id": "obmainf.edgewinter"
+		},
+		{
+			"id": "obmainf.piercingedge"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmainf.edgeforge",
+	"label": "The Blazing Edge",
+	"startdescription": "The flame arrives before the blade—the former changes, the latter destroys.",
+	"requirements": {
+		"panel.obmainf": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"purge": {
+		"ke.shieldmalachite": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainf.edgewinter",
+	"label": "The Frigid Edge",
+	"startdescription": "Silence arrives after the blade—the blade subdues, the silence ends.",
+	"requirements": {
+		"panel.obmainf": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"purge": {
+		"ke.shieldmalachite": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainf.meltingedge",
+	"label": "The Molten Edge",
+	"startdescription": "Before the mysteries of change and conquest, their defenses are feeble and brittle.",
+	"requirements": {
+		"panel.obmainf": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"ka.melting": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"purge": {
+		"ke.shieldmalachite": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainf.piercingedge",
+	"label": "The Piercing Edge",
+	"startdescription": "Before the mysteries of ending and conquest, their defences are feeble and brittle.",
+	"requirements": {
+		"panel.obmainf": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"ka.piercing": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"purge": {
+		"ke.shieldmalachite": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmaing",
+	"label": "Challenge: Kill a Long",
+	"startdescription": "It is no harder than killing a mortal.\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmaing": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmaing.edge"
+		},
+		{
+			"id": "obmaing.winter"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmaing.edge",
+	"label": "Respond with Force",
+	"startdescription": "Utterly destroy them with overwhelming might.",
+	"requirements": {
+		"panel.obmaing": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmaing.winter",
+	"label": "Respond with Finality",
+	"startdescription": "The art of ending shall extinguish this person's flame of life.",
+	"requirements": {
+		"panel.obmaing": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obmainh",
+	"label": "Challenge: Destroy Base Camp",
+	"startdescription": "I must create some chaos to accomplish this.\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obmainh": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obmainh.forge"
+		},
+		{
+			"id": "obmainh.moth"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obmainh.forge",
+	"label": "Respond with Flame",
+	"startdescription": "Then, let the flames take over everything.",
+	"requirements": {
+		"panel.obmainh": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obmainh.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "Smoke and shadows—chaos is the accomplice of destruction.",
+	"requirements": {
+		"panel.obmainh": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obsecreta",
+	"label": "Challenge: The Velvet's Gift",
+	"startdescription": "Our target seeks to escape under the cover of the Velvet's mist -- \n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obsecreta": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obsecreta.lantern"
+		},
+		{
+			"id": "obsecreta.knock"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obsecreta.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "The Watchman comes before the Velvet, and so we use light to dispel the mist.",
+	"requirements": {
+		"panel.obsecreta": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obsecreta.knock",
+	"label": "Respond with Opening",
+	"startdescription": "The power of opening shows me the way forward, and the Velvet's interference is powerless to stop me.",
+	"requirements": {
+		"panel.obsecreta": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obsecretb",
+	"label": "Challenge: Deep Shadows",
+	"startdescription": "The base camp of the Secret Society is hidden in a secluded corner of the city -- I'll need to employ unconventional methods to find my target. \n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obsecretb": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obsecretb.moth"
+		},
+		{
+			"id": "obsecretb.history"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obsecretb.moth",
+	"label": "Respond with Inspiration",
+	"startdescription": "Instead of seeking light, we search for shadow – only thus may we counteract the subtle arts of concealment.",
+	"requirements": {
+		"panel.obsecretb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obsecretb.history",
+	"label": "Respond with History",
+	"startdescription": "An understanding of the Secret Histories will help us achieve our goal.",
+	"requirements": {
+		"panel.obsecretb": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obsecretc",
+	"label": "Challenge: Kill a Long",
+	"startdescription": "These immortals possess extraordinary cunning. Brute force will not suffice if we seek to kill them quickly.\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obsecretc": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obsecretc.winter"
+		},
+		{
+			"id": "obsecretc.edgewinter"
+		},
+		{
+			"id": "obsecretc.piercingedge"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obsecretc.winter",
+	"label": "Respond with Finality",
+	"startdescription": "The art of ending shall extinguish this person's flame of life.",
+	"requirements": {
+		"panel.obsecretc": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obsecretc.edgewinter",
+	"label": "The Frigid Edge",
+	"startdescription": "Silence arrives after the blade—the blade subdues, the silence ends.",
+	"requirements": {
+		"panel.obsecretc": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obsecretc.piercingedge",
+	"label": "The Piercing Edge",
+	"startdescription": "Before the mysteries of ending and conquest, their defences are feeble and brittle.",
+	"requirements": {
+		"panel.obsecretc": 1,
+		"ka.piercingedge": 1,
+		"ka.piercing": 1,
+		"edge": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obsecretd",
+	"label": "Challenge: Destroy Base Camp",
+	"startdescription": "I must create some chaos to accomplish this.\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obsecretd": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obsecretd.forge"
+		},
+		{
+			"id": "obsecretd.grail"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obsecretd.forge",
+	"label": "Respond with Flame",
+	"startdescription": "Then, let the flames take over everything.",
+	"requirements": {
+		"panel.obsecretd": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obsecretd.grail",
+	"label": "Respond with Torment",
+	"startdescription": "The power of scarlet torment will desecrate this sanctuary, and chaos will ensue.",
+	"requirements": {
+		"panel.obsecretd": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obenvoysa",
+	"label": "Challenge: Light of Escape",
+	"startdescription": "My target seeks to escape through a path of light --\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obenvoysa": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obenvoysa.lantern"
+		},
+		{
+			"id": "obenvoysa.winter"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obenvoysa.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "I fill every path with a deadly radiance, leaving my enemies with nowhere to flee.",
+	"requirements": {
+		"panel.obenvoysa": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obenvoysa.winter",
+	"label": "Respond with Silence",
+	"startdescription": "With the power of silence, I seal every passage, leaving my enemies with nowhere to flee.",
+	"requirements": {
+		"panel.obenvoysa": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obenvoysb",
+	"label": "Challenge: A Maze of Reflections",
+	"startdescription": "The enemy seeks to mislead me, using innumerable illusions cast from mirrors -- \n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obenvoysb": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obenvoysb.moth"
+		},
+		{
+			"id": "obenvoysb.knock"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obenvoysb.moth",
+	"label": "Respond with Inspiration",
+	"startdescription": "I shut out the unreliable visions, and let my inspiration guide me forward.",
+	"requirements": {
+		"panel.obenvoysb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obenvoysb.knock",
+	"label": "Respond with Opening",
+	"startdescription": "The power of opening shows me the way forward, and the interference of reflections is powerless to stop me.",
+	"requirements": {
+		"panel.obenvoysb": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obenvoysc",
+	"label": "Challenge: Kill a Long",
+	"startdescription": "The unique forms of these immortals make them resistant to physical harm. Brute force will not suffice if we seek to kill them quickly.\n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obenvoysc": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obenvoysc.forge"
+		},
+		{
+			"id": "obenvoysc.edgeforge"
+		},
+		{
+			"id": "obenvoysc.meltingedge"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obenvoysc.forge",
+	"label": "Respond with Flame",
+	"startdescription": "The flames of change will burn through their light.",
+	"requirements": {
+		"panel.obenvoysc": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obenvoysc.edgeforge",
+	"label": "The Blazing Edge",
+	"startdescription": "The flame arrives before the blade—the former changes, the latter destroys.",
+	"requirements": {
+		"panel.obenvoysc": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obenvoysc.meltingedge",
+	"label": "The Molten Edge",
+	"startdescription": "Before the mysteries of change and conquest, their defenses are feeble and brittle.",
+	"requirements": {
+		"panel.obenvoysc": 1,
+		"ka.meltingedge": 1,
+		"ka.melting": 1,
+		"edge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.obenvoysd",
+	"label": "Challenge: Destroy Base Camp",
+	"startdescription": "I need to destroy the channel that guides the light. \n\n[Meet any threshold to pass the challenge.]",
+	"warmup": 30,
+	"requirements": {
+		"panel.obenvoysd": 1
+	},
+	"slots": [
+		{
+			"id": "ks.fightpartyresponse",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.unfit": 1,
+				"exhausted": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "obenvoysd.edge"
+		},
+		{
+			"id": "obenvoysd.winter"
+		}
+	],
+	"linked": [
+		{
+			"id": "fightparty.lucky",
+			"chance": 10
+		},
+		{
+			"id": "fightparty.failed"
+		}
+	]
+},
+{
+	"id": "obenvoysd.edge",
+	"label": "Respond with Force",
+	"startdescription": "Shatter mirrors and destroy vessels – break everything they can use.",
+	"requirements": {
+		"panel.obenvoysd": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "obenvoysd.winter",
+	"label": "Respond with Finality",
+	"startdescription": "Extinguish light and seal pathways – bring an end to everything they can use.",
+	"requirements": {
+		"panel.obenvoysd": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99,
+		"ke.progress": 1
+	},
+	"linked": [
+		{
+			"id": "fightparty.buffer"
+		}
+	]
+},
+{
+	"id": "fightparty.complete",
+	"comments": "过渡配方，转化机会并使资源疲劳",
+	"startdescription": "",
+	"warmup": 0,
+	"requirements": {
+		"ke.progress": 2
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects":{
+		"influence": -99,
+		"supplies": -99
+	},
+	"linked":[
+		{
+			"id": "kr.woundpartymaincomplete"
+		},
+		{
+			"id": "kr.setbackpartymaincomplete"
+		},
+		{
+			"id": "kr.woundpartysecretcomplete"
+		},
+		{
+			"id": "kr.setbackpartysecretcomplete"
+		},
+		{
+			"id": "kr.woundpartyenvoyscomplete"
+		},
+		{
+			"id": "kr.setbackpartyenvoyscomplete"
+		}
+	]
+},
+{
+	"id": "kr.woundpartymaincomplete",
+	"label": "Hunt the Long: Success!",
+	"description": "The force of this hostile group has been dealt a blow.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opwoundpartymain": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"effects":{
+		"ke.corpselong": 1
+	}
+},
+{
+	"id": "kr.setbackpartymaincomplete",
+	"label": "Destroy Base Camp: Success!",
+	"description": "The power of this hostile group has been significantly reduced.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opsetbackpartymain": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"effects":{
+		"ke.partymainmoving": 1
+	},
+	"deckeffects":{
+		"kd.lootpartymain": 2
+	}
+},
+{
+	"id": "kr.woundpartysecretcomplete",
+	"label": "Hunt the Long: Success!",
+	"description": "The force of this hostile group has been dealt a blow.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opwoundpartysecret": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"effects":{
+		"ke.corpselong": 1
+	}
+},
+{
+	"id": "kr.setbackpartysecretcomplete",
+	"label": "Destroy Base Camp: Success!",
+	"description": "What this hostile group sought to conceal has now been exposed.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opsetbackpartysecret": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"deckeffects":{
+		"kd.lootpartysecret": 2
+	}
+},
+{
+	"id": "kr.woundpartyenvoyscomplete",
+	"label": "Hunt the Long: Success!",
+	"description": "The force of this hostile group has been dealt a blow.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opwoundpartyenvoys": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"effects":{
+		"influencelanterne": 1
+	}
+},
+{
+	"id": "kr.setbackpartyenvoyscomplete",
+	"label": "Destroy Base Camp: Success!",
+	"description": "Having disrupted the preparations of the Messengers, the blinding light blocking my path has abated.",
+	"warmup": 0,
+	"requirements": {
+		"ke.opsetbackpartyenvoys": 1
+	},
+	"aspects": {
+		"completeaction": 1
+	},
+	"purge":{
+		"malice.illusion": 1
+	},
+	"deckeffects":{
+		"kd.lootpartyenvoys": 2
+	}
+}
+]
+}
