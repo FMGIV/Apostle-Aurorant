@@ -1,0 +1,1664 @@
+{
+"recipes":[
+{
+	"id": "sunshrine.searchdefault",
+	"actionid": "kv.move",
+	"label": "Pilgrimage to the Solar Shrine",
+	"startdescription": "This sacred place, through its unique rituals, worships all the Hours bearing the names of the sun. Any of these celestial guardians might pay attention to this place and leave their gifts in the light.\n\n[This will randomly give you beneficial influences, but there is also a small chance of producing 'trace'.]",
+	"description": "@#influenceedgec|Pain was boiling in the air, sharp enough to cut! That most vicious sun - the Wolf-Divided has cast his attention.#influenceforgec|Heat transpires, sparks surge! A scorching sun once passed by here.#influenceknockc|The delicate silver light fell upon this place - a kind of sunlight that was diffused and balanced in a harmonious manner. the Meniscate left a key here. #influencelanternc|The light is here, blinding and merciless, revealing the path ahead for both the willing and the unwilling. The Watchman once walked here.#influencewinterc|The silent chill pierced through the bones and reached deep into the soul. A cold sun had once shone upon this place. #ke.strengthc|There are mysteries and revelations, hidden in light. Today, I gained an understanding from the light of the sun. #ke.trace|Not all suns are kind to me. Such interference will cause trouble.@",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ability": -1,
+		"influence": -1,
+		"ka.damaged": -1,
+		"memory": -1
+	},
+	"craftable": true,
+	"deckeffects": {
+		"kd.shrine": 1
+	}
+},
+{
+	"id": "sunshrine.searchwithreason",
+	"actionid": "kv.move",
+	"label": "Follow the Merciless Teachings",
+	"startdescription": "Here I can sense the light of the Watchman - shining from some lofty distance. He has always been waiting for those who should understand the path ahead. As long as I follow his rituals, I will be able to find him in the light.\n\n[This will give you a <b>Lantern</b> influence, but will also exhaust your Reason.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.reason": 1,
+		"influence": -1,
+		"ka.damaged": -1
+	},
+	"craftable": true,
+	"aspects": {
+		"exhaust": 1
+	},
+	"linked": [
+		{
+			"id": "sunshrine.searchwithreason.spawn"
+		}
+	]
+},
+{
+	"id": "sunshrine.searchwithreason.spawn",
+	"actionid": "kv.move",
+	"label": "Follow the Merciless Teachings",
+	"description": "The knife-like light pierced through the glass and the skin, dispelling the shadows in this place. The Watchman had already responded here.",
+	"requirements": {
+		"sunshrine": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"influencelanternc": 1
+	}
+},
+{
+	"id": "sunshrine.subvertinfluencemoth",
+	"actionid": "kv.move",
+	"label": "Seek in Yearning",
+	"startdescription": "The Moth is well aware of the way to pursue light - it is unknown whether he will eventually ascend to the Glory, but he is certainly able to catch the particles that leak from it.\n\n[Transform an <b>Moth</b> influence into an equivalent level of <b>Lantern</b> influence.]",
+	"warmup": 20,
+	"requirements": {
+		"sunshrine": 1,
+		"influencemoth": 1,
+		"supplies": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influencemoth": -99,
+		"influencelantern": 1
+	}
+},
+{
+	"id": "sunshrine.subvertinfluencemothc",
+	"actionid": "kv.move",
+	"label": "Seek in Yearning",
+	"startdescription": "The beats in my skull continues, and my soul crackles with a sound. Where will this yearning lead me to?\n\n[Transform an <b>Moth</b> influence into an equivalent level of <b>Lantern</b> influence.]",
+	"warmup": 20,
+	"requirements": {
+		"sunshrine": 1,
+		"influencemothc": 1,
+		"supplies": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencec"
+		}
+	]
+},
+{
+	"id": "sunshrine.subvertinfluencemothe",
+	"actionid": "kv.move",
+	"label": "Seek in Yearning",
+	"startdescription": "The Glory is a question, and Moth always answers Yes.\n\n[Transform an <b>Moth</b> influence into an equivalent level of <b>Lantern</b> influence.]",
+	"warmup": 20,
+	"requirements": {
+		"sunshrine": 1,
+		"influencemothe": 1,
+		"supplies": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencee"
+		}
+	]
+},
+{
+	"id": "sunshrine.subvertinfluencemothg",
+	"actionid": "kv.move",
+	"label": "Seek in Yearning",
+	"startdescription": "TheSunTheSunTheSunTheSun -\n\n[Transform an <b>Moth</b> influence into an equivalent level of <b>Lantern</b> influence.]",
+	"warmup": 20,
+	"requirements": {
+		"sunshrine": 1,
+		"influencemothg": 1,
+		"supplies": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluenceg"
+		}
+	]
+},
+{
+	"id": "kh.shrineupgradeinfluence",
+	"actionid": "kv.move",
+	"label": "Gather the Light?",
+	"startdescription": "A bright sacred place - the light here flows exceptionally slowly. I can take advantage of this to combine two equally bright beams of light into one; or offer a sacrifice with sufficient power to enhance the brightness.\n\n[You can combine two identical <b>Lantern</b> influences in the shrine to create a stronger one, or offer supplies with stronger <b>Lantern</b> to upgrade the influence.]",
+	"requirements": {
+		"sunshrine": 1,
+		"influence": 1,
+		"lantern": 1,
+		"ability": -1,
+		"ka.damaged": -1
+	},
+	"hintonly": true,
+	"craftable": false
+},
+{
+	"id": "sunshrine.combineinfluence",
+	"actionid": "kv.move",
+	"label": "Gather the Light",
+	"startdescription": "The invisible particles will gather together under my guidance, and then a brighter color will emerge.\n\n[Combine the two identical <b>Lantern</b> influences into a stronger one.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelantern": 2
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencec"
+		}
+	]
+},
+{
+	"id": "sunshrine.offeringinfluence",
+	"actionid": "kv.move",
+	"label": "The Bright Offerings",
+	"startdescription": "The doctrine of light is merciless. The principles of light recognize sacrifice. This will liberate the inner power of the offerings and enhance the existing influence.\n\n[This will consume the supplies and upgrade the influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelantern": 1,
+		"supplies": 1,
+		"lantern": 5
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencec"
+		}
+	]
+},
+{
+	"id": "sunshrine.upgradeinfluence",
+	"actionid": "kv.move",
+	"label": "The Inner Light",
+	"startdescription": "The revelation of the Glory conceals power - this power shines brighter than any visible light. I will prove this.\n\n[Using 'Revelation' can upgrade any level of <b>Lantern</b> influence. But - Are you sure about this? This will consume 'Revelation' and grant you a level 6 <b>Lantern</b> influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelantern": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencec"
+		}
+	]
+},
+{
+	"id": "sunshrine.spawninfluencec",
+	"actionid": "kv.move",
+	"label": "An Eye-catching Light",
+	"description": "Now, even the most slow-witted adepts can sense the brightness here. The light, as if in a tangible form, spreads and flows throughout this place - and the potential here is far more than that.",
+	"requirements": {
+		"sunshrine": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"influencelanternc": 1
+	}
+},
+{
+	"id": "sunshrine.combineinfluencec",
+	"actionid": "kv.move",
+	"label": "Gather the Light",
+	"startdescription": "All the colors will become increasingly bright until they start to lose their hues. All the shadows will flee from this place, and then the two light sources will merge into one in a dazzling scene.\n\n[Combine two identical <b>Lantern</b> influences into a stronger one.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanternc": 2
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencee"
+		}
+	]
+},
+{
+	"id": "sunshrine.offeringinfluencec",
+	"actionid": "kv.move",
+	"label": "The Bright Offerings",
+	"startdescription": "The doctrine of light is merciless. The principles of light recognize sacrifice. This will liberate the inner power of the offerings and enhance the existing influence.\n\n[This will consume the supplies and upgrade the influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanternc": 1,
+		"supplies": 1,
+		"lantern": 13
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencee"
+		}
+	]
+},
+{
+	"id": "sunshrine.upgradeinfluencec",
+	"actionid": "kv.move",
+	"label": "The Inner Light",
+	"startdescription": "The revelation of the Glory conceals power - this power shines brighter than any visible light. I will prove this.\n\n[Using 'Revelation' can upgrade any level of <b>Lantern</b> influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanternc": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluencee"
+		}
+	]
+},
+{
+	"id": "sunshrine.spawninfluencee",
+	"actionid": "kv.move",
+	"label": "The Rising Light",
+	"description": "The light here is blazingly shining, like a star that is burning - but it could still be even stronger. The potential here is far from exhausted.",
+	"requirements": {
+		"sunshrine": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"influencelanterne": 1
+	}
+},
+{
+	"id": "sunshrine.combineinfluencee",
+	"actionid": "kv.move",
+	"label": "Gather the Light",
+	"startdescription": "The process of aggregation will evoke scenes similar to those of the past Noon - the radiance that can penetrate the skin and all obstructions. What must be done will be understood, and what is understood will be accomplished.\n\n[Combine two identical <b>Lantern</b> influences into a stronger one.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanterne": 2
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluenceg"
+		}
+	]
+},
+{
+	"id": "sunshrine.offeringinfluencee",
+	"actionid": "kv.move",
+	"label": "The Bright Offerings",
+	"startdescription": "The doctrine of light is merciless. The principles of light recognize sacrifice. This will liberate the inner power of the offerings and enhance the existing influence.\n\n[This will consume the supplies and upgrade the influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanterne": 1,
+		"supplies": 1,
+		"lantern": 21
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluenceg"
+		}
+	]
+},
+{
+	"id": "sunshrine.upgradeinfluencee",
+	"actionid": "kv.move",
+	"label": "The Inner Light",
+	"startdescription": "The revelation of the Glory conceals power - this power shines brighter than any visible light. I will prove this.\n\n[Using 'Revelation' can upgrade any level of <b>Lantern</b> influence.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"influencelanterne": 1,
+		"ke.strengthc": 1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"linked": [
+		{
+			"id": "sunshrine.spawninfluenceg"
+		}
+	]
+},
+{
+	"id": "sunshrine.spawninfluenceg",
+	"actionid": "kv.move",
+	"label": "The Brightest Light",
+	"description": "Splendid like the midday sun of the long gone Noon, and it seems like squeezing the entire radiance of the sun into a single room. This is the limit that this place can accommodate. It is already sufficient for me to achieve things beyond the ordinary.",
+	"requirements": {
+		"sunshrine": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"influencelanterng": 1
+	}
+},
+{
+	"id": "kh.shrinerestorereason",
+	"actionid": "kv.move",
+	"label": "Piercing the Barrier in Mind?",
+	"startdescription": "This part of my spirit has fallen into permanent darkness - but the essence from the Glory can be reawakened, and the remaining power here is suitable for guiding the necessary light.\n\n[Provide a 15 level of <b>Lantern</b> influence to restore your reason. You cannot repeat this action in the same Sun Shrine.]",
+	"requirements": {
+		"sunshrine": 1,
+		"ke.reasondamaged": 1,
+		"shrine.exhausted": -1
+	},
+	"hintonly": true,
+	"craftable": false
+},
+{
+	"id": "sunshrine.restorereason",
+	"actionid": "kv.move",
+	"label": "Piercing the Barrier in Mind?",
+	"startdescription": "The Splendid radiance filled my mind. A sharp beam of light pierced through the thick fog, just like sunlight breaking through clouds -\n\n[This will consume the influence and restore the damaged reason. You cannot repeat this action in the same shrine.]",
+	"description": "The curse can be dispelled, and the illusion can be broken. The only important thing is to keep seeking upwards and eventually understand that question.\n\n[Your reason is recovered, but this shrine cannot repeat this action.]",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.reasondamaged": 1,
+		"influencelanterng": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"restorereason": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "kh.shrineexhausted",
+	"actionid": "kv.move",
+	"label": "No Longer Bright",
+	"startdescription": "This place no longer has the glory it once had. I can still perform my worship and works, but attempting to regain my reason through this would be sheer folly. \n\n[This shrine can no longer be used to restore your reason.]",
+	"requirements": {
+		"sunshrine": 1,
+		"ke.reasondamaged": 1,
+		"shrine.exhausted": 1
+	},
+	"hintonly": true,
+	"craftable": false
+},
+{
+	"id": "kh.shrinerevealmyst",
+	"actionid": "kv.move",
+	"label": "Deciphering the Strange Memory?",
+	"startdescription": "I have no clue about the origin of this memory. Maybe it was the touch of the Chandler that brought his memory to me. Or perhaps this memory was already within me all along, and it was only the fire of the Chandler that later lit it up. Ordinary methods were of no avail; only a very special light might have the potential to unlock its content.\n\n[Provide 'Twilight' to interpret the content of the memory. You cannot repeat this action in the same shrine.]",
+	"requirements": {
+		"sunshrine": 1,
+		"tag.mystchandler": 1,
+		"shrine.exhausted": -1
+	},
+	"hintonly": true,
+	"craftable": false
+},
+{
+	"id": "sunshrine.revealmysta",
+	"actionid": "kv.move",
+	"label": "Deciphering the Strange Memory",
+	"startdescription": "An impossible scene, a mysterious secret of contradiction, gradually reveals its meaning in the strange and ever-changing glimmering light - \n\n[Use 'Twilight' to interpret the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nA fierce burst of flames, its brilliant light transcending the barriers of time, casting ever-changing shadows in every era. The distant flames cannot directly burn reality with their heat, but their projection is also a manifestation of power - I will remember this lesson.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.mystchandlera": 1,
+		"strength.chandler": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealmyst": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "sunshrine.revealmystb",
+	"actionid": "kv.move",
+	"label": "Deciphering the Strange Memory",
+	"startdescription": "An impossible scene, a mysterious secret of contradiction, gradually reveals its meaning in the strange and ever-changing glimmering light - \n\n[Use 'Twilight' to interpret the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nThe Red Grail rose from the thirst brought by the blood. The moth transformed to answer the questions about the way forward. The glimmer of the Chandler shone for the first time in the older embers. Without desire, there is no action; and the craving itself is the initial power - I will remember this lesson.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.mystchandlerb": 1,
+		"strength.chandler": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealmyst": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "sunshrine.revealmystc",
+	"actionid": "kv.move",
+	"label": "Deciphering the Strange Memory",
+	"startdescription": "An impossible scene, a mysterious secret of contradiction, gradually reveals its meaning in the strange and ever-changing glimmering light - \n\n[Use 'Twilight' to interpret the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nTime, a ceaselessly flowing river that never stops, a one-way rolling wheel that never stops turning - this is a complete lie. Thought deceives us by making everything seem to move in a logical way, while the passage of time is more malleable and less stable than the way our felt. I will remember this lesson.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.mystchandlerc": 1,
+		"strength.chandler": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealmyst": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "kh.shrinerevealstory",
+	"actionid": "kv.move",
+	"label": "Reveal the Dimming Memories?",
+	"startdescription": "This memory is filled with a great deal of gloomy and lost color - perhaps, with an extremely powerful of light, I can restore some of its content.\n\n[Provide a 15-level <b>Lantern</b> influence to reveal the content of the memory. You cannot perform this action in the same shrine twice.]",
+	"requirements": {
+		"sunshrine": 1,
+		"tag.storysun": 1,
+		"shrine.exhausted": -1
+	},
+	"hintonly": true,
+	"craftable": false
+},
+{
+	"id": "sunshrine.revealstorya",
+	"actionid": "kv.move",
+	"label": "Reveal the Dimming Memories",
+	"startdescription": "The lost colors, the dim memories, return to clarity in the brilliant and dazzling light.\n\n[This will consume the influence and reveal the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nAs the most magnificent sun, the radiant light of the Sun-in-Splendour overshadowed the hue of the Red Sun in an ancient struggle. Since then, he has roamed the vast expanse as the supreme and supreme being.\n\nFor those who submit to the rule, he bestows upon them the gift of brightness; while for those evil creatures lurking in the darkness, he brings them death with ruthless and glaring golden light.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.storysuna": 1,
+		"influencelanterng": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealstory": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "sunshrine.revealstoryb",
+	"actionid": "kv.move",
+	"label": "Reveal the Dimming Memories",
+	"startdescription": "The lost colors, the dim memories, return to clarity in the brilliant and dazzling light.\n\n[This will consume the influence and reveal the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nTo get closer to the Glory, and to truly achieve the state of eternal invincibility, the Sun-in-Splendour split the dark and evil parts of himself, in order to completely liberate its bright potential.\n\nThat which was split apart then emerged as the <b><i>Wolf</i></b>. It also bore all the hatred, all the pain, and all the sins of the sun. The sun had believed that it would never awaken, but things are unpredictable - even for the highmost Hour of the Mansus.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.storysunb": 1,
+		"influencelanterng": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealstory": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "sunshrine.revealstoryc",
+	"actionid": "kv.move",
+	"label": "Reveal the Dimming Memories",
+	"startdescription": "After elevating its own light to its peak, the Sun-in-Splendour began to strive to realize the grand vision of guiding all things towards Eternity...\n\nHis strength was complete and flawless, the path had been waiting for long - but, why it all ended like this? Why couldn't that Eternity come true, and why did he fall so drastically?\n\n[This will consume the influence and reveal the content of the memories. You cannot repeat this action in the same shrine.]",
+	"description": "I saw... in the light...\n\nEverything is ready, but within the undivided sun there is still the first sin unredeemed. Perhaps the sun himself never regarded it as sin, or perhaps he knew about it but deliberately chose to ignore such flaws.\n\nAnd that very first sin was named love. The love for the Forge and all other creatures that resist eternity prevented him from taking the final step towards the Glory, and he also knew that he could not let it go.\n\nIn the end, the sun accepted his fate and allowed the Forge to change him with the same love - to divide him. But his unfinished work still exists in the world, in dreams, and along the Bounds, waiting for the destined successor.",
+	"warmup": 30,
+	"requirements": {
+		"sunshrine": 1,
+		"ke.storysunc": 1,
+		"influencelanterng": 1,
+		"shrine.exhausted": -1
+	},
+	"craftable": true,
+	"effects": {
+		"influence": -99
+	},
+	"aspects": {
+		"revealstory": 1
+	},
+	"mutations": [
+		{
+			"filter": "sunshrine",
+			"mutate": "shrine.exhausted",
+			"level": 1,
+			"additive": true
+		}
+	]
+},
+{
+	"id": "lookfor.vagasteps.startup",
+	"actionid": "kv.move",
+	"label": "Tracing the footsteps of the Vagabond",
+	"startdescription": "Sometimes it is the remnants in the wind, sometimes it is the footprints on the ground; Sometimes subtle, sometimes complicated - the Vagabond's trials were never easy, but at the end of each journey she left a gift for the first shrewdness to follow in her footsteps.\n\n[Overcome all the obstacles encountered to gain the opportunity to recover passion. This process is rather lengthy, but even if you fail, the previous progress will still be retained.]",
+	"requirements": {
+		"vagasteps": 1
+	},
+	"craftable": true,
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "vagasteps.pre"
+		}
+	]
+},
+{
+	"id": "vagasteps.pre",
+	"actionid": "kv.move",
+	"label": "Preparations for the Expedition",
+	"startdescription": "Follow the Centipede's path - I must proceed alone, restore its trajectory, and not disrupt any undamaged obstacles.\n\n[Overcome all obstacles to achieve the goal. Before starting, you can invest two cards as preparation.]",
+	"warmup": 15,
+	"slots": [
+		{
+			"id": "preparationslot1",
+			"label": "Prepatory",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.damaged": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "preparationslot2",
+			"label": "Work",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.damaged": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.trigger"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.trigger",
+	"actionid": "kv.move",
+	"comments": "根据路程数量触发不同的阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"alt": [
+		{
+			"id": "vagasteps.drawobstacle5"
+		},
+		{
+			"id": "vagasteps.drawobstacle4"
+		},
+		{
+			"id": "vagasteps.drawobstacle3"
+		},
+		{
+			"id": "vagasteps.drawobstacle2"
+		},
+		{
+			"id": "vagasteps.drawobstacle1"
+		}
+	]
+},
+{
+	"id": "vagasteps.drawobstacle5",
+	"label": "阻碍5",
+	"comments": "抽取第五个阻碍。",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 5,
+		"distance.travelled": 4
+	},
+	"aspects": {
+		"drawob5": 1
+	},
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.router"
+		}
+	]
+},
+{
+	"id": "vagasteps.drawobstacle4",
+	"label": "阻碍4",
+	"comments": "抽取第四个阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 4,
+		"distance.travelled": 3
+	},
+	"aspects": {
+		"drawob4": 1
+	},
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.router"
+		}
+	]
+},
+{
+	"id": "vagasteps.drawobstacle3",
+	"label": "阻碍3",
+	"comments": "抽取第三个阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 3,
+		"distance.travelled": 2
+	},
+	"aspects": {
+		"drawob3": 1
+	},
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.router"
+		}
+	]
+},
+{
+	"id": "vagasteps.drawobstacle2",
+	"label": "阻碍2",
+	"comments": "抽取第二个阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"requirements": {
+		"ka.obcount": 2,
+		"distance.travelled": 1
+	},
+	"aspects": {
+		"drawob2": 1
+	},
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.router"
+		}
+	]
+},
+{
+	"id": "vagasteps.drawobstacle1",
+	"label": "阻碍1",
+	"comments": "抽取第一个阻碍。",
+	"startdescription": "",
+	"warmup": 0,
+	"aspects": {
+		"drawob1": 1
+	},
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.router"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.router",
+	"actionid": "kv.move",
+	"label": "阻碍判定器",
+	"comments": "这一配方链接着所有追寻the Vagabond时可能出现的阻碍。",
+	"startdescription": "",
+	"requirements": {
+		"ka.obcount": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.crack"
+		},
+		{
+			"id": "vagasteps.obstacle.crossroad"
+		},
+		{
+			"id": "vagasteps.obstacle.riptide"
+		},
+		{
+			"id": "vagasteps.obstacle.cliff"
+		},
+		{
+			"id": "vagasteps.obstacle.chill"
+		},
+		{
+			"id": "vagasteps.obstacle.puzzle"
+		},
+		{
+			"id": "vagasteps.obstacle.thewood"
+		}
+	]
+},
+{
+	"id": "vagasteps.forward",
+	"label": "A Long Road Ahead",
+	"startdescription": "Keep going, until the next obstacle comes into view.",
+	"warmup": 15,
+	"linked": [
+		{
+			"id": "vagasteps.obstacle.trigger"
+		}
+	]
+},
+{
+	"id": "vagasteps.completed",
+	"label": "End of the Trial",
+	"startdescription": "At the end of the trial, the Centipede had already bestowed her imagination along with the teachings she had gained from her journey - as a reward for those who ascended first.",
+	"warmup": 30,
+	"requirements": {
+		"ka.obcount": 1,
+		"distance.travelled": "ka.obcount"
+	},
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"vagasteps": -1,
+		"obstacle": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	},
+	"alt": [
+		{
+			"id": "kr.vagabondgift",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "vagasteps.retreat",
+	"label": "Temporarily Blocked",
+	"startdescription": "Remote and far from accessible resources - it is futile to continue wasting my strength here. Next time, I will return to this place with more adequate preparations.\n\n[Exploration terminated, but the distance you have traveled will be preserved.]",
+	"warmup": 30,
+	"aspects": {
+		"exhaust": 1
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"influence": -99,
+		"op": -99,
+		"supplies": -99
+	}
+},
+{
+	"id": "obstacle.passed.strengthb",
+	"label": "Succeed with Whimsy",
+	"startdescription": "The Vagabond follows the boundless whimsy to forge ahead - when power rises, I can briefly replicate a corner of her thoughts; it's very limited, but it's sufficient for me to overcome the current difficulties.",
+	"requirements": {
+		"ka.obstacle": 1,
+		"vagasteps": 1,
+		"ke.strengthb": 1
+	},
+	"effects": {
+		"ka.obstacle": -99,
+		"ke.strengthb": -1
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.crack",
+	"label": "Obstacle: Passing Through a Narrow Crack?",
+	"startdescription": "Calling this a 'door' would be rather too crude. I need a key that is sufficiently exquisite, or something that can awaken the transformative power.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.crack": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "crack.passed.moth"
+		},
+		{
+			"id": "crack.passed.knock"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "crack.passed.moth",
+	"label": "Passing Through a Narrow Crack: Transforming",
+	"startdescription": "Passing through the external barrier as if shedding the skin.",
+	"requirements": {
+		"obstacle.crack": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "crack.passed.knock",
+	"label": "Passing Through a Narrow Crack: Opening",
+	"startdescription": "The exquisite power of opening can cause the crack to only briefly open for me.",
+	"requirements": {
+		"obstacle.crack": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.crossroad",
+	"label": "Obstacle: Distinguish the side roads?",
+	"startdescription": "Making the wrong choice will lead to failure. Adequate light can help me identify more details, but following one's inspiration is often more effective in such situations.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.crossroad": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "crossroad.passed.lantern"
+		},
+		{
+			"id": "crossroad.passed.moth"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "crossroad.passed.lantern",
+	"label": "Distinguish the side roads: Illumination",
+	"startdescription": "The evidence is conclusive and irrefutable. The correct path has been illuminated.",
+	"requirements": {
+		"obstacle.crossroad": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "crossroad.passed.moth",
+	"label": "Distinguish the side roads: Inspiration",
+	"startdescription": "The wind of inspiration will guide me towards the direction that The Vagabond has taken.",
+	"requirements": {
+		"obstacle.crossroad": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.riptide",
+	"label": "Obstacle: Crossing the Torrent?",
+	"startdescription": "I must not be moved by its impact in order to continue moving forward. I can increase my patience through ceaseless effort, or strengthen my determination by using heavy force.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.riptide": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "riptide.passed.heart"
+		},
+		{
+			"id": "riptide.passed.forge"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "riptide.passed.heart",
+	"label": "Crossing the Torrent: Ceaselessness",
+	"startdescription": "The marching footsteps are more rapid than the turbulent rush - it's time to go against the current.",
+	"requirements": {
+		"obstacle.riptide": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "riptide.passed.forge",
+	"label": "Crossing the Torrent: Practical",
+	"startdescription": "I have made my steps firm and powerful through Forge's practical teachings, and my path will not deviate even by the slightest bit.",
+	"requirements": {
+		"obstacle.riptide": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.cliff",
+	"label": "Obstacle: Climbing the cliff?",
+	"startdescription": "The terrain became extremely dangerous. I needed determination or perseverance to avoid falling.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.cliff": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "cliff.passed.edge"
+		},
+		{
+			"id": "cliff.passed.winter"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "cliff.passed.edge",
+	"label": "Climbing the cliff: determination",
+	"startdescription": "I plunged into the sheer cliff like a sharp knife. My determination will not be broken by such a perilous situation.",
+	"requirements": {
+		"obstacle.cliff": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "cliff.passed.winter",
+	"label": "Climbing the cliff: Perseverance",
+	"startdescription": "The silent perseverance is rooted in my will. I will rise steadily with patience.",
+	"requirements": {
+		"obstacle.cliff": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.chill",
+	"label": "Obstacle: Enduring the Bitter Cold?",
+	"startdescription": "This will be a long and painful ordeal. I can recall the teachings of patience and endurance, or call upon the power of ceaselessness.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.chill": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "chill.passed.winter"
+		},
+		{
+			"id": "chill.passed.heart"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "chill.passed.winter",
+	"label": "Enduring the Bitter Cold: Patience",
+	"startdescription": "Distractions fade away, the sting fades, leaving only a silent focus.",
+	"requirements": {
+		"obstacle.chill": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "chill.passed.heart",
+	"label": "Enduring the Bitter Cold: Ceaselessness",
+	"startdescription": "It will not stop, it cannot stop - the unceasing power will ensure that I overcome the difficulties.",
+	"requirements": {
+		"obstacle.chill": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.puzzle",
+	"label": "Obstacle: A Puzzling Conundrum",
+	"startdescription": "The current problem defies common understanding - I need unconventional thinking or unique knowledge to solve it.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.puzzle": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "puzzle.passed.moth"
+		},
+		{
+			"id": "puzzle.passed.sh"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "puzzle.passed.moth",
+	"label": "A Puzzling Conundrum: Inspiration",
+	"startdescription": "When reason fails to help, only inspiration can bridge the seemingly unrelated fragments.",
+	"requirements": {
+		"obstacle.puzzle": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "puzzle.passed.sh",
+	"label": "A Puzzling Conundrum: Secrets",
+	"startdescription": "Knowledge from another History might be able to answer my questions.",
+	"requirements": {
+		"obstacle.puzzle": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "vagasteps.obstacle.thewood",
+	"label": "Obstacle: Through the Wood?",
+	"startdescription": "The entrance to the road has been concealed in a secluded corner of the Wood. I need strength to guide me in the right direction.\n[Satisfy any threshold of the obstacle, or use a 'Whimsy'.]",
+	"warmup": 45,
+	"requirements": {
+		"obstacle.thewood": 1
+	},
+	"slots": [
+		{
+			"id": "passwith",
+			"label": "Response",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"ka.ally": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "thewood.passed.moth"
+		},
+		{
+			"id": "thewood.passed.knock"
+		},
+		{
+			"id": "obstacle.passed.strengthb"
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.retreat"
+		}
+	]
+},
+{
+	"id": "thewood.passed.moth",
+	"label": "Through the Wood: Inspiration",
+	"startdescription": "I moved forward following the guidance of my instincts. The shadows of the Wood danced and shifted, but I could always find my way.",
+	"requirements": {
+		"obstacle.thewood": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+},
+{
+	"id": "thewood.passed.knock",
+	"label": "Through the Wood: Guidance",
+	"startdescription": "The power of the opening knew how to find the way to the door. Thanks to its guidance, I was able to traverse the unpredictable Wood.",
+	"requirements": {
+		"obstacle.thewood": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.obstacle": -99
+	},
+	"mutations": [
+		{
+			"filter": "vagasteps",
+			"mutate": "distance.travelled",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "vagasteps.completed"
+		},
+		{
+			"id": "vagasteps.forward"
+		}
+	]
+}
+]
+}

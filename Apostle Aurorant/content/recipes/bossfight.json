@@ -1,0 +1,3817 @@
+{
+    "recipes":[
+{
+	"id": "wolfdivided.setup",
+	"actionid": "kv.boss",
+    "warmup": 0,
+	"maxexecutions": 1,
+	"extantreqs": {
+		"tag.wolfdivided": -1
+	},
+	"effects": {
+		"wolfdivided.furious": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.first"
+		}
+	]
+},
+{
+	"id": "wolfdivided.first",
+	"actionid": "kv.boss",
+    "label": "Fury of the Wolf",
+    "startdescription": "As the god of unmaking and agony, the Wolf-Divided intended to spread the flames of annihilation throughout the entire world during the great war - and he would definitely not accept being imprisoned or bound by fate. We must confront his rage head-on.",
+    "warmup": 20,
+	"playAudioTrack": "themeboss.mp3",
+	"setBGMusic":[
+		"themeboss.mp3"
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.draw",
+	"actionid": "kv.boss",
+	"comments": "抽取裂分之狼的行动策略。",
+	"requirements": {
+		"tag.wolfdivided": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.wolfdivided": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.router"
+		}
+	]
+},
+{
+	"id": "wolfdivided.router",
+	"actionid": "kv.boss",
+	"comments": "这一配方链接着裂分之狼的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"tag.wolfdivided": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "wolfdivided.maxwounds"
+		},
+		{
+			"id": "wolfdivided.weakpoint.pre"
+		},
+		{
+			"id": "wolfdivided.anguish.attacka.pre"
+		},
+		{
+			"id": "wolfdivided.furious.attacka.pre"
+		},
+		{
+			"id": "wolfdivided.anguish.attackb.pre"
+		},
+		{
+			"id": "wolfdivided.furious.attackb.pre"
+		},
+		{
+			"id": "wolfdivided.anguish.consume"
+		},
+		{
+			"id": "wolfdivided.furious.consume"
+		},
+		{
+			"id": "wolfdivided.switch"
+		},
+		{
+			"id": "wolfdivided.pass"
+		}
+	]
+},
+{
+	"id": "wolfdivided.maxwounds",
+	"actionid": "kv.boss",
+	"label": "Wounds of the Wolf?",
+	"startdescription": "The long and terrifying torment finally came to an end, and the Hour of unmaking had been weakened to its limit -",
+	"warmup": 20,
+	"requirements": {
+		"tag.wolfdivided": 1,
+		"wound.wolfdivided": 7
+	},
+	"slots": [
+		{
+			"id": "ks.needskillwolf",
+			"label": "Accommodate",
+			"required": {
+				"ke.skillwolf": 1
+			}
+		}
+	],
+	"haltverb":{
+		"kv.wolf": 1
+	},
+	"alt":[
+		{
+			"id": "wolfdivided.defeated"
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.router"
+		}
+	]
+},
+{
+	"id": "wolfdivided.defeated",
+	"actionid": "kv.boss",
+	"label": "Wounds of the Wolf",
+	"startdescription": "The indescribable agony was boiling within me. The most vile part of myself emerged from the invisible wound and merged with the Wolf's carcass -\n\n[Warning! If you still have untreated wounds, this could very likely kill you.]",
+	"description": "This wound was extremely deep, and the pain was even more intense than the act of self-dividing. But in order to welcome back the old Sun, this was a sacrifice that had to be made.",
+	"warmup": 20,
+	"requirements": {
+		"tag.wolfdivided": 1,
+		"ke.skillwolf": 1,
+		"wound.wolfdivided": 7
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"effects": {
+		"tag.wolfdivided": -99,
+		"ke.thewound": 1
+	},
+	"purge":{
+		"enemy.wolfshard": 99,
+		"enemy.wolfshard.hidden": 99,
+		"malice.wolfdivided": 99
+	},
+	"achievements": [
+	    "A_AURORANT_KILLWOLF"
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.pre",
+	"actionid": "kv.boss",
+	"requirements": {
+		"tag.wolfdivided": 1,
+		"ke.strategy.bossd": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.wolfweakpoint": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.weakpoint"
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint",
+	"actionid": "kv.boss",
+	"label": "Blood of an Immortal God?",
+	"startdescription": "The Wolf Divided once again fought fiercely within the cage of glass and light, with a deafening roar! But his claws also loosened up a little bit. If I could gather enough strength -\n\n[Satisfy any threshold to attempt to cause damage to the Wolf, but all Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.response1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.weakpoint.respond.edgeforge"
+		},
+		{
+			"id": "wolfdivided.weakpoint.respond.edgelantern"
+		},
+		{
+			"id": "wolfdivided.weakpoint.respond.edgewinter"
+		},
+		{
+			"id": "wolfdivided.weakpoint.respond.meltingedge"
+		},
+		{
+			"id": "wolfdivided.weakpoint.respond.piercingedge"
+		},
+		{
+			"id": "wolfdivided.weakpoint.respond.profaneedge"
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.edgeforge",
+	"label": "Burning Blade",
+	"startdescription": "Burning Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.edgelantern",
+	"label": "Radiant Blade",
+	"startdescription": "Radiant Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.edgewinter",
+	"label": "Icy Blade",
+	"startdescription": "Icy Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.meltingedge",
+	"label": "Molten Blade",
+	"startdescription": "Molten Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.meltingedge": 1,
+		"ka.melting": 1,
+		"edge": "ka.meltingedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.piercingedge",
+	"label": "Piercing Blade",
+	"startdescription": "Piercing Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.piercingedge": 1,
+		"ka.piercing": 1,
+		"edge": "ka.piercingedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.weakpoint.respond.profaneedge",
+	"label": "Profane Blade",
+	"startdescription": "Profane Blade removed the foul black and grey fur of the Wolf, and a wound was left on its body, a wound that caused the gods to bleed -\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfweakpoint": 1,
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"aspects":{
+		"damageboss": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attacka.pre",
+	"actionid": "kv.boss",
+	"requirements": {
+		"wolfdivided.furious": 1,
+		"ke.strategy.bossa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.wolffuriousa": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.furious.attacka"
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attacka",
+	"actionid": "kv.boss",
+	"label": "A Fear beyond Death",
+	"startdescription": "The light fades away, the fierce wind roars, and reality screams in terror at the approach of destruction; within that foul, stinking maw, a fate even worse than death awaits -\n\n[Satisfy any threshold or activate the 'Eternal Dominion' defense to counter this attack. Otherwise, you will die!]",
+	"requirements": {
+		"panel.wolffuriousa": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.response1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.furious.attacka.respond.edge"
+		},
+		{
+			"id": "wolfdivided.furious.attacka.respond.edgelantern"
+		},
+		{
+			"id": "wolfdivided.furious.attacka.respond.profaneedge"
+		},
+		{
+			"id": "kr.wolfdivided.instantkill",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attacka.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "The power of resolution is sufficient to turn the inevitable situation around. I cannot be destroyed - not today, not here.\n\n[SERIOUSLY? All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousa": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attacka.respond.edgelantern",
+	"label": "Radiant Blade",
+	"startdescription": "The dazzling light pushed back the approaching shadows, saving me from destruction - at least for now.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousa": 1,
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attacka.respond.profaneedge",
+	"label": "Profane Blade",
+	"startdescription": "The dazzling light pushed back the approaching shadows, saving me from destruction - at least for now.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousa": 1,
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attacka.pre",
+	"actionid": "kv.boss",
+	"requirements": {
+		"wolfdivided.anguish": 1,
+		"ke.strategy.bossa": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.wolfanguisha": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.anguish.attacka"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attacka",
+	"actionid": "kv.boss",
+	"label": "A Hate beyond Time",
+	"startdescription": "The shadows expand, the frost weeps, reality trembles at the approach of its end; the endless hatred of the wolves has already manifested, and all things here will soon face their inevitable destruction -\n\n[Satisfy any threshold or activate the 'Eternal Dominion' defense to counter this attack. Otherwise, you will die!]",
+	"requirements": {
+		"panel.wolfanguisha": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.response1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.anguish.attacka.respond.winter"
+		},
+		{
+			"id": "wolfdivided.anguish.attacka.respond.edgelantern"
+		},
+		{
+			"id": "wolfdivided.anguish.attacka.respond.profaneedge"
+		},
+		{
+			"id": "kr.wolfdivided.instantkill",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attacka.respond.winter",
+	"label": "Respond with Finality",
+	"startdescription": "The final epiphany has made me the embodiment of the end. I cannot be destroyed – not today, not here.\n\n[SERIOUSLY? All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguisha": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attacka.respond.edgelantern",
+	"label": "Radiant Blade",
+	"startdescription": "The dazzling light pushed back the approaching shadows, saving me from destruction - at least for now.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguisha": 1,
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attacka.respond.profaneedge",
+	"label": "Profane Blade",
+	"startdescription": "The dazzling light pushed back the approaching shadows, saving me from destruction - at least for now.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguisha": 1,
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attackb.pre",
+	"actionid": "kv.boss",
+	"requirements": {
+		"wolfdivided.furious": 1,
+		"ke.strategy.bossb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.wolffuriousb": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.furious.attackb"
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attackb",
+	"actionid": "kv.boss",
+	"label": "The Shape of Annihilation",
+	"startdescription": "In the blindingly painful light, the shape of Wolf-Divided distorted into a nightmare composed of countless sharp teeth and thorns, each part overflowing with the intent of slaughter and destruction -\n\n[Failing to defend will permanently damage your ability cards.All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.response1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.furious.attackb.respond.edge"
+		},
+		{
+			"id": "wolfdivided.furious.attackb.respond.heart"
+		},
+		{
+			"id": "kr.destroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attackb.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "I summoned all the deadly lessons within my body, mind and soul, forming a barrier against the force of annihilation - each time the Wolf tores, it was like a hundred poisons gnawing at the heart... But that was just pain; the Wolf could no longer cause any further harm.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousb": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.attackb.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "I summoned all the unceasing strength within my body, mind and soul, forming a barrier against the force of annihilation - each time the Wolf tores, it was like a hundred poisons gnawing at the heart... But that was just pain; the Wolf could no longer cause any further harm.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolffuriousb": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attackb.pre",
+	"actionid": "kv.boss",
+	"requirements": {
+		"wolfdivided.anguish": 1,
+		"ke.strategy.bossb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.wolfanguishb": 1
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.anguish.attackb"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attackb",
+	"actionid": "kv.boss",
+	"label": "Enmity for Eternity",
+	"startdescription": "The enmity of the Wolf Divided transformed into an insidious, bone-chilling coldness. The roaring frost and snow were relentlessly devouring all the life in this place - before all things could reach their predetermined end, this overwhelming hatred would never cease.\n\n[Failing to defend will permanently damage your ability cards.All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguishb": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.response1",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response2",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.response3",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.anguish.attackb.respond.forge"
+		},
+		{
+			"id": "wolfdivided.anguish.attackb.respond.winter"
+		},
+		{
+			"id": "kr.destroyany",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attackb.respond.winter",
+	"label": "Respond with Endurance",
+	"startdescription": "The world is still as ice, and I pondered the ending lessons here: everything has its end, and those who understand patience are the most enduring. Therefore, my soul did not yield to the ancient enmity.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguishb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.attackb.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "The world is still as ice, and here I unleashed the most intense flames: Everything has an end, but change never ceases, and an end cannot come. Therefore, my body and mind did not yield to the ancient enmity.\n\n[All Allies involved will be killed.]",
+	"requirements": {
+		"panel.wolfanguishb": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.wolfdivided",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.consume",
+	"actionid": "kv.boss",
+	"label": "Malice Gathers",
+	"startdescription": "The stars dimmed, the void boiled over, and the destructive power of the Wolf was rising along with its malice -\n\n[The Wolf can utilize the malice on the field to unleash powerful special strategies.]",
+	"requirements": {
+		"wolfdivided.furious": 1,
+		"ke.strategy.bossc": 1
+	},
+	"extantreqs":{
+		"malice.wolfdivided": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice.wolfdivided",
+			"label": "Malice",
+			"required": {
+				"malice.wolfdivided": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.furious.consumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.furious.consumesuccess",
+	"actionid": "kv.boss",
+	"label": "Hostility Converges",
+	"startdescription": "The malevolence of the Wolf manifests in its terrifying form -\n\n[The Wolf's special strategy will transform its malice into enemies.]",
+	"requirements": {
+		"wolfdivided.furious": 1,
+		"malice.wolfdivided": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.spawnshards",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.consume",
+	"actionid": "kv.boss",
+	"label": "Malice Gathers",
+	"startdescription": "The stars dimmed, the void boiled over, and the destructive power of the Wolf was rising along with its malice -\n\n[The Wolf can utilize the malice on the field to unleash powerful special strategies.]",
+	"requirements": {
+		"wolfdivided.anguish": 1,
+		"ke.strategy.bossc": 1
+	},
+	"extantreqs":{
+		"malice.wolfdivided": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice.wolfdivided",
+			"label": "Malice",
+			"required": {
+				"malice.wolfdivided": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "wolfdivided.anguish.consumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.anguish.consumesuccess",
+	"actionid": "kv.boss",
+	"label": "Rising Hell",
+	"startdescription": "The malice of the Wolf manifests itself as endless torment and suffering -\n\n[The Wolf's special strategy will transform its malice into 'Agonizing Wound's.]",
+	"requirements": {
+		"wolfdivided.anguish": 1,
+		"malice.wolfdivided": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.spawnagony",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.switch",
+	"actionid": "kv.boss",
+	"label": "The Divided Wolf",
+	"startdescription": "The Wolf is the most destructive aspect of the sun, and also its most severe scar. The essence of contradiction determines that it is itself in a state of eternal change and division. Soon, that destructive force will undergo another transformation -",
+	"warmup": 20,
+	"requirements": {
+		"tag.wolfdivided": 1,
+		"ke.strategy.bosse": 1
+	},
+	"aspects":{
+		"switchmode": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.pass",
+	"actionid": "kv.boss",
+	"label": "The Wolf Processes",
+	"startdescription": "@#wolfdivided.furious|The flames are chaotic, the wind is like a knife cutting through - even imprisoned within glass and bound by the light, the fury of The Wolf-Divided can still cause reality to warp and collapse.#wolfdivided.anguish|The frost are fierce, and the old wounds throb with pain. - even imprisoned within glass and bound by the light,, the fury of The Wolf-Divided can still cause reality to warp and collapse.@",
+	"requirements": {
+		"tag.wolfdivided": 1
+	},
+	"warmup": 5,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "wolfdivided.cooldown",
+	"label": "A Breathing Space",
+	"startdescription": "The Wolf was temporarily halted here, but his malice will not subside -",
+	"warmup": 10,
+	"linked": [
+		{
+			"id": "wolfdivided.draw"
+		}
+	]
+},
+{
+	"id": "coalition.setup",
+	"actionid": "kv.boss",
+	"maxexecutions": 1,
+    "warmup": 0,
+	"extantreqs": {
+		"tag.coalition": -1
+	},
+	"effects": {
+		"dominant.forge": 1
+	},
+	"alt":[
+		{
+			"id": "spawncoalition.first",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.first"
+		}
+	]
+},
+{
+	"id": "coalition.first",
+	"actionid": "kv.boss",
+    "label": "The Collapsing City",
+    "startdescription": "The power and skills that Ys possessed were what led to her being exiled beyond the waves. And in the ongoing battle, I was not the only force that coveted her legacy. The roar of the ships shook the sea, the expanding flames tore through the sky - the downfall of this city was only a matter of time.",
+    "warmup": 20,
+	"playAudioTrack": "themeboss.mp3",
+	"setBGMusic":[
+		"themeboss.mp3"
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.draw",
+	"actionid": "kv.boss",
+	"comments": "抽取伊苏联军的行动策略。",
+	"requirements": {
+		"tag.coalition": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.coalition": 1
+	},
+	"linked": [
+		{
+			"id": "coalition.router"
+		}
+	]
+},
+{
+	"id": "coalition.router",
+	"actionid": "kv.boss",
+	"comments": "这一配方链接着伊苏联军的全部行动，根据抽取到的策略决定行动。",
+	"requirements": {
+		"tag.coalition": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "coalition.reducestability"
+		},
+		{
+			"id": "coalition.forge.attackname.pre"
+		},
+		{
+			"id": "coalition.forge.attackfleet.pre"
+		},
+		{
+			"id": "coalition.forge.attackrivals.pre"
+		},
+		{
+			"id": "coalition.forge.call"
+		},
+		{
+			"id": "coalition.twins.attackname.pre"
+		},
+		{
+			"id": "coalition.twins.attackfleet.pre"
+		},
+		{
+			"id": "coalition.twins.attackrivals.pre"
+		},
+		{
+			"id": "coalition.twins.call"
+		},
+		{
+			"id": "coalition.bones.attackname.pre"
+		},
+		{
+			"id": "coalition.bones.attackfleet.pre"
+		},
+		{
+			"id": "coalition.bones.attackrivals.pre"
+		},
+		{
+			"id": "coalition.bones.call"
+		},
+		{
+			"id": "coalition.switch"
+		},
+		{
+			"id": "coalition.pass"
+		}
+	]
+},
+{
+	"id": "coalition.reducestability",
+	"label": "The Situation is Worsening!",
+	"startdescription": "Even though we have done our best to defend against the enemy, the endless battles are gradually pushing Ys towards destruction -",
+	"warmup": 20,
+    "requirements":{
+		"tag.coalition": 1,
+		"ke.token": 3
+    },
+	"effects":{
+		"ka.purgemarklogic": -99,
+		"ke.token": -99
+	},
+	"alt": [
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackname.pre",
+	"label": "The Name Prepares to Act!",
+	"startdescription": "Heat surges and waves boil - the enemy is about to act!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.namechick": 1
+	},
+    "requirements":{
+        "dominant.forge": 1,
+		"ke.strategy.bossa": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.namechick",
+			"label": "Name",
+			"required": {
+				"enemy.namechick": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.forge.attackname"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackname",
+	"actionid": "kv.boss",
+	"label": "The Name Attacks!",
+	"startdescription": "This Name is seeking to further undermine Ys' precarious defense line -\n\n[Failing to defend the Name's attack will reduce Ys' stability.]",
+	"requirements": {
+        "enemy.namechick": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.nameresponse1",
+			"label": "Oppose",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.nameresponse2",
+			"label": "The Name",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackname.respondforge"
+		},
+		{
+			"id": "coalition.attackname.respondgrail"
+		},
+		{
+			"id": "coalition.attackname.respondheart"
+		},
+		{
+			"id": "coalition.attackname.respondlantern"
+		},
+		{
+			"id": "coalition.attackname.respondmoth"
+		},
+		{
+			"id": "coalition.attackname.respondwinter"
+		},
+		{
+			"id": "coalition.attackname.edgeforge"
+		},
+		{
+			"id": "coalition.attackname.edgelantern"
+		},
+		{
+			"id": "coalition.attackname.edgewinter"
+		},
+		{
+			"id": "coalition.attackname.meltingedge"
+		},
+		{
+			"id": "coalition.attackname.piercingedge"
+		},
+		{
+			"id": "coalition.attackname.profaneedge"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+        {
+            "id": "coalition.attackname.deadly"
+        },
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.attackname.deadly",
+    "actionid": "kv.boss",
+	"comments": "具名者在有致命特性时将额外降低一次稳定度。",
+	"warmup": 0,
+	"grandreqs": {
+		"ka.enemy": 1,
+		"ka.deadly": 1
+	},
+	"alt": [
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+    "linked":[
+        {
+            "id": "coalition.cooldown"
+        }
+    ]
+},
+{
+	"id": "coalition.riposted",
+	"label": "Unleash the Wild Fury",
+	"startdescription": "Blazing wrath seizes my mind and body, burning through every stray of soul and every inch of flesh—",
+	"requirements": {
+		"ka.enemy": 1,
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostecoalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondforge",
+	"label": "Respond with Flame",
+	"startdescription": "I unleash a furious, searing inferno, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondgrail",
+	"label": "Respond with Vitality",
+	"startdescription": "The power of blood and vitality swallows all encroaching harm, forcing the Name to retreat. ",
+	"requirements": {
+		"ka.enemy": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondheart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The power of unending drumming forms an inviolable barrier, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondlantern",
+	"label": "Respond with Radiance",
+	"startdescription": "I unleash a deadly, blinding light, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondmoth",
+	"label": "Respond with Chaos",
+	"startdescription": "Chaotic influences disrupt the Name's attack, forcing a retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.respondwinter",
+	"label": "Respond with Finality",
+	"startdescription": "An apocalyptic frost surges from deep within me, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.edgeforge",
+	"label": "Burning Blade",
+	"startdescription": "I call forth the unyielding power of creation and destruction, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.meltingedge": 1,
+		"edge": "ka.meltingedge",
+		"forge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.edgelantern",
+	"label": "Radiant Blade",
+	"startdescription": "I call forth the supreme mystery of ruthlessness and strife, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.profaneedge": 1,
+		"edge": "ka.profaneedge",
+		"lantern": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.edgewinter",
+	"label": "Icy Blade",
+	"startdescription": "I call forth the terrifying power of conquer and ending, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.piercingedge": 1,
+		"edge": "ka.piercingedge",
+		"winter": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.meltingedge",
+	"label": "Molten Blade",
+	"startdescription": "I call forth the unyielding power of creation and destruction, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.meltingedge": 1,
+		"ka.melting": 1,
+		"edge": "ka.meltingedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.profaneedge",
+	"label": "Profane Blade",
+	"startdescription": "I call forth the supreme mystery of ruthlessness and strife, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.profaneedge": 1,
+		"ka.profane": 1,
+		"edge": "ka.profaneedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackname.piercingedge",
+	"label": "Piercing Blade",
+	"startdescription": "I call forth the terrifying power of conquer and ending, forcing the Name to retreat.",
+	"requirements": {
+		"ka.enemy": 1,
+		"ka.piercingedge": 1,
+		"ka.piercing": 1,
+		"edge": "ka.piercingedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackfleet.pre",
+	"label": "The Forge's Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.fleetforge": 1
+	},
+    "requirements":{
+        "dominant.forge": 1,
+		"ke.strategy.bossb": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetforge1",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetforge2",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetforge3",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.forge.attackfleet"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackfleet",
+	"actionid": "kv.boss",
+	"label": "The Forge's Fleets Attack!",
+	"startdescription": "Cannons blast and boilers roar, the fleets of the Forge are closing in –\n\n[Failing to defend the enemies' attack will reduce Ys' stability.]",
+	"requirements": {
+        "enemy.fleetforge": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetresponse1",
+			"label": "Confront",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse2",
+			"label": "Enemy",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse3",
+			"label": "Fleets",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackfleet.respondedge"
+		},
+		{
+			"id": "coalition.attackfleet.respondforge"
+		},
+		{
+			"id": "coalition.attackfleet.respondgrail"
+		},
+		{
+			"id": "coalition.attackfleet.respondheart"
+		},
+		{
+			"id": "coalition.attackfleet.respondknock"
+		},
+		{
+			"id": "coalition.attackfleet.respondlantern"
+		},
+		{
+			"id": "coalition.attackfleet.respondmoth"
+		},
+		{
+			"id": "coalition.attackfleet.respondwinter"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondedge",
+	"label": "Respond with Force",
+	"startdescription": "The assembled fleet is a formidable force, but we, too, are not to be underestimated. This time, the enemy's advance failed to achieve its goal.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondforge",
+	"label": "Respond with Flame",
+	"startdescription": "We have forged an impregnable defense line with steel and fire. This time, the enemy's advance failed to achieve any success.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondgrail",
+	"label": "Respond with Appetite",
+	"startdescription": "The sea is fickle and eager to devour, and now we direct its appetite to the enemy. This time, their advance failed to achieve any success.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondheart",
+	"label": "Respond with Persistence",
+	"startdescription": "Powerful force of preservation temporarily strengthened Ys' defenses, preventing them from being breached. This time, the enemy's advance failed to achieve any success.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondknock",
+	"label": "Respond with Opening",
+	"startdescription": "Waves crashes and the ocean parts - the force of the opening temporarily helped us divide the battlefield. This time, the enemy's advance failed to achieve any results.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondlantern",
+	"label": "Respond with Radiance",
+	"startdescription": "The dazzling light dispelled the shadows and also dazzled our enemies. This time, their advance failed to achieve any success.",
+	"requirements": {
+		"ka.enemy": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondmoth",
+	"label": "Respond with Chaos",
+	"startdescription": "Thick sea fog covered the entire battlefield, preventing the enemy from moving efficiently. This time, their advance failed to achieve any results.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.attackfleet.respondwinter",
+	"label": "Respond with Coldness",
+	"startdescription": "Metal crackes, equipments fail, and the icy wind like a sharp knife halted the enemy's intent. This time, their advance failed to achieve any success.",
+	"requirements": {
+		"ka.enemy": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.coalition",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1,
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackrivals.pre",
+	"label": "The Forge's Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.fleetforge": 1
+	},
+    "requirements":{
+        "dominant.forge": 1,
+		"ke.strategy.bossd": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetforge1",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetforge2",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetforge3",
+			"required": {
+				"enemy.fleetforge": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.forge.attackrivals"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.forge.attackrivals",
+	"label": "Towards the other two fleets?",
+	"startdescription": "We are all in pursuit of Ys' legacy - this means that all four of our factions are hostile to each other. And this time, the Forge's fleet has chosen to target the other two factions.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.forge": 1,
+		"enemy.fleetforge": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetrivals1",
+			"required": {
+				"enemy.fleettwins": 1,
+				"enemy.fleetbones": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetrivals2",
+			"required": {
+				"enemy.fleettwins": 1,
+				"enemy.fleetbones": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "forgeattackrivals.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1
+				}
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.forge.call",
+	"label": "The Forge's Fleets are Calling Reinforcements!",
+	"startdescription": "The enemy's force in this area has been weakened, and they are calling for more allies to come and provide support.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.forge": 1,
+		"ke.strategy.bossc": 1
+    },
+	"extantreqs":{
+		"enemy.fleetforge": -3
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"alt": [
+		{
+			"id": "kr.callfleetforge",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackname.pre",
+	"label": "The Name Prepares to Act!",
+	"startdescription": "The demonic sound pierces and echoes - the enemy is about to act!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.namebanshee.defeated": -1
+	},
+    "requirements":{
+        "dominant.twins": 1,
+		"ke.strategy.bossa": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.namebanshee",
+			"label": "Name",
+			"required": {
+				"enemy.namebanshee": 1,
+				"enemy.namebanshee.reviving": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.twins.attackname"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackname",
+	"actionid": "kv.boss",
+	"label": "The Name Attacks!",
+	"startdescription": "This Name is seeking to further undermine Ys' precarious defense line -\n\n[Failing to defend the Name's attack will reduce Ys' stability.]",
+	"grandreqs": {
+        "[enemy.namebanshee]+[enemy.namebanshee.reviving]": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.nameresponse1",
+			"label": "Oppose",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.nameresponse2",
+			"label": "The Name",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackname.respondforge"
+		},
+		{
+			"id": "coalition.attackname.respondgrail"
+		},
+		{
+			"id": "coalition.attackname.respondheart"
+		},
+		{
+			"id": "coalition.attackname.respondlantern"
+		},
+		{
+			"id": "coalition.attackname.respondmoth"
+		},
+		{
+			"id": "coalition.attackname.respondwinter"
+		},
+		{
+			"id": "coalition.attackname.edgeforge"
+		},
+		{
+			"id": "coalition.attackname.edgelantern"
+		},
+		{
+			"id": "coalition.attackname.edgewinter"
+		},
+		{
+			"id": "coalition.attackname.meltingedge"
+		},
+		{
+			"id": "coalition.attackname.piercingedge"
+		},
+		{
+			"id": "coalition.attackname.profaneedge"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+        {
+            "id": "coalition.attackname.deadly"
+        },
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackfleet.pre",
+	"label": "The Twins' Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.fleettwins": 1
+	},
+    "requirements":{
+        "dominant.twins": 1,
+		"ke.strategy.bossb": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleettwins1",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleettwins2",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleettwins3",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.twins.attackfleet"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackfleet",
+	"actionid": "kv.boss",
+	"label": "The Twins' Fleets Attack!",
+	"startdescription": "Huge sails creaks and storm rumbles - the fleets of the Twins are closing in -\n\n[Failing to defend the enemies' attack will reduce Ys' stability.]",
+	"requirements": {
+        "enemy.fleettwins": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetresponse1",
+			"label": "Confront",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse2",
+			"label": "Enemy",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse3",
+			"label": "Fleets",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackfleet.respondedge"
+		},
+		{
+			"id": "coalition.attackfleet.respondforge"
+		},
+		{
+			"id": "coalition.attackfleet.respondgrail"
+		},
+		{
+			"id": "coalition.attackfleet.respondheart"
+		},
+		{
+			"id": "coalition.attackfleet.respondknock"
+		},
+		{
+			"id": "coalition.attackfleet.respondlantern"
+		},
+		{
+			"id": "coalition.attackfleet.respondmoth"
+		},
+		{
+			"id": "coalition.attackfleet.respondwinter"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackrivals.pre",
+	"label": "The Twins' Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.fleettwins": 1
+	},
+    "requirements":{
+        "dominant.twins": 1,
+		"ke.strategy.bossd": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleettwins1",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleettwins2",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleettwins3",
+			"required": {
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.twins.attackrivals"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.twins.attackrivals",
+	"label": "Towards the other two fleets?",
+	"startdescription": "We are all in pursuit of Ys' legacy - this means that all four of our factions are hostile to each other. And this time, the Twins' fleet has chosen to target the other two factions.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.twins": 1,
+		"enemy.fleettwins": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetrivals1",
+			"required": {
+				"enemy.fleetforge": 1,
+				"enemy.fleetbones": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetrivals2",
+			"required": {
+				"enemy.fleetforge": 1,
+				"enemy.fleetbones": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "twinsattackrivals.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1
+				}
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.twins.call",
+	"label": "The Twins' Fleets are Calling Reinforcements!",
+	"startdescription": "The enemy's force in this area has been weakened, and they are calling for more allies to come and provide support.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.twins": 1,
+		"ke.strategy.bossc": 1
+    },
+	"extantreqs":{
+		"enemy.fleettwins": -3
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"alt": [
+		{
+			"id": "kr.callfleettwins",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackname.pre",
+	"label": "The Name Prepares to Act!",
+	"startdescription": "Shadows quivers and the candle flickers - the enemy is about to act!",
+	"warmup": 20,
+	"extantreqs":{
+		"enemy.nameeaten.defeated": -1
+	},
+    "requirements":{
+        "dominant.bones": 1,
+		"ke.strategy.bossa": 1
+    },
+	"aspects":{
+		"revealenemy": 1
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.nameeaten",
+			"label": "Name",
+			"required": {
+				"enemy.nameeaten": 1,
+				"enemy.nameeaten.hidden": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.bones.attackname"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackname",
+	"actionid": "kv.boss",
+	"label": "The Name Attacks!",
+	"startdescription": "This Name is seeking to further undermine Ys' precarious defense line -\n\n[Failing to defend the Name's attack will reduce Ys' stability.]",
+	"requirements": {
+        "enemy.nameeaten": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.nameresponse1",
+			"label": "Oppose",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.nameresponse2",
+			"label": "The Name",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackname.respondforge"
+		},
+		{
+			"id": "coalition.attackname.respondgrail"
+		},
+		{
+			"id": "coalition.attackname.respondheart"
+		},
+		{
+			"id": "coalition.attackname.respondlantern"
+		},
+		{
+			"id": "coalition.attackname.respondmoth"
+		},
+		{
+			"id": "coalition.attackname.respondwinter"
+		},
+		{
+			"id": "coalition.attackname.edgeforge"
+		},
+		{
+			"id": "coalition.attackname.edgelantern"
+		},
+		{
+			"id": "coalition.attackname.edgewinter"
+		},
+		{
+			"id": "coalition.attackname.meltingedge"
+		},
+		{
+			"id": "coalition.attackname.piercingedge"
+		},
+		{
+			"id": "coalition.attackname.profaneedge"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+        {
+            "id": "coalition.attackname.deadly"
+        },
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackfleet.pre",
+	"label": "The Blackbone's Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"tag.fleetbones": 1
+	},
+    "requirements":{
+        "dominant.bones": 1,
+		"ke.strategy.bossb": 1
+    },
+	"aspects":{
+		"revealenemy": 1
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetbones1",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetbones2",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetbones3",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.bones.attackfleet"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackfleet",
+	"actionid": "kv.boss",
+	"label": "The Blackbone's Fleets Attack!",
+	"startdescription": "Tempest rages and the waves surge, the fleets of the Blackbone are closing in -\n\n[Failing to defend the enemies' attack will reduce Ys' stability.]",
+	"requirements": {
+        "enemy.fleetbones": 1
+	},
+	"warmup": 20,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetresponse1",
+			"label": "Confront",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse2",
+			"label": "Enemy",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.fleetresponse3",
+			"label": "Fleets",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "coalition.riposted"
+		},
+		{
+			"id": "coalition.attackfleet.respondedge"
+		},
+		{
+			"id": "coalition.attackfleet.respondforge"
+		},
+		{
+			"id": "coalition.attackfleet.respondgrail"
+		},
+		{
+			"id": "coalition.attackfleet.respondheart"
+		},
+		{
+			"id": "coalition.attackfleet.respondknock"
+		},
+		{
+			"id": "coalition.attackfleet.respondlantern"
+		},
+		{
+			"id": "coalition.attackfleet.respondmoth"
+		},
+		{
+			"id": "coalition.attackfleet.respondwinter"
+		},
+		{
+			"id": "kr.reducestability",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackrivals.pre",
+	"label": "The Blackbone's Fleets are Assembling!",
+	"startdescription": "The enemy is assembling their troops for the next attack!",
+	"warmup": 20,
+	"extantreqs":{
+		"tag.fleetbones": 1
+	},
+    "requirements":{
+        "dominant.bones": 1,
+		"ke.strategy.bossd": 1
+    },
+	"aspects":{
+		"revealenemy": 1
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetbones1",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetbones2",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetbones3",
+			"required": {
+				"enemy.fleetbones": 1,
+				"enemy.fleetbones.hidden": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.bones.attackrivals"
+		},
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.bones.attackrivals",
+	"label": "Towards the other two fleets?",
+	"startdescription": "We are all in pursuit of Ys' legacy - this means that all four of our factions are hostile to each other. And this time, the Blackbone's fleet has chosen to target the other two factions.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.bones": 1,
+		"enemy.fleetbones": 1
+    },
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"slots": [
+		{
+			"id": "ks.fleetrivals1",
+			"required": {
+				"enemy.fleetforge": 1,
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		},
+		{
+			"id": "ks.fleetrivals2",
+			"required": {
+				"enemy.fleetforge": 1,
+				"enemy.fleettwins": 1
+			},
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "bonesattackrivals.spit",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1
+				}
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.cooldown"
+		}
+	]
+},
+{
+	"id": "coalition.bones.call",
+	"label": "The Blackbone's Fleets are Calling Reinforcements!",
+	"startdescription": "The enemy's force in this area has been weakened, and they are calling for more allies to come and provide support.",
+	"warmup": 20,
+    "requirements":{
+        "dominant.bones": 1,
+		"ke.strategy.bossc": 1
+    },
+	"extantreqs":{
+		"tag.fleetbones": -3
+	},
+	"effects":{
+		"ka.purgemarklogic": -99
+	},
+	"alt": [
+		{
+			"id": "kr.callfleetbones",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.switch",
+	"actionid": "kv.boss",
+	"label": "The Tide Turns",
+	"startdescription": "The conditions of the sea beyond the Waking world are constantly changing, and so is the situation of the battle. The balance of power is tilting, and soon, another fleet will gain the upper hand.",
+	"warmup": 20,
+	"requirements": {
+		"tag.coalition": 1,
+		"ke.strategy.bosse": 1
+	},
+	"aspects":{
+		"switchmode": 1
+	},
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.cooldown",
+	"label": "A Pause in the Offensive",
+	"startdescription": "The next wave of offensive will soon be upon us -",
+	"warmup": 10,
+	"alt": [
+		{
+			"id": "spit.coalition.filterenemy",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"ka.enemy": 1
+				}
+			}
+		}
+	],
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+},
+{
+	"id": "coalition.pass",
+	"actionid": "kv.boss",
+	"label": "@#dominant.bones|The Blackbone's fleets are lingering around #dominant.forge|The Forge's fleets are lingering around #dominant.twins|The Twins' fleets are lingering around @",
+	"startdescription": "Waves tremble, wind whispers. This sea area maintains a rare state of tranquility for now. The enemy fleets are operating nearby, but they have not yet turned their attention towards us.",
+	"requirements": {
+		"tag.coalition": 1
+	},
+	"warmup": 10,
+	"effects": {
+		"ka.purgemarklogic": -99
+	},
+	"linked": [
+		{
+			"id": "coalition.draw"
+		}
+	]
+}
+]
+}

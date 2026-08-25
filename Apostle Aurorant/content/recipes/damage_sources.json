@@ -1,0 +1,406 @@
+{
+"recipes":[
+{
+	"id": "kr.attackexhausthealth",
+	"actionid": "kv.damage",
+	"label": "Slightly Weary",
+	"startdescription": "The attack poses no real threat, yet it still manages to trouble me somewhat—",
+	"description": "It will consume a portion of my surplus stamina.",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "exhaustneedhealth",
+			"label": "Exaust",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.attackexhaustmind",
+	"actionid": "kv.damage",
+	"label": "Slightly Weary",
+	"startdescription": "The attack poses no real threat, yet it still manages to trouble me somewhat—",
+	"description": "It will temporarily disrupt a portion of my mind.",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"aspects":{
+		"exhaust": 1
+	},
+	"slots": [
+		{
+			"id": "exhaustneedmind",
+			"label": "Exaust",
+			"required": {
+				"ke.reason": 1,
+				"ke.passion": 1
+			},
+			"greedy": true
+		}
+	]
+},
+{
+	"id": "kr.damagehealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured!",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "damagehealth.hit"
+		},
+		{
+			"id": "damagehealth.wound"
+		}
+	]
+},
+{
+	"id": "damagehealth.hit",
+	"label": "A setback!",
+	"description": "As long as I still retain even a sliver of spare strength, I shall not suffer overly grave injury — but this portion of power will require some time to recover.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"damagehealth": 1
+	}
+},
+{
+	"id": "damagehealth.wound",
+	"label": "I'm Hurt!",
+	"description": "It didn't have to be this way![If the attack fails to absorb Health, it will create a Wound. Receiving three Wounds of any kind will result in immediate death.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundminor": 1
+	}
+},
+{
+	"id": "kr.destroyhealth",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I failed to muster enough strength to resist the enemy, and now I will pay the price—",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"slots": [
+		{
+			"id": "damageneedhealth",
+			"label": "Injured!",
+			"required": {
+				"ke.health": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "destroyhealth.hit"
+		},
+		{
+			"id": "destroyhealth.wound"
+		}
+	]
+},
+{
+	"id": "destroyhealth.hit",
+	"label": "A Heavy Blow!",
+	"description": "As long as I still retain even a sliver of spare strength, wounds of this kind will not prove fatal—but that portion of power cannot be restored without external aid.",
+	"requirements": {
+		"ke.health": 1
+	},
+	"aspects": {
+		"destroyhealth": 1
+	}
+},
+{
+	"id": "destroyhealth.wound",
+	"label": "Grievously Wounded!",
+	"description": "Awakened Torment, Greater Than Before—[Three simultaneous Wounds of any kind will result in instant death, and such Wounds cannot heal on their own.]",
+	"requirements": {
+		"ke.health": -1
+	},
+	"effects": {
+		"ke.woundsevere": 1
+	}
+},
+{
+	"id": "kr.damagemind",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I have failed to summon the strength necessary to face the foe; now my mind lies exposed to the threat—",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"slots": [
+		{
+			"id": "damageneedmind",
+			"label": "Injured!",
+			"required": {
+				"ke.reason": 1,
+				"ke.reasonexhausted": 1,
+				"ke.passion": 1,
+				"ke.passionexhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "damagemind.hit"
+		},
+		{
+			"id": "damagemind.end"
+		}
+	]
+},
+{
+	"id": "damagemind.hit",
+	"label": "Mind Wounded!",
+	"startdescription": "My reason is thrown into chaos, my passion dwindles and wanes—\n\n[Be warned: if both reason and passion are injured, mental strikes will directly kill you.]",
+	"requirements": {
+		"ka.mind": 1
+	},
+	"aspects": {
+		"damagemind": 1
+	}
+},
+{
+	"id": "damagemind.end",
+	"label": "In Utter Despair",
+	"startdescription": "Darkness swallows all. My consciousness helplessly sinks.",
+	"signalEndingFlavour": "Melancholy",
+	"requirements": {
+		"ka.mind": -1
+	},
+	"warmup": 10,
+	"ending": "aurorant.ending.deathmind"
+},
+{
+	"id": "kr.destroymind",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"startdescription": "I have failed to summon the strength necessary to face the foe; now my mind lies exposed to a deadly threat—",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"slots": [
+		{
+			"id": "damageneedmind",
+			"label": "Injured!",
+			"required": {
+				"ke.reason": 1,
+				"ke.reasonexhausted": 1,
+				"ke.passion": 1,
+				"ke.passionexhausted": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "destroymind.hit"
+		},
+		{
+			"id": "killedbywolf.end"
+		},
+		{
+			"id": "killedbyskadi.end"
+		},
+		{
+			"id": "killedbycat.end"
+		},
+		{
+			"id": "killedbypig.end"
+		},
+		{
+			"id": "damagemind.end"
+		}
+	]
+},
+{
+	"id": "destroymind.hit",
+	"label": "Burden of the Mind",
+	"startdescription": "My reason lies shattered into gleaming fragments, my passion withers like leaves in the wind—\n\n[This damaged Ability card cannot recover on its own. Beware: if both Reason and Passion are already wounded, a mental strike will kill you outright.]",
+	"requirements": {
+		"ka.mind": 1
+	},
+	"aspects": {
+		"destroymind": 1
+	}
+},
+{
+	"id": "kr.destroyrandom",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"linked": [
+		{
+			"id": "kr.destroyhealth",
+			"chance": 50
+		},
+		{
+			"id": "kr.destroymind"
+		}
+	]
+},
+{
+	"id": "kr.damagerandom",
+	"actionid": "kv.damage",
+	"label": "Defenseless!",
+	"warmup": 0,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"linked": [
+		{
+			"id": "kr.damagehealth",
+			"chance": 50
+		},
+		{
+			"id": "kr.damagemind"
+		}
+	]
+},
+{
+	"id": "kr.destroyany",
+	"actionid": "kv.damage",
+	"label": "A Horrifying Power",
+	"startdescription": "An irresistible force crushes my very existence—",
+	"warmup": 10,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"slots": [
+		{
+			"id": "damageneedany",
+			"label": "Destruction—",
+			"required": {
+				"ke.health": 1,
+				"ke.reason": 1,
+				"ke.passion": 1
+			},
+			"forbidden": {
+				"ka.damaged": 1
+			},
+			"greedy": true
+		}
+	],
+	"linked": [
+		{
+			"id": "destroyany.hit"
+		},
+		{
+			"id": "killedbywolf.end"
+		},
+		{
+			"id": "killedbyskadi.end"
+		},
+		{
+			"id": "killedbycat.end"
+		},
+		{
+			"id": "killedbypig.end"
+		}
+	]
+},
+{
+	"id": "destroyany.hit",
+	"label": "No Longer Sustained",
+	"startdescription": "—Each strike pushes me closer to the brink of destruction!\n\n[This damaged Ability card cannot recover on its own; beware: taking a final blow with no usable Abilities left will cause instant death.]",
+	"requirements": {
+		"ability": 2
+	},
+	"aspects": {
+		"destroyhealth": 1,
+		"destroymind": 1
+	}
+},
+{
+	"id": "kr.wolfdivided.instantkill",
+	"actionid": "kv.damage",
+	"label": "Jaws of the Wolf",
+	"startdescription": "The flames of annihilation consumed my flesh and soul; the Wolf's bite ran deep, and it was excruciating—",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.skillimmune.active": -1
+	},
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathwolf"
+},
+{
+	"id": "killedbywolf.end",
+	"label": "Annihilation",
+	"startdescription": "For one devoured by the Wolf, this may be the most merciful of ends.",
+	"extantreqs": {
+		"tag.wolfdivided": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathwolf"
+},
+{
+	"id": "killedbyskadi.end",
+	"label": "A Reckoning",
+	"startdescription": "The Madrugad will take her due in the end.",
+	"extantreqs": {
+		"ke.skadi": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathskadi"
+},
+{
+	"id": "killedbycat.end",
+	"label": "Frenzy",
+	"startdescription": "Neither alive nor dead. I am forever lost.",
+	"extantreqs": {
+		"ke.cat": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathcat"
+},
+{
+	"id": "killedbypig.end",
+	"label": "Red Tide",
+	"startdescription": "A sweet red tide devoured me.",
+	"extantreqs": {
+		"ke.pig": 1
+	},
+	"warmup": 10,
+	"signalEndingFlavour": "Melancholy",
+	"ending": "aurorant.ending.deathpig"
+}
+]
+}

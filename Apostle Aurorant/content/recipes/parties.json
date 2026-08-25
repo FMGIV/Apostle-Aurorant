@@ -1,0 +1,1335 @@
+{
+    "recipes":[
+{
+	"id": "partysecret.setup",
+	"actionid": "kv.party",
+    "warmup": 0,
+	"maxexecutions": 1,
+	"extantreqs": {
+		"ke.partysecret": -1
+	},
+	"effects": {
+		"ke.partysecret": 1
+	},
+	"linked": [
+		{
+			"id": "partysecret.first"
+		}
+	]
+},
+{
+	"id": "partysecret.first",
+	"actionid": "kv.party",
+    "label": "The Enemy Gathers",
+    "startdescription": "In the murky darkness at fog's edge, I found concealed traces of the Secret Society: immortals who serve under the Velvet. And, they have found me. Now, neither of us can pretend that nothing's happened. What a shame.",
+    "warmup": 30,
+	"playAudioTrack": "themetension.mp3",
+	"linked": [
+		{
+			"id": "partysecret.draw"
+		}
+	]
+},
+{
+	"id": "partysecret.draw",
+	"actionid": "kv.party",
+	"comments": "抽取秘密结社的行动策略。",
+	"requirements": {
+		"ke.partysecret": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.partysecret": 1
+	},
+	"linked": [
+		{
+			"id": "partysecret.router"
+		}
+	]
+},
+{
+	"id": "partysecret.router",
+	"actionid": "kv.party",
+	"comments": "链接着所有可能的recipe，决定秘密结社如何行动。",
+	"requirements": {
+		"ke.partysecret": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "partysecret.defeated"
+		},
+		{
+			"id": "partysecret.attacka.pre"
+		},
+		{
+			"id": "partysecret.attackb.pre"
+		},
+		{
+			"id": "partysecret.silence"
+		},
+		{
+			"id": "partysecret.consume"
+		},
+		{
+			"id": "partysecret.pass"
+		}
+	]
+},
+{
+	"id": "partysecret.defeated",
+	"actionid": "kv.party",
+	"label": "Shattered Lines",
+	"startdescription": "This hostile group has been routed from losing too many members. It's time to focus on advancing my own cause.",
+	"extantreqs": {
+		"wound.partysecret": 7
+	},
+	"purge":{
+		"wound.partysecret": 99
+	},
+	"warmup": 30,
+	"aspects": {
+		"defeatparty": 1
+	}
+},
+{
+	"id": "partysecret.attacka.pre",
+	"actionid": "kv.party",
+	"requirements": {
+		"ke.strategy.partya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partysecreta": 1
+	},
+	"linked": [
+		{
+			"id": "partysecret.attacka"
+		}
+	]
+},
+{
+	"id": "partysecret.attacka",
+	"actionid": "kv.party",
+	"label": "A Shadowy Blade",
+	"startdescription": "In the thick shadows and chilling fog, an enemy assassin is preparing an ambush – \n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partysecreta": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partysecret.riposted"
+		},
+		{
+			"id": "partysecreta.respond.edge"
+		},
+		{
+			"id": "partysecreta.respond.winter"
+		},
+		{
+			"id": "partysecret.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partysecreta.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "Overpowering force is sufficient to counter an ambush. My defences are impenetrable.",
+	"requirements": {
+		"panel.partysecreta": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartysecret.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partysecreta.respond.winter",
+	"label": "Respond with Patience",
+	"startdescription": "Patience is a very practical form of wisdom. If the enemy cannot catch me off guard, their plans will be foiled.",
+	"requirements": {
+		"panel.partysecreta": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartysecret.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partysecret.attackb.pre",
+	"actionid": "kv.party",
+	"requirements": {
+		"ke.strategy.partyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partysecretb": 1
+	},
+	"linked": [
+		{
+			"id": "partysecret.attackb"
+		}
+	]
+},
+{
+	"id": "partysecret.attackb",
+	"actionid": "kv.party",
+	"label": "An Elusive Mystery",
+	"startdescription": "The enemy has called upon forbidden, lost knowledge in an attempt to poison my spirit – \n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partysecretb": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partysecret.riposted"
+		},
+		{
+			"id": "partysecretb.respond.lantern"
+		},
+		{
+			"id": "partysecretb.respond.history"
+		},
+		{
+			"id": "partysecret.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partysecretb.respond.lantern",
+	"label": "Respond with Illumination",
+	"startdescription": "That which is concealed can be revealed once again: so we are taught by Illumination.",
+	"requirements": {
+		"panel.partysecretb": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartysecret.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partysecretb.respond.history",
+	"label": "Respond with History",
+	"startdescription": "There is more than one History, and secrets in one may be revealed in another.",
+	"requirements": {
+		"panel.partysecretb": 1,
+		"neghistory": 1,
+		"secrethistories": "neghistory"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartysecret.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partysecret.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostepartysecret",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartysecret.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partysecret.delayed",
+	"label": "A Trick to Distort Time",
+	"startdescription": "Time is a flickering, unpredictable flame. The Chandler's paradoxical mysteries disrupt its flow, and distort it, stretching it – \n\n[This will delay an attack for a while.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "partysecret.redirecting"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "partysecret.redirecting",
+	"label": "A Trick to Distort Time",
+	"startdescription": "This trick won't break causality <i>that</i> easily, but it will buy me more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "partysecret.attacka"
+		},
+		{
+			"id": "partysecret.attackb"
+		}
+	]
+},
+{
+	"id": "partysecret.silence",
+	"actionid": "kv.party",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "A suffocating silence hangs in the air. A formless encumbrance has been summoned, suppressing my power. \n\n[The Secret Society will periodically prevent you from using your lore.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.silence": -1
+	},
+	"requirements":{
+		"ke.strategy.partye": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.silence",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partysecret.draw"
+		}
+	]
+},
+{
+	"id": "partysecret.consume",
+	"actionid": "kv.party",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "The Velvet's malice echoes in every breath of air here, and my foes are scheming to harness her power for yet more sinister plots…\n\n[When the number of threats reaches a certain level, hostile groups can employ powerful special tactics by drawing upon the Malice present in the field.]",
+	"requirements": {
+		"ke.strategy.partye": 1
+	},
+	"extantreqs":{
+		"malice.velvet": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice",
+			"label": "Malice",
+			"essential": {
+				"malice.velvet": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partysecret.destroyechoes"
+		}
+	],
+	"linked": [
+		{
+			"id": "partysecret.draw"
+		}
+	]
+},
+{
+	"id": "partysecret.destroyechoes",
+	"actionid": "kv.party",
+	"label": "A Silent Pressure",
+	"startdescription": "The Velvet's malice is suppressing the lingering melody. \n\n[The enemy has used the Velvet's malice to destroy 'Haunting Melodies'. Remove malice to prevent this from happening.]",
+	"requirements": {
+		"malice.velvet": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"purge":{
+		"ke.opecho": 3
+	},
+	"linked": [
+		{
+			"id": "partysecret.draw"
+		}
+	]
+},
+{
+	"id": "partysecret.pass",
+	"actionid": "kv.party",
+	"label": "Enemy Plots in the Shadows",
+	"startdescription": "In corners beyond my sight, thieves, assassins, and schemers whisper among themselves, weaving their shadowy plots.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partysecret.draw"
+		}
+	]
+},
+{
+	"id": "partyenvoys.setup",
+	"actionid": "kv.party",
+    "warmup": 0,
+	"maxexecutions": 1,
+	"extantreqs": {
+		"ke.partyenvoys": -1
+	},
+	"effects": {
+		"ke.partyenvoys": 1
+	},
+	"alt":[
+		{
+			"id": "spawnillusion.first",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyenvoys.first"
+		}
+	]
+},
+{
+	"id": "partyenvoys.first",
+	"actionid": "kv.party",
+    "label": "The Enemy Gathers",
+    "startdescription": "Shining phantasms flicker before my eyes. The surroundings gleam, mirror-like, in the moonlight.  The Messengers of the House of the Moon have anticipated me.",
+    "warmup": 30,
+	"playAudioTrack": "themetension.mp3",
+	"linked": [
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+},
+{
+	"id": "partyenvoys.draw",
+	"actionid": "kv.party",
+	"comments": "抽取使者们的行动策略。",
+	"requirements": {
+		"ke.partyenvoys": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.partyenvoys": 1
+	},
+	"linked": [
+		{
+			"id": "partyenvoys.router"
+		}
+	]
+},
+{
+	"id": "partyenvoys.router",
+	"actionid": "kv.party",
+	"comments": "链接着所有可能的recipe，决定秘密结社如何行动。",
+	"requirements": {
+		"ke.partyenvoys": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "partyenvoys.defeated"
+		},
+		{
+			"id": "partyenvoys.attacka.pre"
+		},
+		{
+			"id": "partyenvoys.attackb.pre"
+		},
+		{
+			"id": "partyenvoys.reverse"
+		},
+		{
+			"id": "partyenvoys.consume"
+		},
+		{
+			"id": "partyenvoys.pass"
+		}
+	]
+},
+{
+	"id": "partyenvoys.defeated",
+	"actionid": "kv.party",
+	"label": "Shattered Lines",
+	"startdescription": "This hostile group has been routed from losing too many members. It's time to focus on advancing my own cause.",
+	"extantreqs": {
+		"wound.partyenvoys": 7
+	},
+	"purge":{
+		"wound.partyenvoys": 99
+	},
+	"warmup": 30,
+	"aspects": {
+		"defeatparty": 1
+	}
+},
+{
+	"id": "partyenvoys.attacka.pre",
+	"actionid": "kv.party",
+	"requirements": {
+		"ke.strategy.partya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partyenvoysa": 1
+	},
+	"linked": [
+		{
+			"id": "partyenvoys.attacka"
+		}
+	]
+},
+{
+	"id": "partyenvoys.attacka",
+	"actionid": "kv.party",
+	"label": "A Shapeless Blade",
+	"startdescription": "The malice of the Messengers gathers in a deadly silver flash, which slices menacingly towards me – \n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partyenvoysa": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partyenvoys.riposted"
+		},
+		{
+			"id": "partyenvoysa.respond.forge"
+		},
+		{
+			"id": "partyenvoysa.respond.heart"
+		},
+		{
+			"id": "partyenvoys.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partyenvoysa.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "I raise a defensive barrier of fire, melting the shapeless blade. ",
+	"requirements": {
+		"panel.partyenvoysa": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartyenvoys.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partyenvoysa.respond.heart",
+	"label": "Respond with Ceaselessness",
+	"startdescription": "The power of unending drumming forms an inviolable barrier, which preserves me from the attack.",
+	"requirements": {
+		"panel.partyenvoysa": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartyenvoys.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partyenvoys.attackb.pre",
+	"actionid": "kv.party",
+	"requirements": {
+		"ke.strategy.partyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partyenvoysb": 1
+	},
+	"linked": [
+		{
+			"id": "partyenvoys.attackb"
+		}
+	]
+},
+{
+	"id": "partyenvoys.attackb",
+	"actionid": "kv.party",
+	"label": "Captivating Illusions",
+	"startdescription": "My sight is filled with a silvery glow. In its light, everything appears balanced and perfect. That light, it's too beautiful – \n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partyenvoysb": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partyenvoys.riposted"
+		},
+		{
+			"id": "partyenvoysb.respond.moth"
+		},
+		{
+			"id": "partyenvoysb.respond.winter"
+		},
+		{
+			"id": "partyenvoys.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partyenvoysb.respond.moth",
+	"label": "Respond with Chaos",
+	"startdescription": "Under the cover of chaos, I escape the mesmerizing light.  ",
+	"requirements": {
+		"panel.partyenvoysb": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartyenvoys.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partyenvoysb.respond.winter",
+	"label": "Respond with Silence",
+	"startdescription": "Calling upon a mystery of silence, I bring an end to the illusions.",
+	"requirements": {
+		"panel.partyenvoysb": 1,
+		"negwinter": 1,
+		"winter": "negwinter"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartyenvoys.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partyenvoys.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostepartyenvoys",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartyenvoys.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partyenvoys.delayed",
+	"label": "A Trick to Distort Time",
+	"startdescription": "Time is a flickering, unpredictable flame. The Chandler's paradoxical mysteries disrupt its flow, and distort it, stretching it – \n\n[This will delay an attack for a while.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "partyenvoys.redirecting"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "partyenvoys.redirecting",
+	"label": "A Trick to Distort Time",
+	"startdescription": "This trick won't break causality <i>that</i> easily, but it will buy me more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "partyenvoys.attacka"
+		},
+		{
+			"id": "partyenvoys.attackb"
+		}
+	]
+},
+{
+	"id": "partyenvoys.reverse",
+	"actionid": "kv.party",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "The strange hues of the Meniscate have tainted and blurred the boundaries of reality – what is possible, and what is merely real? – \n\n[The Messengers of the House of the Moon periodically transform helpful influences and opportunities into special enemies.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.silence": -1
+	},
+	"requirements":{
+		"ke.strategy.partye": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.reverse",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+},
+{
+	"id": "partyenvoys.consume",
+	"actionid": "kv.party",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "The malice of the Meniscate echoes in every breath of air here, and my foes are scheming to harness her power for yet more sinister plots…\n\n[When the number of threats reaches a certain level, hostile groups can employ powerful special tactics by drawing upon the Malice present in the field.]",
+	"requirements": {
+		"ke.strategy.partyc": 1
+	},
+	"extantreqs":{
+		"malice.moon": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.needmalice",
+			"label": "Malice",
+			"essential": {
+				"malice.moon": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partyenvoys.special"
+		}
+	],
+	"linked": [
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+},
+{
+	"id": "partyenvoys.special",
+	"actionid": "kv.party",
+	"label": "Surging Phantasms",
+	"startdescription": "The Meniscate's illusory radiance is steadily intensifying. \n\n[The enemy has converted malice into 'Illusory Radiance'. Remove malice to prevent this from happening.]",
+	"requirements": {
+		"malice.moon": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.speciality.illusion",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+},
+{
+	"id": "partyenvoys.pass",
+	"actionid": "kv.party",
+	"label": "Enemy Plots in the Shadows",
+	"startdescription": "In the dense forest, a faint glow flickers. The immortals of the Meniscate are plotting to hinder my progress.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+}
+]
+}

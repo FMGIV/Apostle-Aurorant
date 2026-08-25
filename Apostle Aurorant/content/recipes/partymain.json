@@ -1,0 +1,1539 @@
+{
+    "recipes":[
+{
+	"id": "partymain.coming",
+	"actionid": "kv.partymain",
+	"label": "Pursuers in Sight",
+	"startdescription": "The wind carries an unpleasant scent—sickly sweet, almost rotten, mingled with hawthorn blossoms, or perhaps the smell of blood. The signs are unmistakable: those who would hinder my ambitions have tracked me here.\n\n[When traces are present on the board, hostile groups may arrive at the end of each cycle. The more traces there are, the higher the chance they will find you.]",
+	"extantreqs": {
+		"ka.difficulty": -4,
+		"ke.partymaindefeated": -1,
+		"ke.partymain": -1,
+		"ka.nopartymain": -1
+	},
+	"warmup": 30,
+	"effects": {
+		"ke.partymain": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.setup3"
+		},
+		{
+			"id": "partymain.setup2"
+		},
+		{
+			"id": "partymain.setup1"
+		},
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.setup3",
+	"actionid": "kv.partymain",
+	"label": "The Enemy Gathers",
+	"startdescription": "Just as I steadily regain my former strength, my enemies will not remain idle. They will return with greater power and more sinister designs...\n\n[As the game progresses, the Garrisons of Triple Knot will enter the board with increasingly higher initial Threat and will remove two 'Wastage' upon arrival.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.difficulty": 3
+	},
+	"purge": {
+		"wound.partymain": 2
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 4,
+			"additive": true
+		}
+	],
+	"alt": [
+		{
+			"id": "lessername.setup",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.setup2",
+	"actionid": "kv.partymain",
+	"label": "The Enemy Gathers",
+	"startdescription": "Just as I steadily regain my former strength, my enemies will not remain idle. They will return with greater power and more sinister designs...\n\n[As the game progresses, the Garrisons of Triple Knot will enter the board with increasingly higher initial Threat and will remove two 'Wastage' upon arrival.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.difficulty": 2
+	},
+	"purge": {
+		"wound.partymain": 2
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 4,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.setup1",
+	"actionid": "kv.partymain",
+	"label": "The Enemy Gathers",
+	"startdescription": "Just as I steadily regain my former strength, my enemies will not remain idle. They will return with greater power and more sinister designs...\n\n[As the game progresses, the Garrisons of Triple Knot will enter the board with increasingly higher initial Threat and will remove a 'Wastage' upon arrival.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.difficulty": 1
+	},
+	"purge": {
+		"wound.partymain": 1
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 2,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.draw",
+	"actionid": "kv.partymain",
+	"comments": "抽取绳结戍边者的行动策略。",
+	"requirements": {
+		"ke.partymain": 1
+	},
+	"warmup": 0,
+	"deckeffects": {
+		"kd.strategies.partymain": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.router"
+		}
+	]
+},
+{
+	"id": "partymain.router",
+	"actionid": "kv.partymain",
+	"comments": "链接着所有可能的recipe，决定绳结戍边者如何行动。",
+	"requirements": {
+		"ke.partymain": 1
+	},
+	"warmup": 0,
+	"linked": [
+		{
+			"id": "partymain.defeated"
+		},
+		{
+			"id": "partymain.losethreat"
+		},
+		{
+			"id": "partymain.finale"
+		},
+		{
+			"id": "partymain.supportcat"
+		},
+		{
+			"id": "partymain.supportpig"
+		},
+		{
+			"id": "partymain.attack3a.pre"
+		},
+		{
+			"id": "partymain.attack3b.pre"
+		},
+		{
+			"id": "partymain.attack2a.pre"
+		},
+		{
+			"id": "partymain.attack2b.pre"
+		},
+		{
+			"id": "partymain.special"
+		},
+		{
+			"id": "partymain.attack1a"
+		},
+		{
+			"id": "partymain.attack1b"
+		},
+		{
+			"id": "partymain.consume"
+		},
+		{
+			"id": "partymain.develop"
+		},
+		{
+			"id": "partymain.pass"
+		}
+	]
+},
+{
+	"id": "partymain.defeated",
+	"actionid": "kv.partymain",
+	"label": "Shattered Lines",
+	"startdescription": "A decisive victory! Having lost a significant number of members and resources, this group of hostile Long will pose no threat to me for a long time. Yet there will always be more fools rushing to the fire.",
+	"extantreqs": {
+		"wound.partymain": 7
+	},
+	"purge":{
+		"wound.partymain": 99
+	},
+	"warmup": 30,
+	"aspects": {
+		"defeatparty": 1
+	}
+},
+{
+	"id": "partymain.supportcat",
+	"actionid": "kv.partymain",
+	"label": "Enemies in Service",
+	"startdescription": "The enemy is channeling greater power from the dreams to aid their patron—\n\n[While the Huntress is present, the enemy will continually generate Malice to support their actions.]",
+	"grandReqs": {
+		"[ke.strategy.partyc]+[ke.strategy.partye]+[ke.strategy.partyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.cat": 1,
+		"ke.sealofknot": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.supportcat",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.supportpig",
+	"actionid": "kv.partymain",
+	"label": "Enemies in Service",
+	"startdescription": "The enemy is channeling greater power from the dreams to aid their patron—\n\n[While the Huntress is present, the enemy will continually generate Malice to support their actions.]",
+	"grandReqs": {
+		"[ke.strategy.partyc]+[ke.strategy.partye]+[ke.strategy.partyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.pig": 1,
+		"ke.sealofknot": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt":[
+		{
+			"id": "kr.supportpig",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.finale",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "My enemies have amassed enough strength and are now massing to fulfill the most sinister designs of the the Hours of the Knot—soon, something mad will occur.\n\n[Your enemies have grown extremely dangerous—if you wish to avoid pointless losses, it is best to withdraw now.]",
+	"grandReqs": {
+		"[ke.strategy.partyc]+[ke.strategy.partye]+[ke.strategy.partyd]": 1,
+		"ka.threat": 10
+	},
+	"extantreqs":{
+		"ke.sealofknot": -1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.summoncat"
+		},
+		{
+			"id": "partymain.summonpig"
+		},
+		{
+			"id": "partymain.blockarea"
+		}
+	]
+},
+{
+	"id": "partymain.summoncat",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has performed a large‑scale profane ritual to summon their patron—a hostile Name hidden within dreams. The situation will become extremely perilous for me.\n\n[An extremely dangerous enemy—a hostile Name has been called to this place. Be prepared.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.markcat": 1,
+		"ka.huntressishere": -1
+	},
+	"alt":[
+		{
+			"id": "cat.pre",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.summonpig",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has performed a large‑scale profane ritual to summon their patron—a hostile Name hidden within dreams. The situation will become extremely perilous for me.\n\n[An extremely dangerous enemy—a hostile Name has been called to this place. Be prepared.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ke.markpig": 1,
+		"ka.huntressishere": -1
+	},
+	"alt":[
+		{
+			"id": "pig.pre",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.blockarea",
+	"actionid": "kv.partymain",
+	"label": "Enemies Gathering",
+	"startdescription": "The enemy has performed a large‑scale profane ritual to summon their patron—a hostile Name hidden within dreams. The situation will become extremely perilous for me.\n\n[An extremely dangerous enemy—a hostile Name has been called to this place. Be prepared.]",
+	"warmup": 30,
+	"extantreqs":{
+		"ka.huntressishere": 1
+	},
+	"alt":[
+		{
+			"id": "kr.knotblockmove",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.losethreat",
+	"actionid": "kv.partymain",
+	"label": "Weakened!",
+	"startdescription": "After losing a key local stronghold, the threat posed by this hostile group will diminish—for now.\n\n[This hostile group's Threat will be reduced by 2.]",
+	"requirements": {
+		"ka.threat": 2
+	},
+	"extantreqs": {
+		"ke.partymainsetback": 1
+	},
+	"purge": {
+		"ke.partymainsetback": 1
+	},
+	"warmup": 30,
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": -2,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.router"
+		}
+	]
+},
+{
+	"id": "partymain.special",
+	"actionid": "kv.partymain",
+	"label": "Enemies Summoning Corruption",
+	"startdescription": "The malice of the Hours of the Knot echoes in every breath of air here, and my foes are scheming to harness their power for yet more sinister plots…\n\n[When the number of threats reaches a certain level, hostile groups can employ powerful special tactics by drawing upon the Malice present in the field.]",
+	"requirements": {
+		"ke.strategy.partye": 1,
+		"ka.threat": 5
+	},
+	"extantreqs":{
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "needknotmalice",
+			"label": "Malice",
+			"required": {
+				"malice.axe": 1,
+				"malice.grail": 1,
+				"malice.malachite": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.specialaxe"
+		},
+		{
+			"id": "partymain.specialgrail"
+		},
+		{
+			"id": "partymain.specialmalachite"
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.specialaxe",
+	"actionid": "kv.partymain",
+	"label": "Edict of the Sealed Gate",
+	"startdescription": "The malice of the Horned-Axe is splitting the battlefield in a sinister way—some of my allies and resources will be forced to withdraw from the front lines!\n\n[The enemy has used the Malice of the Horned-Axe to weaken your support! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.axe": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.speciality.axe",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "partymain.specialgrail",
+	"actionid": "kv.partymain",
+	"label": "Pain Etched in Memory",
+	"startdescription": "The venomous pain from the Grail saturates this realm of reality—both I and my allies shall endure suffering.\n\n[The enemy has used the Malice of the Grail to weaken your support! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.grail": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	],
+	"alt":[
+		{
+			"id": "kr.speciality.grail",
+			"additional": true
+		}
+	]
+},
+{
+	"id": "partymain.specialmalachite",
+	"actionid": "kv.partymain",
+	"label": "Embrace of the Malachite",
+	"startdescription": "The Malachite's malice takes the form of viridian protection—bestowed upon foes.\n\n[The enemy has established a barrier using the Malachite's malice! You must clear the malice from the field in advance to prevent such situations.]",
+	"requirements": {
+		"malice.malachite": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.speciality.malachite",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.attack3a.pre",
+	"actionid": "kv.partymain",
+	"label": "The Owl's Talons",
+	"startdescription": "Guided by the enemy, the frigid power of the Horned-Axe is tearing through my flesh—\n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"ka.threat": 7,
+		"ke.strategy.partya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain3a": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack3a"
+		}
+	]
+},
+{
+	"id": "partymain.attack3a",
+	"actionid": "kv.partymain",
+	"label": "The Owl's Talons",
+	"startdescription": "Guided by the enemy, the frigid power of the Horned-Axe is tearing through my flesh—\n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partymain3a": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.riposted"
+		},
+		{
+			"id": "partymain3a.respond.edge"
+		},
+		{
+			"id": "partymain3a.respond.knock"
+		},
+		{
+			"id": "partymain.delayed"
+		},
+		{
+			"id": "kr.destroyhealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain3a.respond.edge",
+	"label": "Respond with Force",
+	"startdescription": "The Owl's talons are certainly vicious, but they no longer possess their former sharpness. Relying on brute force, I managed to fend them off and force them back beneath the world's skin.",
+	"requirements": {
+		"panel.partymain3a": 1,
+		"negedge": 1,
+		"edge": "negedge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain3a.respond.knock",
+	"label": "Respond with Opening",
+	"startdescription": "The Horned-Axe knows the ways of opening, but even the faint echoes of her power can still be deflected and misled. This strike caused me no real harm.",
+	"requirements": {
+		"panel.partymain3a": 1,
+		"negknock": 1,
+		"knock": "negknock"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain.attack3b.pre",
+	"actionid": "kv.partymain",
+	"label": "Touch of the Grail",
+	"startdescription": "My vision is tinged with a maddening scarlet—the temptation touched by the Grail is eroding my sanity and soul—\n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"ka.threat": 7,
+		"ke.strategy.partyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain3b": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack3b"
+		}
+	]
+},
+{
+	"id": "partymain.attack3b",
+	"actionid": "kv.partymain",
+	"label": "Touch of the Grail",
+	"startdescription": "My vision is tinged with a maddening scarlet—the temptation touched by the Grail is eroding my sanity and soul—\n\n[If left undefended, this will permanently damage one of your Ability card.]",
+	"requirements": {
+		"panel.partymain3b": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.riposted"
+		},
+		{
+			"id": "partymain3b.respond.grail"
+		},
+		{
+			"id": "partymain3b.respond.moth"
+		},
+		{
+			"id": "partymain.delayed"
+		},
+		{
+			"id": "kr.destroymind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain3b.respond.grail",
+	"label": "Respond with Torment",
+	"startdescription": "Understanding of the Grail's nature allows me to resist its lure with pain of equal magnitude. The frenzied scarlet recedes bit by bit against the current until it finally fades away entirely.",
+	"requirements": {
+		"panel.partymain3b": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain3b.respond.moth",
+	"label": "Respond with Yearning",
+	"startdescription": "A deeper, more fundamental restlessness buzzing within my skull, growing ever stronger. The Grail's temptation unwillingly yields to this yearning.",
+	"requirements": {
+		"panel.partymain3b": 1,
+		"negmoth": 1,
+		"moth": "negmoth"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain.attack2a.pre",
+	"actionid": "kv.partymain",
+	"label": "Stingstorm",
+	"startdescription": "The enemy has invoked the Malachite, summoning a tide of swarming bees  from the Wood! If I wish to avoid the agony of their venom, I'd do well to keep my distance from these tiny foes—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"ka.threat": 3,
+		"ke.strategy.partya": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain2a": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack2a"
+		}
+	]
+},
+{
+	"id": "partymain.attack2a",
+	"actionid": "kv.partymain",
+	"label": "Stingstorm",
+	"startdescription": "The enemy has invoked the Malachite, summoning a tide of swarming bees  from the Wood! If I wish to avoid the agony of their venom, I'd do well to keep my distance from these tiny foes—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"panel.partymain2a": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.riposted"
+		},
+		{
+			"id": "partymain2a.respond.grail"
+		},
+		{
+			"id": "partymain2a.respond.forge"
+		},
+		{
+			"id": "partymain.delayed"
+		},
+		{
+			"id": "kr.damagehealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain2a.respond.grail",
+	"label": "Respond with Temptation",
+	"startdescription": "The Malachite tempts the swarm with the sweetness of her blood, while the Red Arts can replicate an extremely similar taste. The enemy has been misled.",
+	"requirements": {
+		"panel.partymain2a": 1,
+		"neggrail": 1,
+		"grail": "neggrail"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain2a.respond.forge",
+	"label": "Respond with Flame",
+	"startdescription": "Creatures who have long dwelt in the Wood cannot withstand fire. However vast their numbers, they shall be reduced to ashes.",
+	"requirements": {
+		"panel.partymain2a": 1,
+		"negforge": 1,
+		"forge": "negforge"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain.attack2b.pre",
+	"actionid": "kv.partymain",
+	"label": "Desecration's Reverberation",
+	"startdescription": "A blasphemous ritual, twisted by malice, is underway—one that should have sustained the existence of all things: now, the sickly resonance of the skin of the world tears through material barriers, assaulting my spirit—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"ka.threat": 3,
+		"ke.strategy.partyb": 1
+	},
+	"warmup": 0,
+	"effects": {
+		"panel.partymain2b": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.attack2b"
+		}
+	]
+},
+{
+	"id": "partymain.attack2b",
+	"actionid": "kv.partymain",
+	"label": "Desecration's Reverberation",
+	"startdescription": "A blasphemous ritual, twisted by malice, is underway—one that should have sustained the existence of all things: now, the sickly resonance of the skin of the world tears through material barriers, assaulting my spirit—\n\n[Without defense, this will temporarily impair your ability cards.]",
+	"requirements": {
+		"panel.partymain2b": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "ks.partyresponse1",
+			"label": "A Way To",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		},
+		{
+			"id": "ks.partyresponse2",
+			"label": "Defend",
+			"required": {
+				"edge": 1,
+				"forge": 1,
+				"grail": 1,
+				"heart": 1,
+				"knock": 1,
+				"lantern": 1,
+				"moth": 1,
+				"winter": 1,
+				"secrethistories": 1
+			},
+			"forbidden": {
+				"exhausted": 1,
+				"ka.unfit": 1
+			}
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.riposted"
+		},
+		{
+			"id": "partymain2b.respond.heart"
+		},
+		{
+			"id": "partymain2b.respond.lantern"
+		},
+		{
+			"id": "partymain.delayed"
+		},
+		{
+			"id": "kr.damagemind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain2b.respond.heart",
+	"label": "Respond with Persistence",
+	"startdescription": "Pulsing persistence shall recall the perseverance of the one who preserves the skin of the world, bringing this profane rite to a premature end.",
+	"requirements": {
+		"panel.partymain2b": 1,
+		"negheart": 1,
+		"heart": "negheart"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain2b.respond.lantern",
+	"label": "Respond with Ruthlessness",
+	"startdescription": "The light of the Watchman will reveal the merciless truth, and drive out the impure from this world. The unbearable cacophony of mingled sounds fades, then vanishes completely… at least for now.",
+	"requirements": {
+		"panel.partymain2b": 1,
+		"neglantern": 1,
+		"lantern": "neglantern"
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 10
+		}
+	]
+},
+{
+	"id": "partymain.riposted",
+	"label": "Unleash a Power of Wild Fury",
+	"startdescription": "Blazing fury fills my entire being, burning through every fibre of my being—",
+	"requirements": {
+		"ke.skillriposte": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	],
+	"alt": [
+		{
+			"id": "kr.ripostepartymain",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		},
+		{
+			"id": "kr.partygoalsetup",
+			"additional": true,
+			"chance": 100
+		},
+		{
+			"id":  "kr.tracepartymain.fight",
+			"additional": true,
+			"chance": 30
+		}
+	]
+},
+{
+	"id": "partymain.delayed",
+	"label": "A Trick to Distort Time",
+	"startdescription": "Time is a flickering, unpredictable flame. The Chandler's paradoxical mysteries disrupt its flow, and distort it, stretching it – \n\n[This will delay an attack for a while.]",
+	"requirements": {
+		"ke.skilltime": 1
+	},
+	"linked": [
+		{
+			"id": "partymain.redirecting"
+		}
+	],
+	"alt": [
+		{
+			"id": "spit.party",
+			"additional": true,
+			"expulsion": {
+				"limit": 99,
+				"filter": {
+					"edge": 1,
+					"forge": 1,
+					"grail": 1,
+					"heart": 1,
+					"knock": 1,
+					"lantern": 1,
+					"moth": 1,
+					"winter": 1,
+					"secrethistories": 1
+				}
+			}
+		}
+	]
+},
+{
+	"id": "partymain.redirecting",
+	"label": "A Trick to Distort Time",
+	"startdescription": "This trick won't break causality <i>that</i> easily, but it will buy me more time to prepare.",
+	"warmup": 60,
+	"linked": [
+		{
+			"id": "partymain.attack3a"
+		},
+		{
+			"id": "partymain.attack3b"
+		},
+		{
+			"id": "partymain.attack2a"
+		},
+		{
+			"id": "partymain.attack2b"
+		}
+	]
+},
+{
+	"id": "partymain.attack1a",
+	"actionid": "kv.partymain",
+	"label": "Petty Tricks",
+	"startdescription": "The Sisterhood's lackeys are attempting to harm me with mundane magic—but I'm not kind enough to play wounded for their sake.\n\n[The hostile group is attempting to deplete your Heath. This poses no substantial threat, but they will unlock more powerful abilities as their threat level increases.]",
+	"requirements": {
+		"ke.strategy.partya": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.attackexhausthealth",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain.attack1b",
+	"actionid": "kv.partymain",
+	"label": "Scratching the Surface",
+	"startdescription": "The Sisterhood's lackeys are trying to disrupt my mind with curses. It is somewhat irritating, but nothing more.\n\n[The hostile group is attempting to deplete your Reason and Passion. This poses no substantial threat, but they will unlock more powerful abilities as their threat level increases.]",
+	"requirements": {
+		"ke.strategy.partyb": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"alt": [
+		{
+			"id": "kr.attackexhaustmind",
+			"additional": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partyshared.cooldown"
+		}
+	]
+},
+{
+	"id": "partymain.consume",
+	"actionid": "kv.partymain",
+	"label": "Enemy Grows, Disaster Follows",
+	"startdescription": "The malice of the the Hours of the Knot echoes through every breath of air here, and my enemies are praying to it for greater power…\n\n[A specific type of malice can cause hostile group to grow in threat rapidly.]",
+	"requirements": {
+		"ke.strategy.partyc": 1
+	},
+	"extantreqs":{
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"slots": [
+		{
+			"id": "needknotmalice",
+			"label": "Malice",
+			"required": {
+				"malice.axe": 1,
+				"malice.grail": 1,
+				"malice.malachite": 1
+			},
+			"consumes": true,
+			"greedy": true
+		}
+	],
+	"alt": [
+		{
+			"id": "partymain.consumesuccess"
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.consumesuccess",
+	"actionid": "kv.partymain",
+	"label": "Enemy Grows, Disaster Follows",
+	"startdescription": "The Prayer Is Answered — The Hours of the Knot have granted their servants stronger power, allowing them to employ more vicious tricks.\n\n[Enemies have used malice to increase their threat! You must clear existing malice from the field beforehand to prevent such situations.]",
+	"requirements": {
+		"ka.fromknotgods": 1
+	},
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.develop",
+	"actionid": "kv.partymain",
+	"label": "Enemy Expands",
+	"startdescription": "My enemies are setting up new hideouts, storehouses, and sanctuaries in the area, strengthening their own arms. Their threat will increase.",
+	"warmup": 30,
+	"requirements":{
+		"ke.strategy.partyd": 1
+	},
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"mutations": [
+		{
+			"filter": "ke.partymain",
+			"mutate": "ka.threat",
+			"level": 1,
+			"additive": true
+		}
+	],
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partymain.pass",
+	"actionid": "kv.partymain",
+	"label": "Enemy Plots in the Shadows",
+	"startdescription": "In corners beyond my sight, witches, sorcerers, and aspirants are brewing yet another wave of base schemes they intend to carry out.",
+	"warmup": 30,
+	"effects": {
+		"ka.purgemarkparty": -99
+	},
+	"linked": [
+		{
+			"id": "partymain.draw"
+		}
+	]
+},
+{
+	"id": "partyshared.cooldown",
+	"label": "Enemy Regroups",
+	"startdescription": "This operation against me has ended. Regardless of the outcome, they will need time to reorganize before confronting me again —",
+	"warmup": 15,
+	"linked": [
+		{
+			"id": "partymain.draw"
+		},
+		{
+			"id": "partysecret.draw"
+		},
+		{
+			"id": "partyenvoys.draw"
+		}
+	]
+}
+]
+}
