@@ -1,2 +1,2 @@
 # Apostle-Aurorant
-for testing
+for powergaming
